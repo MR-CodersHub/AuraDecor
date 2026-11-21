@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="terracottaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C9755B"/>
+      <stop offset="50%" stop-color="#B9684E"/>
+      <stop offset="100%" stop-color="#9E533B"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4BC82"/>
+      <stop offset="50%" stop-color="#B79A62"/>
+      <stop offset="100%" stop-color="#8F743D"/>
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#39332D" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="64" height="64" rx="16" fill="url(#terracottaGrad)"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.8"/>
+
+  <g filter="url(#subtleShadow)">
+    <path d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z" fill="#F8F3E9"/>
+    <path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="url(#goldGrad)"/>
+    <circle cx="32" cy="32" r="3.2" fill="#B9684E"/>
+    <circle cx="32" cy="32" r="1.5" fill="#FFFFFF"/>
+  </g>
+</svg>

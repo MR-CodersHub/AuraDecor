@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" width="280" height="60">
+  <defs>
+    <linearGradient id="logoTerraGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C9755B"/>
+      <stop offset="50%" stop-color="#B9684E"/>
+      <stop offset="100%" stop-color="#9E533B"/>
+    </linearGradient>
+    <linearGradient id="logoGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4BC82"/>
+      <stop offset="50%" stop-color="#B79A62"/>
+      <stop offset="100%" stop-color="#8F743D"/>
+    </linearGradient>
+    <style>
+      .brand-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 26px;
+        font-weight: 700;
+        fill: #39332D;
+        letter-spacing: -0.5px;
+      }
+      .brand-tagline {
+        font-family: 'Lato', Helvetica, Arial, sans-serif;
+        font-size: 8.5px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        fill: #B9684E;
+      }
+      .star-ornament {
+        fill: #B79A62;
+      }
+    </style>
+  </defs>
+
+  <!-- Emblem Icon on Left -->
+  <g transform="translate(6, 6)">
+    <rect width="48" height="48" rx="12" fill="url(#logoTerraGrad)"/>
+    <rect x="2" y="2" width="44" height="44" rx="10" fill="none" stroke="url(#logoGoldGrad)" stroke-width="1.2" stroke-dasharray="2 1.5" opacity="0.85"/>
+    <!-- 8 Point Artisan Star -->
+    <path d="M24 8 L26.2 18.5 L34 13 L28.8 21 L39 24 L28.8 27 L34 35 L26.2 29.5 L24 40 L21.8 29.5 L14 35 L19.2 27 L9 24 L19.2 21 L14 13 L21.8 18.5 Z" fill="#F8F3E9"/>
+    <!-- Center Diamond & Core -->
+    <path d="M24 13.5 L27 21 L34.5 24 L27 27 L24 34.5 L21 27 L13.5 24 L21 21 Z" fill="url(#logoGoldGrad)"/>
+    <circle cx="24" cy="24" r="2.5" fill="#B9684E"/>
+    <circle cx="24" cy="24" r="1.2" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Typography on Right -->
+  <g transform="translate(68, 12)">
+    <!-- Brand Title -->
+    <text x="0" y="22" class="brand-title">AuraDecor</text>
+    <!-- Tagline with subtle divider -->
+    <text x="1" y="37" class="brand-tagline">TIMELESS CRAFT · SOULFUL LIVING</text>
+  </g>
+</svg>
