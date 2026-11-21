@@ -34,7 +34,7 @@ Every public-facing page contains **exactly 6 meaningful content sections** (exc
    - Section 5: Meet Our Artisan Guild Community
    - Section 6: Ethical Commitments (Fair trade, plastic-free packaging, zero mass-production)
 
-4. [services.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/services.html) — **Shop Products & Categories** *(Integrated Main Store)*
+4. [services.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/services.html) — **Services** *(Integrated Main Store)*
    - Section 1: Shop Introduction Hero
    - Section 2: 10 Visual Category Cards with interactive on-page filtering
    - Section 3: 24-Product Dynamic Grid with live search, category selector, price slider, and sorting
