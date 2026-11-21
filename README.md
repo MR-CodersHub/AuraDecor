@@ -50,7 +50,7 @@ Every public-facing page contains **exactly 6 meaningful content sections** (exc
    - Section 5: Master Artisan Story Spotlight (Priya Sharma, Jaipur)
    - Section 6: Related Handcrafted Pieces & Continuous Shopping Recommendations
 
-6. [blog.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/blog.html) — **Artisan Stories & Craft Journal** *(Integrated Stories)*
+6. [blog.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/blog.html) — **Blog** *(Integrated Stories)*
    - Section 1: Journal Hero with topical category pills
    - Section 2: Editorial Feature Story: *"The Potter's Wheel: Priya Sharma"*
    - Section 3: Meet Our Artisans (6 master profiles across Rajasthan, Gujarat, Kerala, Bihar, U.P.)
