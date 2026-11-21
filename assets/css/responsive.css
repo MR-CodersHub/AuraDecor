@@ -249,6 +249,11 @@
     display: none !important;
   }
 
+  .navbar.navbar-open .mobile-menu {
+    top: 64px;
+    height: calc(100vh - 64px);
+  }
+
   /* Push body down when fixed navbar present */
   body.has-fixed-nav {
     padding-top: 64px;
@@ -300,6 +305,21 @@
   .hamburger span {
     width: 20px;
   }
+
+  .navbar.navbar-open .mobile-menu {
+    top: 60px;
+    height: calc(100vh - 60px);
+    padding: 20px 16px 28px;
+  }
+
+  .mobile-nav-link {
+    padding: 10px 8px;
+    font-size: 0.95rem;
+  }
+
+  .mobile-menu-kicker {
+    font-size: 0.72rem;
+  }
 }
 
 /* Tablet view (769px – 1023px) */
@@ -315,10 +335,6 @@
 
   .nav-links {
     display: none;
-  }
-
-  .navbar.navbar-open .nav-links {
-    display: flex !important;
   }
 }
 
