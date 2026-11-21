@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="shortcut icon" href="../favicon.svg">
   <meta name="description" content="AuraDecor is preparing a new handcrafted seasonal collection. Join our VIP early preview list.">
   <title>Coming Soon &amp; Maintenance — AuraDecor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,21 +39,45 @@
 
     /* Top Brand Header */
     .coming-header {
-      padding: 2rem 0;
+      padding: 1.8rem 0;
       text-align: center;
       border-bottom: 1px solid var(--warm-sand);
     }
     .coming-header .logo {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
       text-decoration: none;
-      color: var(--charcoal);
-      font-family: var(--font-heading);
-      font-size: 1.8rem;
-      font-weight: 700;
+      text-align: left;
     }
-    .logo-mark { color: var(--terracotta); }
+    .coming-header .logo-mark svg {
+      display: block;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(185, 104, 78, 0.25);
+    }
+    .coming-header .logo-text-group {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .coming-header .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: -0.015em;
+    }
+    .coming-header .logo-tagline {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-top: 2px;
+    }
 
     /* SECTION 1: HERO */
     .cs-hero {
@@ -254,10 +280,7 @@
 <!-- Header -->
 <header class="coming-header">
   <div class="container">
-    <a href="../index.html" class="logo">
-      <span class="logo-mark"><i class="fas fa-star"></i></span>
-      <span>AuraDecor</span>
-    </a>
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#B9684E"/><path d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z" fill="#F8F3E9"/><path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="#B79A62"/><circle cx="32" cy="32" r="3.2" fill="#B9684E"/></svg></span><span class="logo-text-group"><span class="logo-text">AuraDecor</span><span class="logo-tagline">Timeless Craft · Soulful Living</span></span></a>
   </div>
 </header>
 

@@ -4,6 +4,16 @@ A luxury, visually rich, and fully responsive e-commerce web platform for **Aura
 
 Built entirely using **pure HTML5, CSS3, and Vanilla JavaScript (ES6)** with zero third-party framework dependencies.
 
+## Brand Identity & Visual Assets
+
+- **Official Tagline**: *Timeless Craft · Soulful Living*
+- **Favicon**:
+  - `assets/images/favicon.svg`: Handcrafted 8-point artisan star with terracotta gradient base (`#B9684E`), golden filigree border, and warm sand core (`#F8F3E9`).
+  - `favicon.svg`: Root-level vector favicon for browser auto-detection.
+- **Logo**:
+  - `assets/images/logo.svg`: Master vector logo featuring the handcrafted artisan emblem, Playfair Display serif wordmark, and clean sans-serif tagline.
+  - Linked and integrated with inline vector optimization across all 12 pages in both navigation and footer sections.
+
 ---
 
 ## Exact 12-Page Architecture

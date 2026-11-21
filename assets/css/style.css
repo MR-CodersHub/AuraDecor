@@ -421,13 +421,8 @@ code {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.65rem;
   text-decoration: none;
-  font-family: var(--font-heading, var(--font-serif));
-  font-size: 1.55rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.01em;
   flex-shrink: 0;
 }
 
@@ -436,13 +431,69 @@ code {
 }
 
 .logo-mark {
-  color: var(--accent, #B9684E);
-  font-size: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   line-height: 1;
+  flex-shrink: 0;
+}
+
+.logo-mark svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(185, 104, 78, 0.25);
+  transition: transform var(--transition-fast);
+}
+
+.logo:hover .logo-mark svg {
+  transform: scale(1.05);
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
 }
 
 .logo-text {
-  letter-spacing: -0.01em;
+  font-family: var(--font-heading, var(--font-serif));
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.015em;
+}
+
+[data-theme="dark"] .logo-text {
+  color: #fff;
+}
+
+.logo-tagline {
+  font-family: var(--font-body, var(--font-sans));
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent, #B9684E);
+  margin-top: 1px;
+}
+
+[data-theme="dark"] .logo-tagline {
+  color: var(--accent-gold, #B79A62);
+}
+
+.footer-logo {
+  margin-bottom: 0.8rem;
+}
+
+.footer-logo .logo-text {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .footer-logo .logo-text {
+  color: #fff;
 }
 
 /* Nav Links - Desktop */

@@ -220,11 +220,21 @@
   }
 
   .logo {
+    gap: 0.5rem;
+  }
+
+  .logo-text {
     font-size: 1.35rem;
   }
 
-  .logo-mark {
-    font-size: 1.2rem;
+  .logo-tagline {
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+  }
+
+  .logo-mark svg {
+    width: 28px;
+    height: 28px;
   }
 
   /* Cart / actions on mobile */
@@ -257,8 +267,18 @@
     gap: 4px;
   }
 
-  .logo {
-    font-size: 1.2rem;
+  .logo-text {
+    font-size: 1.15rem;
+  }
+
+  .logo-tagline {
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
+  }
+
+  .logo-mark svg {
+    width: 24px;
+    height: 24px;
   }
 
   .icon-btn {
