@@ -329,18 +329,8 @@
     box-sizing: border-box !important;
   }
 
-  .mobile-menu-brand .logo-mark svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .mobile-menu-brand .logo-text {
-    font-size: 1.15rem;
-  }
-
-  .mobile-menu-brand .logo-tagline {
-    font-size: 0.5rem;
-    letter-spacing: 0.08em;
+  .mobile-menu-header {
+    display: none !important;
   }
 
   .mobile-nav-link {
@@ -357,10 +347,6 @@
     height: 28px;
     font-size: 0.85rem;
     border-radius: 7px;
-  }
-
-  .mobile-menu-kicker {
-    font-size: 0.72rem;
   }
 }
 
