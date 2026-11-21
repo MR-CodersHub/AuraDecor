@@ -829,8 +829,8 @@ code {
   }
 
   .mobile-menu-header {
-    padding-bottom: 20px;
-    margin-bottom: 18px;
+    padding-bottom: 18px;
+    margin-bottom: 16px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
@@ -842,6 +842,8 @@ code {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin: 0;
+    padding: 0;
   }
 
   .mobile-menu-brand .logo-text {
@@ -859,7 +861,8 @@ code {
   }
 
   .mobile-menu-kicker {
-    margin: 10px 0 0;
+    margin: 8px 0 0;
+    padding: 0;
     font-size: 0.78rem;
     color: rgba(57, 51, 45, 0.65);
   }
@@ -871,14 +874,16 @@ code {
   .mobile-menu-nav {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
+    margin: 0;
+    padding: 0;
   }
 
   .mobile-nav-link {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 12px 10px;
+    padding: 9px 12px 9px 0;
     border-radius: 10px;
     color: var(--text-primary);
     text-decoration: none;
@@ -889,38 +894,53 @@ code {
 
   .mobile-nav-link:hover,
   .mobile-nav-link:focus-visible {
-    background-color: rgba(185, 104, 78, 0.1);
     color: var(--accent);
     transform: translateX(3px);
   }
 
-  .mobile-nav-link.active {
+  .mobile-nav-link:hover .mobile-nav-icon,
+  .mobile-nav-link:focus-visible .mobile-nav-icon {
     background-color: var(--accent);
     color: #fff;
+  }
+
+  .mobile-nav-link.active {
+    color: var(--accent);
+    background: linear-gradient(90deg, rgba(185, 104, 78, 0.12) 0%, rgba(185, 104, 78, 0.02) 100%);
+    border-radius: 10px;
   }
 
   .mobile-nav-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 9px;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
     background-color: rgba(185, 104, 78, 0.12);
     color: var(--accent);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     flex-shrink: 0;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .mobile-nav-link.active .mobile-nav-icon {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--accent);
     color: #fff;
+    box-shadow: 0 4px 12px rgba(185, 104, 78, 0.35);
   }
 
   .mobile-nav-arrow {
     margin-left: auto;
     font-size: 0.75rem;
     opacity: 0.45;
+    transition: transform 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+  }
+
+  .mobile-nav-link.active .mobile-nav-arrow {
+    color: var(--accent);
+    opacity: 1;
+    transform: translateX(2px);
   }
 
   .mobile-menu-actions {
@@ -1039,6 +1059,10 @@ code {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     opacity: 0.6;
+  }
+
+  [dir="rtl"] .mobile-nav-link {
+    padding: 9px 0 9px 12px;
   }
 
   [dir="rtl"] .mobile-nav-link:hover,

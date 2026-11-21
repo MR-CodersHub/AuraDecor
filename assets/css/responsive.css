@@ -210,7 +210,7 @@
 @media (max-width: 768px) {
   .navbar {
     height: 64px;
-    padding: 0 16px;
+    padding: 0 !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -219,8 +219,18 @@
     box-sizing: border-box;
   }
 
+  .navbar-inner,
+  .navbar .navbar-inner {
+    padding: 0 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .logo {
     gap: 0.5rem;
+    margin: 0;
+    padding: 0;
   }
 
   .logo-text {
@@ -252,6 +262,8 @@
   .navbar.navbar-open .mobile-menu {
     top: 64px;
     height: calc(100vh - 64px);
+    padding: 20px 16px 28px !important;
+    box-sizing: border-box !important;
   }
 
   /* Push body down when fixed navbar present */
@@ -264,12 +276,16 @@
 @media (max-width: 480px) {
   .navbar {
     height: 60px;
-    padding: 0 10px;
+    padding: 0 !important;
   }
 
-  .navbar-inner {
-    padding: 0 4px;
-    gap: 4px;
+  .navbar-inner,
+  .navbar .navbar-inner {
+    padding: 0 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 6px;
   }
 
   .logo-text {
@@ -309,12 +325,38 @@
   .navbar.navbar-open .mobile-menu {
     top: 60px;
     height: calc(100vh - 60px);
-    padding: 20px 16px 28px;
+    padding: 16px 16px 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-menu-brand .logo-mark svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .mobile-menu-brand .logo-text {
+    font-size: 1.15rem;
+  }
+
+  .mobile-menu-brand .logo-tagline {
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
   }
 
   .mobile-nav-link {
-    padding: 10px 8px;
+    padding: 8px 10px 8px 0;
     font-size: 0.95rem;
+  }
+
+  [dir="rtl"] .mobile-nav-link {
+    padding: 8px 0 8px 10px;
+  }
+
+  .mobile-nav-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+    border-radius: 7px;
   }
 
   .mobile-menu-kicker {
@@ -326,7 +368,22 @@
 @media (min-width: 769px) and (max-width: 1023px) {
   .navbar {
     height: 68px;
-    padding: 0 24px;
+    padding: 0 !important;
+  }
+
+  .navbar-inner,
+  .navbar .navbar-inner {
+    padding: 0 24px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .navbar.navbar-open .mobile-menu {
+    top: 68px;
+    height: calc(100vh - 68px);
+    padding: 24px 24px 32px !important;
+    box-sizing: border-box !important;
   }
 
   .hamburger {
@@ -1988,8 +2045,18 @@
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
   @media (max-width: 768px) {
     .navbar {
-      padding-left: max(16px, env(safe-area-inset-left));
-      padding-right: max(16px, env(safe-area-inset-right));
+      padding: 0 !important;
+    }
+
+    .navbar-inner,
+    .navbar .navbar-inner {
+      padding-left: max(16px, env(safe-area-inset-left)) !important;
+      padding-right: max(16px, env(safe-area-inset-right)) !important;
+    }
+
+    .navbar.navbar-open .mobile-menu {
+      padding-left: max(16px, env(safe-area-inset-left)) !important;
+      padding-right: max(16px, env(safe-area-inset-right)) !important;
     }
 
     .footer {
