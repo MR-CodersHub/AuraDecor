@@ -765,23 +765,10 @@ function initMobileMenu() {
   const hamburger = document.querySelector('.hamburger, .nav-toggle, [data-nav-toggle]');
   if (!navbar || !hamburger) return;
 
-  const syncMobileTools = () => {
-    const themeBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.querySelector('[data-mobile-theme] i');
-    if (themeBtn && themeIcon) {
-      const sourceIcon = themeBtn.querySelector('i');
-      themeIcon.className = sourceIcon ? sourceIcon.className : 'fas fa-moon';
-    }
-    const rtlBtn = document.getElementById('rtl-toggle');
-    const rtlLabel = document.querySelector('[data-mobile-rtl] span');
-    if (rtlBtn && rtlLabel) rtlLabel.textContent = rtlBtn.textContent.trim() || 'RTL';
-  };
-
   const openMenu = () => {
     navbar.classList.add('navbar-open');
     document.body.style.overflow = 'hidden';
     hamburger.setAttribute('aria-expanded', 'true');
-    syncMobileTools();
     const firstLink = document.querySelector('.mobile-menu .mobile-nav-link');
     if (firstLink) requestAnimationFrame(() => firstLink.focus());
   };
@@ -814,24 +801,6 @@ function initMobileMenu() {
       closeMenu();
     });
   });
-
-  const mobileTheme = document.querySelector('[data-mobile-theme]');
-  if (mobileTheme) {
-    mobileTheme.addEventListener('click', () => {
-      const themeBtn = document.getElementById('theme-toggle');
-      if (themeBtn) themeBtn.click();
-      syncMobileTools();
-    });
-  }
-
-  const mobileRtl = document.querySelector('[data-mobile-rtl]');
-  if (mobileRtl) {
-    mobileRtl.addEventListener('click', () => {
-      const rtlBtn = document.getElementById('rtl-toggle');
-      if (rtlBtn) rtlBtn.click();
-      syncMobileTools();
-    });
-  }
 
   // Close on outside click
   document.addEventListener('click', (e) => {
