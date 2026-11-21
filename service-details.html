@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Terracotta Sunrise Vase — handcrafted by Priya Sharma. Discover the story, materials and craftsmanship behind this beautiful artisan pottery piece.">
+  <title>Terracotta Sunrise Vase — AuraDecor Product Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* ===== PRODUCT DETAIL SPECIFIC ===== */
+    .pd-breadcrumb{background:var(--natural-cream);padding:1rem 0;}
+    .pd-breadcrumb nav{font-size:.85rem;color:#888;}
+    .pd-breadcrumb a{color:var(--terracotta);text-decoration:none;}
+    .pd-breadcrumb span{margin:0 .4rem;color:#ccc;}
+
+    /* Section 1 — Gallery & Overview */
+    .pd-overview{background:var(--natural-cream);padding:3rem 0 4rem;}
+    .pd-overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    @media(max-width:800px){.pd-overview-grid{grid-template-columns:1fr;gap:2rem;}}
+    .pd-gallery{position:relative;}
+    .pd-main-img{width:100%;border-radius:20px;overflow:hidden;aspect-ratio:1;position:relative;cursor:zoom-in;}
+    .pd-main-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+    .pd-main-img:hover img{transform:scale(1.04);}
+    .pd-zoom-btn{position:absolute;bottom:14px;right:14px;width:40px;height:40px;background:rgba(255,255,255,.9);border:none;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.12);transition:background .2s;}
+    .pd-zoom-btn:hover{background:#fff;}
+    .pd-thumbs{display:flex;gap:.8rem;margin-top:1rem;flex-wrap:wrap;}
+    .pd-thumb{width:80px;height:80px;border-radius:10px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .2s;}
+    .pd-thumb.active,.pd-thumb:hover{border-color:var(--terracotta);}
+    .pd-thumb img{width:100%;height:100%;object-fit:cover;}
+
+    /* Info panel */
+    .pd-category-tag{font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:var(--deep-olive);font-weight:700;margin-bottom:.6rem;}
+    .pd-title{font-family:var(--font-heading);font-size:clamp(1.8rem,3vw,2.8rem);color:var(--charcoal);margin-bottom:.6rem;line-height:1.2;}
+    .pd-rating{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;}
+    .pd-stars{color:var(--antique-gold);font-size:1rem;letter-spacing:.1em;}
+    .pd-rating-count{font-size:.85rem;color:#888;}
+    .pd-price-row{display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem;}
+    .pd-price{font-size:2rem;font-weight:700;color:var(--terracotta);}
+    .pd-price-old{font-size:1.1rem;color:#aaa;text-decoration:line-through;}
+    .pd-savings{background:var(--terracotta);color:#fff;font-size:.75rem;font-weight:700;padding:.2rem .7rem;border-radius:20px;}
+    .pd-short-desc{font-size:1rem;color:#666;line-height:1.7;margin-bottom:1.5rem;}
+    .pd-qty-row{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;}
+    .pd-qty-label{font-size:.85rem;font-weight:700;color:var(--charcoal);}
+    .qty-ctrl{display:flex;align-items:center;gap:0;border:1.5px solid var(--warm-sand);border-radius:10px;overflow:hidden;}
+    .qty-btn{background:none;border:none;width:40px;height:40px;font-size:1.3rem;cursor:pointer;color:var(--charcoal);transition:background .2s;}
+    .qty-btn:hover{background:var(--warm-sand);}
+    .qty-input{width:50px;height:40px;border:none;text-align:center;font-size:1rem;font-family:var(--font-body);font-weight:700;color:var(--charcoal);}
+    .pd-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+    .pd-btn-cart{flex:1;min-width:160px;background:var(--terracotta);color:#fff;border:none;border-radius:12px;padding:1rem;font-size:1rem;font-weight:700;cursor:pointer;transition:background .3s;}
+    .pd-btn-cart:hover{background:var(--deep-olive);}
+    .pd-btn-wish{background:transparent;border:1.5px solid var(--warm-sand);border-radius:12px;padding:1rem 1.4rem;font-size:1.2rem;cursor:pointer;transition:all .25s;color:var(--charcoal);}
+    .pd-btn-wish:hover,.pd-btn-wish.active{background:var(--terracotta);border-color:var(--terracotta);color:#fff;}
+    .pd-meta-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+    .pd-tag{background:var(--soft-beige);color:var(--charcoal);font-size:.75rem;padding:.3rem .9rem;border-radius:20px;font-weight:600;}
+    .pd-artisan-mini{display:flex;align-items:center;gap:.9rem;margin-top:1.5rem;padding:1rem;background:#fff;border-radius:12px;border:1px solid var(--warm-sand);}
+    .pd-artisan-mini img{width:50px;height:50px;border-radius:50%;object-fit:cover;}
+    .pd-artisan-mini-name{font-weight:700;font-size:.9rem;color:var(--charcoal);}
+    .pd-artisan-mini-craft{font-size:.8rem;color:var(--deep-olive);}
+
+    /* Tabs */
+    .pd-tabs-section{background:#fff;padding:4rem 0;}
+    .pd-tabs{display:flex;gap:0;border-bottom:2px solid var(--warm-sand);margin-bottom:2.5rem;overflow-x:auto;}
+    .pd-tab{background:none;border:none;padding:1rem 2rem;font-family:var(--font-heading);font-size:1rem;color:#888;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:color .25s,border-color .25s;}
+    .pd-tab.active{color:var(--terracotta);border-bottom-color:var(--terracotta);}
+    .pd-tab-content{display:none;}
+    .pd-tab-content.active{display:block;}
+
+    /* Specs table */
+    .specs-table{width:100%;border-collapse:collapse;}
+    .specs-table tr:nth-child(even){background:var(--natural-cream);}
+    .specs-table td{padding:.9rem 1.2rem;font-size:.92rem;color:var(--charcoal);border-bottom:1px solid var(--warm-sand);}
+    .specs-table td:first-child{font-weight:700;width:40%;}
+
+    /* Artisan story */
+    .pd-artisan-story{background:var(--soft-beige);padding:4rem 0;}
+    .pd-artisan-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    @media(max-width:800px){.pd-artisan-grid{grid-template-columns:1fr;gap:2rem;}}
+    .pd-artisan-img{border-radius:20px;overflow:hidden;aspect-ratio:1;}
+    .pd-artisan-img img{width:100%;height:100%;object-fit:cover;}
+    .pd-artisan-quote{font-family:var(--font-heading);font-size:1.3rem;font-style:italic;color:var(--terracotta);line-height:1.5;margin:1.2rem 0;}
+
+    /* Related products */
+    .pd-related{background:var(--natural-cream);padding:4rem 0;}
+    .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+    @media(max-width:1000px){.related-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:520px){.related-grid{grid-template-columns:1fr;}}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:none;align-items:center;justify-content:center;}
+    .lightbox.open{display:flex;}
+    .lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:12px;}
+    .lightbox-close{position:fixed;top:1.5rem;right:1.5rem;width:44px;height:44px;background:rgba(255,255,255,.15);border:none;border-radius:50%;color:#fff;font-size:1.5rem;cursor:pointer;z-index:10000;}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown"><a href="index.html" class="nav-link">Home ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1 — Handicraft Store</a></li>
+          <li><a href="home2.html">Home 2 — Artisan Collections</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="nav-link">About Us</a></li>
+      <li><a href="services.html" class="nav-link active">Shop Collections</a></li>
+      <li><a href="blog.html" class="nav-link">Artisan Stories</a></li>
+      <li><a href="pricing.html" class="nav-link">Custom Orders</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL">⇄</button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <a href="login.html" class="btn-nav-login">Login</a>
+      <a href="services.html" class="btn-nav-cta">Shop Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- Breadcrumb -->
+<div class="pd-breadcrumb">
+  <div class="container">
+    <nav aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span>›</span>
+      <a href="services.html">Shop</a><span>›</span>
+      <a href="services.html?cat=Pottery">Pottery & Ceramics</a><span>›</span>
+      <span style="color:var(--charcoal);">Terracotta Sunrise Vase</span>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== SECTION 1: PRODUCT GALLERY & OVERVIEW ===== -->
+<section class="pd-overview">
+  <div class="container">
+    <div class="pd-overview-grid">
+      <!-- Gallery -->
+      <div class="pd-gallery reveal-up">
+        <div class="pd-main-img" id="mainImgWrap">
+          <img id="mainImg" src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&auto=format&fit=crop" alt="Terracotta Sunrise Vase — main view">
+          <button class="pd-zoom-btn" onclick="openLightbox()" aria-label="Zoom image">🔍</button>
+        </div>
+        <div class="pd-thumbs">
+          <div class="pd-thumb active" onclick="switchImg(this,'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&auto=format&fit=crop','Terracotta Sunrise Vase')">
+            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=200&auto=format&fit=crop" alt="View 1">
+          </div>
+          <div class="pd-thumb" onclick="switchImg(this,'https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=700&auto=format&fit=crop','Detail close-up')">
+            <img src="https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=200&auto=format&fit=crop" alt="View 2">
+          </div>
+          <div class="pd-thumb" onclick="switchImg(this,'https://images.unsplash.com/photo-1558618047-f4a0e76e1c3e?w=700&auto=format&fit=crop','In-room styling')">
+            <img src="https://images.unsplash.com/photo-1558618047-f4a0e76e1c3e?w=200&auto=format&fit=crop" alt="View 3">
+          </div>
+          <div class="pd-thumb" onclick="switchImg(this,'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&auto=format&fit=crop','Artisan workshop')">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200&auto=format&fit=crop" alt="View 4">
+          </div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="reveal-up" style="--delay:.15s">
+        <p class="pd-category-tag">✦ Pottery & Ceramics</p>
+        <h1 class="pd-title">Terracotta Sunrise Vase</h1>
+        <div class="pd-rating">
+          <span class="pd-stars">★★★★★</span>
+          <span class="pd-rating-count">(47 reviews) · In Stock</span>
+        </div>
+        <div class="pd-price-row">
+          <span class="pd-price">₹2,850</span>
+          <span class="pd-price-old">₹3,500</span>
+          <span class="pd-savings">Save 19%</span>
+        </div>
+        <p class="pd-short-desc">A stunning hand-thrown terracotta vase with a warm, sun-kissed glaze inspired by Rajasthan's golden hour. Each piece is individually wheel-thrown by master potter Priya Sharma, ensuring no two are exactly alike.</p>
+        <div class="pd-qty-row">
+          <span class="pd-qty-label">Quantity:</span>
+          <div class="qty-ctrl">
+            <button class="qty-btn" onclick="changeQty(-1)" aria-label="Decrease">−</button>
+            <input class="qty-input" type="number" id="qtyInput" value="1" min="1" max="10" readonly>
+            <button class="qty-btn" onclick="changeQty(1)" aria-label="Increase">+</button>
+          </div>
+        </div>
+        <div class="pd-actions">
+          <button class="pd-btn-cart" onclick="addProductToCart()">🛒 Add to Cart</button>
+          <button class="pd-btn-wish" id="wishBtn" onclick="toggleWish()" aria-label="Add to wishlist">♡</button>
+        </div>
+        <div class="pd-meta-tags">
+          <span class="pd-tag">Handmade</span>
+          <span class="pd-tag">Terracotta</span>
+          <span class="pd-tag">Free Shipping</span>
+          <span class="pd-tag">Gift Ready</span>
+          <span class="pd-tag">Eco-Friendly</span>
+        </div>
+        <div class="pd-artisan-mini">
+          <img src="https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=100&auto=format&fit=crop" alt="Priya Sharma">
+          <div>
+            <p class="pd-artisan-mini-name">Priya Sharma</p>
+            <p class="pd-artisan-mini-craft">Master Potter · Jaipur, Rajasthan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: PRODUCT DESCRIPTION (TABS) ===== -->
+<section class="pd-tabs-section">
+  <div class="container">
+    <div class="pd-tabs reveal-up">
+      <button class="pd-tab active" onclick="switchTab('desc',this)">Description</button>
+      <button class="pd-tab" onclick="switchTab('craft',this)">Craftsmanship</button>
+      <button class="pd-tab" onclick="switchTab('specs',this)">Specifications</button>
+      <button class="pd-tab" onclick="switchTab('care',this)">Care Guide</button>
+    </div>
+
+    <!-- Description Tab -->
+    <div class="pd-tab-content active reveal-up" id="tab-desc">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+        <div>
+          <h2 style="font-family:var(--font-heading);font-size:1.6rem;margin-bottom:1rem;color:var(--charcoal);">The Story Behind This Vase</h2>
+          <p style="color:#666;line-height:1.8;margin-bottom:1rem;">The Terracotta Sunrise Vase was born from Priya Sharma's daily walk past Jaipur's rooftops at dawn, watching the sky transform from deep indigo to warm amber. She sought to capture that ephemeral moment in clay — the way light seems to emanate from within warm terracotta.</p>
+          <p style="color:#666;line-height:1.8;margin-bottom:1rem;">Each vase begins as a ball of locally sourced red clay from Rajasthan's potter villages. Priya centers it on her wheel, drawing the walls upward with practiced hands before shaping the distinctive flared neck that defines this series.</p>
+          <p style="color:#666;line-height:1.8;">The glaze — a proprietary blend of iron oxide and natural mineral pigments — is applied in three layers and fired twice in a wood-kiln to achieve the characteristic warm depth. No two vases carry exactly the same glaze pattern, making each one a unique artwork.</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&auto=format&fit=crop" alt="Vase detail" style="width:100%;border-radius:16px;object-fit:cover;aspect-ratio:4/5;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Craftsmanship Tab -->
+    <div class="pd-tab-content reveal-up" id="tab-craft">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+        <div>
+          <img src="https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=600&auto=format&fit=crop" alt="Pottery craftsmanship" style="width:100%;border-radius:16px;aspect-ratio:4/5;object-fit:cover;">
+        </div>
+        <div>
+          <h2 style="font-family:var(--font-heading);font-size:1.6rem;margin-bottom:1.2rem;color:var(--charcoal);">Craftsmanship & Materials</h2>
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div style="padding:1rem;background:var(--natural-cream);border-radius:12px;border-left:3px solid var(--terracotta);">
+              <strong style="display:block;margin-bottom:.3rem;color:var(--charcoal);">Materials</strong>
+              <p style="font-size:.9rem;color:#666;">Red terracotta clay sourced from Sanganer village, Jaipur. Natural iron-oxide pigment glaze. No synthetic chemicals or lead-based compounds used.</p>
+            </div>
+            <div style="padding:1rem;background:var(--natural-cream);border-radius:12px;border-left:3px solid var(--deep-olive);">
+              <strong style="display:block;margin-bottom:.3rem;color:var(--charcoal);">Technique</strong>
+              <p style="font-size:.9rem;color:#666;">Traditional wheel-throwing on a kick-wheel. Hand-shaped neck and rim. Leather-hard trimming on the base. Bisque fired at 900°C, then glaze fired at 1120°C in a wood-fuelled kiln.</p>
+            </div>
+            <div style="padding:1rem;background:var(--natural-cream);border-radius:12px;border-left:3px solid var(--antique-gold);">
+              <strong style="display:block;margin-bottom:.3rem;color:var(--charcoal);">Finish</strong>
+              <p style="font-size:.9rem;color:#666;">Matte exterior with a slightly satin interior. The glaze pools at natural imperfections, creating depth and warmth unique to each piece. Slight surface texture is intentional and characteristic of terracotta pottery.</p>
+            </div>
+            <div style="padding:1rem;background:var(--natural-cream);border-radius:12px;border-left:3px solid var(--muted-clay);">
+              <strong style="display:block;margin-bottom:.3rem;color:var(--charcoal);">Handmade Variations</strong>
+              <p style="font-size:.9rem;color:#666;">As a handmade product, slight variations in shape, glaze colour and texture are natural and desirable — they are not defects but signatures of genuine craftsmanship.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs Tab -->
+    <div class="pd-tab-content reveal-up" id="tab-specs">
+      <h2 style="font-family:var(--font-heading);font-size:1.6rem;margin-bottom:1.5rem;color:var(--charcoal);">Product Specifications</h2>
+      <table class="specs-table">
+        <tbody>
+          <tr><td>Dimensions</td><td>Height: 28 cm | Diameter: 14 cm | Neck: 8 cm</td></tr>
+          <tr><td>Weight</td><td>Approximately 620g</td></tr>
+          <tr><td>Material</td><td>Red terracotta clay, natural mineral glaze</td></tr>
+          <tr><td>Colour</td><td>Warm terracotta amber with sunrise gradient tones</td></tr>
+          <tr><td>Finish</td><td>Matte exterior, satin interior glaze</td></tr>
+          <tr><td>Firing Temperature</td><td>1120°C (double-fired)</td></tr>
+          <tr><td>Water Resistance</td><td>Suitable for fresh flowers with water (interior glazed)</td></tr>
+          <tr><td>Care</td><td>Hand wash only. Not microwave or dishwasher safe.</td></tr>
+          <tr><td>Artisan</td><td>Priya Sharma, Jaipur, Rajasthan</td></tr>
+          <tr><td>Origin</td><td>Made in India — Jaipur, Rajasthan</td></tr>
+          <tr><td>Availability</td><td>In Stock — Limited Edition (12 pieces per batch)</td></tr>
+          <tr><td>Dispatch</td><td>Ships within 3–5 business days</td></tr>
+          <tr><td>Packaging</td><td>Gift-ready box with shredded paper padding. No bubble wrap.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Care Tab -->
+    <div class="pd-tab-content reveal-up" id="tab-care">
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;">
+        <div style="padding:1.5rem;background:var(--natural-cream);border-radius:14px;">
+          <span style="font-size:2rem;display:block;margin-bottom:.8rem;">🫧</span>
+          <h3 style="font-family:var(--font-heading);font-size:1.1rem;margin-bottom:.5rem;">Cleaning</h3>
+          <p style="font-size:.88rem;color:#666;line-height:1.6;">Rinse gently with lukewarm water and a soft cloth. Avoid abrasive scrubbers. For decorative use, simply dust with a dry soft brush. Hand wash only — not dishwasher safe.</p>
+        </div>
+        <div style="padding:1.5rem;background:var(--natural-cream);border-radius:14px;">
+          <span style="font-size:2rem;display:block;margin-bottom:.8rem;">💧</span>
+          <h3 style="font-family:var(--font-heading);font-size:1.1rem;margin-bottom:.5rem;">Water Use</h3>
+          <p style="font-size:.88rem;color:#666;line-height:1.6;">Safe for fresh flowers with water (interior is glazed). Avoid soaking in water for extended periods as terracotta is naturally porous. Empty and dry after use.</p>
+        </div>
+        <div style="padding:1.5rem;background:var(--natural-cream);border-radius:14px;">
+          <span style="font-size:2rem;display:block;margin-bottom:.8rem;">☀️</span>
+          <h3 style="font-family:var(--font-heading);font-size:1.1rem;margin-bottom:.5rem;">Display</h3>
+          <p style="font-size:.88rem;color:#666;line-height:1.6;">Safe for indoor display in direct sunlight — the terracotta clay will not fade. Avoid placing on surfaces that may stain from moisture seepage through the base.</p>
+        </div>
+        <div style="padding:1.5rem;background:var(--natural-cream);border-radius:14px;">
+          <span style="font-size:2rem;display:block;margin-bottom:.8rem;">📦</span>
+          <h3 style="font-family:var(--font-heading);font-size:1.1rem;margin-bottom:.5rem;">Storage</h3>
+          <p style="font-size:.88rem;color:#666;line-height:1.6;">Store upright in a cool, dry place. If storing for long periods, wrap loosely in tissue paper. Avoid extreme temperature changes which may cause micro-cracking.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: CRAFTSMANSHIP & MATERIALS (combined into tabs above) =====
+     (Section 3 serves as the Craftsmanship tab content — Section 4 as Specifications tab)
+     Below are the remaining standalone sections -->
+
+<!-- ===== SECTION 4 / ARTISAN STORY ===== -->
+<section class="pd-artisan-story">
+  <div class="container">
+    <div class="pd-artisan-grid">
+      <div class="pd-artisan-img reveal-up">
+        <img src="https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=700&auto=format&fit=crop" alt="Priya Sharma at her pottery wheel" loading="lazy">
+      </div>
+      <div class="reveal-right">
+        <span class="section-eyebrow">Meet the Maker</span>
+        <h2 class="section-title" style="text-align:left;">The Artisan<br><em>Behind This Piece</em></h2>
+        <blockquote class="pd-artisan-quote">"Every time I sit at my wheel, I feel like the clay is telling me what it wants to become. My hands just help it get there."</blockquote>
+        <p style="color:#666;line-height:1.8;margin-bottom:1rem;"><strong style="color:var(--charcoal);">Priya Sharma</strong> is a third-generation potter from Sanganer, one of Jaipur's oldest pottery villages. She learned the craft at her grandmother's wheel as a child, spending summer holidays coaxing clay into forms that would line their family home.</p>
+        <p style="color:#666;line-height:1.8;margin-bottom:1rem;">After formal training at the Rajasthan School of Arts, Priya returned to Sanganer with new techniques but the same reverence for tradition. She now leads a collective of 8 women potters, ensuring the craft passes to the next generation.</p>
+        <p style="color:#666;line-height:1.8;margin-bottom:1.5rem;">Her work has been exhibited in Delhi, Mumbai, and London, and each AuraDecor piece is personally signed on the base with her traditional potter's mark.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="blog-details.html" class="btn-primary">Read Priya's Full Story</a>
+          <a href="services.html?cat=Pottery" class="btn-secondary">More Pottery</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: RELATED PRODUCTS ===== -->
+<section class="pd-related">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">You May Also Love</span>
+      <h2 class="section-title">Related<br><em>Handcrafted Items</em></h2>
+    </div>
+    <div class="related-grid reveal-up">
+      <article class="product-card">
+        <div class="product-card-img">
+          <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&auto=format&fit=crop" alt="Blue Pottery Spice Jars" loading="lazy">
+          <span class="product-badge">Popular</span>
+        </div>
+        <div class="product-card-body">
+          <p class="product-category">Pottery</p>
+          <h3>Blue Pottery Spice Jars</h3>
+          <div class="product-pricing"><span class="price-current">₹1,850</span></div>
+          <div class="product-card-actions">
+            <a href="service-details.html" class="btn-detail" style="flex:1;justify-content:center;">View Details</a>
+          </div>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-card-img">
+          <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&auto=format&fit=crop" alt="Glazed Ceramic Bowl Set" loading="lazy">
+          <span class="product-badge" style="background:var(--deep-olive)">Bestseller</span>
+        </div>
+        <div class="product-card-body">
+          <p class="product-category">Pottery</p>
+          <h3>Glazed Ceramic Bowl Set</h3>
+          <div class="product-pricing"><span class="price-current">₹3,600</span><span class="price-old">₹4,200</span></div>
+          <div class="product-card-actions">
+            <a href="service-details.html" class="btn-detail" style="flex:1;justify-content:center;">View Details</a>
+          </div>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-card-img">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&auto=format&fit=crop" alt="Stoneware Coffee Mug Set" loading="lazy">
+          <span class="product-badge" style="background:var(--terracotta)">Sale</span>
+        </div>
+        <div class="product-card-body">
+          <p class="product-category">Tableware</p>
+          <h3>Stoneware Coffee Mug Set</h3>
+          <div class="product-pricing"><span class="price-current">₹2,400</span><span class="price-old">₹2,800</span></div>
+          <div class="product-card-actions">
+            <a href="service-details.html" class="btn-detail" style="flex:1;justify-content:center;">View Details</a>
+          </div>
+        </div>
+      </article>
+      <article class="product-card">
+        <div class="product-card-img">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&auto=format&fit=crop" alt="Carved Mango Wood Bowl" loading="lazy">
+        </div>
+        <div class="product-card-body">
+          <p class="product-category">Wooden</p>
+          <h3>Carved Mango Wood Bowl</h3>
+          <div class="product-pricing"><span class="price-current">₹1,750</span></div>
+          <div class="product-card-actions">
+            <a href="service-details.html" class="btn-detail" style="flex:1;justify-content:center;">View Details</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal-up">
+      <a href="services.html" class="btn-primary">Continue Shopping</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: CONTINUE SHOPPING CTA ===== -->
+<section style="background:var(--charcoal);padding:4rem 0;text-align:center;" class="section-padding">
+  <div class="container reveal-up">
+    <span class="section-eyebrow" style="color:var(--antique-gold);">Explore More</span>
+    <h2 style="font-family:var(--font-heading);font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin:1rem 0;">Every Piece Tells<br><em style="color:var(--warm-sand);">an Artisan's Story</em></h2>
+    <p style="color:rgba(255,255,255,.75);max-width:500px;margin:0 auto 2rem;">Discover more handcrafted treasures from India's finest artisans — each one made with care, tradition, and love.</p>
+    <div style="display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;">
+      <a href="services.html" class="btn-primary">Shop All Collections</a>
+      <a href="blog.html" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,.4);">Artisan Stories</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+        <p class="footer-tagline">Celebrating the beauty of handmade — connecting artisans with homes that appreciate authenticity.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram" class="social-link">📷</a>
+          <a href="#" aria-label="Pinterest" class="social-link">📌</a>
+          <a href="#" aria-label="Facebook" class="social-link">📘</a>
+          <a href="#" aria-label="WhatsApp" class="social-link">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Collections</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Home Decor</a></li>
+          <li><a href="services.html">Pottery & Ceramics</a></li>
+          <li><a href="services.html">Handmade Textiles</a></li>
+          <li><a href="services.html">Wooden Crafts</a></li>
+          <li><a href="services.html">Wall Art</a></li>
+          <li><a href="services.html">Handmade Gifts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Artisan Stories</a></li>
+          <li><a href="pricing.html">Custom Orders</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html">Login / Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <address class="footer-address">
+          <p>12, Artisan Lane, Near City Palace<br>Jaipur, Rajasthan 302001 <em>(sample)</em></p>
+          <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p><a href="mailto:hello@auradecor.in">hello@auradecor.in</a></p>
+          <p>Mon–Sat: 10AM–7PM IST</p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with ♥ in Jaipur.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Use</a>
+        <a href="coming-soon.html">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close-btn" id="cartClose">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping →</a></p>
+  </div>
+  <div class="cart-footer-panel" id="cartFooterPanel" style="display:none;">
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
+    <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
+    <p class="cart-demo-note">⚠ Demo store — no real payments processed</p>
+  </div>
+</aside>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Product image lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
+  <img id="lightboxImg" src="" alt="Product enlarged view">
+</div>
+
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<script src="assets/js/products-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+// Tab switching
+function switchTab(id,btn){
+  document.querySelectorAll('.pd-tab-content').forEach(c=>c.classList.remove('active'));
+  document.querySelectorAll('.pd-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+}
+// Gallery image switch
+function switchImg(thumb,src,alt){
+  document.getElementById('mainImg').src=src;
+  document.getElementById('mainImg').alt=alt;
+  document.querySelectorAll('.pd-thumb').forEach(t=>t.classList.remove('active'));
+  thumb.classList.add('active');
+}
+// Lightbox
+function openLightbox(){
+  const src=document.getElementById('mainImg').src;
+  document.getElementById('lightboxImg').src=src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('lightbox').addEventListener('click',function(e){if(e.target===this)closeLightbox();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
+// Quantity
+function changeQty(d){
+  const inp=document.getElementById('qtyInput');
+  const v=Math.max(1,Math.min(10,parseInt(inp.value)+d));
+  inp.value=v;
+}
+// Add to cart
+function addProductToCart(){
+  const qty=parseInt(document.getElementById('qtyInput').value);
+  if(typeof window.addToCart==='function'){
+    for(let i=0;i<qty;i++)window.addToCart(1,'Terracotta Sunrise Vase',2850,'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=200&auto=format&fit=crop');
+  }
+}
+// Wishlist
+function toggleWish(){
+  const btn=document.getElementById('wishBtn');
+  const active=btn.classList.toggle('active');
+  btn.textContent=active?'♥':'♡';
+  btn.style.background=active?'var(--terracotta)':'';
+  btn.style.color=active?'#fff':'';
+  btn.style.borderColor=active?'var(--terracotta)':'';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AuraDecor is preparing a new handcrafted seasonal collection. Join our VIP early preview list.">
+  <title>Coming Soon &amp; Maintenance — AuraDecor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Standalone CSS for Coming Soon / Maintenance */
+    :root {
+      --terracotta: #B9684E;
+      --deep-olive: #4D5940;
+      --warm-sand: #DCCBB2;
+      --natural-cream: #F8F3E9;
+      --soft-beige: #EAE0D2;
+      --charcoal: #39332D;
+      --antique-gold: #B79A62;
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Lato', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--natural-cream);
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Top Brand Header */
+    .coming-header {
+      padding: 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--warm-sand);
+    }
+    .coming-header .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--charcoal);
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .logo-mark { color: var(--terracotta); }
+
+    /* SECTION 1: HERO */
+    .cs-hero {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--charcoal);
+      color: #fff;
+      overflow: hidden;
+      padding: 4rem 1.5rem;
+    }
+    .cs-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1600&auto=format&fit=crop') center/cover;
+      opacity: 0.3;
+    }
+    .cs-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
+    .cs-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .cs-hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* SECTION 2: CRAFT JOURNEY MESSAGE */
+    .cs-message {
+      background: var(--natural-cream);
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .cs-message-content {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .cs-message-content h2 {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .cs-message-content p {
+      color: #666;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    /* SECTION 3: LIVE COUNTDOWN TIMER */
+    .cs-timer-section {
+      background: var(--soft-beige);
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      .countdown-grid { gap: 0.8rem; }
+    }
+    .timer-block {
+      background: #fff;
+      border: 1px solid var(--warm-sand);
+      border-radius: 16px;
+      padding: 1.8rem 1.4rem;
+      min-width: 110px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+    @media (max-width: 600px) {
+      .timer-block { min-width: 70px; padding: 1.2rem 0.6rem; }
+    }
+    .timer-val {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--terracotta);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .timer-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--deep-olive);
+      font-weight: 700;
+    }
+
+    /* SECTION 4: VIP LAUNCH / NEWSLETTER */
+    .cs-newsletter {
+      background: #fff;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .newsletter-box {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 500px) {
+      .newsletter-form { flex-direction: column; }
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.9rem 1.2rem;
+      border: 1.5px solid var(--warm-sand);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .newsletter-form input:focus {
+      border-color: var(--terracotta);
+    }
+    .btn-submit {
+      background: var(--terracotta);
+      color: #fff;
+      border: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: background 0.25s;
+    }
+    .btn-submit:hover {
+      background: var(--deep-olive);
+    }
+    .cs-feedback {
+      display: none;
+      color: var(--deep-olive);
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    /* SECTION 5: STUDIO CONTACT INFO */
+    .cs-contact-strip {
+      background: var(--natural-cream);
+      padding: 4rem 0;
+      text-align: center;
+      border-top: 1px solid var(--warm-sand);
+    }
+    .contact-items {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .contact-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+    .contact-item p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* SECTION 6: RETURN TO HOME */
+    .cs-return-strip {
+      background: var(--charcoal);
+      color: #fff;
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .btn-return {
+      display: inline-block;
+      background: var(--antique-gold);
+      color: var(--charcoal);
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 1rem;
+      transition: transform 0.25s;
+    }
+    .btn-return:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="coming-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">✦</span>
+      <span>AuraDecor</span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== SECTION 1: HERO ===== -->
+<section class="cs-hero">
+  <div class="cs-hero-bg"></div>
+  <div class="cs-hero-content">
+    <p style="text-transform:uppercase;letter-spacing:0.2em;color:var(--antique-gold);font-weight:700;margin-bottom:0.8rem;font-size:0.8rem;">✦ Artisan Studio Update</p>
+    <h1>The Wheel is Turning</h1>
+    <p>We are currently firing a fresh batch of seasonal terracotta, handloom weaves, and brass decor in our artisan kilns.</p>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: CRAFT JOURNEY MESSAGE ===== -->
+<section class="cs-message">
+  <div class="container">
+    <div class="cs-message-content">
+      <span style="font-size:0.8rem;color:var(--deep-olive);font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Slow Living &amp; Craftsmanship</span>
+      <h2>A Fresh Collection Is in the Kiln</h2>
+      <p>True craftsmanship cannot be rushed by automated production lines. Each piece in our upcoming collection is being shaped, sun-dried, glazed with natural Rajasthan minerals, and double-fired by our master artisans.</p>
+      <p>During this scheduled update window, our studio is curating limited-edition pottery suites, bespoke woven carpets from Kutch, and hand-carved mango wood tableware.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: LIVE COUNTDOWN TIMER ===== -->
+<section class="cs-timer-section">
+  <div class="container">
+    <span style="font-size:0.8rem;color:var(--terracotta);font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Seasonal Drop In</span>
+    <h2 style="font-family:var(--font-heading);font-size:2.2rem;margin-top:0.4rem;">Collection Reveal Countdown</h2>
+    <div class="countdown-grid">
+      <div class="timer-block">
+        <div class="timer-val" id="cDays">14</div>
+        <div class="timer-label">Days</div>
+      </div>
+      <div class="timer-block">
+        <div class="timer-val" id="cHours">08</div>
+        <div class="timer-label">Hours</div>
+      </div>
+      <div class="timer-block">
+        <div class="timer-val" id="cMins">45</div>
+        <div class="timer-label">Mins</div>
+      </div>
+      <div class="timer-block">
+        <div class="timer-val" id="cSecs">12</div>
+        <div class="timer-label">Secs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: VIP LAUNCH NOTIFICATION ===== -->
+<section class="cs-newsletter">
+  <div class="container">
+    <div class="newsletter-box">
+      <span style="font-size:0.8rem;color:var(--deep-olive);font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Be the First</span>
+      <h2 style="font-family:var(--font-heading);font-size:2rem;margin-top:0.4rem;">Get VIP Early Access</h2>
+      <p style="color:#666;font-size:0.95rem;margin-top:0.5rem;">Join 4,500+ handcrafted living enthusiasts who receive early access 48 hours before public launch.</p>
+      <form class="newsletter-form" onsubmit="handleNotify(event)">
+        <input type="email" placeholder="Enter your email address" required id="vipEmail">
+        <button type="submit" class="btn-submit">Notify Me →</button>
+      </form>
+      <div class="cs-feedback" id="vipFeedback">✦ You are on the VIP guest list! We will notify you first.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: STUDIO CONTACT INFO ===== -->
+<section class="cs-contact-strip">
+  <div class="container">
+    <h3 style="font-family:var(--font-heading);font-size:1.4rem;">Need Urgent Support During Maintenance?</h3>
+    <div class="contact-items">
+      <div class="contact-item">
+        <h4>Studio Email</h4>
+        <p><a href="mailto:hello@auradecor.in" style="color:var(--terracotta);text-decoration:none;">hello@auradecor.in</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>WhatsApp Desk</h4>
+        <p><a href="tel:+919876543210" style="color:var(--terracotta);text-decoration:none;">+91 98765 43210</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>Jaipur Gallery</h4>
+        <p>12, Artisan Lane, Jaipur, Rajasthan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: RETURN TO HOME ===== -->
+<section class="cs-return-strip">
+  <div class="container">
+    <p style="font-size:1.05rem;color:rgba(255,255,255,0.85);">Explore existing published artisan stories and portfolio pieces on our main website.</p>
+    <a href="index.html" class="btn-return">Visit Store Homepage →</a>
+  </div>
+</section>
+
+</main>
+
+<script>
+// Live Countdown Script (14 days from now)
+(function() {
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 14);
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const distance = targetDate.getTime() - now;
+
+    if (distance < 0) return;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('cDays').textContent = String(days).padStart(2, '0');
+    document.getElementById('cHours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cMins').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('cSecs').textContent = String(seconds).padStart(2, '0');
+  }
+
+  setInterval(updateTimer, 1000);
+  updateTimer();
+})();
+
+function handleNotify(e) {
+  e.preventDefault();
+  document.getElementById('vipFeedback').style.display = 'block';
+  document.getElementById('vipEmail').value = '';
+}
+</script>
+</body>
+</html>

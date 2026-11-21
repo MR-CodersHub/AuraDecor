@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraDecor — Handcrafted Home Decor | Artisan Crafts & Handicrafts</title>
+  <meta name="description" content="Discover premium handcrafted home decor, artisan pottery, woven textiles and wooden crafts at AuraDecor. Celebrate handmade living.">
+  <meta property="og:title" content="AuraDecor — Handcrafted Home Decor">
+  <meta property="og:description" content="Premium handcrafted home decor by skilled Indian artisans.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown"><a href="index.html" class="nav-link active">Home ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1 — Handicraft Store</a></li>
+          <li><a href="home2.html">Home 2 — Artisan Collections</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="nav-link">About Us</a></li>
+      <li><a href="services.html" class="nav-link">Shop Collections</a></li>
+      <li><a href="blog.html" class="nav-link">Artisan Stories</a></li>
+      <li><a href="pricing.html" class="nav-link">Custom Orders</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Dark/Light mode">🌙</button>
+      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL/LTR" title="RTL/LTR">⇄</button>
+      <button class="icon-btn wishlist-btn" id="wishlistBtn" aria-label="Wishlist">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <a href="login.html" class="btn-nav-login">Login</a>
+      <a href="services.html" class="btn-nav-cta">Shop Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- SECTION 1: HERO -->
+<section class="hero hero-home" aria-label="Welcome hero">
+  <div class="hero-bg-img" style="background-image:url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&auto=format&fit=crop');"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-badge reveal">Handmade &nbsp;✦&nbsp; Sustainable &nbsp;✦&nbsp; Artisan</span>
+      <h1 class="hero-title reveal">Where Every Object<br><em>Tells a Story</em></h1>
+      <p class="hero-subtitle reveal">Discover our curated collection of handmade ceramics, artisan textiles, wooden sculptures, and timeless home accessories — crafted with love by skilled artisans.</p>
+      <div class="hero-btns reveal">
+        <a href="services.html" class="btn-primary btn-hero">Explore Collections</a>
+        <a href="about.html" class="btn-outline btn-hero">Discover Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: FEATURED COLLECTIONS -->
+<section class="section collections-sec" aria-label="Featured collections">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Our Collections</span>
+      <h2 class="section-title">Explore Handcrafted Collections</h2>
+      <p class="section-subtitle">From ancient pottery traditions to contemporary woven art — discover craft in all its forms.</p>
+    </div>
+    <div class="collections-grid">
+      <article class="collection-card reveal">
+        <a href="services.html?cat=home-decor" class="collection-link">
+          <div class="collection-img-wrap">
+            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&auto=format&fit=crop" alt="Handcrafted Home Decor collection" loading="lazy">
+            <div class="collection-overlay"><span>Explore →</span></div>
+          </div>
+          <div class="collection-info"><h3>Handcrafted Home Decor</h3><span class="collection-count">48 items</span></div>
+        </a>
+      </article>
+      <article class="collection-card reveal">
+        <a href="services.html?cat=pottery-ceramics" class="collection-link">
+          <div class="collection-img-wrap">
+            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&auto=format&fit=crop" alt="Handmade Pottery collection" loading="lazy">
+            <div class="collection-overlay"><span>Explore →</span></div>
+          </div>
+          <div class="collection-info"><h3>Handmade Pottery</h3><span class="collection-count">36 items</span></div>
+        </a>
+      </article>
+      <article class="collection-card reveal">
+        <a href="services.html?cat=textiles" class="collection-link">
+          <div class="collection-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&auto=format&fit=crop" alt="Woven Textiles collection" loading="lazy">
+            <div class="collection-overlay"><span>Explore →</span></div>
+          </div>
+          <div class="collection-info"><h3>Woven Textiles</h3><span class="collection-count">52 items</span></div>
+        </a>
+      </article>
+      <article class="collection-card reveal">
+        <a href="services.html?cat=wooden" class="collection-link">
+          <div class="collection-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop" alt="Wooden Crafts collection" loading="lazy">
+            <div class="collection-overlay"><span>Explore →</span></div>
+          </div>
+          <div class="collection-info"><h3>Wooden Crafts</h3><span class="collection-count">29 items</span></div>
+        </a>
+      </article>
+      <article class="collection-card reveal">
+        <a href="services.html?cat=wall-art" class="collection-link">
+          <div class="collection-img-wrap">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&auto=format&fit=crop" alt="Wall Art collection" loading="lazy">
+            <div class="collection-overlay"><span>Explore →</span></div>
+          </div>
+          <div class="collection-info"><h3>Wall Art</h3><span class="collection-count">41 items</span></div>
+        </a>
+      </article>
+      <article class="collection-card reveal">
+        <a href="services.html?cat=lighting" class="collection-link">
+          <div class="collection-img-wrap">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop" alt="Handmade Lighting collection" loading="lazy">
+            <div class="collection-overlay"><span>Explore →</span></div>
+          </div>
+          <div class="collection-info"><h3>Handmade Lighting</h3><span class="collection-count">24 items</span></div>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: BESTSELLERS -->
+<section class="section products-sec bg-sec" aria-label="Bestselling products">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Bestsellers</span>
+      <h2 class="section-title">Bestselling Handcrafted Pieces</h2>
+      <p class="section-subtitle">Each piece is a labour of love, crafted by skilled artisans for your home.</p>
+    </div>
+    <div class="products-grid">
+      <article class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&auto=format&fit=crop" alt="Terracotta Sunrise Vase" loading="lazy" class="product-img">
+          <span class="product-badge badge-best">Bestseller</span>
+          <button class="wishlist-toggle" aria-label="Add to wishlist" data-id="1">♡</button>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Pottery &amp; Ceramics</span>
+          <h3 class="product-name">Terracotta Sunrise Vase</h3>
+          <p class="product-artisan">by Priya Sharma, Rajasthan</p>
+          <div class="product-rating">★★★★★ <span>(124)</span></div>
+          <div class="product-pricing"><span class="price-now">₹2,850</span><span class="price-was">₹3,500</span><span class="price-save">Save ₹650</span></div>
+          <p class="product-desc">Hand-thrown terracotta vase with warm sunrise glaze — perfect for dried florals or as a sculptural object.</p>
+          <div class="product-actions">
+            <a href="service-details.html" class="btn-outline btn-sm">View Details</a>
+            <button class="btn-primary btn-sm atc-btn" data-id="1" data-name="Terracotta Sunrise Vase" data-price="2850" data-img="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=100">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&auto=format&fit=crop" alt="Hand-Woven Jute Rug" loading="lazy" class="product-img">
+          <span class="product-badge badge-best">Bestseller</span>
+          <button class="wishlist-toggle" aria-label="Add to wishlist" data-id="2">♡</button>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Handmade Textiles</span>
+          <h3 class="product-name">Hand-Woven Jute Rug</h3>
+          <p class="product-artisan">by Ramesh Patel, Gujarat</p>
+          <div class="product-rating">★★★★★ <span>(89)</span></div>
+          <div class="product-pricing"><span class="price-now">₹5,200</span><span class="price-was">₹6,000</span><span class="price-save">Save ₹800</span></div>
+          <p class="product-desc">Handwoven natural jute rug in earthy neutral tones — adds warmth and texture to any living space.</p>
+          <div class="product-actions">
+            <a href="service-details.html" class="btn-outline btn-sm">View Details</a>
+            <button class="btn-primary btn-sm atc-btn" data-id="2" data-name="Hand-Woven Jute Rug" data-price="5200" data-img="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=100">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop" alt="Carved Mango Wood Bowl" loading="lazy" class="product-img">
+          <span class="product-badge badge-new">New</span>
+          <button class="wishlist-toggle" aria-label="Add to wishlist" data-id="3">♡</button>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Wooden Handicrafts</span>
+          <h3 class="product-name">Carved Mango Wood Bowl</h3>
+          <p class="product-artisan">by Meera Nair, Kerala</p>
+          <div class="product-rating">★★★★★ <span>(67)</span></div>
+          <div class="product-pricing"><span class="price-now">₹1,750</span></div>
+          <p class="product-desc">Hand-carved mango wood serving bowl with natural grain finish — functional art for your dining table.</p>
+          <div class="product-actions">
+            <a href="service-details.html" class="btn-outline btn-sm">View Details</a>
+            <button class="btn-primary btn-sm atc-btn" data-id="3" data-name="Carved Mango Wood Bowl" data-price="1750" data-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=100">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <div class="product-img-wrap">
+          <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&auto=format&fit=crop" alt="Copper Lotus Wall Art" loading="lazy" class="product-img">
+          <span class="product-badge badge-best">Bestseller</span>
+          <button class="wishlist-toggle" aria-label="Add to wishlist" data-id="4">♡</button>
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Metal Crafts</span>
+          <h3 class="product-name">Copper Lotus Wall Art</h3>
+          <p class="product-artisan">by Arjun Mehta, U.P.</p>
+          <div class="product-rating">★★★★☆ <span>(52)</span></div>
+          <div class="product-pricing"><span class="price-now">₹3,400</span><span class="price-was">₹4,000</span><span class="price-save">Save ₹600</span></div>
+          <p class="product-desc">Handcrafted copper lotus wall art panel — intricate metalwork that transforms any wall into a gallery.</p>
+          <div class="product-actions">
+            <a href="service-details.html" class="btn-outline btn-sm">View Details</a>
+            <button class="btn-primary btn-sm atc-btn" data-id="4" data-name="Copper Lotus Wall Art" data-price="3400" data-img="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=100">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="section-cta reveal"><a href="services.html" class="btn-primary">View All Products</a></div>
+  </div>
+</section>
+
+<!-- SECTION 4: THE BEAUTY OF HANDMADE -->
+<section class="section handmade-sec" aria-label="The beauty of handmade">
+  <div class="container">
+    <div class="handmade-grid">
+      <div class="handmade-content reveal">
+        <span class="section-label">Our Philosophy</span>
+        <h2 class="section-title">The Beauty of Handmade</h2>
+        <p class="lead-text">In a world of mass production, handmade objects carry something irreplaceable — the warmth of human touch, the story of the maker, and the quiet dignity of genuine craft.</p>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <div class="feature-icon">✦</div>
+            <div><strong>Uniquely Made</strong><p>No two pieces are exactly alike — each carries natural variations that mark genuine handcraft.</p></div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-icon">🤲</div>
+            <div><strong>Traditional Techniques</strong><p>Centuries-old methods preserved by master craftspeople, passed from generation to generation.</p></div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-icon">🌿</div>
+            <div><strong>Natural Materials</strong><p>Ethically sourced clay, reclaimed wood, hand-spun cotton fiber, and traditional metal alloys.</p></div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-icon">❤️</div>
+            <div><strong>Supporting Artisans</strong><p>Every purchase directly supports the livelihood of skilled artisan families across India.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="handmade-images reveal">
+        <div class="image-collage">
+          <div class="collage-main">
+            <img src="https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=800&auto=format&fit=crop" alt="Artisan at work in pottery workshop" loading="lazy">
+          </div>
+          <div class="collage-side">
+            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&auto=format&fit=crop" alt="Hand-thrown terracotta pottery" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop" alt="Handcrafted wooden bowl" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: CRAFTED BY ARTISANS -->
+<section class="section artisans-sec bg-sec" aria-label="Our artisans">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The Makers</span>
+      <h2 class="section-title">Crafted by Our Artisans</h2>
+      <p class="section-subtitle">Meet the hands and hearts behind our collections.</p>
+    </div>
+    <div class="artisans-grid">
+      <article class="artisan-card reveal">
+        <div class="artisan-img-wrap">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop" alt="Priya Sharma, Pottery Artisan from Jaipur" loading="lazy" class="artisan-img">
+        </div>
+        <div class="artisan-body">
+          <span class="artisan-craft">Pottery &amp; Ceramics</span>
+          <h3 class="artisan-name">Priya Sharma</h3>
+          <p class="artisan-location">📍 Jaipur, Rajasthan</p>
+          <p class="artisan-bio">A fourth-generation potter whose terracotta vessels carry the warmth of Rajasthan's red earth. Priya has been throwing pots since childhood, guided by her mother and grandmother before her.</p>
+          <a href="blog.html" class="artisan-link">Read Her Story →</a>
+        </div>
+      </article>
+      <article class="artisan-card reveal">
+        <div class="artisan-img-wrap">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop" alt="Ramesh Patel, Textile Artisan from Gujarat" loading="lazy" class="artisan-img">
+        </div>
+        <div class="artisan-body">
+          <span class="artisan-craft">Handloom Textiles</span>
+          <h3 class="artisan-name">Ramesh Patel</h3>
+          <p class="artisan-location">📍 Kutch, Gujarat</p>
+          <p class="artisan-bio">Master weaver preserving the intricate patterns of Kutchi handloom. Ramesh threads centuries of tradition into every textile he creates, from warp to weft.</p>
+          <a href="blog.html" class="artisan-link">Read His Story →</a>
+        </div>
+      </article>
+      <article class="artisan-card reveal">
+        <div class="artisan-img-wrap">
+          <img src="https://images.unsplash.com/photo-1546961342-ea5f70d193d2?w=400&auto=format&fit=crop" alt="Meera Nair, Woodcraft Artisan from Kerala" loading="lazy" class="artisan-img">
+        </div>
+        <div class="artisan-body">
+          <span class="artisan-craft">Hand-Carved Woodcraft</span>
+          <h3 class="artisan-name">Meera Nair</h3>
+          <p class="artisan-location">📍 Thrissur, Kerala</p>
+          <p class="artisan-bio">Meera hand-carves each piece using traditional Kerala tools passed from her grandfather. Her workshop carries the quiet beauty of rosewood and sandalwood.</p>
+          <a href="blog.html" class="artisan-link">Read Her Story →</a>
+        </div>
+      </article>
+    </div>
+    <div class="section-cta reveal"><a href="blog.html" class="btn-outline">Discover All Artisan Stories</a></div>
+  </div>
+</section>
+
+<!-- SECTION 6: CTA BANNER -->
+<section class="section cta-banner-sec" aria-label="Explore collections">
+  <div class="cta-banner-bg" style="background-image:url('https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1600&auto=format&fit=crop');"></div>
+  <div class="cta-banner-overlay"></div>
+  <div class="container cta-banner-content reveal">
+    <div class="cta-banner-frame">
+      <span class="section-label light">Handmade Living</span>
+      <h2 class="cta-banner-title">Discover the Art of<br><em>Handmade Living</em></h2>
+      <p class="cta-banner-subtitle">Every piece in our collection carries the soul of its maker — explore hundreds of unique handcrafted items for your home.</p>
+      <div class="cta-banner-btns">
+        <a href="services.html" class="btn-primary btn-hero">Shop Handcrafted Collections</a>
+        <a href="about.html" class="btn-outline-light btn-hero">Learn Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo"><span class="logo-mark">✦</span> AuraDecor</a>
+        <p>Celebrating handmade artistry and bringing traditional craftsmanship into contemporary living spaces.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+          <a href="#" aria-label="Pinterest" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.19-5.03 1.19-5.03s-.3-.6-.3-1.49c0-1.4.81-2.44 1.82-2.44.86 0 1.27.64 1.27 1.41 0 .86-.55 2.15-.83 3.35-.24.99.5 1.8 1.47 1.8 1.76 0 3.12-1.86 3.12-4.55 0-2.38-1.72-4.05-4.17-4.05-2.84 0-4.5 2.13-4.5 4.33 0 .86.33 1.78.74 2.28.08.1.09.19.07.29l-.28 1.13c-.04.18-.15.22-.34.13-1.25-.58-2.03-2.41-2.03-3.88 0-3.15 2.29-6.05 6.61-6.05 3.47 0 6.17 2.47 6.17 5.78 0 3.45-2.17 6.22-5.19 6.22-1.01 0-1.97-.53-2.29-1.15l-.62 2.38c-.23.87-.84 1.96-1.25 2.62.94.29 1.93.45 2.96.45 5.52 0 10-4.48 10-10S17.52 2 12 2z"></path></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="social-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Shop Collections</a></li>
+          <li><a href="blog.html">Artisan Stories</a></li>
+          <li><a href="pricing.html">Custom Orders</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html">My Account</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Collections</h4>
+        <ul class="footer-links">
+          <li><a href="services.html?cat=home-decor">Home Decor</a></li>
+          <li><a href="services.html?cat=pottery-ceramics">Pottery &amp; Ceramics</a></li>
+          <li><a href="services.html?cat=textiles">Handmade Textiles</a></li>
+          <li><a href="services.html?cat=wooden">Wooden Handicrafts</a></li>
+          <li><a href="services.html?cat=wall-art">Wall Art</a></li>
+          <li><a href="services.html?cat=lighting">Handmade Lighting</a></li>
+          <li><a href="services.html?cat=metal-crafts">Metal Crafts</a></li>
+          <li><a href="services.html?cat=gifts">Handmade Gifts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="contact.html#faq">FAQs</a></li>
+          <li><a href="pricing.html">Custom Orders</a></li>
+          <li><a href="pricing.html">Wholesale</a></li>
+        </ul>
+        <div class="footer-contact-info">
+          <p>📍 12, Artisan Lane, Jaipur, Rajasthan <em>(sample)</em></p>
+          <p>📞 +91 98765 43210 <em>(sample)</em></p>
+          <p>✉️ hello@auradecor.in <em>(sample)</em></p>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <form class="nl-form" id="footerNLForm">
+            <input type="email" placeholder="Your email address" required aria-label="Newsletter email">
+            <button type="submit" class="btn-primary-sm">Subscribe</button>
+            <p class="nl-success" id="footerNLSuccess" style="display:none;">✓ Subscribed! Thank you.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 AuraDecor. All rights reserved. &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close-btn" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping →</a></p>
+  </div>
+  <div class="cart-footer-panel" id="cartFooterPanel">
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
+    <p class="cart-free-ship">Free shipping on orders above ₹2,000</p>
+    <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
+    <p class="cart-demo-note">⚠ Demo store — no real payments processed</p>
+  </div>
+</aside>
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<script src="assets/js/products-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+(function(){
+  document.getElementById('footerNLForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    document.getElementById('footerNLSuccess').style.display='block';
+    this.querySelector('input').style.display='none';
+    this.querySelector('button').style.display='none';
+  });
+  document.querySelectorAll('.atc-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var d=this.dataset;
+      if(window.addToCart) window.addToCart({id:parseInt(d.id),name:d.name,price:parseInt(d.price),image:d.img,qty:1});
+      var tc=document.getElementById('toastContainer');
+      if(tc){var t=document.createElement('div');t.className='toast';t.innerHTML='<span>✓ Added: '+d.name+'</span>';tc.appendChild(t);requestAnimationFrame(function(){t.classList.add('show');});setTimeout(function(){t.classList.remove('show');setTimeout(function(){t.remove();},400);},2800);}
+    });
+  });
+  document.querySelectorAll('.wishlist-toggle').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      this.classList.toggle('active');
+      this.textContent=this.classList.contains('active')?'♥':'♡';
+      var tc=document.getElementById('toastContainer');
+      if(tc){var msg=this.classList.contains('active')?'✓ Added to wishlist':'Removed from wishlist';var t=document.createElement('div');t.className='toast';t.innerHTML='<span>'+msg+'</span>';tc.appendChild(t);requestAnimationFrame(function(){t.classList.add('show');});setTimeout(function(){t.classList.remove('show');setTimeout(function(){t.remove();},400);},2500);}
+    });
+  });
+})();
+</script>
+</body>
+</html>

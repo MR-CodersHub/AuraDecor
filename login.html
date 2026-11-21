@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in or register for an AuraDecor account. Track your artisan orders, manage your wishlist, and enjoy curated craft benefits.">
+  <title>Customer Account — Login &amp; Register — AuraDecor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* ===== LOGIN / REGISTER STYLES ===== */
+    .auth-hero {
+      position: relative;
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      background: var(--charcoal);
+      color: #fff;
+      overflow: hidden;
+    }
+    .auth-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1600&auto=format&fit=crop') center/cover;
+      opacity: 0.35;
+    }
+    .auth-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .auth-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      margin-bottom: 0.8rem;
+    }
+
+    /* Auth Box Container */
+    .auth-section {
+      background: var(--natural-cream);
+      padding: 4rem 0 5rem;
+    }
+    .auth-card {
+      background: #fff;
+      border-radius: 24px;
+      max-width: 520px;
+      margin: 0 auto;
+      box-shadow: 0 10px 45px rgba(0,0,0,0.06);
+      border: 1px solid var(--warm-sand);
+      overflow: hidden;
+    }
+    .auth-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--warm-sand);
+      background: var(--soft-beige);
+    }
+    .auth-tab-btn {
+      flex: 1;
+      padding: 1.2rem;
+      border: none;
+      background: none;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: #888;
+      cursor: pointer;
+      transition: all 0.25s;
+      border-bottom: 3px solid transparent;
+    }
+    .auth-tab-btn.active {
+      color: var(--terracotta);
+      background: #fff;
+      border-bottom-color: var(--terracotta);
+      font-weight: 700;
+    }
+    .auth-form-container {
+      padding: 2.5rem;
+    }
+    .auth-form {
+      display: none;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .auth-form.active {
+      display: flex;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-field label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: 0.05em;
+    }
+    .form-field input {
+      padding: 0.85rem 1rem;
+      border: 1.5px solid var(--warm-sand);
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.25s;
+    }
+    .form-field input:focus {
+      border-color: var(--terracotta);
+    }
+    .auth-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .auth-options a {
+      color: var(--terracotta);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Password Strength Indicator */
+    .strength-meter {
+      height: 4px;
+      background: #eee;
+      border-radius: 2px;
+      margin-top: 0.4rem;
+      overflow: hidden;
+    }
+    .strength-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s, background-color 0.3s;
+    }
+
+    /* Account Benefits Section */
+    .benefits-section {
+      background: var(--soft-beige);
+      padding: 5rem 0;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.8rem;
+    }
+    @media (max-width: 900px) {
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+    .benefit-item {
+      background: #fff;
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+      text-align: center;
+      border: 1px solid var(--warm-sand);
+    }
+    .benefit-icon {
+      font-size: 2.2rem;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+    .benefit-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+    }
+    .benefit-item p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Brand Strip Section */
+    .artisan-strip-section {
+      background: var(--charcoal);
+      color: #fff;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .artisan-strip-images {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.8rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 768px) {
+      .artisan-strip-images { grid-template-columns: repeat(3, 1fr); }
+    }
+    .artisan-strip-images img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* In-page Success Message (No dashboard redirect) */
+    .demo-account-state {
+      display: none;
+      background: rgba(77,89,64,0.1);
+      border: 2px solid var(--deep-olive);
+      color: var(--deep-olive);
+      padding: 1.8rem;
+      border-radius: 16px;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown"><a href="index.html" class="nav-link">Home ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1 — Handicraft Store</a></li>
+          <li><a href="home2.html">Home 2 — Artisan Collections</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="nav-link">About Us</a></li>
+      <li><a href="services.html" class="nav-link">Shop Collections</a></li>
+      <li><a href="blog.html" class="nav-link">Artisan Stories</a></li>
+      <li><a href="pricing.html" class="nav-link">Custom Orders</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL">⇄</button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <a href="login.html" class="btn-nav-login active">Login</a>
+      <a href="services.html" class="btn-nav-cta">Shop Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===== SECTION 1: AUTH HERO ===== -->
+<section class="auth-hero section-padding">
+  <div class="auth-hero-bg"></div>
+  <div class="container">
+    <div class="auth-hero-content reveal-up">
+      <span class="section-eyebrow" style="color:var(--antique-gold);">Craft Sanctuary</span>
+      <h1>Welcome to the<br><em>AuraDecor Family</em></h1>
+      <p>Sign in to view order updates, save your curated wishlist, and access limited artisan studio editions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: TAB SWITCHER & CONTAINER ===== -->
+<section class="auth-section">
+  <div class="container">
+    <div class="auth-card reveal-up">
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="tabLoginBtn" onclick="switchAuthTab('login')">Sign In</button>
+        <button class="auth-tab-btn" id="tabRegisterBtn" onclick="switchAuthTab('register')">Create Account</button>
+      </div>
+
+      <div class="auth-form-container">
+        <!-- In-page Success Message (No Dashboard) -->
+        <div class="demo-account-state" id="authSuccessMsg">
+          <h4 id="successTitle">✦ Welcome Back, Artisan Patron!</h4>
+          <p id="successDesc">You are currently logged into your guest craft account. No dashboard redirect is needed.</p>
+          <button class="btn-primary" style="margin-top:1rem;padding:0.6rem 1.4rem;" onclick="resetAuthDisplay()">Sign Out</button>
+        </div>
+
+        <!-- ===== SECTION 3: LOGIN FORM ===== -->
+        <form class="auth-form active" id="loginForm" onsubmit="handleLoginSubmit(event)">
+          <div class="form-field">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" placeholder="your@email.com" required>
+          </div>
+
+          <div class="form-field">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" required>
+          </div>
+
+          <div class="auth-options">
+            <label style="display:flex;align-items:center;gap:0.4rem;cursor:pointer;">
+              <input type="checkbox" id="rememberMe">
+              <span>Remember me</span>
+            </label>
+            <a href="#" onclick="alert('Password reset link sent to demo email!');return false;">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width:100%;padding:1rem;margin-top:0.5rem;">Sign In to Account →</button>
+          <p style="text-align:center;font-size:0.8rem;color:#888;margin:0.5rem 0 0;">Demo credentials: any email and password.</p>
+        </form>
+
+        <!-- ===== SECTION 4: REGISTER FORM ===== -->
+        <form class="auth-form" id="registerForm" onsubmit="handleRegisterSubmit(event)">
+          <div class="form-field">
+            <label for="regName">Full Name</label>
+            <input type="text" id="regName" placeholder="Pooja Verma" required>
+          </div>
+
+          <div class="form-field">
+            <label for="regEmail">Email Address</label>
+            <input type="email" id="regEmail" placeholder="pooja@example.com" required>
+          </div>
+
+          <div class="form-field">
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" placeholder="Minimum 8 characters" required oninput="checkStrength(this.value)">
+            <div class="strength-meter"><div class="strength-bar" id="strengthBar"></div></div>
+          </div>
+
+          <div class="form-field">
+            <label for="regConfirmPassword">Confirm Password</label>
+            <input type="password" id="regConfirmPassword" placeholder="Re-type password" required>
+          </div>
+
+          <div class="form-field">
+            <label style="display:flex;align-items:flex-start;gap:0.5rem;font-size:0.82rem;color:#666;font-weight:400;cursor:pointer;">
+              <input type="checkbox" required>
+              <span>I agree to AuraDecor's <a href="404.html" style="color:var(--terracotta);">Terms of Use</a> and respect for artisan heritage.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width:100%;padding:1rem;">Create Craft Account →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: ACCOUNT BENEFITS ===== -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Patron Privileges</span>
+      <h2 class="section-title">Why Create an<br><em>AuraDecor Account?</em></h2>
+      <p class="section-subtitle">Become part of an intentional community supporting Indian craft heritage.</p>
+    </div>
+
+    <div class="benefits-grid reveal-up">
+      <div class="benefit-item">
+        <span class="benefit-icon">📦</span>
+        <h4>Kiln to Door Tracking</h4>
+        <p>Monitor your handcrafted orders through drying, glazing, firing, and plastic-free transit.</p>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">❤️</span>
+        <h4>Synchronized Wishlist</h4>
+        <p>Save your favorite artisan pieces across devices and get notified when limited batches return.</p>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">🎨</span>
+        <h4>Early Studio Access</h4>
+        <p>Enjoy 48-hour advance access to seasonal collections and one-of-a-kind master gallery drops.</p>
+      </div>
+
+      <div class="benefit-item">
+        <span class="benefit-icon">🌿</span>
+        <h4>Impact Transparency</h4>
+        <p>See exactly which artisan families and guild clusters your purchases have supported directly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: BRAND STATEMENT & COMMUNITY STRIP ===== -->
+<section class="artisan-strip-section">
+  <div class="container">
+    <div class="reveal-up" style="max-width:700px;margin:0 auto;">
+      <span class="section-eyebrow" style="color:var(--antique-gold);">Crafted with Reverence</span>
+      <h2 style="font-family:var(--font-heading);font-size:2.2rem;margin-bottom:1rem;color:#fff;">Connected by Clay, Thread &amp; Timber</h2>
+      <p style="color:rgba(255,255,255,0.8);line-height:1.7;">Over 120 artisan households across Rajasthan, Gujarat, Kerala, Bihar, and Uttar Pradesh create the soulful treasures that fill your living spaces.</p>
+    </div>
+
+    <div class="artisan-strip-images reveal-up">
+      <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&auto=format&fit=crop" alt="Ceramics">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&auto=format&fit=crop" alt="Textiles">
+      <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&auto=format&fit=crop" alt="Woodcraft">
+      <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&auto=format&fit=crop" alt="Metalwork">
+      <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=400&auto=format&fit=crop" alt="Grasscraft">
+      <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=400&auto=format&fit=crop" alt="Wall Art">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+        <p class="footer-tagline">Celebrating the beauty of handmade — connecting artisans with homes that appreciate authenticity.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram" class="social-link">📷</a>
+          <a href="#" aria-label="Pinterest" class="social-link">📌</a>
+          <a href="#" aria-label="Facebook" class="social-link">📘</a>
+          <a href="#" aria-label="WhatsApp" class="social-link">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Collections</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Home Decor</a></li>
+          <li><a href="services.html">Pottery & Ceramics</a></li>
+          <li><a href="services.html">Handmade Textiles</a></li>
+          <li><a href="services.html">Wooden Crafts</a></li>
+          <li><a href="services.html">Wall Art</a></li>
+          <li><a href="services.html">Handmade Gifts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Artisan Stories</a></li>
+          <li><a href="pricing.html">Custom Orders</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html">Login / Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <address class="footer-address">
+          <p>12, Artisan Lane, Near City Palace<br>Jaipur, Rajasthan 302001 <em>(sample)</em></p>
+          <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p><a href="mailto:hello@auradecor.in">hello@auradecor.in</a></p>
+          <p>Mon–Sat: 10AM–7PM IST</p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with ♥ in Jaipur.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Use</a>
+        <a href="coming-soon.html">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-header"><h3>Your Cart</h3><button class="cart-close-btn" id="cartClose">✕</button></div>
+  <div class="cart-items" id="cartItems"><p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping →</a></p></div>
+  <div class="cart-footer-panel" id="cartFooterPanel" style="display:none;">
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
+    <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
+    <p class="cart-demo-note">⚠ Demo store — no real payments processed</p>
+  </div>
+</aside>
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script src="assets/js/products-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+function switchAuthTab(type) {
+  const loginForm = document.getElementById('loginForm');
+  const regForm = document.getElementById('registerForm');
+  const tabLoginBtn = document.getElementById('tabLoginBtn');
+  const tabRegBtn = document.getElementById('tabRegisterBtn');
+
+  if (type === 'login') {
+    loginForm.classList.add('active');
+    regForm.classList.remove('active');
+    tabLoginBtn.classList.add('active');
+    tabRegBtn.classList.remove('active');
+  } else {
+    regForm.classList.add('active');
+    loginForm.classList.remove('active');
+    tabRegBtn.classList.add('active');
+    tabLoginBtn.classList.remove('active');
+  }
+}
+
+function handleLoginSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('loginEmail').value;
+  document.getElementById('loginForm').style.display = 'none';
+  document.getElementById('registerForm').style.display = 'none';
+  const successBox = document.getElementById('authSuccessMsg');
+  document.getElementById('successTitle').textContent = `✦ Welcome Back, ${email.split('@')[0]}!`;
+  document.getElementById('successDesc').textContent = 'You are signed into your AuraDecor patron account. All saved wishlists and orders are active.';
+  successBox.style.display = 'block';
+}
+
+function handleRegisterSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('regName').value;
+  document.getElementById('loginForm').style.display = 'none';
+  document.getElementById('registerForm').style.display = 'none';
+  const successBox = document.getElementById('authSuccessMsg');
+  document.getElementById('successTitle').textContent = `✦ Account Created, ${name}!`;
+  document.getElementById('successDesc').textContent = 'Thank you for joining our community of handcrafted living. Your account is ready.';
+  successBox.style.display = 'block';
+}
+
+function resetAuthDisplay() {
+  document.getElementById('authSuccessMsg').style.display = 'none';
+  document.getElementById('loginForm').style.display = 'flex';
+  document.getElementById('registerForm').style.display = 'none';
+  document.getElementById('tabLoginBtn').classList.add('active');
+  document.getElementById('tabRegisterBtn').classList.remove('active');
+}
+
+function checkStrength(val) {
+  const bar = document.getElementById('strengthBar');
+  if (val.length === 0) {
+    bar.style.width = '0%';
+  } else if (val.length < 6) {
+    bar.style.width = '30%';
+    bar.style.backgroundColor = '#e74c3c';
+  } else if (val.length < 10) {
+    bar.style.width = '65%';
+    bar.style.backgroundColor = '#f39c12';
+  } else {
+    bar.style.width = '100%';
+    bar.style.backgroundColor = '#27ae60';
+  }
+}
+</script>
+</body>
+</html>

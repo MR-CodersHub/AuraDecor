@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artisan stories, craft journals and handmade inspiration from India's finest makers — AuraDecor Blog.">
+  <title>Artisan Stories & Craft Journal — AuraDecor Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* ===== BLOG PAGE STYLES ===== */
+    .blog-hero{position:relative;min-height:65vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--charcoal);padding-bottom:3rem;}
+    .blog-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=1600&auto=format&fit=crop')center/cover;opacity:.4;}
+    .blog-hero-content{position:relative;z-index:2;max-width:720px;}
+    .blog-hero h1{font-family:var(--font-heading);font-size:clamp(2.2rem,5vw,4rem);color:#fff;margin-bottom:1rem;line-height:1.15;}
+    .blog-hero p{font-size:1.1rem;color:rgba(255,255,255,.8);max-width:540px;margin-bottom:1.5rem;}
+    .blog-filter-pills{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.5rem;}
+    .pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:50px;padding:.45rem 1.1rem;font-size:.82rem;cursor:pointer;transition:all .25s;font-family:var(--font-body);}
+    .pill.active,.pill:hover{background:var(--terracotta);border-color:var(--terracotta);}
+
+    /* Featured story */
+    .featured-story-section{background:var(--natural-cream);}
+    .featured-story-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    @media(max-width:800px){.featured-story-grid{grid-template-columns:1fr;gap:2rem;}}
+    .featured-story-img{border-radius:20px;overflow:hidden;aspect-ratio:5/4;}
+    .featured-story-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .featured-story-img:hover img{transform:scale(1.04);}
+    .featured-story-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:var(--terracotta);font-weight:700;margin-bottom:.8rem;}
+    .featured-story-title{font-family:var(--font-heading);font-size:clamp(1.5rem,3vw,2.4rem);color:var(--charcoal);margin-bottom:.8rem;line-height:1.25;}
+    .featured-story-title em{color:var(--terracotta);}
+    .featured-story-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;font-size:.82rem;color:#888;}
+    .featured-story-meta img{width:36px;height:36px;border-radius:50%;object-fit:cover;}
+    .featured-story-excerpt{color:#666;line-height:1.75;font-size:.97rem;margin-bottom:1.5rem;}
+    .blog-tag{background:var(--soft-beige);color:var(--deep-olive);font-size:.72rem;padding:.25rem .75rem;border-radius:20px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+
+    /* Artisan profiles */
+    .artisans-section{background:var(--soft-beige);}
+    .artisans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
+    @media(max-width:900px){.artisans-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:520px){.artisans-grid{grid-template-columns:1fr;}}
+    .artisan-card{background:#fff;border-radius:18px;overflow:hidden;transition:transform .35s,box-shadow .35s;}
+    .artisan-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.12);}
+    .artisan-card-img{position:relative;overflow:hidden;aspect-ratio:1;}
+    .artisan-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .artisan-card:hover .artisan-card-img img{transform:scale(1.08);}
+    .artisan-card-craft-badge{position:absolute;bottom:12px;left:12px;background:var(--terracotta);color:#fff;font-size:.7rem;font-weight:700;padding:.3rem .8rem;border-radius:20px;}
+    .artisan-card-body{padding:1.3rem;}
+    .artisan-card-name{font-family:var(--font-heading);font-size:1.15rem;color:var(--charcoal);margin-bottom:.25rem;}
+    .artisan-card-location{font-size:.8rem;color:var(--deep-olive);margin-bottom:.5rem;font-weight:700;}
+    .artisan-card-desc{font-size:.83rem;color:#777;line-height:1.55;margin-bottom:.8rem;}
+    .artisan-card-link{font-size:.78rem;color:var(--terracotta);font-weight:700;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;}
+
+    /* Craft traditions / blog grid */
+    .craft-stories-section{background:var(--natural-cream);}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
+    @media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:520px){.blog-grid{grid-template-columns:1fr;}}
+    .blog-card{background:#fff;border-radius:18px;overflow:hidden;transition:transform .35s,box-shadow .35s;}
+    .blog-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.12);}
+    .blog-card-img{overflow:hidden;aspect-ratio:16/10;}
+    .blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .blog-card:hover .blog-card-img img{transform:scale(1.07);}
+    .blog-card-body{padding:1.3rem;}
+    .blog-card-meta{display:flex;align-items:center;gap:.7rem;margin-bottom:.7rem;font-size:.78rem;color:#aaa;}
+    .blog-card-meta img{width:28px;height:28px;border-radius:50%;object-fit:cover;}
+    .blog-card-title{font-family:var(--font-heading);font-size:1.1rem;color:var(--charcoal);margin-bottom:.5rem;line-height:1.3;}
+    .blog-card-excerpt{font-size:.82rem;color:#777;line-height:1.6;margin-bottom:.8rem;}
+    .blog-card-link{font-size:.78rem;color:var(--terracotta);font-weight:700;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;}
+
+    /* Home styling section */
+    .home-styling-section{background:var(--soft-beige);}
+    .styling-grid{display:grid;grid-template-columns:2fr 1fr;gap:1.8rem;align-items:start;}
+    @media(max-width:800px){.styling-grid{grid-template-columns:1fr;}}
+    .styling-main-card{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:16/9;cursor:pointer;}
+    .styling-main-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .styling-main-card:hover img{transform:scale(1.05);}
+    .styling-main-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(39,33,29,.85) 40%,transparent 100%);}
+    .styling-main-content{position:absolute;bottom:0;left:0;right:0;padding:2rem;}
+    .styling-main-content h3{font-family:var(--font-heading);font-size:1.6rem;color:#fff;margin-bottom:.5rem;}
+    .styling-main-content p{font-size:.88rem;color:rgba(255,255,255,.8);margin-bottom:.8rem;}
+    .styling-side{display:flex;flex-direction:column;gap:1.2rem;}
+    .styling-side-card{border-radius:14px;overflow:hidden;position:relative;aspect-ratio:16/9;cursor:pointer;}
+    .styling-side-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .styling-side-card:hover img{transform:scale(1.08);}
+    .styling-side-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(39,33,29,.78) 40%,transparent 100%);}
+    .styling-side-content{position:absolute;bottom:0;padding:1rem;}
+    .styling-side-content h4{font-family:var(--font-heading);font-size:1rem;color:#fff;}
+
+    /* Newsletter */
+    .newsletter-section{background:var(--charcoal);position:relative;overflow:hidden;}
+    .newsletter-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=1400&auto=format&fit=crop')center/cover;opacity:.2;}
+    .newsletter-content{position:relative;z-index:2;text-align:center;max-width:600px;margin:0 auto;}
+    .newsletter-content h2{font-family:var(--font-heading);font-size:clamp(1.8rem,4vw,3rem);color:#fff;margin-bottom:1rem;}
+    .newsletter-content p{color:rgba(255,255,255,.75);margin-bottom:2rem;}
+    .newsletter-form{display:flex;gap:.8rem;max-width:460px;margin:0 auto;}
+    @media(max-width:520px){.newsletter-form{flex-direction:column;}}
+    .newsletter-form input{flex:1;border:none;border-radius:10px;padding:.9rem 1.2rem;font-family:var(--font-body);font-size:.95rem;outline:none;}
+    .newsletter-form button{background:var(--terracotta);color:#fff;border:none;border-radius:10px;padding:.9rem 1.6rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .25s;}
+    .newsletter-form button:hover{background:var(--antique-gold);}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown"><a href="index.html" class="nav-link">Home ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1 — Handicraft Store</a></li>
+          <li><a href="home2.html">Home 2 — Artisan Collections</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="nav-link">About Us</a></li>
+      <li><a href="services.html" class="nav-link">Shop Collections</a></li>
+      <li><a href="blog.html" class="nav-link active">Artisan Stories</a></li>
+      <li><a href="pricing.html" class="nav-link">Custom Orders</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL">⇄</button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <a href="login.html" class="btn-nav-login">Login</a>
+      <a href="services.html" class="btn-nav-cta">Shop Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===== SECTION 1: BLOG HERO ===== -->
+<section class="blog-hero section-padding">
+  <div class="blog-hero-bg"></div>
+  <div class="container">
+    <div class="blog-hero-content">
+      <span style="font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--antique-gold);font-weight:700;display:block;margin-bottom:1rem;">✦ Stories from the Workshop</span>
+      <h1>Artisan Stories &amp;<br><em>Craft Journal</em></h1>
+      <p>Meet the makers behind your favourite handcrafted pieces. Explore craft traditions, artisan journeys, and the beauty of handmade living.</p>
+      <div class="blog-filter-pills">
+        <button class="pill active">All Stories</button>
+        <button class="pill">Pottery & Ceramics</button>
+        <button class="pill">Textiles & Weaving</button>
+        <button class="pill">Woodcraft</button>
+        <button class="pill">Folk Art</button>
+        <button class="pill">Home Styling</button>
+        <button class="pill">Craft Traditions</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: FEATURED ARTISAN STORY ===== -->
+<section class="featured-story-section section-padding">
+  <div class="container">
+    <div class="section-header reveal-up" style="margin-bottom:2.5rem;">
+      <span class="section-eyebrow">Editor's Pick</span>
+      <h2 class="section-title">Featured<br><em>Artisan Story</em></h2>
+    </div>
+    <div class="featured-story-grid">
+      <div class="featured-story-img reveal-up">
+        <img src="https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=800&auto=format&fit=crop" alt="Priya Sharma at the potter's wheel" loading="lazy">
+      </div>
+      <div class="reveal-right">
+        <p class="featured-story-eyebrow">✦ Pottery & Ceramics</p>
+        <h2 class="featured-story-title">The Potter's Wheel:<br><em>Priya Sharma's Journey</em></h2>
+        <div class="featured-story-meta">
+          <img src="https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=100&auto=format&fit=crop" alt="Priya Sharma">
+          <span><strong>Priya Sharma</strong> · Jaipur, Rajasthan</span>
+          <span>·</span>
+          <span>8 min read</span>
+        </div>
+        <p class="featured-story-excerpt">In a sunlit workshop tucked into the lanes of Sanganer, Priya Sharma begins her day before dawn. The wheel spins, the clay rises, and three generations of pottery tradition flow through her hands. We visit her workspace to discover how ancient technique meets contemporary design — and why she believes every vessel holds a conversation.</p>
+        <p class="featured-story-excerpt">"My grandmother said the clay teaches patience. You can't rush a pot, any more than you can rush a child. It tells you when it's ready," Priya shares, her fingers still bearing the warm-red stain of the morning's first clay.</p>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+          <span class="blog-tag">Pottery</span>
+          <span class="blog-tag">Jaipur</span>
+          <span class="blog-tag">Artisan Profile</span>
+          <span class="blog-tag">Craft Tradition</span>
+        </div>
+        <a href="blog-details.html" class="btn-primary">Read Full Story →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: MEET OUR ARTISANS ===== -->
+<section class="artisans-section section-padding">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">The Makers</span>
+      <h2 class="section-title">Meet Our<br><em>Artisan Community</em></h2>
+      <p class="section-subtitle">Every product at AuraDecor is made by a skilled artisan with a remarkable story. Here are some of the talented makers behind our collections.</p>
+    </div>
+    <div class="artisans-grid reveal-up">
+      <div class="artisan-card">
+        <div class="artisan-card-img">
+          <img src="https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=500&auto=format&fit=crop" alt="Priya Sharma" loading="lazy">
+          <span class="artisan-card-craft-badge">Pottery & Ceramics</span>
+        </div>
+        <div class="artisan-card-body">
+          <h3 class="artisan-card-name">Priya Sharma</h3>
+          <p class="artisan-card-location">📍 Jaipur, Rajasthan</p>
+          <p class="artisan-card-desc">Third-generation potter and ceramic artist, known for her signature terracotta sunrise glazes and Jaipur blue pottery. 20+ years of mastery.</p>
+          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+        </div>
+      </div>
+      <div class="artisan-card">
+        <div class="artisan-card-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop" alt="Ramesh Patel" loading="lazy">
+          <span class="artisan-card-craft-badge">Textiles & Weaving</span>
+        </div>
+        <div class="artisan-card-body">
+          <h3 class="artisan-card-name">Ramesh Patel</h3>
+          <p class="artisan-card-location">📍 Kutch, Gujarat</p>
+          <p class="artisan-card-desc">Master weaver preserving the ancient Kutchi handloom tradition. His natural-dyed jute and cotton textiles have won national craft recognition.</p>
+          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+        </div>
+      </div>
+      <div class="artisan-card">
+        <div class="artisan-card-img">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop" alt="Meera Nair" loading="lazy">
+          <span class="artisan-card-craft-badge">Woodcraft</span>
+        </div>
+        <div class="artisan-card-body">
+          <h3 class="artisan-card-name">Meera Nair</h3>
+          <p class="artisan-card-location">📍 Thrissur, Kerala</p>
+          <p class="artisan-card-desc">Hand-carver of exceptional skill, Meera transforms sustainably sourced mango and rosewood into sculptural home objects of quiet beauty.</p>
+          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+        </div>
+      </div>
+      <div class="artisan-card">
+        <div class="artisan-card-img">
+          <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&auto=format&fit=crop" alt="Arjun Mehta" loading="lazy">
+          <span class="artisan-card-craft-badge">Metal Crafts</span>
+        </div>
+        <div class="artisan-card-body">
+          <h3 class="artisan-card-name">Arjun Mehta</h3>
+          <p class="artisan-card-location">📍 Moradabad, U.P.</p>
+          <p class="artisan-card-desc">Carrying the legacy of Moradabad's famed brassware tradition, Arjun crafts intricately engraved copper and brass pieces that blend tradition with modern design.</p>
+          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+        </div>
+      </div>
+      <div class="artisan-card">
+        <div class="artisan-card-img">
+          <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500&auto=format&fit=crop" alt="Sunita Devi" loading="lazy">
+          <span class="artisan-card-craft-badge">Grass Weaving</span>
+        </div>
+        <div class="artisan-card-body">
+          <h3 class="artisan-card-name">Sunita Devi</h3>
+          <p class="artisan-card-location">📍 Muzaffarpur, Bihar</p>
+          <p class="artisan-card-desc">Master of the ancient Sikki grass weaving tradition, Sunita creates intricate baskets and decorative objects from naturally golden grass gathered in Bihar's floodplains.</p>
+          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+        </div>
+      </div>
+      <div class="artisan-card">
+        <div class="artisan-card-img">
+          <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=500&auto=format&fit=crop" alt="Kavita Jha" loading="lazy">
+          <span class="artisan-card-craft-badge">Folk Painting</span>
+        </div>
+        <div class="artisan-card-body">
+          <h3 class="artisan-card-name">Kavita Jha</h3>
+          <p class="artisan-card-location">📍 Madhubani, Bihar</p>
+          <p class="artisan-card-desc">Renowned Madhubani folk painter who has exhibited her work internationally. Kavita's vibrant panels draw from Hindu mythology, nature, and village life.</p>
+          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: CRAFT TRADITIONS ===== -->
+<section class="craft-stories-section section-padding">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Craft Journal</span>
+      <h2 class="section-title">Craft Traditions<br><em>&amp; Making Stories</em></h2>
+      <p class="section-subtitle">Explore the history, techniques and cultural significance of India's most treasured craft traditions.</p>
+    </div>
+    <div class="blog-grid reveal-up">
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&auto=format&fit=crop" alt="Jaipur Blue Pottery" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><img src="https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=60" alt="Priya"><span>Priya Sharma · 6 min read</span></div>
+          <h3 class="blog-card-title">The Ancient Art of Jaipur Blue Pottery — A 400-Year Legacy</h3>
+          <p class="blog-card-excerpt">Discover how Persian influence merged with Rajasthani tradition to create one of India's most recognisable craft forms, now reinterpreted for modern homes.</p>
+          <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Pottery</span><span class="blog-tag">Jaipur</span></div>
+          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop" alt="Kutchi Weaving" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=60" alt="Ramesh"><span>Ramesh Patel · 7 min read</span></div>
+          <h3 class="blog-card-title">Threads of Identity: The Handloom Traditions of Kutch</h3>
+          <p class="blog-card-excerpt">In the arid plains of Kutch, master weavers produce textiles of extraordinary beauty using traditional pit-looms and naturally dyed threads passed down through generations.</p>
+          <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Textiles</span><span class="blog-tag">Gujarat</span></div>
+          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&auto=format&fit=crop" alt="Dhokra Metal" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=60" alt="Vikram"><span>Vikram Das · 5 min read</span></div>
+          <h3 class="blog-card-title">Dhokra: India's Oldest Lost-Wax Metal Casting Tradition</h3>
+          <p class="blog-card-excerpt">More than 4,000 years old, the Dhokra process creates unique brass and bronze objects that can never be exactly replicated — each one is a singular work of tribal art.</p>
+          <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Metal</span><span class="blog-tag">Chhattisgarh</span></div>
+          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" alt="Kerala Woodcraft" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=60" alt="Meera"><span>Meera Nair · 6 min read</span></div>
+          <h3 class="blog-card-title">Wood Whisperers: The Carving Traditions of Kerala</h3>
+          <p class="blog-card-excerpt">Kerala's wood-carving masters work with the grain itself, believing each log already contains the form it wishes to become. Meet the craftspeople keeping this art alive.</p>
+          <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Woodcraft</span><span class="blog-tag">Kerala</span></div>
+          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=600&auto=format&fit=crop" alt="Madhubani Painting" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=60" alt="Kavita"><span>Kavita Jha · 8 min read</span></div>
+          <h3 class="blog-card-title">Madhubani: When Village Walls Became Sacred Canvas</h3>
+          <p class="blog-card-excerpt">Originally painted on mud walls for weddings and festivals, Madhubani art has travelled from Bihar's villages to galleries worldwide — yet it remains rooted in ritual and community.</p>
+          <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Folk Art</span><span class="blog-tag">Bihar</span></div>
+          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&auto=format&fit=crop" alt="Sikki Weaving" loading="lazy">
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta"><img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=60" alt="Sunita"><span>Sunita Devi · 5 min read</span></div>
+          <h3 class="blog-card-title">Golden Grass: The Quiet Craft of Sikki Weaving in Bihar</h3>
+          <p class="blog-card-excerpt">Harvested from Bihar's floodplains, the golden sikki grass is hand-woven by women artisans into objects of extraordinary intricacy — a tradition endangered but resilient.</p>
+          <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Weaving</span><span class="blog-tag">Bihar</span></div>
+          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: HOME STYLING ===== -->
+<section class="home-styling-section section-padding">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Interior Inspiration</span>
+      <h2 class="section-title">Handmade<br><em>Home Styling</em></h2>
+      <p class="section-subtitle">How to bring artisan-made beauty into your living spaces — room by room, piece by piece.</p>
+    </div>
+    <div class="styling-grid reveal-up">
+      <div class="styling-main-card">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&auto=format&fit=crop" alt="Living Room Decor">
+        <div class="styling-main-overlay"></div>
+        <div class="styling-main-content">
+          <span style="font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--antique-gold);font-weight:700;">Home Styling</span>
+          <h3>How to Style a Living Room with Earthy Artisan Pieces</h3>
+          <p>Layering terracotta, natural wood and handwoven textiles to create a warm, grounded living room that feels like home.</p>
+          <a href="blog-details.html" style="font-size:.78rem;color:var(--antique-gold);font-weight:700;text-transform:uppercase;letter-spacing:.1em;">Read Article →</a>
+        </div>
+      </div>
+      <div class="styling-side">
+        <div class="styling-side-card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop" alt="Bedroom Lighting">
+          <div class="styling-side-overlay"></div>
+          <div class="styling-side-content">
+            <h4>Bedroom Ambiance with Handmade Lighting</h4>
+          </div>
+        </div>
+        <div class="styling-side-card">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&auto=format&fit=crop" alt="Dining Table">
+          <div class="styling-side-overlay"></div>
+          <div class="styling-side-content">
+            <h4>Setting a Handcrafted Table for Every Occasion</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: NEWSLETTER CTA ===== -->
+<section class="newsletter-section section-padding">
+  <div class="newsletter-bg"></div>
+  <div class="container">
+    <div class="newsletter-content reveal-up">
+      <span class="section-eyebrow" style="color:var(--antique-gold);">Stay Connected</span>
+      <h2>Stories Delivered<br><em style="color:var(--warm-sand);">to Your Inbox</em></h2>
+      <p>Get the latest artisan stories, craft discoveries, new arrivals and exclusive offers from the AuraDecor workshop, delivered fortnightly.</p>
+      <form class="newsletter-form" id="newsletterForm" onsubmit="submitNewsletter(event)">
+        <input type="email" placeholder="Your email address" required aria-label="Email address">
+        <button type="submit">Subscribe →</button>
+      </form>
+      <p style="font-size:.8rem;color:rgba(255,255,255,.5);margin-top:1rem;">No spam, ever. Unsubscribe at any time. We respect your privacy.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+        <p class="footer-tagline">Celebrating the beauty of handmade — connecting artisans with homes that appreciate authenticity.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram" class="social-link">📷</a>
+          <a href="#" aria-label="Pinterest" class="social-link">📌</a>
+          <a href="#" aria-label="Facebook" class="social-link">📘</a>
+          <a href="#" aria-label="WhatsApp" class="social-link">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Collections</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Home Decor</a></li>
+          <li><a href="services.html">Pottery & Ceramics</a></li>
+          <li><a href="services.html">Handmade Textiles</a></li>
+          <li><a href="services.html">Wooden Crafts</a></li>
+          <li><a href="services.html">Wall Art</a></li>
+          <li><a href="services.html">Handmade Gifts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Artisan Stories</a></li>
+          <li><a href="pricing.html">Custom Orders</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html">Login / Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <address class="footer-address">
+          <p>12, Artisan Lane, Near City Palace<br>Jaipur, Rajasthan 302001 <em>(sample)</em></p>
+          <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p><a href="mailto:hello@auradecor.in">hello@auradecor.in</a></p>
+          <p>Mon–Sat: 10AM–7PM IST</p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with ♥ in Jaipur.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Use</a>
+        <a href="coming-soon.html">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-header"><h3>Your Cart</h3><button class="cart-close-btn" id="cartClose">✕</button></div>
+  <div class="cart-items" id="cartItems"><p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping →</a></p></div>
+  <div class="cart-footer-panel" id="cartFooterPanel" style="display:none;">
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
+    <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
+    <p class="cart-demo-note">⚠ Demo store — no real payments processed</p>
+  </div>
+</aside>
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<script src="assets/js/products-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+// Filter pills
+document.querySelectorAll('.pill').forEach(pill=>{
+  pill.addEventListener('click',function(){
+    document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+// Newsletter
+function submitNewsletter(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  btn.textContent='✓ Subscribed!';
+  btn.style.background='var(--deep-olive)';
+  btn.disabled=true;
+}
+</script>
+</body>
+</html>

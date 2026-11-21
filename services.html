@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop handcrafted home decor, pottery, textiles, wooden crafts, wall art and more at AuraDecor — India's premium artisan marketplace.">
+  <title>Shop Handcrafted Collections — AuraDecor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* ===== SHOP PAGE SPECIFIC ===== */
+    .shop-hero{position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden;background:var(--charcoal);}
+    .shop-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&auto=format&fit=crop')center/cover no-repeat;opacity:.45;}
+    .shop-hero-content{position:relative;z-index:2;max-width:700px;}
+    .shop-hero-eyebrow{font-family:var(--font-body);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--antique-gold);margin-bottom:1rem;}
+    .shop-hero h1{font-family:var(--font-heading);font-size:clamp(2.4rem,5vw,4.2rem);color:#fff;line-height:1.15;margin-bottom:1.2rem;}
+    .shop-hero p{font-size:1.1rem;color:rgba(255,255,255,.82);max-width:520px;margin-bottom:2rem;}
+    /* Category grid */
+    .categories-section{background:var(--natural-cream);}
+    .cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;}
+    @media(max-width:1100px){.cat-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:680px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+    .cat-card{position:relative;border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .35s,box-shadow .35s;aspect-ratio:3/4;}
+    .cat-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.18);}
+    .cat-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .cat-card:hover img{transform:scale(1.07);}
+    .cat-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(39,33,29,.88) 40%,transparent 100%);}
+    .cat-card-body{position:absolute;bottom:0;left:0;right:0;padding:1.4rem;}
+    .cat-card-body h3{font-family:var(--font-heading);font-size:1.1rem;color:#fff;margin-bottom:.35rem;}
+    .cat-card-body p{font-size:.78rem;color:rgba(255,255,255,.75);margin-bottom:.7rem;line-height:1.5;}
+    .cat-card-link{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--antique-gold);font-family:var(--font-body);font-weight:700;}
+    .cat-card.active-cat{outline:3px solid var(--terracotta);outline-offset:3px;}
+    /* Filter bar */
+    .products-section{background:var(--soft-beige);}
+    .filter-bar{background:#fff;border-radius:16px;padding:1.4rem 2rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-bottom:2.5rem;box-shadow:0 4px 24px rgba(0,0,0,.07);}
+    .filter-bar label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--charcoal);display:flex;flex-direction:column;gap:.35rem;flex:1;min-width:150px;}
+    .filter-bar input,.filter-bar select{border:1.5px solid var(--warm-sand);border-radius:8px;padding:.5rem .9rem;font-size:.9rem;font-family:var(--font-body);background:#fff;color:var(--charcoal);outline:none;transition:border .25s;}
+    .filter-bar input:focus,.filter-bar select:focus{border-color:var(--terracotta);}
+    .price-output{font-size:.85rem;color:var(--terracotta);font-weight:700;}
+    #resetBtn{background:var(--terracotta);color:#fff;border:none;border-radius:8px;padding:.6rem 1.4rem;font-size:.85rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .25s;align-self:flex-end;}
+    #resetBtn:hover{background:var(--deep-olive);}
+    .results-meta{font-size:.9rem;color:#888;margin-bottom:1.5rem;}
+    .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.8rem;}
+    @media(max-width:1100px){.products-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:720px){.products-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:420px){.products-grid{grid-template-columns:1fr;}}
+    .product-card{background:#fff;border-radius:16px;overflow:hidden;transition:transform .35s,box-shadow .35s;position:relative;}
+    .product-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.13);}
+    .product-card-img{position:relative;overflow:hidden;aspect-ratio:1;}
+    .product-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .product-card:hover .product-card-img img{transform:scale(1.08);}
+    .product-badge{position:absolute;top:12px;left:12px;background:var(--terracotta);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.08em;padding:.3rem .7rem;border-radius:20px;text-transform:uppercase;}
+    .wishlist-btn{position:absolute;top:12px;right:12px;width:36px;height:36px;background:#fff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:background .25s,color .25s;}
+    .wishlist-btn.active,.wishlist-btn:hover{background:var(--terracotta);color:#fff;}
+    .product-card-body{padding:1.2rem;}
+    .product-category{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--deep-olive);font-weight:700;margin-bottom:.4rem;}
+    .product-card-body h3{font-family:var(--font-heading);font-size:1.05rem;color:var(--charcoal);margin-bottom:.45rem;line-height:1.3;}
+    .product-desc{font-size:.8rem;color:#777;line-height:1.5;margin-bottom:.8rem;}
+    .product-pricing{display:flex;align-items:baseline;gap:.6rem;margin-bottom:1rem;}
+    .price-current{font-size:1.1rem;font-weight:700;color:var(--terracotta);}
+    .price-old{font-size:.85rem;color:#aaa;text-decoration:line-through;}
+    .product-card-actions{display:flex;gap:.6rem;}
+    .btn-cart{flex:1;background:var(--charcoal);color:#fff;border:none;border-radius:8px;padding:.62rem;font-size:.82rem;font-weight:700;cursor:pointer;transition:background .25s;}
+    .btn-cart:hover{background:var(--terracotta);}
+    .btn-detail{background:transparent;border:1.5px solid var(--warm-sand);border-radius:8px;padding:.62rem .9rem;font-size:.82rem;color:var(--charcoal);cursor:pointer;transition:border-color .25s,color .25s;text-decoration:none;display:flex;align-items:center;white-space:nowrap;}
+    .btn-detail:hover{border-color:var(--terracotta);color:var(--terracotta);}
+    .no-results{grid-column:1/-1;text-align:center;padding:4rem;color:#aaa;}
+    .no-results p{font-size:1.1rem;margin-bottom:1rem;}
+    /* Curated collections */
+    .curated-section{background:var(--natural-cream);}
+    .curated-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
+    @media(max-width:800px){.curated-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:520px){.curated-grid{grid-template-columns:1fr;}}
+    .curated-card{border-radius:18px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;transition:transform .35s;}
+    .curated-card:hover{transform:translateY(-5px);}
+    .curated-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+    .curated-card:hover img{transform:scale(1.06);}
+    .curated-card-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(39,33,29,.72),rgba(185,104,78,.4));}
+    .curated-card-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.8rem;}
+    .curated-card-content h3{font-family:var(--font-heading);font-size:1.3rem;color:#fff;margin-bottom:.4rem;}
+    .curated-card-content p{font-size:.82rem;color:rgba(255,255,255,.8);margin-bottom:.8rem;}
+    .curated-link{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--antique-gold);font-weight:700;}
+    /* Custom orders */
+    .custom-orders-section{background:var(--soft-beige);}
+    .custom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;align-items:center;}
+    @media(max-width:800px){.custom-grid{grid-template-columns:1fr;}}
+    .custom-features{list-style:none;padding:0;margin:1.5rem 0;}
+    .custom-features li{padding:.6rem 0;border-bottom:1px solid var(--warm-sand);display:flex;align-items:center;gap:.8rem;font-size:.95rem;color:var(--charcoal);}
+    .custom-features li:last-child{border-bottom:none;}
+    .custom-features li::before{content:'✦';color:var(--terracotta);font-size:.7rem;}
+    .custom-img-wrap{border-radius:20px;overflow:hidden;aspect-ratio:1.2;position:relative;}
+    .custom-img-wrap img{width:100%;height:100%;object-fit:cover;}
+    /* Shop CTA */
+    .shop-cta-section{position:relative;overflow:hidden;background:var(--charcoal);}
+    .shop-cta-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1400&auto=format&fit=crop')center/cover;opacity:.3;}
+    .shop-cta-content{position:relative;z-index:2;text-align:center;max-width:680px;margin:0 auto;}
+    .shop-cta-content h2{font-family:var(--font-heading);font-size:clamp(2rem,4vw,3.2rem);color:#fff;margin-bottom:1rem;}
+    .shop-cta-content p{color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:2rem;}
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">✦</span>
+      <span class="logo-text">AuraDecor</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown">
+        <a href="index.html" class="nav-link">Home ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1 — Handicraft Store</a></li>
+          <li><a href="home2.html">Home 2 — Artisan Collections</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="nav-link">About Us</a></li>
+      <li><a href="services.html" class="nav-link active">Shop Collections</a></li>
+      <li><a href="blog.html" class="nav-link">Artisan Stories</a></li>
+      <li><a href="pricing.html" class="nav-link">Custom Orders</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL">⇄</button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <a href="login.html" class="btn-nav-login">Login</a>
+      <a href="services.html" class="btn-nav-cta">Shop Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===== SECTION 1: SHOP HERO ===== -->
+<section class="shop-hero section-padding">
+  <div class="shop-hero-bg"></div>
+  <div class="container">
+    <div class="shop-hero-content reveal-up">
+      <p class="shop-hero-eyebrow">✦ Handcrafted for Your Home</p>
+      <h1>Discover Handmade<br><em>Treasures for Your Home</em></h1>
+      <p>Explore our curated collections of authentic, artisan-crafted home decor — each piece a unique expression of traditional skill and contemporary beauty.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#products-section" class="btn-primary">Browse All Products</a>
+        <a href="#categories-section" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,.5);">Shop by Category</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: SHOP BY CATEGORY ===== -->
+<section class="categories-section section-padding" id="categories-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Browse by Craft</span>
+      <h2 class="section-title">Shop by Product<br><em>Category</em></h2>
+      <p class="section-subtitle">Discover the full breadth of our handcrafted collections — from earthy ceramics to intricately woven textiles.</p>
+    </div>
+    <div class="cat-grid reveal-up">
+      <div class="cat-card" data-cat="Home Decor" onclick="filterByCategory('Home Decor',this)" tabindex="0" role="button" aria-label="Shop Home Decor">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&auto=format&fit=crop" alt="Home Decor" loading="lazy">
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <h3>Home Decor</h3>
+          <p>Handcrafted accents for every room</p>
+          <span class="cat-card-link">Explore →</span>
+        </div>
+      </div>
+      <div class="cat-card" data-cat="Pottery" onclick="filterByCategory('Pottery',this)" tabindex="0" role="button" aria-label="Shop Pottery">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&auto=format&fit=crop" alt="Pottery & Ceramics" loading="lazy">
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <h3>Pottery & Ceramics</h3>
+          <p>Wheel-thrown & hand-built artisan pottery</p>
+          <span class="cat-card-link">Explore →</span>
+        </div>
+      </div>
+      <div class="cat-card" data-cat="Textiles" onclick="filterByCategory('Textiles',this)" tabindex="0" role="button" aria-label="Shop Textiles">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop" alt="Handmade Textiles" loading="lazy">
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <h3>Handmade Textiles</h3>
+          <p>Handloom rugs, throws & woven fabrics</p>
+          <span class="cat-card-link">Explore →</span>
+        </div>
+      </div>
+      <div class="cat-card" data-cat="Wooden" onclick="filterByCategory('Wooden',this)" tabindex="0" role="button" aria-label="Shop Wooden Crafts">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop" alt="Wooden Handicrafts" loading="lazy">
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <h3>Wooden Handicrafts</h3>
+          <p>Carved bowls, sculptures & furniture accents</p>
+          <span class="cat-card-link">Explore →</span>
+        </div>
+      </div>
+      <div class="cat-card" data-cat="Wall Art" onclick="filterByCategory('Wall Art',this)" tabindex="0" role="button" aria-label="Shop Wall Art">
+        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&auto=format&fit=crop" alt="Wall Art" loading="lazy">
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <h3>Wall Art & Hangings</h3>
+          <p>Macramé, paintings & decorative wall pieces</p>
+          <span class="cat-card-link">Explore →</span>
+        </div>
+      </div>
+      <div class="cat-card" data-cat="Lighting" onclick="filterByCategory('Lighting',this)" tabindex="0" role="button" aria-label="Shop Lighting">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop" alt="Handmade Lighting" loading="lazy">
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <h3>Handmade Lighting</h3>
+          <p>Rattan lamps, lanterns & candle holders</p>
+          <span class="cat-card-link">Explore →</span>
+        </div>
+      </div>
+      <div class="cat-card" data-cat="Metal" onclick="filterByCategory('Metal',this)" tabindex="0" role="button" aria-label="Shop Metal Crafts">
+        <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&auto=format&fit=crop" alt="Metal Crafts" loading="lazy">
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <h3>Metal Crafts</h3>
+          <p>Brass, copper & dhokra metalwork</p>
+          <span class="cat-card-link">Explore →</span>
+        </div>
+      </div>
+      <div class="cat-card" data-cat="Accessories" onclick="filterByCategory('Accessories',this)" tabindex="0" role="button" aria-label="Shop Accessories">
+        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&auto=format&fit=crop" alt="Decorative Accessories" loading="lazy">
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <h3>Decorative Accessories</h3>
+          <p>Incense holders, baskets & artisan objects</p>
+          <span class="cat-card-link">Explore →</span>
+        </div>
+      </div>
+      <div class="cat-card" data-cat="Tableware" onclick="filterByCategory('Tableware',this)" tabindex="0" role="button" aria-label="Shop Tableware">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&auto=format&fit=crop" alt="Tableware" loading="lazy">
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <h3>Tableware & Kitchen</h3>
+          <p>Handmade mugs, bowls & serving pieces</p>
+          <span class="cat-card-link">Explore →</span>
+        </div>
+      </div>
+      <div class="cat-card" data-cat="Gifts" onclick="filterByCategory('Gifts',this)" tabindex="0" role="button" aria-label="Shop Gifts">
+        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&auto=format&fit=crop" alt="Handmade Gifts" loading="lazy">
+        <div class="cat-card-overlay"></div>
+        <div class="cat-card-body">
+          <h3>Handmade Gifts</h3>
+          <p>Curated gifting for every occasion</p>
+          <span class="cat-card-link">Explore →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: ALL PRODUCTS ===== -->
+<section class="products-section section-padding" id="products-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Our Collection</span>
+      <h2 class="section-title">All Handcrafted<br><em>Products</em></h2>
+    </div>
+    <!-- Filter Bar -->
+    <div class="filter-bar reveal-up">
+      <label>Search
+        <input type="text" id="searchInput" placeholder="Search products…" autocomplete="off">
+      </label>
+      <label>Category
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="Home Decor">Home Decor</option>
+          <option value="Pottery">Pottery & Ceramics</option>
+          <option value="Textiles">Handmade Textiles</option>
+          <option value="Wooden">Wooden Handicrafts</option>
+          <option value="Wall Art">Wall Art & Hangings</option>
+          <option value="Lighting">Handmade Lighting</option>
+          <option value="Metal">Metal Crafts</option>
+          <option value="Accessories">Decorative Accessories</option>
+          <option value="Tableware">Tableware & Kitchen</option>
+          <option value="Gifts">Handmade Gifts</option>
+        </select>
+      </label>
+      <label>Max Price: <span class="price-output" id="priceOutput">₹10,000</span>
+        <input type="range" id="priceRange" min="500" max="10000" value="10000" step="100">
+      </label>
+      <label>Sort By
+        <select id="sortFilter">
+          <option value="default">Default</option>
+          <option value="newest">Newest</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </label>
+      <button id="resetBtn" onclick="resetFilters()">Reset Filters</button>
+    </div>
+    <p class="results-meta" id="resultsMeta">Showing all products</p>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: CURATED COLLECTIONS ===== -->
+<section class="curated-section section-padding">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Handpicked for You</span>
+      <h2 class="section-title">Featured & Seasonal<br><em>Collections</em></h2>
+      <p class="section-subtitle">Thoughtfully curated groups that bring harmony and artisanal warmth to every corner of your home.</p>
+    </div>
+    <div class="curated-grid reveal-up">
+      <div class="curated-card" onclick="filterByCategory('Home Decor',null)">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&auto=format&fit=crop" alt="Earthy Living">
+        <div class="curated-card-overlay"></div>
+        <div class="curated-card-content">
+          <h3>Earthy Living</h3>
+          <p>Warm terracotta tones & organic textures</p>
+          <span class="curated-link">Shop Collection →</span>
+        </div>
+      </div>
+      <div class="curated-card" onclick="filterByCategory('Pottery',null)">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&auto=format&fit=crop" alt="Artisan Ceramics">
+        <div class="curated-card-overlay"></div>
+        <div class="curated-card-content">
+          <h3>Artisan Ceramics</h3>
+          <p>Wheel-thrown beauty from master potters</p>
+          <span class="curated-link">Shop Collection →</span>
+        </div>
+      </div>
+      <div class="curated-card" onclick="filterByCategory('Textiles',null)">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&auto=format&fit=crop" alt="Natural Textures">
+        <div class="curated-card-overlay"></div>
+        <div class="curated-card-content">
+          <h3>Natural Textures</h3>
+          <p>Handloom weaves in earthy palettes</p>
+          <span class="curated-link">Shop Collection →</span>
+        </div>
+      </div>
+      <div class="curated-card" onclick="filterByCategory('Gifts',null)">
+        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=700&auto=format&fit=crop" alt="Festive Decor">
+        <div class="curated-card-overlay"></div>
+        <div class="curated-card-content">
+          <h3>Festive Decor</h3>
+          <p>Handcrafted gifts for every celebration</p>
+          <span class="curated-link">Shop Collection →</span>
+        </div>
+      </div>
+      <div class="curated-card" onclick="filterByCategory('Accessories',null)">
+        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=700&auto=format&fit=crop" alt="Handmade Gifts">
+        <div class="curated-card-overlay"></div>
+        <div class="curated-card-content">
+          <h3>Handmade Gifts</h3>
+          <p>Meaningful pieces that tell a story</p>
+          <span class="curated-link">Shop Collection →</span>
+        </div>
+      </div>
+      <div class="curated-card" onclick="filterByCategory('Wall Art',null)">
+        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=700&auto=format&fit=crop" alt="Contemporary Folk Art">
+        <div class="curated-card-overlay"></div>
+        <div class="curated-card-content">
+          <h3>Contemporary Folk Art</h3>
+          <p>Traditional motifs in modern compositions</p>
+          <span class="curated-link">Shop Collection →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: CUSTOM ORDERS ===== -->
+<section class="custom-orders-section section-padding">
+  <div class="container">
+    <div class="custom-grid">
+      <div class="reveal-up">
+        <span class="section-eyebrow">Made Just for You</span>
+        <h2 class="section-title" style="text-align:left;">Custom Handcrafted<br><em>Orders</em></h2>
+        <p style="color:var(--charcoal);opacity:.8;margin-bottom:1rem;">Every home has its own story. Our artisans work with you to create personalized handcrafted pieces that fit your space, your style, and your vision perfectly.</p>
+        <ul class="custom-features">
+          <li>Personalized decor with your name, initials or motif</li>
+          <li>Custom dimensions to fit your specific space</li>
+          <li>Color palette tailored to your interior</li>
+          <li>Special gift orders with handwritten notes</li>
+          <li>Bulk handcrafted orders for events & gifting</li>
+          <li>Artisan consultation for large-scale commissions</li>
+        </ul>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+          <a href="contact.html" class="btn-primary">Request a Custom Order</a>
+          <a href="pricing.html" class="btn-secondary">View Pricing</a>
+        </div>
+      </div>
+      <div class="custom-img-wrap reveal-right">
+        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&auto=format&fit=crop" alt="Artisan crafting custom pottery" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: SHOP CTA ===== -->
+<section class="shop-cta-section section-padding">
+  <div class="shop-cta-bg"></div>
+  <div class="container">
+    <div class="shop-cta-content reveal-up">
+      <span class="section-eyebrow" style="color:var(--antique-gold);">Every Piece Tells a Story</span>
+      <h2>Discover Your<br><em style="color:var(--warm-sand);">Favourite Piece</em></h2>
+      <p>Each item in our collection is handcrafted by a skilled artisan who pours their tradition, creativity, and care into every piece. No two are exactly alike — which makes yours truly one of a kind.</p>
+      <div style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;">
+        <a href="#products-section" class="btn-primary">Shop Handcrafted Collections</a>
+        <a href="about.html" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,.4);">Our Artisan Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+        <p class="footer-tagline">Celebrating the beauty of handmade — connecting artisans with homes that appreciate authenticity.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram" class="social-link">📷</a>
+          <a href="#" aria-label="Pinterest" class="social-link">📌</a>
+          <a href="#" aria-label="Facebook" class="social-link">📘</a>
+          <a href="#" aria-label="WhatsApp" class="social-link">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Collections</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Home Decor</a></li>
+          <li><a href="services.html">Pottery & Ceramics</a></li>
+          <li><a href="services.html">Handmade Textiles</a></li>
+          <li><a href="services.html">Wooden Crafts</a></li>
+          <li><a href="services.html">Wall Art</a></li>
+          <li><a href="services.html">Handmade Gifts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Artisan Stories</a></li>
+          <li><a href="pricing.html">Custom Orders</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html">Login / Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <address class="footer-address">
+          <p>12, Artisan Lane, Near City Palace<br>Jaipur, Rajasthan 302001 <em>(sample)</em></p>
+          <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p><a href="mailto:hello@auradecor.in">hello@auradecor.in</a></p>
+          <p>Mon–Sat: 10AM–7PM IST</p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with ♥ in Jaipur.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Use</a>
+        <a href="coming-soon.html">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="cart-close-btn" id="cartClose">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping →</a></p>
+  </div>
+  <div class="cart-footer-panel" id="cartFooterPanel" style="display:none;">
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
+    <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
+    <p class="cart-demo-note">⚠ Demo store — no real payments processed</p>
+  </div>
+</aside>
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script src="assets/js/products-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+// ===== SHOP PAGE — FILTER, SORT & RENDER =====
+const SHOP_PRODUCTS = [
+  {id:1,name:"Terracotta Sunrise Vase",cat:"Pottery",price:2850,old:3500,desc:"Hand-thrown terracotta vase with a warm sunrise glaze, perfect as a statement centerpiece.",img:"https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=500&auto=format&fit=crop",artisan:"Priya Sharma",badge:"Bestseller",isNew:false},
+  {id:2,name:"Hand-Woven Jute Rug",cat:"Textiles",price:5200,old:6000,desc:"Naturally dyed jute rug in earthy geometric patterns, handloom woven by master weavers.",img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop",artisan:"Ramesh Patel",badge:"",isNew:false},
+  {id:3,name:"Carved Mango Wood Bowl",cat:"Wooden",price:1750,old:0,desc:"Hand-carved mango wood bowl with organic edges and natural grain — no two are alike.",img:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop",artisan:"Meera Nair",badge:"",isNew:false},
+  {id:4,name:"Copper Lotus Wall Art",cat:"Wall Art",price:3400,old:4000,desc:"Hand-hammered copper lotus panel with an antique patina finish, ethically crafted in Moradabad.",img:"https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500&auto=format&fit=crop",artisan:"Arjun Mehta",badge:"",isNew:false},
+  {id:5,name:"Rattan Pendant Lamp",cat:"Lighting",price:4500,old:5500,desc:"Intricately hand-woven rattan pendant that casts beautiful dappled light across any room.",img:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop",artisan:"Sunita Devi",badge:"Sale",isNew:false},
+  {id:6,name:"Dhokra Brass Figurine",cat:"Metal",price:2100,old:0,desc:"Lost-wax cast tribal brass figurine in the ancient Dhokra tradition of Chhattisgarh.",img:"https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&auto=format&fit=crop",artisan:"Vikram Das",badge:"",isNew:false},
+  {id:7,name:"Madhubani Wall Panel",cat:"Wall Art",price:3200,old:0,desc:"Vibrant folk painting on handmade paper using traditional Madhubani motifs of nature and mythology.",img:"https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=500&auto=format&fit=crop",artisan:"Kavita Jha",badge:"",isNew:true},
+  {id:8,name:"Sikki Grass Basket",cat:"Accessories",price:1200,old:0,desc:"Hand-woven golden sikki grass basket with intricate geometric patterns, used for storage or display.",img:"https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500&auto=format&fit=crop",artisan:"Sunita Devi",badge:"",isNew:true},
+  {id:9,name:"Stoneware Coffee Mug Set",cat:"Tableware",price:2400,old:2800,desc:"Set of 4 hand-thrown stoneware mugs with a natural ash glaze. Microwave & dishwasher safe.",img:"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format&fit=crop",artisan:"Priya Sharma",badge:"Sale",isNew:false},
+  {id:10,name:"Indigo Block Print Throw",cat:"Textiles",price:3800,old:0,desc:"Hand block-printed cotton throw blanket in deep indigo and natural white geometric patterns.",img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop",artisan:"Ramesh Patel",badge:"",isNew:true},
+  {id:11,name:"Carved Sheesham Wood Lamp",cat:"Lighting",price:5800,old:0,desc:"Hand-carved sheesham wood table lamp with filigree cutwork casting stunning shadow patterns.",img:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop",artisan:"Meera Nair",badge:"",isNew:true},
+  {id:12,name:"Blue Pottery Spice Jars",cat:"Pottery",price:1850,old:0,desc:"Set of 3 Jaipur blue pottery spice jars with hand-painted floral motifs and fitted lids.",img:"https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=500&auto=format&fit=crop",artisan:"Priya Sharma",badge:"",isNew:false},
+  {id:13,name:"Macramé Wall Hanging",cat:"Wall Art",price:2600,old:3000,desc:"Hand-knotted cotton macramé wall hanging in a natural boho pattern. Handmade with love.",img:"https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500&auto=format&fit=crop",artisan:"Sunita Devi",badge:"Sale",isNew:false},
+  {id:14,name:"Brass Diya Lamp Set",cat:"Metal",price:1750,old:2000,desc:"Set of 5 hand-crafted brass diya lamps with intricate engravings. Perfect for festive occasions.",img:"https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=500&auto=format&fit=crop",artisan:"Vikram Das",badge:"",isNew:false},
+  {id:15,name:"Handmade Gift Hamper",cat:"Gifts",price:4200,old:0,desc:"Curated artisan gift hamper with 5 handcrafted items — pottery, textiles, brass & more.",img:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&auto=format&fit=crop",artisan:"AuraDecor",badge:"",isNew:true},
+  {id:16,name:"Jute Macramé Planter",cat:"Home Decor",price:1100,old:0,desc:"Handknotted jute macramé plant hanger for indoor plants. Eco-friendly and stylish.",img:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&auto=format&fit=crop",artisan:"Sunita Devi",badge:"",isNew:true},
+  {id:17,name:"Glazed Ceramic Bowl Set",cat:"Pottery",price:3600,old:4200,desc:"Set of 3 hand-glazed ceramic nesting bowls in earthy terracotta and sage green tones.",img:"https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=500&auto=format&fit=crop",artisan:"Priya Sharma",badge:"Bestseller",isNew:false},
+  {id:18,name:"Hand-Painted Wooden Tray",cat:"Wooden",price:2200,old:0,desc:"Mango wood serving tray with hand-painted floral mandala in natural pigments.",img:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop",artisan:"Meera Nair",badge:"",isNew:true},
+  {id:19,name:"Copper Wind Chime",cat:"Accessories",price:1550,old:0,desc:"Handcrafted copper wind chime with geometric cutouts producing a melodious chime.",img:"https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500&auto=format&fit=crop",artisan:"Arjun Mehta",badge:"",isNew:false},
+  {id:20,name:"Handwoven Cushion Cover Set",cat:"Textiles",price:2900,old:3500,desc:"Set of 2 handwoven cushion covers in natural cotton with geometric ikat patterns.",img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop",artisan:"Ramesh Patel",badge:"Sale",isNew:false},
+  {id:21,name:"Warli Art Canvas",cat:"Wall Art",price:4800,old:0,desc:"Original Warli tribal art on canvas featuring village life scenes in white on earthy brown.",img:"https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=500&auto=format&fit=crop",artisan:"Vikram Das",badge:"",isNew:true},
+  {id:22,name:"Handmade Soy Candle Set",cat:"Gifts",price:1800,old:0,desc:"Set of 3 hand-poured soy wax candles in terracotta pots with botanical fragrances.",img:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&auto=format&fit=crop",artisan:"AuraDecor",badge:"",isNew:true},
+  {id:23,name:"Bamboo Fruit Basket",cat:"Tableware",price:1350,old:0,desc:"Hand-woven bamboo fruit basket with a natural lacquer finish. Eco-friendly kitchen essential.",img:"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&auto=format&fit=crop",artisan:"Meera Nair",badge:"",isNew:false},
+  {id:24,name:"Iron Candle Lantern",cat:"Lighting",price:2750,old:3200,desc:"Hand-forged wrought iron lantern with antique finish. Perfect for indoor or outdoor ambiance.",img:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop",artisan:"Arjun Mehta",badge:"Sale",isNew:false}
+];
+
+let currentCat = '';
+let currentMax = 10000;
+let searchTimer = null;
+
+function formatPrice(n){return '₹'+n.toLocaleString('en-IN');}
+
+function getWishlist(){try{return JSON.parse(localStorage.getItem('aura_wishlist')||'[]');}catch{return [];}}
+function toggleWishlistItem(id){
+  let w=getWishlist();
+  const idx=w.indexOf(id);
+  if(idx===-1){w.push(id);}else{w.splice(idx,1);}
+  localStorage.setItem('aura_wishlist',JSON.stringify(w));
+  updateWishlistBadge();
+  return idx===-1;
+}
+function updateWishlistBadge(){
+  const el=document.getElementById('wishlistCount');
+  if(el)el.textContent=getWishlist().length;
+}
+function addToCartShop(id){
+  const p=SHOP_PRODUCTS.find(x=>x.id===id);if(!p)return;
+  if(typeof window.addToCart==='function'){window.addToCart(p.id,p.name,p.price,p.img);}
+  else{
+    try{
+      let cart=JSON.parse(localStorage.getItem('aura_cart')||'[]');
+      const ex=cart.find(x=>x.id===id);
+      if(ex){ex.qty++;}else{cart.push({id:p.id,name:p.name,price:p.price,img:p.img,qty:1});}
+      localStorage.setItem('aura_cart',JSON.stringify(cart));
+      showToastShop(p.name+' added to cart!');
+      updateCartBadge();
+    }catch(e){}
+  }
+}
+function showToastShop(msg){
+  const tc=document.getElementById('toastContainer');
+  if(!tc)return;
+  const t=document.createElement('div');t.className='toast';t.textContent=msg;
+  tc.appendChild(t);setTimeout(()=>t.remove(),3200);
+}
+function updateCartBadge(){
+  try{
+    const cart=JSON.parse(localStorage.getItem('aura_cart')||'[]');
+    const total=cart.reduce((s,x)=>s+x.qty,0);
+    const el=document.getElementById('cartCount');if(el)el.textContent=total;
+  }catch(e){}
+}
+
+function renderGrid(){
+  const grid=document.getElementById('productsGrid');
+  const meta=document.getElementById('resultsMeta');
+  const search=document.getElementById('searchInput').value.toLowerCase().trim();
+  const cat=document.getElementById('categoryFilter').value;
+  const maxP=parseInt(document.getElementById('priceRange').value);
+  const sort=document.getElementById('sortFilter').value;
+  const wishlist=getWishlist();
+
+  let items=[...SHOP_PRODUCTS];
+  if(cat)items=items.filter(p=>p.cat===cat);
+  if(search)items=items.filter(p=>p.name.toLowerCase().includes(search)||p.desc.toLowerCase().includes(search)||p.artisan.toLowerCase().includes(search));
+  items=items.filter(p=>p.price<=maxP);
+
+  if(sort==='newest')items.sort((a,b)=>b.id-a.id);
+  else if(sort==='price-asc')items.sort((a,b)=>a.price-b.price);
+  else if(sort==='price-desc')items.sort((a,b)=>b.price-a.price);
+
+  meta.textContent=items.length===SHOP_PRODUCTS.length?'Showing all '+items.length+' products':'Showing '+items.length+' of '+SHOP_PRODUCTS.length+' products';
+
+  if(!items.length){
+    grid.innerHTML='<div class="no-results"><p>No products found for your search.</p><button onclick="resetFilters()" style="background:var(--terracotta);color:#fff;border:none;border-radius:8px;padding:.7rem 1.6rem;cursor:pointer;font-weight:700;">Clear Filters</button></div>';
+    return;
+  }
+
+  grid.innerHTML=items.map(p=>{
+    const inW=wishlist.includes(p.id);
+    const badgeHTML=p.badge?`<span class="product-badge">${p.badge}</span>`:'';
+    const oldHTML=p.old?`<span class="price-old">${formatPrice(p.old)}</span>`:'';
+    const newBadge=p.isNew&&!p.badge?`<span class="product-badge" style="background:var(--deep-olive)">New</span>`:'';
+    return `<article class="product-card">
+      <div class="product-card-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+        ${badgeHTML}${newBadge}
+        <button class="wishlist-btn${inW?' active':''}" onclick="handleWishlist(${p.id},this)" aria-label="Wishlist ${p.name}">${inW?'♥':'♡'}</button>
+      </div>
+      <div class="product-card-body">
+        <p class="product-category">${p.cat}</p>
+        <h3>${p.name}</h3>
+        <p class="product-desc">${p.desc}</p>
+        <div class="product-pricing"><span class="price-current">${formatPrice(p.price)}</span>${oldHTML}</div>
+        <div class="product-card-actions">
+          <button class="btn-cart" onclick="addToCartShop(${p.id})">Add to Cart</button>
+          <a href="service-details.html" class="btn-detail">Details</a>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function handleWishlist(id,btn){
+  const added=toggleWishlistItem(id);
+  btn.textContent=added?'♥':'♡';
+  btn.classList.toggle('active',added);
+  showToastShop(added?'Added to wishlist!':'Removed from wishlist');
+}
+
+function filterByCategory(cat,card){
+  currentCat=cat;
+  document.getElementById('categoryFilter').value=cat;
+  document.querySelectorAll('.cat-card').forEach(c=>c.classList.remove('active-cat'));
+  if(card)card.classList.add('active-cat');
+  renderGrid();
+  document.getElementById('products-section').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function resetFilters(){
+  currentCat='';
+  document.getElementById('searchInput').value='';
+  document.getElementById('categoryFilter').value='';
+  document.getElementById('priceRange').value=10000;
+  document.getElementById('priceOutput').textContent='₹10,000';
+  document.getElementById('sortFilter').value='default';
+  document.querySelectorAll('.cat-card').forEach(c=>c.classList.remove('active-cat'));
+  renderGrid();
+}
+window.resetFilters=resetFilters;
+
+// Wire up controls
+document.getElementById('searchInput').addEventListener('input',function(){
+  clearTimeout(searchTimer);
+  searchTimer=setTimeout(renderGrid,300);
+});
+document.getElementById('categoryFilter').addEventListener('change',function(){
+  currentCat=this.value;
+  document.querySelectorAll('.cat-card').forEach(c=>c.classList.remove('active-cat'));
+  const card=document.querySelector(`.cat-card[data-cat="${this.value}"]`);
+  if(card)card.classList.add('active-cat');
+  renderGrid();
+});
+document.getElementById('priceRange').addEventListener('input',function(){
+  document.getElementById('priceOutput').textContent='₹'+parseInt(this.value).toLocaleString('en-IN');
+  renderGrid();
+});
+document.getElementById('sortFilter').addEventListener('change',renderGrid);
+
+// Check URL param
+(function(){
+  const params=new URLSearchParams(window.location.search);
+  const cat=params.get('cat');
+  if(cat){
+    document.getElementById('categoryFilter').value=cat;
+    const card=document.querySelector(`.cat-card[data-cat="${cat}"]`);
+    if(card)card.classList.add('active-cat');
+  }
+  renderGrid();
+  updateWishlistBadge();
+  updateCartBadge();
+})();
+</script>
+</body>
+</html>

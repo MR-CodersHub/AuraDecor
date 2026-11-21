@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Custom handcrafted orders, bulk corporate gifting, and wholesale pricing guide from AuraDecor. Transparent artisan pricing and bespoke commissions.">
+  <title>Custom Orders &amp; Wholesale Pricing — AuraDecor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <style>
+    /* ===== PRICING & CUSTOM ORDERS STYLES ===== */
+    .pricing-hero {
+      position: relative;
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      background: var(--charcoal);
+      color: #fff;
+      overflow: hidden;
+    }
+    .pricing-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&auto=format&fit=crop') center/cover;
+      opacity: 0.35;
+    }
+    .pricing-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+    .pricing-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .pricing-hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+
+    /* Section 2: Custom Handmade Orders Cards */
+    .custom-tiers-section {
+      background: var(--natural-cream);
+      padding: 5rem 0;
+    }
+    .craft-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 992px) {
+      .craft-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 540px) {
+      .craft-cards-grid { grid-template-columns: 1fr; }
+    }
+    .craft-tier-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2.2rem 1.6rem;
+      border: 1px solid var(--warm-sand);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .craft-tier-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+      border-color: var(--terracotta);
+    }
+    .craft-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .craft-tier-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+    .craft-tier-card p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+    .craft-meta {
+      border-top: 1px dashed var(--warm-sand);
+      padding-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--deep-olive);
+      font-weight: 700;
+    }
+
+    /* Section 3: Bulk & Wholesale Tiers */
+    .wholesale-section {
+      background: var(--soft-beige);
+      padding: 5rem 0;
+    }
+    .tier-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.8rem;
+    }
+    @media (max-width: 1024px) {
+      .tier-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 580px) {
+      .tier-cards-grid { grid-template-columns: 1fr; }
+    }
+    .tier-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 2.5rem 1.8rem;
+      border: 1px solid var(--warm-sand);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .tier-card.featured {
+      border: 2px solid var(--terracotta);
+      box-shadow: 0 10px 40px rgba(185,104,78,0.15);
+      transform: scale(1.02);
+    }
+    .tier-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--terracotta);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+    }
+    .tier-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+    }
+    .tier-volume {
+      font-size: 0.85rem;
+      color: var(--deep-olive);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    .tier-discount {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--terracotta);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-heading);
+    }
+    .tier-discount small {
+      font-size: 0.9rem;
+      color: #888;
+      font-weight: 400;
+      font-family: var(--font-body);
+    }
+    .tier-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .tier-features li {
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 0.6rem;
+    }
+    .tier-features li::before {
+      content: '✓';
+      color: var(--deep-olive);
+      font-weight: bold;
+    }
+
+    /* Section 4: 5-Step Custom Order Process */
+    .process-timeline-section {
+      background: var(--natural-cream);
+      padding: 5rem 0;
+    }
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.2rem;
+      position: relative;
+      margin-top: 2rem;
+    }
+    @media (max-width: 900px) {
+      .timeline-steps { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .timeline-step {
+      background: #fff;
+      padding: 1.8rem 1.4rem;
+      border-radius: 16px;
+      border: 1px solid var(--warm-sand);
+      position: relative;
+    }
+    .step-badge {
+      width: 36px;
+      height: 36px;
+      background: var(--charcoal);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .timeline-step h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .timeline-step p {
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Section 5: Pricing Factors & Craft Guide */
+    .pricing-factors-section {
+      background: var(--soft-beige);
+      padding: 5rem 0;
+    }
+    .factors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+    @media (max-width: 900px) {
+      .factors-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 550px) {
+      .factors-grid { grid-template-columns: 1fr; }
+    }
+    .factor-item {
+      background: #fff;
+      padding: 1.8rem;
+      border-radius: 14px;
+      border-left: 4px solid var(--terracotta);
+    }
+    .factor-item h4 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+    }
+    .factor-item p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* Section 6: Request Quote Form & CTA */
+    .quote-cta-section {
+      background: var(--charcoal);
+      color: #fff;
+      padding: 5rem 0;
+    }
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    @media (max-width: 850px) {
+      .quote-grid { grid-template-columns: 1fr; }
+    }
+    .quote-form-panel {
+      background: #2a2521;
+      padding: 2.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .quote-form-panel input,
+    .quote-form-panel select,
+    .quote-form-panel textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: #1e1a17;
+      color: #fff;
+      font-family: var(--font-body);
+      outline: none;
+    }
+    .quote-form-panel input:focus,
+    .quote-form-panel select:focus,
+    .quote-form-panel textarea:focus {
+      border-color: var(--antique-gold);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-dropdown"><a href="index.html" class="nav-link">Home ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html">Home 1 — Handicraft Store</a></li>
+          <li><a href="home2.html">Home 2 — Artisan Collections</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html" class="nav-link">About Us</a></li>
+      <li><a href="services.html" class="nav-link">Shop Collections</a></li>
+      <li><a href="blog.html" class="nav-link">Artisan Stories</a></li>
+      <li><a href="pricing.html" class="nav-link active">Custom Orders</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL">⇄</button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <span class="badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="badge" id="cartCount">0</span>
+      </button>
+      <a href="login.html" class="btn-nav-login">Login</a>
+      <a href="services.html" class="btn-nav-cta">Shop Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===== SECTION 1: PRICING HERO ===== -->
+<section class="pricing-hero section-padding">
+  <div class="pricing-hero-bg"></div>
+  <div class="container">
+    <div class="pricing-hero-content reveal-up">
+      <span class="section-eyebrow" style="color:var(--antique-gold);">Craft Commissions &amp; Gifting</span>
+      <h1>Transparent Artisan<br><em>Pricing &amp; Custom Orders</em></h1>
+      <p>Whether you require a one-of-a-kind bespoke centerpiece for your home, hospitality fit-outs, or curated artisan hampers for corporate gifting, our craft pricing is fair, direct, and ethical.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: CUSTOM HANDMADE ORDERS ===== -->
+<section class="custom-tiers-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Bespoke Living</span>
+      <h2 class="section-title">Custom Artisan<br><em>Order Disciplines</em></h2>
+      <p class="section-subtitle">We collaborate with regional master crafters to accommodate custom proportions, hues, and motifs.</p>
+    </div>
+
+    <div class="craft-cards-grid reveal-up">
+      <div class="craft-tier-card">
+        <div>
+          <span class="craft-icon">🏺</span>
+          <h3>Ceramics &amp; Pottery</h3>
+          <p>Wheel-thrown vessels, dinnerware sets, and planter suites with personalized mineral glazes and engraved seals.</p>
+        </div>
+        <div class="craft-meta">
+          <span>Starting from ₹2,500</span><br>
+          <small>Lead time: 2–3 weeks</small>
+        </div>
+      </div>
+
+      <div class="craft-tier-card">
+        <div>
+          <span class="craft-icon">🧶</span>
+          <h3>Handloom Textiles</h3>
+          <p>Custom-dimension jute dhurries, organic indigo throws, and block-printed furnishings dyed with botanical pigments.</p>
+        </div>
+        <div class="craft-meta">
+          <span>Starting from ₹4,000</span><br>
+          <small>Lead time: 3–4 weeks</small>
+        </div>
+      </div>
+
+      <div class="craft-tier-card">
+        <div>
+          <span class="craft-icon">🪵</span>
+          <h3>Sculptural Woodcraft</h3>
+          <p>Hand-carved mango wood, teak wall screens, and bespoke serving trays sealed with food-grade beeswax.</p>
+        </div>
+        <div class="craft-meta">
+          <span>Starting from ₹3,200</span><br>
+          <small>Lead time: 2–4 weeks</small>
+        </div>
+      </div>
+
+      <div class="craft-tier-card">
+        <div>
+          <span class="craft-icon">🪔</span>
+          <h3>Brass &amp; Metal Art</h3>
+          <p>Ancient Dhokra lost-wax castings, hand-beaten copper mirrors, and architectural brass lighting fixtures.</p>
+        </div>
+        <div class="craft-meta">
+          <span>Starting from ₹3,800</span><br>
+          <small>Lead time: 3–5 weeks</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: BULK & WHOLESALE TIERS ===== -->
+<section class="wholesale-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Trade &amp; Corporate Gifting</span>
+      <h2 class="section-title">Bulk &amp; Wholesale<br><em>Partner Tiers</em></h2>
+      <p class="section-subtitle">Designed for architects, interior stylists, festive corporate gifting, and luxury boutique hotels.</p>
+    </div>
+
+    <div class="tier-cards-grid reveal-up">
+      <div class="tier-card">
+        <div>
+          <h3 class="tier-title">Studio Tier</h3>
+          <div class="tier-volume">10 – 25 Units</div>
+          <div class="tier-discount">15% Off <small>/ retail</small></div>
+          <ul class="tier-features">
+            <li>Mix &amp; match standard catalogue</li>
+            <li>Custom hand-stamped logo tags</li>
+            <li>Standard eco-friendly packaging</li>
+            <li>Single address dispatch</li>
+          </ul>
+        </div>
+        <a href="#quote-section" class="btn-secondary" style="text-align:center;">Enquire Studio</a>
+      </div>
+
+      <div class="tier-card featured">
+        <span class="tier-badge">Most Popular</span>
+        <div>
+          <h3 class="tier-title">Boutique Tier</h3>
+          <div class="tier-volume">26 – 50 Units</div>
+          <div class="tier-discount">25% Off <small>/ retail</small></div>
+          <ul class="tier-features">
+            <li>Glaze &amp; textile colour customization</li>
+            <li>Custom engraved brass or wood plate</li>
+            <li>Bespoke rigid gift box options</li>
+            <li>Split delivery to up to 3 locations</li>
+            <li>Dedicated artisan project manager</li>
+          </ul>
+        </div>
+        <a href="#quote-section" class="btn-primary" style="text-align:center;">Enquire Boutique</a>
+      </div>
+
+      <div class="tier-card">
+        <div>
+          <h3 class="tier-title">Heritage Tier</h3>
+          <div class="tier-volume">51 – 150 Units</div>
+          <div class="tier-discount">35% Off <small>/ retail</small></div>
+          <ul class="tier-features">
+            <li>Full bespoke mold &amp; pattern creation</li>
+            <li>Artisan story booklet with each item</li>
+            <li>Custom branded wax seal packaging</li>
+            <li>Multi-destination domestic shipping</li>
+            <li>Sample prototype before production</li>
+          </ul>
+        </div>
+        <a href="#quote-section" class="btn-secondary" style="text-align:center;">Enquire Heritage</a>
+      </div>
+
+      <div class="tier-card">
+        <div>
+          <h3 class="tier-title">Institutional Tier</h3>
+          <div class="tier-volume">150+ Units / Hospitality</div>
+          <div class="tier-discount">Custom <small>/ contract</small></div>
+          <ul class="tier-features">
+            <li>Exclusive cluster craftsmanship booking</li>
+            <li>Direct guild master supervision</li>
+            <li>Global freight &amp; customs management</li>
+            <li>Custom sustainable shipping crates</li>
+            <li>Staggered delivery milestones</li>
+          </ul>
+        </div>
+        <a href="#quote-section" class="btn-secondary" style="text-align:center;">Contact Commercial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: CUSTOM ORDER PROCESS ===== -->
+<section class="process-timeline-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">How It Works</span>
+      <h2 class="section-title">The 5-Step Bespoke<br><em>Commission Process</em></h2>
+      <p class="section-subtitle">From conceptual sketch to master kiln firing, each custom piece follows a thoughtful rhythm.</p>
+    </div>
+
+    <div class="timeline-steps reveal-up">
+      <div class="timeline-step">
+        <div class="step-badge">1</div>
+        <h4>Consultation</h4>
+        <p>You share your aesthetic vision, room dimensions, preferred colourways, and deadline expectations.</p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="step-badge">2</div>
+        <h4>Artisan Pairing</h4>
+        <p>We match your commission with the master craftsman best suited to the material and technique.</p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="step-badge">3</div>
+        <h4>Prototyping</h4>
+        <p>A miniature prototype, colour swatch, or digital preview is shared with you for feedback and approval.</p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="step-badge">4</div>
+        <h4>Slow Crafting</h4>
+        <p>The artisan completes the piece by hand. We share studio progress photos as it dries and fires.</p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="step-badge">5</div>
+        <h4>Safe Delivery</h4>
+        <p>Rigorous quality inspection, certificate of authenticity issuance, and plastic-free secure courier delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: PRICING FACTORS ===== -->
+<section class="pricing-factors-section">
+  <div class="container">
+    <div class="section-header reveal-up">
+      <span class="section-eyebrow">Honest Craft Economics</span>
+      <h2 class="section-title">What Determines Our<br><em>Handmade Prices?</em></h2>
+      <p class="section-subtitle">We believe in transparent pricing that values human dignity, natural ingredients, and time-tested methods.</p>
+    </div>
+
+    <div class="factors-grid reveal-up">
+      <div class="factor-item">
+        <h4>1. Ethical Artisan Wages</h4>
+        <p>Our crafters set their own fair hourly and piece rates, ensuring generational craft sustainability without exploitative middlemen.</p>
+      </div>
+
+      <div class="factor-item">
+        <h4>2. Earth-Friendly Raw Materials</h4>
+        <p>Pure terracotta clay, unbleached cotton, wild harvested jute, virgin brass, and naturally aged fallen timber cost more than synthetic alternatives.</p>
+      </div>
+
+      <div class="factor-item">
+        <h4>3. Time &amp; Firing Cycles</h4>
+        <p>A single double-fired ceramic piece requires up to 48 hours in a wood kiln. Handloom rugs require 10–14 days of continuous weaving.</p>
+      </div>
+
+      <div class="factor-item">
+        <h4>4. Uniqueness &amp; Zero Mass-Production</h4>
+        <p>No high-speed hydraulic stamping presses or chemical vats. Every item reflects the singular hand signature of its creator.</p>
+      </div>
+
+      <div class="factor-item">
+        <h4>5. Zero-Waste Studio Packaging</h4>
+        <p>We invest in biodegradable honeycomb kraft paper, cotton ribbons, and durable multi-wall shipping boxes to safeguard delicate ceramics.</p>
+      </div>
+
+      <div class="factor-item">
+        <h4>6. Community Reinvestment</h4>
+        <p>A fixed percentage of proceeds funds clean water access, kiln maintenance, and apprentice stipends across artisan clusters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: REQUEST A QUOTE FORM & CTA ===== -->
+<section class="quote-cta-section" id="quote-section">
+  <div class="container">
+    <div class="quote-grid">
+      <div class="reveal-up">
+        <span class="section-eyebrow" style="color:var(--antique-gold);">Let's Create Together</span>
+        <h2 class="section-title" style="text-align:left;color:#fff;">Request a Custom Order<br><em style="color:var(--warm-sand);">or Wholesale Estimate</em></h2>
+        <p style="color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:1.5rem;">Tell us about your project or bulk order. Our craft coordinator will respond within 24 hours with material suggestions, sample timelines, and an itemized quote.</p>
+        
+        <div style="background:rgba(255,255,255,0.06);padding:1.4rem;border-radius:12px;margin-bottom:1.5rem;border-left:3px solid var(--terracotta);">
+          <p style="color:var(--antique-gold);font-weight:700;margin-bottom:0.2rem;">DIRECT TRADE DESK</p>
+          <p style="font-size:0.95rem;color:#fff;">Email: <a href="mailto:wholesale@auradecor.in" style="color:var(--warm-sand);text-decoration:none;">wholesale@auradecor.in</a></p>
+          <p style="font-size:0.95rem;color:#fff;">Phone: <a href="tel:+919876543210" style="color:var(--warm-sand);text-decoration:none;">+91 98765 43210</a> (Wholesale Extension 2)</p>
+        </div>
+      </div>
+
+      <div class="quote-form-panel reveal-right">
+        <form id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+          <input type="text" placeholder="Your Name or Organisation *" required>
+          <input type="email" placeholder="Email Address *" required>
+          <input type="tel" placeholder="Phone / WhatsApp Number">
+          <select required>
+            <option value="" disabled selected>Select Commission Discipline *</option>
+            <option value="Bespoke Ceramics">Bespoke Ceramics &amp; Pottery</option>
+            <option value="Handloom Textiles">Custom Handloom Textiles</option>
+            <option value="Carved Woodcraft">Carved Woodcraft &amp; Furniture</option>
+            <option value="Brass & Metal">Brass, Copper &amp; Dhokra Art</option>
+            <option value="Bulk Corporate Gifting">Bulk Corporate Gifting (15+ units)</option>
+            <option value="Hospitality / Interior Design">Hospitality / Interior Design Project</option>
+          </select>
+          <input type="number" placeholder="Estimated Quantity (e.g. 1 or 50)" min="1">
+          <textarea rows="3" placeholder="Brief project description, desired dimensions, or budget range..." required></textarea>
+          <button type="submit" class="btn-primary" style="width:100%;padding:1rem;">Request Personalized Estimate →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+        <p class="footer-tagline">Celebrating the beauty of handmade — connecting artisans with homes that appreciate authenticity.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram" class="social-link">📷</a>
+          <a href="#" aria-label="Pinterest" class="social-link">📌</a>
+          <a href="#" aria-label="Facebook" class="social-link">📘</a>
+          <a href="#" aria-label="WhatsApp" class="social-link">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Collections</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Home Decor</a></li>
+          <li><a href="services.html">Pottery & Ceramics</a></li>
+          <li><a href="services.html">Handmade Textiles</a></li>
+          <li><a href="services.html">Wooden Crafts</a></li>
+          <li><a href="services.html">Wall Art</a></li>
+          <li><a href="services.html">Handmade Gifts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Pages</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="blog.html">Artisan Stories</a></li>
+          <li><a href="pricing.html">Custom Orders</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="login.html">Login / Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Contact</h4>
+        <address class="footer-address">
+          <p>12, Artisan Lane, Near City Palace<br>Jaipur, Rajasthan 302001 <em>(sample)</em></p>
+          <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p><a href="mailto:hello@auradecor.in">hello@auradecor.in</a></p>
+          <p>Mon–Sat: 10AM–7PM IST</p>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with ♥ in Jaipur.</p>
+      <div class="footer-bottom-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Use</a>
+        <a href="coming-soon.html">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-header"><h3>Your Cart</h3><button class="cart-close-btn" id="cartClose">✕</button></div>
+  <div class="cart-items" id="cartItems"><p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping →</a></p></div>
+  <div class="cart-footer-panel" id="cartFooterPanel" style="display:none;">
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
+    <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
+    <p class="cart-demo-note">⚠ Demo store — no real payments processed</p>
+  </div>
+</aside>
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script src="assets/js/products-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+function handleQuoteSubmit(e) {
+  e.preventDefault();
+  alert('Thank you for requesting an artisan quote! Our craft liaison will be in touch within 24 hours.');
+  e.target.reset();
+}
+</script>
+</body>
+</html>
