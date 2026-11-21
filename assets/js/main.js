@@ -6,6 +6,9 @@
 
 'use strict';
 
+/** Base path for generated page links (root index vs. pages/ folder). */
+const PAGES_BASE = window.location.pathname.replace(/\\/g, '/').includes('/pages/') ? '' : 'pages/';
+
 /* ============================================================
    1. PRODUCT DATA
    ============================================================ */
@@ -923,7 +926,7 @@ function renderCart() {
       <div class="cart-empty">
         <i class="fas fa-shopping-bag"></i>
         <p>Your cart is empty</p>
-        <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+        <a href="${PAGES_BASE}services.html" class="btn btn-primary">Continue Shopping</a>
       </div>`;
     if (cartSubtotalEl) cartSubtotalEl.textContent = '₹0';
     return;
@@ -1235,7 +1238,7 @@ function renderProducts(list, containerId) {
 
     return `
       <article class="product-card reveal" data-id="${p.id}">
-        <a href="product-detail.html?id=${p.id}" class="product-card__image-link">
+        <a href="${PAGES_BASE}service-details.html?id=${p.id}" class="product-card__image-link">
           <img src="${p.image}" alt="${p.name}" loading="lazy" class="product-card__img">
           ${p.isNew ? '<span class="badge badge-new">New</span>' : ''}
           ${p.isBestseller && !p.isNew ? '<span class="badge badge-bestseller">Bestseller</span>' : ''}
@@ -1245,7 +1248,7 @@ function renderProducts(list, containerId) {
         <div class="product-card__body">
           <p class="product-card__category">${p.category}</p>
           <h3 class="product-card__name">
-            <a href="product-detail.html?id=${p.id}">${p.name}</a>
+            <a href="${PAGES_BASE}service-details.html?id=${p.id}">${p.name}</a>
           </h3>
           <div class="product-card__rating" aria-label="${p.rating} out of 5 stars">
             ${stars}
@@ -2462,7 +2465,7 @@ function initSearchOverlay() {
       }
 
       results.innerHTML = hits.map(p => `
-        <a class="search-result-item" href="product-detail.html?id=${p.id}">
+        <a class="search-result-item" href="${PAGES_BASE}service-details.html?id=${p.id}">
           <img src="${p.image}" alt="${p.name}" loading="lazy">
           <div>
             <p class="search-result-name">${p.name}</p>
@@ -2519,7 +2522,7 @@ function initQuickView() {
             <button class="btn btn-primary" onclick="addToCart(${product.id}); closeQuickView();">
               <i class="fas fa-shopping-bag"></i> Add to Cart
             </button>
-            <a href="product-detail.html?id=${product.id}" class="btn btn-outline">
+            <a href="${PAGES_BASE}service-details.html?id=${product.id}" class="btn btn-outline">
               View Full Details
             </a>
           </div>
