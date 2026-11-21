@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <style>
@@ -90,7 +91,7 @@
     .custom-features{list-style:none;padding:0;margin:1.5rem 0;}
     .custom-features li{padding:.6rem 0;border-bottom:1px solid var(--warm-sand);display:flex;align-items:center;gap:.8rem;font-size:.95rem;color:var(--charcoal);}
     .custom-features li:last-child{border-bottom:none;}
-    .custom-features li::before{content:'✦';color:var(--terracotta);font-size:.7rem;}
+    .custom-features li::before{content:'\f005';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--terracotta);font-size:.7rem;}
     .custom-img-wrap{border-radius:20px;overflow:hidden;aspect-ratio:1.2;position:relative;}
     .custom-img-wrap img{width:100%;height:100%;object-fit:cover;}
     /* Shop CTA */
@@ -107,12 +108,12 @@
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
     <a href="index.html" class="logo">
-      <span class="logo-mark">✦</span>
+      <span class="logo-mark"><i class="fas fa-star"></i></span>
       <span class="logo-text">AuraDecor</span>
     </a>
     <ul class="nav-links" id="navLinks">
       <li class="has-dropdown">
-        <a href="index.html" class="nav-link">Home ▾</a>
+        <a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
           <li><a href="index.html">Home 1 — Handicraft Store</a></li>
           <li><a href="home2.html">Home 2 — Artisan Collections</a></li>
@@ -125,8 +126,8 @@
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
     <div class="navbar-actions">
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
-      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL">⇄</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL"><i class="fas fa-exchange-alt"></i></button>
       <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
         <span class="badge" id="wishlistCount">0</span>
@@ -149,7 +150,7 @@
   <div class="shop-hero-bg"></div>
   <div class="container">
     <div class="shop-hero-content reveal-up">
-      <p class="shop-hero-eyebrow">✦ Handcrafted for Your Home</p>
+      <p class="shop-hero-eyebrow"><i class="fas fa-star"></i> Handcrafted for Your Home</p>
       <h1>Discover Handmade<br><em>Treasures for Your Home</em></h1>
       <p>Explore our curated collections of authentic, artisan-crafted home decor — each piece a unique expression of traditional skill and contemporary beauty.</p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;">
@@ -175,7 +176,7 @@
         <div class="cat-card-body">
           <h3>Home Decor</h3>
           <p>Handcrafted accents for every room</p>
-          <span class="cat-card-link">Explore →</span>
+          <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="cat-card" data-cat="Pottery" onclick="filterByCategory('Pottery',this)" tabindex="0" role="button" aria-label="Shop Pottery">
@@ -184,7 +185,7 @@
         <div class="cat-card-body">
           <h3>Pottery & Ceramics</h3>
           <p>Wheel-thrown & hand-built artisan pottery</p>
-          <span class="cat-card-link">Explore →</span>
+          <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="cat-card" data-cat="Textiles" onclick="filterByCategory('Textiles',this)" tabindex="0" role="button" aria-label="Shop Textiles">
@@ -193,7 +194,7 @@
         <div class="cat-card-body">
           <h3>Handmade Textiles</h3>
           <p>Handloom rugs, throws & woven fabrics</p>
-          <span class="cat-card-link">Explore →</span>
+          <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="cat-card" data-cat="Wooden" onclick="filterByCategory('Wooden',this)" tabindex="0" role="button" aria-label="Shop Wooden Crafts">
@@ -202,7 +203,7 @@
         <div class="cat-card-body">
           <h3>Wooden Handicrafts</h3>
           <p>Carved bowls, sculptures & furniture accents</p>
-          <span class="cat-card-link">Explore →</span>
+          <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="cat-card" data-cat="Wall Art" onclick="filterByCategory('Wall Art',this)" tabindex="0" role="button" aria-label="Shop Wall Art">
@@ -211,7 +212,7 @@
         <div class="cat-card-body">
           <h3>Wall Art & Hangings</h3>
           <p>Macramé, paintings & decorative wall pieces</p>
-          <span class="cat-card-link">Explore →</span>
+          <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="cat-card" data-cat="Lighting" onclick="filterByCategory('Lighting',this)" tabindex="0" role="button" aria-label="Shop Lighting">
@@ -220,7 +221,7 @@
         <div class="cat-card-body">
           <h3>Handmade Lighting</h3>
           <p>Rattan lamps, lanterns & candle holders</p>
-          <span class="cat-card-link">Explore →</span>
+          <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="cat-card" data-cat="Metal" onclick="filterByCategory('Metal',this)" tabindex="0" role="button" aria-label="Shop Metal Crafts">
@@ -229,7 +230,7 @@
         <div class="cat-card-body">
           <h3>Metal Crafts</h3>
           <p>Brass, copper & dhokra metalwork</p>
-          <span class="cat-card-link">Explore →</span>
+          <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="cat-card" data-cat="Accessories" onclick="filterByCategory('Accessories',this)" tabindex="0" role="button" aria-label="Shop Accessories">
@@ -238,7 +239,7 @@
         <div class="cat-card-body">
           <h3>Decorative Accessories</h3>
           <p>Incense holders, baskets & artisan objects</p>
-          <span class="cat-card-link">Explore →</span>
+          <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="cat-card" data-cat="Tableware" onclick="filterByCategory('Tableware',this)" tabindex="0" role="button" aria-label="Shop Tableware">
@@ -247,7 +248,7 @@
         <div class="cat-card-body">
           <h3>Tableware & Kitchen</h3>
           <p>Handmade mugs, bowls & serving pieces</p>
-          <span class="cat-card-link">Explore →</span>
+          <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="cat-card" data-cat="Gifts" onclick="filterByCategory('Gifts',this)" tabindex="0" role="button" aria-label="Shop Gifts">
@@ -256,7 +257,7 @@
         <div class="cat-card-body">
           <h3>Handmade Gifts</h3>
           <p>Curated gifting for every occasion</p>
-          <span class="cat-card-link">Explore →</span>
+          <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
     </div>
@@ -323,7 +324,7 @@
         <div class="curated-card-content">
           <h3>Earthy Living</h3>
           <p>Warm terracotta tones & organic textures</p>
-          <span class="curated-link">Shop Collection →</span>
+          <span class="curated-link">Shop Collection <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="curated-card" onclick="filterByCategory('Pottery',null)">
@@ -332,7 +333,7 @@
         <div class="curated-card-content">
           <h3>Artisan Ceramics</h3>
           <p>Wheel-thrown beauty from master potters</p>
-          <span class="curated-link">Shop Collection →</span>
+          <span class="curated-link">Shop Collection <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="curated-card" onclick="filterByCategory('Textiles',null)">
@@ -341,7 +342,7 @@
         <div class="curated-card-content">
           <h3>Natural Textures</h3>
           <p>Handloom weaves in earthy palettes</p>
-          <span class="curated-link">Shop Collection →</span>
+          <span class="curated-link">Shop Collection <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="curated-card" onclick="filterByCategory('Gifts',null)">
@@ -350,7 +351,7 @@
         <div class="curated-card-content">
           <h3>Festive Decor</h3>
           <p>Handcrafted gifts for every celebration</p>
-          <span class="curated-link">Shop Collection →</span>
+          <span class="curated-link">Shop Collection <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="curated-card" onclick="filterByCategory('Accessories',null)">
@@ -359,7 +360,7 @@
         <div class="curated-card-content">
           <h3>Handmade Gifts</h3>
           <p>Meaningful pieces that tell a story</p>
-          <span class="curated-link">Shop Collection →</span>
+          <span class="curated-link">Shop Collection <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
       <div class="curated-card" onclick="filterByCategory('Wall Art',null)">
@@ -368,7 +369,7 @@
         <div class="curated-card-content">
           <h3>Contemporary Folk Art</h3>
           <p>Traditional motifs in modern compositions</p>
-          <span class="curated-link">Shop Collection →</span>
+          <span class="curated-link">Shop Collection <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
     </div>
@@ -426,13 +427,13 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo footer-logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+        <a href="index.html" class="logo footer-logo"><span class="logo-mark"><i class="fas fa-star"></i></span><span class="logo-text">AuraDecor</span></a>
         <p class="footer-tagline">Celebrating the beauty of handmade — connecting artisans with homes that appreciate authenticity.</p>
         <div class="footer-socials">
-          <a href="#" aria-label="Instagram" class="social-link">📷</a>
-          <a href="#" aria-label="Pinterest" class="social-link">📌</a>
-          <a href="#" aria-label="Facebook" class="social-link">📘</a>
-          <a href="#" aria-label="WhatsApp" class="social-link">💬</a>
+          <a href="#" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest" class="social-link"><i class="fab fa-pinterest"></i></a>
+          <a href="#" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -468,7 +469,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with ♥ in Jaipur.</p>
+      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with <i class="fas fa-heart"></i> in Jaipur.</p>
       <div class="footer-bottom-links">
         <a href="404.html">Privacy Policy</a>
         <a href="404.html">Terms of Use</a>
@@ -483,19 +484,19 @@
 <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
   <div class="cart-header">
     <h3>Your Cart</h3>
-    <button class="cart-close-btn" id="cartClose">✕</button>
+    <button class="cart-close-btn" id="cartClose"><i class="fas fa-xmark"></i></button>
   </div>
   <div class="cart-items" id="cartItems">
-    <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping →</a></p>
+    <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p>
   </div>
   <div class="cart-footer-panel" id="cartFooterPanel" style="display:none;">
     <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
     <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
-    <p class="cart-demo-note">⚠ Demo store — no real payments processed</p>
+    <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
   </div>
 </aside>
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
 <script src="assets/js/products-data.js"></script>
 <script src="assets/js/main.js"></script>
@@ -609,7 +610,7 @@ function renderGrid(){
       <div class="product-card-img">
         <img src="${p.img}" alt="${p.name}" loading="lazy">
         ${badgeHTML}${newBadge}
-        <button class="wishlist-btn${inW?' active':''}" onclick="handleWishlist(${p.id},this)" aria-label="Wishlist ${p.name}">${inW?'♥':'♡'}</button>
+        <button class="wishlist-btn${inW?' active':''}" onclick="handleWishlist(${p.id},this)" aria-label="Wishlist ${p.name}">${inW?'<i class="fas fa-heart"></i>':'<i class="far fa-heart"></i>'}</button>
       </div>
       <div class="product-card-body">
         <p class="product-category">${p.cat}</p>
@@ -627,7 +628,7 @@ function renderGrid(){
 
 function handleWishlist(id,btn){
   const added=toggleWishlistItem(id);
-  btn.textContent=added?'♥':'♡';
+  btn.innerHTML=added?'<i class="fas fa-heart"></i>':'<i class="far fa-heart"></i>';
   btn.classList.toggle('active',added);
   showToastShop(added?'Added to wishlist!':'Removed from wishlist');
 }

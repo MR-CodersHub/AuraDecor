@@ -6,7 +6,7 @@ Built entirely using **pure HTML5, CSS3, and Vanilla JavaScript (ES6)** with zer
 
 ---
 
-## ✦ Exact 12-Page Architecture
+## Exact 12-Page Architecture
 
 Every public-facing page contains **exactly 6 meaningful content sections** (excluding the persistent navigation header and footer):
 
@@ -108,7 +108,7 @@ Every public-facing page contains **exactly 6 meaningful content sections** (exc
 
 ---
 
-## ✦ Shared Assets & Architectural Highlights
+## Shared Assets & Architectural Highlights
 
 - [style.css](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/assets/css/style.css): Full typography scale, CSS custom properties, responsive grids, buttons, badges, modals, and design tokens.
 - [responsive.css](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/assets/css/responsive.css): Granular breakpoint overrides for 1200px, 992px, 768px, and 480px viewports.
@@ -123,7 +123,7 @@ Every public-facing page contains **exactly 6 meaningful content sections** (exc
 
 ---
 
-## ✦ Brand Identity & Palette
+## Brand Identity & Palette
 
 - **Terracotta**: `#B9684E`
 - **Deep Olive**: `#4D5940`

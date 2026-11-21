@@ -784,7 +784,7 @@ function initMobileMenu() {
     link.addEventListener('click', (e) => {
       // If it's a dropdown toggle on mobile screen
       if (link.parentElement.classList.contains('has-dropdown') && window.innerWidth <= 1024) {
-        // If clicking the text "Home ▾", toggle the dropdown menu
+        // If clicking the "Home" dropdown label, toggle the dropdown menu
         const dropdown = link.parentElement.querySelector('.dropdown-menu');
         if (dropdown && e.target === link) {
           e.preventDefault();
@@ -2279,7 +2279,7 @@ function initCountdown(targetDate) {
     if (diff <= 0) {
       clearInterval(countdownInterval);
       document.querySelectorAll('.countdown').forEach(el => {
-        el.innerHTML = '<p class="countdown-ended">We\'re Live! 🎉</p>';
+        el.innerHTML = '<p class="countdown-ended">We\'re Live! <i class="fas fa-gifts"></i></p>';
       });
     }
   };

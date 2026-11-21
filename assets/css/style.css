@@ -7000,3 +7000,9 @@ select.form-control {
 /* ============================================================
    END OF AuraDecor style.css
    ============================================================ */
+
+
+/* Font Awesome icon alignment */
+i.fas, i.far, i.fab { line-height: inherit; }
+.icon-btn i, .back-to-top i { font-size: 1.15rem; }
+.social-link i { font-size: 1rem; }

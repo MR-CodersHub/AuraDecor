@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <style>
@@ -184,9 +185,10 @@
       gap: 0.6rem;
     }
     .tier-features li::before {
-      content: '✓';
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
       color: var(--deep-olive);
-      font-weight: bold;
     }
 
     /* Section 4: 5-Step Custom Order Process */
@@ -316,9 +318,9 @@
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
-    <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+    <a href="index.html" class="logo"><span class="logo-mark"><i class="fas fa-star"></i></span><span class="logo-text">AuraDecor</span></a>
     <ul class="nav-links" id="navLinks">
-      <li class="has-dropdown"><a href="index.html" class="nav-link">Home ▾</a>
+      <li class="has-dropdown"><a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
           <li><a href="index.html">Home 1 — Handicraft Store</a></li>
           <li><a href="home2.html">Home 2 — Artisan Collections</a></li>
@@ -331,8 +333,8 @@
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
     <div class="navbar-actions">
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
-      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL">⇄</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL"><i class="fas fa-exchange-alt"></i></button>
       <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
         <span class="badge" id="wishlistCount">0</span>
@@ -374,7 +376,7 @@
     <div class="craft-cards-grid reveal-up">
       <div class="craft-tier-card">
         <div>
-          <span class="craft-icon">🏺</span>
+          <span class="craft-icon"><i class="fas fa-jug"></i></span>
           <h3>Ceramics &amp; Pottery</h3>
           <p>Wheel-thrown vessels, dinnerware sets, and planter suites with personalized mineral glazes and engraved seals.</p>
         </div>
@@ -386,7 +388,7 @@
 
       <div class="craft-tier-card">
         <div>
-          <span class="craft-icon">🧶</span>
+          <span class="craft-icon"><i class="fas fa-layer-group"></i></span>
           <h3>Handloom Textiles</h3>
           <p>Custom-dimension jute dhurries, organic indigo throws, and block-printed furnishings dyed with botanical pigments.</p>
         </div>
@@ -398,7 +400,7 @@
 
       <div class="craft-tier-card">
         <div>
-          <span class="craft-icon">🪵</span>
+          <span class="craft-icon"><i class="fas fa-tree"></i></span>
           <h3>Sculptural Woodcraft</h3>
           <p>Hand-carved mango wood, teak wall screens, and bespoke serving trays sealed with food-grade beeswax.</p>
         </div>
@@ -410,7 +412,7 @@
 
       <div class="craft-tier-card">
         <div>
-          <span class="craft-icon">🪔</span>
+          <span class="craft-icon"><i class="fas fa-fire"></i></span>
           <h3>Brass &amp; Metal Art</h3>
           <p>Ancient Dhokra lost-wax castings, hand-beaten copper mirrors, and architectural brass lighting fixtures.</p>
         </div>
@@ -618,7 +620,7 @@
           </select>
           <input type="number" placeholder="Estimated Quantity (e.g. 1 or 50)" min="1">
           <textarea rows="3" placeholder="Brief project description, desired dimensions, or budget range..." required></textarea>
-          <button type="submit" class="btn-primary" style="width:100%;padding:1rem;">Request Personalized Estimate →</button>
+          <button type="submit" class="btn-primary" style="width:100%;padding:1rem;">Request Personalized Estimate <i class="fas fa-arrow-right"></i></button>
         </form>
       </div>
     </div>
@@ -632,13 +634,13 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo footer-logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+        <a href="index.html" class="logo footer-logo"><span class="logo-mark"><i class="fas fa-star"></i></span><span class="logo-text">AuraDecor</span></a>
         <p class="footer-tagline">Celebrating the beauty of handmade — connecting artisans with homes that appreciate authenticity.</p>
         <div class="footer-socials">
-          <a href="#" aria-label="Instagram" class="social-link">📷</a>
-          <a href="#" aria-label="Pinterest" class="social-link">📌</a>
-          <a href="#" aria-label="Facebook" class="social-link">📘</a>
-          <a href="#" aria-label="WhatsApp" class="social-link">💬</a>
+          <a href="#" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest" class="social-link"><i class="fab fa-pinterest"></i></a>
+          <a href="#" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -674,7 +676,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with ♥ in Jaipur.</p>
+      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with <i class="fas fa-heart"></i> in Jaipur.</p>
       <div class="footer-bottom-links">
         <a href="404.html">Privacy Policy</a>
         <a href="404.html">Terms of Use</a>
@@ -687,16 +689,16 @@
 <!-- Cart Drawer -->
 <div class="cart-overlay" id="cartOverlay"></div>
 <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
-  <div class="cart-header"><h3>Your Cart</h3><button class="cart-close-btn" id="cartClose">✕</button></div>
-  <div class="cart-items" id="cartItems"><p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping →</a></p></div>
+  <div class="cart-header"><h3>Your Cart</h3><button class="cart-close-btn" id="cartClose"><i class="fas fa-xmark"></i></button></div>
+  <div class="cart-items" id="cartItems"><p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p></div>
   <div class="cart-footer-panel" id="cartFooterPanel" style="display:none;">
     <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
     <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
-    <p class="cart-demo-note">⚠ Demo store — no real payments processed</p>
+    <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
   </div>
 </aside>
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
 <script src="assets/js/products-data.js"></script>
 <script src="assets/js/main.js"></script>

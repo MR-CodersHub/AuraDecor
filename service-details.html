@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <style>
@@ -101,9 +102,9 @@
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
-    <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+    <a href="index.html" class="logo"><span class="logo-mark"><i class="fas fa-star"></i></span><span class="logo-text">AuraDecor</span></a>
     <ul class="nav-links" id="navLinks">
-      <li class="has-dropdown"><a href="index.html" class="nav-link">Home ▾</a>
+      <li class="has-dropdown"><a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
           <li><a href="index.html">Home 1 — Handicraft Store</a></li>
           <li><a href="home2.html">Home 2 — Artisan Collections</a></li>
@@ -116,8 +117,8 @@
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
     <div class="navbar-actions">
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
-      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL">⇄</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL"><i class="fas fa-exchange-alt"></i></button>
       <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
         <span class="badge" id="wishlistCount">0</span>
@@ -155,7 +156,7 @@
       <div class="pd-gallery reveal-up">
         <div class="pd-main-img" id="mainImgWrap">
           <img id="mainImg" src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&auto=format&fit=crop" alt="Terracotta Sunrise Vase — main view">
-          <button class="pd-zoom-btn" onclick="openLightbox()" aria-label="Zoom image">🔍</button>
+          <button class="pd-zoom-btn" onclick="openLightbox()" aria-label="Zoom image"><i class="fas fa-magnifying-glass"></i></button>
         </div>
         <div class="pd-thumbs">
           <div class="pd-thumb active" onclick="switchImg(this,'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=700&auto=format&fit=crop','Terracotta Sunrise Vase')">
@@ -175,10 +176,10 @@
 
       <!-- Info -->
       <div class="reveal-up" style="--delay:.15s">
-        <p class="pd-category-tag">✦ Pottery & Ceramics</p>
+        <p class="pd-category-tag"><i class="fas fa-star"></i> Pottery & Ceramics</p>
         <h1 class="pd-title">Terracotta Sunrise Vase</h1>
         <div class="pd-rating">
-          <span class="pd-stars">★★★★★</span>
+          <span class="pd-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
           <span class="pd-rating-count">(47 reviews) · In Stock</span>
         </div>
         <div class="pd-price-row">
@@ -196,8 +197,8 @@
           </div>
         </div>
         <div class="pd-actions">
-          <button class="pd-btn-cart" onclick="addProductToCart()">🛒 Add to Cart</button>
-          <button class="pd-btn-wish" id="wishBtn" onclick="toggleWish()" aria-label="Add to wishlist">♡</button>
+          <button class="pd-btn-cart" onclick="addProductToCart()"><i class="fas fa-cart-shopping"></i> Add to Cart</button>
+          <button class="pd-btn-wish" id="wishBtn" onclick="toggleWish()" aria-label="Add to wishlist"><i class="far fa-heart"></i></button>
         </div>
         <div class="pd-meta-tags">
           <span class="pd-tag">Handmade</span>
@@ -299,22 +300,22 @@
     <div class="pd-tab-content reveal-up" id="tab-care">
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;">
         <div style="padding:1.5rem;background:var(--natural-cream);border-radius:14px;">
-          <span style="font-size:2rem;display:block;margin-bottom:.8rem;">🫧</span>
+          <span style="font-size:2rem;display:block;margin-bottom:.8rem;"><i class="fas fa-soap"></i></span>
           <h3 style="font-family:var(--font-heading);font-size:1.1rem;margin-bottom:.5rem;">Cleaning</h3>
           <p style="font-size:.88rem;color:#666;line-height:1.6;">Rinse gently with lukewarm water and a soft cloth. Avoid abrasive scrubbers. For decorative use, simply dust with a dry soft brush. Hand wash only — not dishwasher safe.</p>
         </div>
         <div style="padding:1.5rem;background:var(--natural-cream);border-radius:14px;">
-          <span style="font-size:2rem;display:block;margin-bottom:.8rem;">💧</span>
+          <span style="font-size:2rem;display:block;margin-bottom:.8rem;"><i class="fas fa-droplet"></i></span>
           <h3 style="font-family:var(--font-heading);font-size:1.1rem;margin-bottom:.5rem;">Water Use</h3>
           <p style="font-size:.88rem;color:#666;line-height:1.6;">Safe for fresh flowers with water (interior is glazed). Avoid soaking in water for extended periods as terracotta is naturally porous. Empty and dry after use.</p>
         </div>
         <div style="padding:1.5rem;background:var(--natural-cream);border-radius:14px;">
-          <span style="font-size:2rem;display:block;margin-bottom:.8rem;">☀️</span>
+          <span style="font-size:2rem;display:block;margin-bottom:.8rem;"><i class="fas fa-sun"></i></span>
           <h3 style="font-family:var(--font-heading);font-size:1.1rem;margin-bottom:.5rem;">Display</h3>
           <p style="font-size:.88rem;color:#666;line-height:1.6;">Safe for indoor display in direct sunlight — the terracotta clay will not fade. Avoid placing on surfaces that may stain from moisture seepage through the base.</p>
         </div>
         <div style="padding:1.5rem;background:var(--natural-cream);border-radius:14px;">
-          <span style="font-size:2rem;display:block;margin-bottom:.8rem;">📦</span>
+          <span style="font-size:2rem;display:block;margin-bottom:.8rem;"><i class="fas fa-box"></i></span>
           <h3 style="font-family:var(--font-heading);font-size:1.1rem;margin-bottom:.5rem;">Storage</h3>
           <p style="font-size:.88rem;color:#666;line-height:1.6;">Store upright in a cool, dry place. If storing for long periods, wrap loosely in tissue paper. Avoid extreme temperature changes which may cause micro-cracking.</p>
         </div>
@@ -440,13 +441,13 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo footer-logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+        <a href="index.html" class="logo footer-logo"><span class="logo-mark"><i class="fas fa-star"></i></span><span class="logo-text">AuraDecor</span></a>
         <p class="footer-tagline">Celebrating the beauty of handmade — connecting artisans with homes that appreciate authenticity.</p>
         <div class="footer-socials">
-          <a href="#" aria-label="Instagram" class="social-link">📷</a>
-          <a href="#" aria-label="Pinterest" class="social-link">📌</a>
-          <a href="#" aria-label="Facebook" class="social-link">📘</a>
-          <a href="#" aria-label="WhatsApp" class="social-link">💬</a>
+          <a href="#" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest" class="social-link"><i class="fab fa-pinterest"></i></a>
+          <a href="#" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -482,7 +483,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with ♥ in Jaipur.</p>
+      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with <i class="fas fa-heart"></i> in Jaipur.</p>
       <div class="footer-bottom-links">
         <a href="404.html">Privacy Policy</a>
         <a href="404.html">Terms of Use</a>
@@ -497,26 +498,26 @@
 <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
   <div class="cart-header">
     <h3>Your Cart</h3>
-    <button class="cart-close-btn" id="cartClose">✕</button>
+    <button class="cart-close-btn" id="cartClose"><i class="fas fa-xmark"></i></button>
   </div>
   <div class="cart-items" id="cartItems">
-    <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping →</a></p>
+    <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p>
   </div>
   <div class="cart-footer-panel" id="cartFooterPanel" style="display:none;">
     <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
     <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
-    <p class="cart-demo-note">⚠ Demo store — no real payments processed</p>
+    <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
   </div>
 </aside>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Product image lightbox">
-  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">✕</button>
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox"><i class="fas fa-xmark"></i></button>
   <img id="lightboxImg" src="" alt="Product enlarged view">
 </div>
 
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 <script src="assets/js/products-data.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
@@ -564,7 +565,7 @@ function addProductToCart(){
 function toggleWish(){
   const btn=document.getElementById('wishBtn');
   const active=btn.classList.toggle('active');
-  btn.textContent=active?'♥':'♡';
+  btn.innerHTML=active?'<i class="fas fa-heart"></i>':'<i class="far fa-heart"></i>';
   btn.style.background=active?'var(--terracotta)':'';
   btn.style.color=active?'#fff':'';
   btn.style.borderColor=active?'var(--terracotta)':'';

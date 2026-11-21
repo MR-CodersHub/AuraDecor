@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <style>
@@ -107,9 +108,9 @@
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar" id="navbar">
   <div class="container navbar-inner">
-    <a href="index.html" class="logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+    <a href="index.html" class="logo"><span class="logo-mark"><i class="fas fa-star"></i></span><span class="logo-text">AuraDecor</span></a>
     <ul class="nav-links" id="navLinks">
-      <li class="has-dropdown"><a href="index.html" class="nav-link">Home ▾</a>
+      <li class="has-dropdown"><a href="index.html" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
         <ul class="dropdown-menu">
           <li><a href="index.html">Home 1 — Handicraft Store</a></li>
           <li><a href="home2.html">Home 2 — Artisan Collections</a></li>
@@ -122,8 +123,8 @@
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
     <div class="navbar-actions">
-      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
-      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL">⇄</button>
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <button class="icon-btn" id="rtlToggle" aria-label="Toggle RTL"><i class="fas fa-exchange-alt"></i></button>
       <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
         <span class="badge" id="wishlistCount">0</span>
@@ -146,7 +147,7 @@
   <div class="blog-hero-bg"></div>
   <div class="container">
     <div class="blog-hero-content">
-      <span style="font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--antique-gold);font-weight:700;display:block;margin-bottom:1rem;">✦ Stories from the Workshop</span>
+      <span style="font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--antique-gold);font-weight:700;display:block;margin-bottom:1rem;"><i class="fas fa-star"></i> Stories from the Workshop</span>
       <h1>Artisan Stories &amp;<br><em>Craft Journal</em></h1>
       <p>Meet the makers behind your favourite handcrafted pieces. Explore craft traditions, artisan journeys, and the beauty of handmade living.</p>
       <div class="blog-filter-pills">
@@ -174,7 +175,7 @@
         <img src="https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=800&auto=format&fit=crop" alt="Priya Sharma at the potter's wheel" loading="lazy">
       </div>
       <div class="reveal-right">
-        <p class="featured-story-eyebrow">✦ Pottery & Ceramics</p>
+        <p class="featured-story-eyebrow"><i class="fas fa-star"></i> Pottery & Ceramics</p>
         <h2 class="featured-story-title">The Potter's Wheel:<br><em>Priya Sharma's Journey</em></h2>
         <div class="featured-story-meta">
           <img src="https://images.unsplash.com/photo-1619627586765-18f97de7f4d8?w=100&auto=format&fit=crop" alt="Priya Sharma">
@@ -190,7 +191,7 @@
           <span class="blog-tag">Artisan Profile</span>
           <span class="blog-tag">Craft Tradition</span>
         </div>
-        <a href="blog-details.html" class="btn-primary">Read Full Story →</a>
+        <a href="blog-details.html" class="btn-primary">Read Full Story <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -212,9 +213,9 @@
         </div>
         <div class="artisan-card-body">
           <h3 class="artisan-card-name">Priya Sharma</h3>
-          <p class="artisan-card-location">📍 Jaipur, Rajasthan</p>
+          <p class="artisan-card-location"><i class="fas fa-location-dot"></i> Jaipur, Rajasthan</p>
           <p class="artisan-card-desc">Third-generation potter and ceramic artist, known for her signature terracotta sunrise glazes and Jaipur blue pottery. 20+ years of mastery.</p>
-          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+          <a href="blog-details.html" class="artisan-card-link">Read Story <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="artisan-card">
@@ -224,9 +225,9 @@
         </div>
         <div class="artisan-card-body">
           <h3 class="artisan-card-name">Ramesh Patel</h3>
-          <p class="artisan-card-location">📍 Kutch, Gujarat</p>
+          <p class="artisan-card-location"><i class="fas fa-location-dot"></i> Kutch, Gujarat</p>
           <p class="artisan-card-desc">Master weaver preserving the ancient Kutchi handloom tradition. His natural-dyed jute and cotton textiles have won national craft recognition.</p>
-          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+          <a href="blog-details.html" class="artisan-card-link">Read Story <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="artisan-card">
@@ -236,9 +237,9 @@
         </div>
         <div class="artisan-card-body">
           <h3 class="artisan-card-name">Meera Nair</h3>
-          <p class="artisan-card-location">📍 Thrissur, Kerala</p>
+          <p class="artisan-card-location"><i class="fas fa-location-dot"></i> Thrissur, Kerala</p>
           <p class="artisan-card-desc">Hand-carver of exceptional skill, Meera transforms sustainably sourced mango and rosewood into sculptural home objects of quiet beauty.</p>
-          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+          <a href="blog-details.html" class="artisan-card-link">Read Story <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="artisan-card">
@@ -248,9 +249,9 @@
         </div>
         <div class="artisan-card-body">
           <h3 class="artisan-card-name">Arjun Mehta</h3>
-          <p class="artisan-card-location">📍 Moradabad, U.P.</p>
+          <p class="artisan-card-location"><i class="fas fa-location-dot"></i> Moradabad, U.P.</p>
           <p class="artisan-card-desc">Carrying the legacy of Moradabad's famed brassware tradition, Arjun crafts intricately engraved copper and brass pieces that blend tradition with modern design.</p>
-          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+          <a href="blog-details.html" class="artisan-card-link">Read Story <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="artisan-card">
@@ -260,9 +261,9 @@
         </div>
         <div class="artisan-card-body">
           <h3 class="artisan-card-name">Sunita Devi</h3>
-          <p class="artisan-card-location">📍 Muzaffarpur, Bihar</p>
+          <p class="artisan-card-location"><i class="fas fa-location-dot"></i> Muzaffarpur, Bihar</p>
           <p class="artisan-card-desc">Master of the ancient Sikki grass weaving tradition, Sunita creates intricate baskets and decorative objects from naturally golden grass gathered in Bihar's floodplains.</p>
-          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+          <a href="blog-details.html" class="artisan-card-link">Read Story <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="artisan-card">
@@ -272,9 +273,9 @@
         </div>
         <div class="artisan-card-body">
           <h3 class="artisan-card-name">Kavita Jha</h3>
-          <p class="artisan-card-location">📍 Madhubani, Bihar</p>
+          <p class="artisan-card-location"><i class="fas fa-location-dot"></i> Madhubani, Bihar</p>
           <p class="artisan-card-desc">Renowned Madhubani folk painter who has exhibited her work internationally. Kavita's vibrant panels draw from Hindu mythology, nature, and village life.</p>
-          <a href="blog-details.html" class="artisan-card-link">Read Story →</a>
+          <a href="blog-details.html" class="artisan-card-link">Read Story <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -299,7 +300,7 @@
           <h3 class="blog-card-title">The Ancient Art of Jaipur Blue Pottery — A 400-Year Legacy</h3>
           <p class="blog-card-excerpt">Discover how Persian influence merged with Rajasthani tradition to create one of India's most recognisable craft forms, now reinterpreted for modern homes.</p>
           <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Pottery</span><span class="blog-tag">Jaipur</span></div>
-          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+          <a href="blog-details.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
       <article class="blog-card">
@@ -311,7 +312,7 @@
           <h3 class="blog-card-title">Threads of Identity: The Handloom Traditions of Kutch</h3>
           <p class="blog-card-excerpt">In the arid plains of Kutch, master weavers produce textiles of extraordinary beauty using traditional pit-looms and naturally dyed threads passed down through generations.</p>
           <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Textiles</span><span class="blog-tag">Gujarat</span></div>
-          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+          <a href="blog-details.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
       <article class="blog-card">
@@ -323,7 +324,7 @@
           <h3 class="blog-card-title">Dhokra: India's Oldest Lost-Wax Metal Casting Tradition</h3>
           <p class="blog-card-excerpt">More than 4,000 years old, the Dhokra process creates unique brass and bronze objects that can never be exactly replicated — each one is a singular work of tribal art.</p>
           <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Metal</span><span class="blog-tag">Chhattisgarh</span></div>
-          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+          <a href="blog-details.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
       <article class="blog-card">
@@ -335,7 +336,7 @@
           <h3 class="blog-card-title">Wood Whisperers: The Carving Traditions of Kerala</h3>
           <p class="blog-card-excerpt">Kerala's wood-carving masters work with the grain itself, believing each log already contains the form it wishes to become. Meet the craftspeople keeping this art alive.</p>
           <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Woodcraft</span><span class="blog-tag">Kerala</span></div>
-          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+          <a href="blog-details.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
       <article class="blog-card">
@@ -347,7 +348,7 @@
           <h3 class="blog-card-title">Madhubani: When Village Walls Became Sacred Canvas</h3>
           <p class="blog-card-excerpt">Originally painted on mud walls for weddings and festivals, Madhubani art has travelled from Bihar's villages to galleries worldwide — yet it remains rooted in ritual and community.</p>
           <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Folk Art</span><span class="blog-tag">Bihar</span></div>
-          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+          <a href="blog-details.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
       <article class="blog-card">
@@ -359,7 +360,7 @@
           <h3 class="blog-card-title">Golden Grass: The Quiet Craft of Sikki Weaving in Bihar</h3>
           <p class="blog-card-excerpt">Harvested from Bihar's floodplains, the golden sikki grass is hand-woven by women artisans into objects of extraordinary intricacy — a tradition endangered but resilient.</p>
           <div style="display:flex;gap:.4rem;margin-bottom:.8rem;"><span class="blog-tag">Weaving</span><span class="blog-tag">Bihar</span></div>
-          <a href="blog-details.html" class="blog-card-link">Read Article →</a>
+          <a href="blog-details.html" class="blog-card-link">Read Article <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
     </div>
@@ -382,7 +383,7 @@
           <span style="font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;color:var(--antique-gold);font-weight:700;">Home Styling</span>
           <h3>How to Style a Living Room with Earthy Artisan Pieces</h3>
           <p>Layering terracotta, natural wood and handwoven textiles to create a warm, grounded living room that feels like home.</p>
-          <a href="blog-details.html" style="font-size:.78rem;color:var(--antique-gold);font-weight:700;text-transform:uppercase;letter-spacing:.1em;">Read Article →</a>
+          <a href="blog-details.html" style="font-size:.78rem;color:var(--antique-gold);font-weight:700;text-transform:uppercase;letter-spacing:.1em;">Read Article <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
       <div class="styling-side">
@@ -415,7 +416,7 @@
       <p>Get the latest artisan stories, craft discoveries, new arrivals and exclusive offers from the AuraDecor workshop, delivered fortnightly.</p>
       <form class="newsletter-form" id="newsletterForm" onsubmit="submitNewsletter(event)">
         <input type="email" placeholder="Your email address" required aria-label="Email address">
-        <button type="submit">Subscribe →</button>
+        <button type="submit">Subscribe <i class="fas fa-arrow-right"></i></button>
       </form>
       <p style="font-size:.8rem;color:rgba(255,255,255,.5);margin-top:1rem;">No spam, ever. Unsubscribe at any time. We respect your privacy.</p>
     </div>
@@ -429,13 +430,13 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="logo footer-logo"><span class="logo-mark">✦</span><span class="logo-text">AuraDecor</span></a>
+        <a href="index.html" class="logo footer-logo"><span class="logo-mark"><i class="fas fa-star"></i></span><span class="logo-text">AuraDecor</span></a>
         <p class="footer-tagline">Celebrating the beauty of handmade — connecting artisans with homes that appreciate authenticity.</p>
         <div class="footer-socials">
-          <a href="#" aria-label="Instagram" class="social-link">📷</a>
-          <a href="#" aria-label="Pinterest" class="social-link">📌</a>
-          <a href="#" aria-label="Facebook" class="social-link">📘</a>
-          <a href="#" aria-label="WhatsApp" class="social-link">💬</a>
+          <a href="#" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Pinterest" class="social-link"><i class="fab fa-pinterest"></i></a>
+          <a href="#" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -471,7 +472,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with ♥ in Jaipur.</p>
+      <p>&copy; 2026 AuraDecor. All rights reserved. Crafted with <i class="fas fa-heart"></i> in Jaipur.</p>
       <div class="footer-bottom-links">
         <a href="404.html">Privacy Policy</a>
         <a href="404.html">Terms of Use</a>
@@ -484,16 +485,16 @@
 <!-- Cart Drawer -->
 <div class="cart-overlay" id="cartOverlay"></div>
 <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
-  <div class="cart-header"><h3>Your Cart</h3><button class="cart-close-btn" id="cartClose">✕</button></div>
-  <div class="cart-items" id="cartItems"><p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping →</a></p></div>
+  <div class="cart-header"><h3>Your Cart</h3><button class="cart-close-btn" id="cartClose"><i class="fas fa-xmark"></i></button></div>
+  <div class="cart-items" id="cartItems"><p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p></div>
   <div class="cart-footer-panel" id="cartFooterPanel" style="display:none;">
     <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
     <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
-    <p class="cart-demo-note">⚠ Demo store — no real payments processed</p>
+    <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
   </div>
 </aside>
 <div class="toast-container" id="toastContainer" aria-live="polite"></div>
-<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 <script src="assets/js/products-data.js"></script>
 <script src="assets/js/main.js"></script>
 <script>
@@ -508,7 +509,7 @@ document.querySelectorAll('.pill').forEach(pill=>{
 function submitNewsletter(e){
   e.preventDefault();
   const btn=e.target.querySelector('button');
-  btn.textContent='✓ Subscribed!';
+  btn.innerHTML='<i class="fas fa-check"></i> Subscribed!';
   btn.style.background='var(--deep-olive)';
   btn.disabled=true;
 }
