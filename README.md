@@ -6,7 +6,7 @@ Built entirely using **pure HTML5, CSS3, and Vanilla JavaScript (ES6)** with zer
 
 ## Brand Identity & Visual Assets
 
-- **Official Tagline**: *Timeless Craft · Soulful Living*
+- **Official Tagline**: *Crafted with Soul*
 - **Favicon**:
   - `assets/images/favicon.svg`: Handcrafted 8-point artisan star with terracotta gradient base (`#B9684E`), golden filigree border, and warm sand core (`#F8F3E9`).
   - `favicon.svg`: Root-level vector favicon for browser auto-detection.
