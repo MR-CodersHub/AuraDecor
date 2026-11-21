@@ -74,7 +74,7 @@ Every public-facing page contains **exactly 6 meaningful content sections** (exc
    - Section 5: 8-Item Interactive FAQ Accordion
    - Section 6: Jaipur Heritage Flagship Studio & Visiting Guide
 
-9. [pricing.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/pricing.html) — **Custom Orders & Wholesale Pricing**
+9. [pricing.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/pricing.html) — **Pricing**
    - Section 1: Transparent Pricing & Commission Hero
    - Section 2: Bespoke Craft Disciplines (Pottery, Textiles, Woodcraft, Metal)
    - Section 3: 4 Tier-based Wholesale & Corporate Gifting Packages (10 to 150+ units)
