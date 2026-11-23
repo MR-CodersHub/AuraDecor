@@ -12,6 +12,17 @@
   padding: var(--space-7) 0;
 }
 
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-2);
+}
+
 /* ------------------------------------------------------------
    Scroll reveal — "up" variant (used by shop markup)
    ------------------------------------------------------------ */
