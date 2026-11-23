@@ -13,82 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
-  <style>
-    /* ===== BLOG DETAILS ===== */
-    .article-hero{position:relative;min-height:72vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--charcoal);}
-    .article-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1600&auto=format&fit=crop')center/cover;opacity:.5;}
-    .article-hero-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(39,33,29,.95) 30%,transparent 100%);}
-    .article-hero-content{position:relative;z-index:2;max-width:820px;padding-bottom:3rem;}
-    .article-category{font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:var(--antique-gold);font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.7rem;}
-    .article-hero h1{font-family:var(--font-heading);font-size:clamp(2rem,5vw,3.6rem);color:#fff;line-height:1.15;margin-bottom:1rem;}
-    .article-meta{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;font-size:.85rem;color:rgba(255,255,255,.65);}
-    .article-meta img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.3);}
-    .article-meta strong{color:rgba(255,255,255,.9);}
-
-    /* Layout */
-    .article-body{background:#fff;padding:5rem 0;}
-    .article-layout{display:grid;grid-template-columns:1fr 320px;gap:5rem;align-items:start;}
-    @media(max-width:1000px){.article-layout{grid-template-columns:1fr;}}
-
-    /* Article content */
-    .article-content h2{font-family:var(--font-heading);font-size:1.9rem;color:var(--charcoal);margin:2.5rem 0 1rem;}
-    .article-content h3{font-family:var(--font-heading);font-size:1.35rem;color:var(--charcoal);margin:2rem 0 .8rem;}
-    .article-content p{font-size:1.05rem;line-height:1.85;color:#555;margin-bottom:1.4rem;}
-    .article-content img{width:100%;border-radius:16px;margin:2rem 0;}
-    .article-pull-quote{border-left:4px solid var(--terracotta);margin:2.5rem 0;padding:1.5rem 2rem;background:var(--natural-cream);border-radius:0 12px 12px 0;}
-    .article-pull-quote blockquote{font-family:var(--font-heading);font-size:1.25rem;font-style:italic;color:var(--charcoal);line-height:1.5;margin:0 0 .5rem;}
-    .article-pull-quote cite{font-size:.85rem;color:#888;}
-    .article-two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2rem 0;}
-    @media(max-width:640px){.article-two-col{grid-template-columns:1fr;}}
-    .article-two-col img{width:100%;border-radius:14px;aspect-ratio:4/3;object-fit:cover;}
-
-    /* Craft process steps */
-    .process-steps{display:flex;flex-direction:column;gap:1.4rem;margin:2rem 0;}
-    .process-step{display:flex;gap:1.2rem;align-items:flex-start;}
-    .step-num{flex-shrink:0;width:48px;height:48px;background:var(--terracotta);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-size:1.1rem;font-weight:700;}
-    .step-content h4{font-family:var(--font-heading);font-size:1rem;color:var(--charcoal);margin-bottom:.35rem;}
-    .step-content p{font-size:.9rem;color:#666;line-height:1.6;margin:0;}
-
-    /* Sidebar */
-    .article-sidebar{position:sticky;top:100px;}
-    .sidebar-card{background:var(--natural-cream);border-radius:16px;padding:1.5rem;margin-bottom:1.5rem;}
-    .sidebar-card h4{font-family:var(--font-heading);font-size:1.1rem;color:var(--charcoal);margin-bottom:1rem;padding-bottom:.7rem;border-bottom:1px solid var(--warm-sand);}
-    .sidebar-artisan{display:flex;gap:.9rem;align-items:center;margin-bottom:1rem;}
-    .sidebar-artisan img{width:60px;height:60px;border-radius:50%;object-fit:cover;}
-    .sidebar-artisan h5{font-family:var(--font-heading);font-size:.95rem;color:var(--charcoal);margin-bottom:.2rem;}
-    .sidebar-artisan p{font-size:.78rem;color:var(--deep-olive);}
-    .sidebar-related-article{display:flex;gap:.9rem;margin-bottom:.9rem;align-items:flex-start;}
-    .sidebar-related-article img{width:70px;height:60px;border-radius:10px;object-fit:cover;flex-shrink:0;}
-    .sidebar-related-article a{font-size:.85rem;color:var(--charcoal);text-decoration:none;line-height:1.4;font-weight:600;}
-    .sidebar-related-article a:hover{color:var(--terracotta);}
-    .sidebar-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
-    .sidebar-tag{background:#fff;border:1px solid var(--warm-sand);color:var(--charcoal);font-size:.74rem;padding:.28rem .8rem;border-radius:20px;cursor:pointer;transition:all .2s;}
-    .sidebar-tag:hover{background:var(--terracotta);color:#fff;border-color:var(--terracotta);}
-
-    /* Related stories */
-    .related-stories-section{background:var(--soft-beige);padding:4rem 0;}
-    .related-stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
-    @media(max-width:800px){.related-stories-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:520px){.related-stories-grid{grid-template-columns:1fr;}}
-
-    /* Products in article */
-    .article-products{background:var(--natural-cream);padding:4rem 0;}
-    .article-products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-    @media(max-width:800px){.article-products-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:520px){.article-products-grid{grid-template-columns:1fr;}}
-
-    /* Explore more */
-    .explore-more-section{background:var(--charcoal);padding:4rem 0;}
-    .explore-more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-    @media(max-width:720px){.explore-more-grid{grid-template-columns:1fr;}}
-    .explore-card{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:3/2;cursor:pointer;}
-    .explore-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-    .explore-card:hover img{transform:scale(1.08);}
-    .explore-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(39,33,29,.85) 40%,transparent 100%);}
-    .explore-card-content{position:absolute;bottom:0;padding:1.5rem;}
-    .explore-card-content h3{font-family:var(--font-heading);font-size:1.1rem;color:#fff;margin-bottom:.4rem;}
-    .explore-card-content a{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--antique-gold);font-weight:700;}
-  </style>
+  <link rel="stylesheet" href="../assets/css/blog.css">
 </head>
 <body>
 
@@ -173,7 +98,7 @@
 <section class="article-body">
   <div class="container">
     <div class="article-layout">
-      <article class="article-content reveal-up">
+      <article class="article-content reveal">
         <!-- Pull Quote Intro -->
         <div class="article-pull-quote">
           <blockquote>"Every time I sit at my wheel, I feel like the clay is telling me what it wants to become. My hands just help it get there."</blockquote>
@@ -241,14 +166,14 @@
             <div class="step-num">5</div>
             <div class="step-content">
               <h4>Bisque Firing</h4>
-              <p>Bone-dry pieces are loaded into the wood-fired kiln and taken to 900Â°C. This bisque firing removes the last moisture and chemical water from the clay, creating a porous ceramic that will accept glaze. The firing takes 8-10 hours; cooling takes another 24.</p>
+              <p>Bone-dry pieces are loaded into the wood-fired kiln and taken to 900°C. This bisque firing removes the last moisture and chemical water from the clay, creating a porous ceramic that will accept glaze. The firing takes 8-10 hours; cooling takes another 24.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">6</div>
             <div class="step-content">
               <h4>Glazing & Glaze Firing</h4>
-              <p>Priya applies three layers of her sunrise glaze by hand, using a combination of dipping and brushwork to achieve the characteristic gradient. A second firing at 1120Â°C melts the glaze into a permanent, food-safe surface. No two pieces emerge from the kiln with identical glaze patterns.</p>
+              <p>Priya applies three layers of her sunrise glaze by hand, using a combination of dipping and brushwork to achieve the characteristic gradient. A second firing at 1120°C melts the glaze into a permanent, food-safe surface. No two pieces emerge from the kiln with identical glaze patterns.</p>
             </div>
           </div>
         </div>
@@ -285,7 +210,7 @@
       </article>
 
       <!-- SIDEBAR -->
-      <aside class="article-sidebar reveal-up" style="--delay:.2s">
+      <aside class="article-sidebar reveal" style="--delay:.2s">
         <!-- About the artisan -->
         <div class="sidebar-card">
           <h4>About the Artisan</h4>
@@ -349,11 +274,11 @@
 <!-- ===== SECTION 4: PRODUCTS FEATURED IN STORY ===== -->
 <section class="article-products">
   <div class="container">
-    <div class="section-header reveal-up">
+    <div class="section-header reveal">
       <span class="section-eyebrow">From the Workshop</span>
       <h2 class="section-title">Shop Priya's<br><em>Pottery Collection</em></h2>
     </div>
-    <div class="article-products-grid reveal-up">
+    <div class="article-products-grid reveal">
       <article class="product-card">
         <div class="product-card-img">
           <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&auto=format&fit=crop" alt="Terracotta Sunrise Vase" loading="lazy">
@@ -402,11 +327,11 @@
 <!-- ===== SECTION 5: RELATED STORIES ===== -->
 <section class="related-stories-section">
   <div class="container">
-    <div class="section-header reveal-up">
+    <div class="section-header reveal">
       <span class="section-eyebrow">Continue Reading</span>
       <h2 class="section-title">More Artisan<br><em>Stories</em></h2>
     </div>
-    <div class="related-stories-grid reveal-up">
+    <div class="related-stories-grid reveal">
       <article class="blog-card">
         <div class="blog-card-img">
           <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop" alt="Kutchi Weaving" loading="lazy">
@@ -444,11 +369,11 @@
 <!-- ===== SECTION 6: EXPLORE MORE CTAs ===== -->
 <section class="explore-more-section">
   <div class="container">
-    <div class="section-header reveal-up" style="margin-bottom:2.5rem;">
+    <div class="section-header reveal" style="margin-bottom:2.5rem;">
       <span class="section-eyebrow" style="color:var(--antique-gold);">Explore AuraDecor</span>
       <h2 class="section-title" style="color:#fff;">There's Always<br><em style="color:var(--warm-sand);">More to Discover</em></h2>
     </div>
-    <div class="explore-more-grid reveal-up">
+    <div class="explore-more-grid reveal">
       <div class="explore-card">
         <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&auto=format&fit=crop" alt="All Pottery" loading="lazy">
         <div class="explore-card-overlay"></div>
@@ -579,8 +504,8 @@
     <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p>
   </div>
   <div class="cart-footer-panel cart-drawer-footer" id="cartFooterPanel">
-    <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">?0</span></div>
-    <p class="cart-free-ship" style="font-size:0.78rem;color:var(--deep-olive);margin-bottom:12px;"><i class="fas fa-truck-fast"></i> Free shipping on orders above ?2,000</p>
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">₹0</span></div>
+    <p class="cart-free-ship" style="font-size:0.78rem;color:var(--deep-olive);margin-bottom:12px;"><i class="fas fa-truck-fast"></i> Free shipping on orders above ₹2,000</p>
     <button class="btn-primary cart-checkout-btn" type="button" onclick="openCheckout()">Proceed to Checkout</button>
     <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
   </div>
