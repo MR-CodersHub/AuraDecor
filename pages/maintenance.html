@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="shortcut icon" href="../favicon.svg">
+  <meta name="description" content="AuraDecor is undergoing scheduled studio maintenance and craft catalog upgrades. We will return online shortly.">
+  <title>Scheduled Maintenance &amp; Upgrades — AuraDecor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <style>
+    /* ===== MAINTENANCE PAGE STYLES ===== */
+    .maint-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Top Utility Bar */
+    .maint-topbar {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--card-bg);
+      transition: background-color var(--transition-base), border-color var(--transition-base);
+    }
+    .maint-topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .maint-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 6px 14px;
+      border-radius: var(--radius-full, 9999px);
+      background-color: rgba(183, 154, 98, 0.15);
+      border: 1px solid rgba(183, 154, 98, 0.35);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--charcoal-brown);
+      letter-spacing: 0.04em;
+    }
+    [data-theme="dark"] .maint-status-pill {
+      color: var(--warm-sand);
+      background-color: rgba(183, 154, 98, 0.2);
+    }
+    .status-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #e09f3e;
+      box-shadow: 0 0 0 0 rgba(224, 159, 62, 0.7);
+      animation: pulseWarning 2s infinite;
+    }
+    @keyframes pulseWarning {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(224, 159, 62, 0.7);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(224, 159, 62, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(224, 159, 62, 0);
+      }
+    }
+
+    /* Main Showcase Stage */
+    .maint-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+    }
+    .maint-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: center;
+    }
+    @media (max-width: 960px) {
+      .maint-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+      .maint-actions {
+        justify-content: center;
+      }
+      .countdown-grid {
+        justify-content: center;
+      }
+    }
+
+    /* Content Side */
+    .maint-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--terracotta);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+    .maint-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      color: var(--text-primary);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    .maint-title em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+    .maint-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      max-width: 580px;
+    }
+    @media (max-width: 960px) {
+      .maint-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* Timer Tiles */
+    .countdown-wrap {
+      margin-bottom: 2.5rem;
+    }
+    .countdown-header {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    @media (max-width: 960px) {
+      .countdown-header {
+        justify-content: center;
+      }
+    }
+    .countdown-grid {
+      display: flex;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+    }
+    .timer-tile {
+      background-color: var(--card-bg, #ffffff);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-xl, 18px);
+      padding: 1.4rem 1.2rem;
+      min-width: 100px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(57, 51, 45, 0.06);
+      transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+    .timer-tile::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--antique-gold));
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+    .timer-tile:hover {
+      transform: translateY(-3px);
+      border-color: var(--terracotta);
+      box-shadow: 0 12px 28px rgba(185, 104, 78, 0.15);
+    }
+    .timer-tile:hover::after {
+      opacity: 1;
+    }
+    .timer-val {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.8vw, 2.8rem);
+      font-weight: 700;
+      color: var(--terracotta);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .timer-unit {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--deep-olive);
+    }
+    [data-theme="dark"] .timer-unit {
+      color: var(--warm-sand);
+    }
+
+    /* Progress bar */
+    .maint-progress-wrap {
+      max-width: 480px;
+      margin-bottom: 2.2rem;
+    }
+    @media (max-width: 960px) {
+      .maint-progress-wrap {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .maint-progress-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    .maint-progress-bar {
+      height: 7px;
+      background-color: var(--border-color);
+      border-radius: var(--radius-full, 9999px);
+      overflow: hidden;
+      position: relative;
+    }
+    .maint-progress-fill {
+      width: 78%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--terracotta), var(--antique-gold));
+      border-radius: var(--radius-full, 9999px);
+      position: relative;
+      animation: progressGlow 2.5s ease-in-out infinite alternate;
+    }
+
+    /* Email Notify Form */
+    .maint-notify-box {
+      background-color: var(--card-bg, #ffffff);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl, 20px);
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 10px 30px rgba(57, 51, 45, 0.05);
+      max-width: 520px;
+    }
+    @media (max-width: 960px) {
+      .maint-notify-box {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .maint-notify-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    @media (max-width: 960px) {
+      .maint-notify-title {
+        justify-content: center;
+      }
+    }
+    .maint-notify-title i {
+      color: var(--terracotta);
+    }
+    .maint-notify-box p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+    .maint-notify-form {
+      display: flex;
+      gap: 0.6rem;
+    }
+    @media (max-width: 520px) {
+      .maint-notify-form {
+        flex-direction: column;
+      }
+    }
+    .maint-notify-input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-full, 9999px);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .maint-notify-input:focus {
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 3px rgba(185, 104, 78, 0.15);
+    }
+    .maint-notify-btn {
+      padding: 12px 22px;
+      border: none;
+      border-radius: var(--radius-full, 9999px);
+      background-color: var(--terracotta);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      transition: background-color var(--transition-fast), transform var(--transition-fast);
+    }
+    .maint-notify-btn:hover {
+      background-color: #a05640;
+      transform: translateY(-2px);
+    }
+
+    /* Vector Artwork Container */
+    .maint-vector-card {
+      position: relative;
+      background: radial-gradient(circle at center, rgba(185, 104, 78, 0.08) 0%, rgba(220, 203, 178, 0.04) 65%, transparent 100%);
+      border-radius: var(--radius-2xl, 28px);
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .maint-svg-artwork {
+      width: 100%;
+      max-width: 540px;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(57, 51, 45, 0.12));
+    }
+
+    /* SVG Ambient Keyframes */
+    @keyframes gearSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes gearSpinReverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes sparkBlink {
+      0%, 100% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+    .svg-gear-cw {
+      transform-origin: 430px 110px;
+      animation: gearSpin 24s linear infinite;
+    }
+    .svg-gear-ccw {
+      transform-origin: 470px 165px;
+      animation: gearSpinReverse 18s linear infinite;
+    }
+    .svg-tool-float {
+      animation: floatGentle 5s ease-in-out infinite;
+    }
+    .svg-sparkle {
+      animation: sparkBlink 3s ease-in-out infinite;
+    }
+    .svg-sparkle-delay {
+      animation: sparkBlink 3s ease-in-out infinite 1.5s;
+    }
+
+    /* Bottom Contact Ribbon */
+    .maint-footer-ribbon {
+      border-top: 1px solid var(--border-color);
+      padding: 1.5rem 0;
+      background-color: var(--card-bg);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .maint-ribbon-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .maint-ribbon-contacts {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+    }
+    .maint-ribbon-contacts a {
+      color: var(--text-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+    .maint-ribbon-contacts a:hover {
+      color: var(--terracotta);
+    }
+    .maint-ribbon-contacts a i {
+      color: var(--terracotta);
+    }
+
+    [data-theme="dark"] .timer-tile,
+    [data-theme="dark"] .maint-notify-box {
+      background-color: var(--card-bg);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+  </style>
+</head>
+<body class="maint-page">
+
+  <!-- ===== 1. TOP UTILITY BAR ===== -->
+  <header class="maint-topbar">
+    <div class="container maint-topbar-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark">
+          <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="#B9684E"/>
+            <path d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z" fill="#F8F3E9"/>
+            <path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="#B79A62"/>
+            <circle cx="32" cy="32" r="3.2" fill="#B9684E"/>
+          </svg>
+        </span>
+        <span class="logo-text-group">
+          <span class="logo-text">AuraDecor</span>
+          <span class="logo-tagline">Crafted with Soul</span>
+        </span>
+      </a>
+
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <span class="maint-status-pill">
+          <span class="status-pulse-dot"></span>
+          <span>Craft Infrastructure Maintenance</span>
+        </span>
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="icon-btn text-toggle" id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 2. MAIN MAINTENANCE STAGE ===== -->
+  <main class="maint-main">
+    <div class="container">
+      <div class="maint-grid">
+        
+        <!-- Left: Details & Live Timer -->
+        <div class="maint-content">
+          <span class="maint-eyebrow">
+            <i class="fas fa-hammer"></i> Refining Our Kilns &amp; Marketplace
+          </span>
+          <h1 class="maint-title">
+            Crafting a Better<br><em>Artisan Experience</em>
+          </h1>
+          <p class="maint-desc">
+            Our digital studio is momentarily offline while we perform scheduled architectural enhancements, update master artisan inventories, and optimize high-speed fair trade checkout channels. We will welcome you back shortly.
+          </p>
+
+          <!-- Live Countdown Timer -->
+          <div class="countdown-wrap">
+            <div class="countdown-header">
+              <i class="fas fa-hourglass-half" style="color:var(--terracotta);"></i>
+              <span>Estimated Return Time</span>
+            </div>
+            <div class="countdown-grid" id="maintTimer">
+              <div class="timer-tile">
+                <div class="timer-val" id="timerDays">00</div>
+                <div class="timer-unit">Days</div>
+              </div>
+              <div class="timer-tile">
+                <div class="timer-val" id="timerHours">05</div>
+                <div class="timer-unit">Hours</div>
+              </div>
+              <div class="timer-tile">
+                <div class="timer-val" id="timerMinutes">42</div>
+                <div class="timer-unit">Minutes</div>
+              </div>
+              <div class="timer-tile">
+                <div class="timer-val" id="timerSeconds">18</div>
+                <div class="timer-unit">Seconds</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upgrade Progress Bar -->
+          <div class="maint-progress-wrap">
+            <div class="maint-progress-info">
+              <span><i class="fas fa-arrows-rotate fa-spin" style="color:var(--terracotta);"></i> Database Optimization &amp; Catalog Cache</span>
+              <span id="progressPercentage">78% Complete</span>
+            </div>
+            <div class="maint-progress-bar">
+              <div class="maint-progress-fill"></div>
+            </div>
+          </div>
+
+          <!-- Get Notified Card -->
+          <div class="maint-notify-box">
+            <h3 class="maint-notify-title"><i class="fas fa-bell"></i> Notify Me When Live</h3>
+            <p>Enter your email address and our craft liaison will ping you the moment our doors reopen.</p>
+            <form class="maint-notify-form" onsubmit="handleNotifySubmit(event)">
+              <input type="email" class="maint-notify-input" id="notifyEmail" placeholder="e.g. ananya@example.com" required>
+              <button type="submit" class="maint-notify-btn">
+                <span>Notify Me</span> <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Handcrafted Vector Artwork (SVG) -->
+        <div class="maint-vector-card">
+          <svg class="maint-svg-artwork" viewBox="0 0 540 400" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Artisan pottery wheel and maintenance craftsmanship vector illustration">
+            <defs>
+              <!-- Gradients -->
+              <radialGradient id="auroraGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#B9684E" stop-opacity="0.22"/>
+                <stop offset="60%" stop-color="#B79A62" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="#DCCBB2" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="terracottaGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#B9684E"/>
+                <stop offset="100%" stop-color="#8D4A35"/>
+              </linearGradient>
+              <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#D5BA7C"/>
+                <stop offset="100%" stop-color="#9C7F45"/>
+              </linearGradient>
+              <linearGradient id="clayGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#E5997A"/>
+                <stop offset="50%" stop-color="#C27357"/>
+                <stop offset="100%" stop-color="#914D37"/>
+              </linearGradient>
+              <linearGradient id="wheelStand" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#2D2723"/>
+                <stop offset="50%" stop-color="#4A413B"/>
+                <stop offset="100%" stop-color="#241F1C"/>
+              </linearGradient>
+              <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#39332D" flood-opacity="0.18"/>
+              </filter>
+            </defs>
+
+            <!-- Background Ambient Glow Aura -->
+            <circle cx="270" cy="210" r="190" fill="url(#auroraGlow)"/>
+
+            <!-- Decorative Craft Mandala Circles -->
+            <circle cx="270" cy="210" r="160" stroke="#DCCBB2" stroke-width="1.2" stroke-dasharray="6 6" opacity="0.45"/>
+            <circle cx="270" cy="210" r="130" stroke="#B79A62" stroke-width="1" stroke-dasharray="3 5" opacity="0.4"/>
+
+            <!-- Rotating Precision Maintenance Gears -->
+            <g class="svg-gear-cw" opacity="0.65">
+              <circle cx="430" cy="110" r="26" stroke="#B79A62" stroke-width="4" stroke-dasharray="8 6"/>
+              <circle cx="430" cy="110" r="16" fill="url(#goldGrad)"/>
+              <circle cx="430" cy="110" r="6" fill="#F8F3E9"/>
+            </g>
+            <g class="svg-gear-ccw" opacity="0.55">
+              <circle cx="470" cy="165" r="18" stroke="#B9684E" stroke-width="3.5" stroke-dasharray="6 5"/>
+              <circle cx="470" cy="165" r="10" fill="url(#terracottaGrad)"/>
+              <circle cx="470" cy="165" r="4" fill="#F8F3E9"/>
+            </g>
+
+            <!-- Studio Shadow Base -->
+            <ellipse cx="270" cy="345" rx="150" ry="22" fill="#39332D" opacity="0.14"/>
+
+            <!-- Pottery Wheel Heavy Base Stand -->
+            <rect x="230" y="270" width="80" height="60" rx="10" fill="url(#wheelStand)"/>
+            <ellipse cx="270" cy="330" rx="95" ry="15" fill="#241F1C"/>
+            
+            <!-- Rotary Flywheel Disc -->
+            <ellipse cx="270" cy="270" rx="115" ry="18" fill="#4D5940" filter="url(#softShadow)"/>
+            <ellipse cx="270" cy="268" rx="105" ry="14" fill="#5E6D4E"/>
+            <ellipse cx="270" cy="266" rx="90" ry="10" stroke="#B79A62" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+
+            <!-- Hand-Thrown Terracotta Amphora / Vase (The Work in Progress) -->
+            <g class="svg-tool-float">
+              <!-- Vessel Shadow -->
+              <ellipse cx="270" cy="262" rx="42" ry="8" fill="#39332D" opacity="0.25"/>
+
+              <!-- Main Ceramic Body -->
+              <path d="M 238 258 
+                       C 230 220, 205 185, 222 145 
+                       C 232 125, 252 118, 270 118 
+                       C 288 118, 308 125, 318 145 
+                       C 335 185, 310 220, 302 258 
+                       Z" 
+                    fill="url(#clayGrad)" filter="url(#softShadow)"/>
+
+              <!-- Ceramic Neck & Lip Rim -->
+              <ellipse cx="270" cy="120" rx="32" ry="7" fill="#8D4A35"/>
+              <ellipse cx="270" cy="118" rx="28" ry="5.5" fill="#B9684E"/>
+              <ellipse cx="270" cy="116" rx="18" ry="3.5" fill="#6A3423"/>
+
+              <!-- Glaze Texture Accent Lines -->
+              <path d="M 226 160 Q 270 178 314 160" stroke="#F8F3E9" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+              <path d="M 220 185 Q 270 205 320 185" stroke="#B79A62" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round" opacity="0.8"/>
+              <path d="M 224 210 Q 270 230 316 210" stroke="#F8F3E9" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+
+              <!-- Glaze Specular Highlight -->
+              <path d="M 240 145 C 232 170, 235 210, 244 245" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+            </g>
+
+            <!-- Floating Artisan Craft Spatula / Modeling Tool -->
+            <g class="svg-tool-float" transform="translate(110, 160) rotate(-22)">
+              <rect x="0" y="0" width="85" height="10" rx="5" fill="#8E6747"/>
+              <path d="M 85 0 C 105 -2, 115 12, 85 10 Z" fill="#DCCBB2"/>
+              <circle cx="15" cy="5" r="2.5" fill="#F8F3E9"/>
+            </g>
+
+            <!-- Precision Compass / Calipers Motif -->
+            <g transform="translate(365, 200) rotate(18)">
+              <line x1="0" y1="0" x2="-25" y2="70" stroke="#B79A62" stroke-width="3.5" stroke-linecap="round"/>
+              <line x1="0" y1="0" x2="25" y2="70" stroke="#B79A62" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="0" cy="0" r="8" fill="#4D5940"/>
+              <circle cx="0" cy="0" r="3.5" fill="#ffffff"/>
+              <path d="M -15 38 Q 0 44 15 38" stroke="#B9684E" stroke-width="2" fill="none"/>
+            </g>
+
+            <!-- Sparkling Golden Craft Stars & Particles -->
+            <g class="svg-sparkle">
+              <path d="M 170 100 L 174 112 L 186 116 L 174 120 L 170 132 L 166 120 L 154 116 L 166 112 Z" fill="#B79A62"/>
+              <circle cx="130" cy="240" r="3.5" fill="#B9684E" opacity="0.6"/>
+              <circle cx="390" cy="90" r="2.5" fill="#B79A62" opacity="0.7"/>
+            </g>
+            <g class="svg-sparkle-delay">
+              <path d="M 370 290 L 373 298 L 381 301 L 373 304 L 370 312 L 367 304 L 359 301 L 367 298 Z" fill="#B9684E"/>
+              <circle cx="210" cy="80" r="3" fill="#B79A62" opacity="0.8"/>
+              <circle cx="430" cy="280" r="4" fill="#DCCBB2" opacity="0.5"/>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== 3. BOTTOM ASSISTANCE RIBBON ===== -->
+  <footer class="maint-footer-ribbon">
+    <div class="container maint-ribbon-inner">
+      <div>
+        <span>&copy; 2026 AuraDecor Studio. Handcrafted in Jaipur.</span>
+      </div>
+      <div class="maint-ribbon-contacts">
+        <span>Urgent inquiry?</span>
+        <a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210</a>
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Studio</a>
+        <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope"></i> hello@auradecor.in</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // ===== 1. LIVE MAINTENANCE COUNTDOWN TIMER =====
+    // Set target finish time: 6 hours from now (persisted in sessionStorage)
+    let targetTime;
+    const storedTarget = sessionStorage.getItem('auradecor_maint_end');
+
+    if (storedTarget && !isNaN(parseInt(storedTarget))) {
+      targetTime = parseInt(storedTarget);
+    } else {
+      // 6 hours from page creation
+      targetTime = new Date().getTime() + (5 * 3600 + 42 * 60 + 30) * 1000;
+      sessionStorage.setItem('auradecor_maint_end', targetTime.toString());
+    }
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetTime - now;
+
+      if (distance <= 0) {
+        document.getElementById('timerDays').textContent = '00';
+        document.getElementById('timerHours').textContent = '00';
+        document.getElementById('timerMinutes').textContent = '00';
+        document.getElementById('timerSeconds').textContent = '00';
+        document.getElementById('progressPercentage').textContent = '100% Complete';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('timerDays').textContent = String(days).padStart(2, '0');
+      document.getElementById('timerHours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('timerMinutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('timerSeconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ===== 2. NOTIFY SUBMIT HANDLER =====
+    function handleNotifySubmit(e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('notifyEmail');
+      const email = emailInput.value.trim();
+      if (!email) return;
+
+      if (typeof window.showToast === 'function') {
+        window.showToast(`Thank you! We will notify ${email} the moment we are back online.`, 'success');
+      } else {
+        alert(`Thank you! We will notify ${email} as soon as the studio reopens.`);
+      }
+      emailInput.value = '';
+    }
+  </script>
+</body>
+</html>
