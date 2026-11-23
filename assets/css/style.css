@@ -1729,23 +1729,12 @@ code {
   background-color: #d93f2a;
 }
 
-/* Quick Actions */
+/* Product Card Actions */
 .product-card-actions {
-  position: absolute;
-  top: 12px;
-  right: 12px;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  z-index: 2;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: opacity var(--transition-base), transform var(--transition-base);
-}
-
-.product-card:hover .product-card-actions {
-  opacity: 1;
-  transform: translateX(0);
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: auto;
 }
 
 .product-action-btn {
@@ -5578,13 +5567,7 @@ select.form-control {
 }
 
 [dir="rtl"] .product-card-actions {
-  right: auto;
-  left: 12px;
-  transform: translateX(-10px);
-}
-
-[dir="rtl"] .product-card:hover .product-card-actions {
-  transform: translateX(0);
+  flex-direction: row-reverse;
 }
 
 [dir="rtl"] .product-card-badge {

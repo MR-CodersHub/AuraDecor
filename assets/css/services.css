@@ -404,10 +404,20 @@
   text-decoration: line-through;
 }
 
-.product-card-actions {
-  display: flex;
-  gap: 0.6rem;
-  margin-top: auto;
+.product-card-actions,
+.product-card:hover .product-card-actions {
+  position: static !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 0.6rem !important;
+  margin-top: auto !important;
+  opacity: 1 !important;
+  transform: none !important;
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+  z-index: auto !important;
+  width: 100% !important;
 }
 
 .btn-cart {

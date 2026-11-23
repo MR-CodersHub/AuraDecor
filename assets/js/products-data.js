@@ -548,9 +548,9 @@ const allProducts = [
     categorySlug: "decorative-accessories",
     price: 850,
     originalPrice: 1100,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+    image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600",
     images: [
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600",
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
       "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600"
     ],
@@ -580,7 +580,7 @@ const allProducts = [
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
     images: [
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600",
       "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600"
     ],
     description: "A trio of hand-dipped pillar candles made from pure Himalayan beeswax — naturally golden, lightly honey-scented, and cleaner-burning than paraffin candles.",
@@ -609,7 +609,7 @@ const allProducts = [
     image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600",
     images: [
       "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600",
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600"
     ],
     description: "A set of five hand-painted Kondapalli wooden elephants in a parade formation — Andhra Pradesh's GI-tagged toy craft, hand-carved from soft tella poniki wood and painted with vivid natural colours.",
@@ -726,9 +726,9 @@ const allProducts = [
     categorySlug: "handmade-gifts",
     price: 4800,
     originalPrice: 6000,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+    image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600",
     images: [
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600",
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
       "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600"
     ],
@@ -758,7 +758,7 @@ const allProducts = [
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
     images: [
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600",
       "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600"
     ],
     description: "A hand-painted Kashmiri papier-mâché keepsake box in deep lacquer red with 24-karat gold-leaf floral motifs — the crown jewel of Kashmir Valley's artistic heritage.",
@@ -788,7 +788,7 @@ const allProducts = [
     images: [
       "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600",
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600"
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600"
     ],
     description: "A set of eight handmade Lokta bark-paper greeting cards hand-embossed with folk motifs — an eco-friendly alternative to commercial greeting cards, made in the Himalayan foothills of Uttarakhand.",
     fullDescription: "Lokta paper is made from the bark of the Daphne plant (Thymelaeaceae family) found growing wild in the Himalayan sub-alpine zone of India and Nepal. The bark is peeled from live plants (which regrow within 5–7 years), cooked in ash water, hand-pounded into a pulp, and sun-dried on mesh frames — producing a naturally textured, extraordinarily durable paper used by Himalayan monasteries for sacred texts for centuries.\n\nThis set of eight greeting cards uses Lokta paper as its base, with each card hand-embossed with a different folk motif: a pheasant, a snow leopard, a yak, rhododendron flowers, a mountain peak, a Buddhist prayer wheel, a lotus, and a tiger. The embossing is done by pressing damp paper against hand-carved wooden blocks before it dries and sets permanently.\n\nThe set comes with matching Lokta envelopes. Cards measure 15 × 10 cm and are suitable for all types of correspondence — birthday, congratulations, festive occasions, or simply as collectible art objects.\n\nAll materials are wild-harvested and renewable. No chemical dyes are used in the paper-making process.",
@@ -962,7 +962,7 @@ const categories = [
     name: "Decorative Accessories",
     slug: "decorative-accessories",
     description: "Sandalwood incense holders, beeswax candles, and painted figurines — the smaller objects that make a house feel genuinely like a home.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+    image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=600",
     productCount: 3,
     featured: false
   },
