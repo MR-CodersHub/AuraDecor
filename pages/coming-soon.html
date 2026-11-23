@@ -6,80 +6,15 @@
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="shortcut icon" href="../favicon.svg">
   <meta name="description" content="AuraDecor is preparing a new handcrafted seasonal collection. Join our VIP early preview list.">
-  <title>Coming Soon &amp; Maintenance — AuraDecor</title>
+  <title>Coming Soon — AuraDecor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
   <style>
-    /* Standalone CSS for Coming Soon / Maintenance */
-    :root {
-      --terracotta: #B9684E;
-      --deep-olive: #4D5940;
-      --warm-sand: #DCCBB2;
-      --natural-cream: #F8F3E9;
-      --soft-beige: #EAE0D2;
-      --charcoal: #39332D;
-      --antique-gold: #B79A62;
-      --font-heading: 'Playfair Display', serif;
-      --font-body: 'Lato', sans-serif;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: var(--font-body);
-      background-color: var(--natural-cream);
-      color: var(--charcoal);
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Top Brand Header */
-    .coming-header {
-      padding: 1.8rem 0;
-      text-align: center;
-      border-bottom: 1px solid var(--warm-sand);
-    }
-    .coming-header .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      text-align: left;
-    }
-    .coming-header .logo-mark svg {
-      display: block;
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      box-shadow: 0 3px 10px rgba(185, 104, 78, 0.25);
-    }
-    .coming-header .logo-text-group {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
-    }
-    .coming-header .logo-text {
-      font-family: var(--font-heading);
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--charcoal);
-      letter-spacing: -0.015em;
-    }
-    .coming-header .logo-tagline {
-      font-family: var(--font-body);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-top: 2px;
-    }
-
-    /* SECTION 1: HERO */
+    /* ===== COMING SOON SPECIFIC STYLES ===== */
     .cs-hero {
       position: relative;
       min-height: 50vh;
@@ -87,37 +22,55 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: var(--charcoal);
+      background: var(--charcoal-brown);
       color: #fff;
       overflow: hidden;
-      padding: 4rem 1.5rem;
+      padding: var(--space-7) 1.5rem;
     }
     .cs-hero-bg {
       position: absolute;
       inset: 0;
-      background: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1600&auto=format&fit=crop') center/cover;
+      background: url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1600&auto=format&fit=crop') center/cover no-repeat;
       opacity: 0.3;
+    }
+    .cs-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(30, 26, 23, 0.45) 0%, rgba(30, 26, 23, 0.92) 100%);
     }
     .cs-hero-content {
       position: relative;
       z-index: 2;
-      max-width: 700px;
+      max-width: 720px;
+    }
+    .cs-hero-content .section-eyebrow {
+      color: var(--antique-gold);
+      margin-bottom: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     .cs-hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      margin-bottom: 1rem;
-      line-height: 1.2;
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: #ffffff;
+      margin-bottom: 1.1rem;
+      line-height: 1.15;
+    }
+    .cs-hero h1 em {
+      font-style: italic;
+      color: var(--warm-sand);
     }
     .cs-hero p {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.65;
     }
 
     /* SECTION 2: CRAFT JOURNEY MESSAGE */
     .cs-message {
-      background: var(--natural-cream);
-      padding: 5rem 0;
+      background: var(--bg-primary);
+      padding: var(--space-7) 0;
       text-align: center;
     }
     .cs-message-content {
@@ -125,12 +78,13 @@
       margin: 0 auto;
     }
     .cs-message-content h2 {
-      font-family: var(--font-heading);
+      font-family: var(--font-serif);
       font-size: 2.2rem;
+      color: var(--text-primary);
       margin-bottom: 1.2rem;
     }
     .cs-message-content p {
-      color: #666;
+      color: var(--text-secondary);
       font-size: 1.05rem;
       line-height: 1.8;
       margin-bottom: 1.5rem;
@@ -138,9 +92,11 @@
 
     /* SECTION 3: LIVE COUNTDOWN TIMER */
     .cs-timer-section {
-      background: var(--soft-beige);
-      padding: 5rem 0;
+      background: var(--card-bg);
+      padding: var(--space-7) 0;
       text-align: center;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
     }
     .countdown-grid {
       display: flex;
@@ -152,18 +108,18 @@
       .countdown-grid { gap: 0.8rem; }
     }
     .timer-block {
-      background: #fff;
-      border: 1px solid var(--warm-sand);
-      border-radius: 16px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl, 18px);
       padding: 1.8rem 1.4rem;
       min-width: 110px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      box-shadow: 0 4px 15px rgba(57, 51, 45, 0.05);
     }
     @media (max-width: 600px) {
       .timer-block { min-width: 70px; padding: 1.2rem 0.6rem; }
     }
     .timer-val {
-      font-family: var(--font-heading);
+      font-family: var(--font-serif);
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 700;
       color: var(--terracotta);
@@ -177,133 +133,120 @@
       color: var(--deep-olive);
       font-weight: 700;
     }
+    [data-theme="dark"] .timer-label {
+      color: var(--warm-sand);
+    }
 
     /* SECTION 4: VIP LAUNCH / NEWSLETTER */
     .cs-newsletter {
-      background: #fff;
-      padding: 5rem 0;
+      background: var(--bg-primary);
+      padding: var(--space-7) 0;
       text-align: center;
     }
     .newsletter-box {
       max-width: 580px;
       margin: 0 auto;
     }
-    .newsletter-form {
+    .newsletter-form-cs {
       display: flex;
       gap: 0.6rem;
       margin-top: 2rem;
     }
     @media (max-width: 500px) {
-      .newsletter-form { flex-direction: column; }
+      .newsletter-form-cs { flex-direction: column; }
     }
-    .newsletter-form input {
+    .newsletter-form-cs input {
       flex: 1;
       padding: 0.9rem 1.2rem;
-      border: 1.5px solid var(--warm-sand);
-      border-radius: 10px;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-full, 9999px);
+      background-color: var(--card-bg);
+      color: var(--text-primary);
       font-size: 0.95rem;
       outline: none;
     }
-    .newsletter-form input:focus {
+    .newsletter-form-cs input:focus {
       border-color: var(--terracotta);
-    }
-    .btn-submit {
-      background: var(--terracotta);
-      color: #fff;
-      border: none;
-      padding: 0.9rem 1.8rem;
-      border-radius: 10px;
-      font-weight: 700;
-      cursor: pointer;
-      font-family: var(--font-body);
-      transition: background 0.25s;
-    }
-    .btn-submit:hover {
-      background: var(--deep-olive);
-    }
-    .cs-feedback {
-      display: none;
-      color: var(--deep-olive);
-      font-weight: 700;
-      margin-top: 1rem;
-    }
-
-    /* SECTION 5: STUDIO CONTACT INFO */
-    .cs-contact-strip {
-      background: var(--natural-cream);
-      padding: 4rem 0;
-      text-align: center;
-      border-top: 1px solid var(--warm-sand);
-    }
-    .contact-items {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-    .contact-item h4 {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      margin-bottom: 0.3rem;
-    }
-    .contact-item p {
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    /* SECTION 6: RETURN TO HOME */
-    .cs-return-strip {
-      background: var(--charcoal);
-      color: #fff;
-      padding: 3rem 0;
-      text-align: center;
-    }
-    .btn-return {
-      display: inline-block;
-      background: var(--antique-gold);
-      color: var(--charcoal);
-      padding: 0.85rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      margin-top: 1rem;
-      transition: transform 0.25s;
-    }
-    .btn-return:hover {
-      transform: translateY(-2px);
     }
   </style>
 </head>
 <body>
 
-<!-- Header -->
-<header class="coming-header">
-  <div class="container">
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
     <a href="../index.html" class="logo"><span class="logo-mark"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#B9684E"/><path d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z" fill="#F8F3E9"/><path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="#B79A62"/><circle cx="32" cy="32" r="3.2" fill="#B9684E"/></svg></span><span class="logo-text-group"><span class="logo-text">AuraDecor</span><span class="logo-tagline">Crafted with Soul</span></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html" class="nav-link">Home</a></li>
+      <li><a href="home2.html" class="nav-link">Home 2</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="blog.html" class="nav-link">Blog</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <button class="icon-btn text-toggle" id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+      <button class="icon-btn cart-trigger" id="cart-btn" data-open-cart aria-label="Open shopping cart" title="Shopping Cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-count" data-cart-count style="display:none;">0</span></button>
+      <a href="contact.html#enquiry-form" class="btn-nav-cta">Book Now</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
-</header>
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <nav class="mobile-menu-nav" aria-label="Main menu">
+      <a href="../index.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-house" aria-hidden="true"></i></span><span>Home</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="home2.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></span><span>Home 2</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="about.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-info-circle" aria-hidden="true"></i></span><span>About</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="services.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i></span><span>Services</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="blog.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-newspaper" aria-hidden="true"></i></span><span>Blog</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="pricing.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-tags" aria-hidden="true"></i></span><span>Pricing</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="contact.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span><span>Contact</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+  </nav>
+  <div class="mobile-menu-actions">
+    <a href="contact.html#enquiry-form" class="mobile-menu-cta"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Now <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+  <div class="mobile-menu-footer">
+    <div class="mobile-menu-socials" aria-label="Follow AuraDecor">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+    </div>
+    <div class="mobile-menu-contact">
+      <a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i> +91 98765 43210</a>
+      <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope" aria-hidden="true"></i> hello@auradecor.in</a>
+    </div>
+    <p class="mobile-menu-note">Handcrafted in Jaipur · Loved everywhere</p>
+  </div>
+</div></nav>
 
 <main>
 
 <!-- ===== SECTION 1: HERO ===== -->
-<section class="cs-hero">
+<section class="cs-hero section-padding">
   <div class="cs-hero-bg"></div>
-  <div class="cs-hero-content">
-    <p style="text-transform:uppercase;letter-spacing:0.2em;color:var(--antique-gold);font-weight:700;margin-bottom:0.8rem;font-size:0.8rem;"><i class="fas fa-star"></i> Artisan Studio Update</p>
-    <h1>The Wheel is Turning</h1>
-    <p>We are currently firing a fresh batch of seasonal terracotta, handloom weaves, and brass decor in our artisan kilns.</p>
+  <div class="cs-hero-overlay"></div>
+  <div class="container">
+    <div class="cs-hero-content reveal">
+      <span class="section-eyebrow"><i class="fas fa-sparkles"></i> Seasonal Release Preview</span>
+      <h1>Something Extraordinary is<br><em>Taking Shape</em></h1>
+      <p>Our artisan collectives in Jaipur, Kutch, and Bastar are firing new kilns and threading new looms for our upcoming festival release.</p>
+    </div>
   </div>
 </section>
 
 <!-- ===== SECTION 2: CRAFT JOURNEY MESSAGE ===== -->
 <section class="cs-message">
   <div class="container">
-    <div class="cs-message-content">
-      <span style="font-size:0.8rem;color:var(--deep-olive);font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Slow Living &amp; Craftsmanship</span>
-      <h2>A Fresh Collection Is in the Kiln</h2>
-      <p>True craftsmanship cannot be rushed by automated production lines. Each piece in our upcoming collection is being shaped, sun-dried, glazed with natural Rajasthan minerals, and double-fired by our master artisans.</p>
-      <p>During this scheduled update window, our studio is curating limited-edition pottery suites, bespoke woven carpets from Kutch, and hand-carved mango wood tableware.</p>
+    <div class="cs-message-content reveal">
+      <span class="section-eyebrow">The Slow Craft Philosophy</span>
+      <h2>Handmade Heirlooms Demand Patience</h2>
+      <p>True slow craftsmanship cannot be rushed by factory calendars. Every batch of blue pottery requires two weeks of atmospheric sun-drying, while our natural vegetable dye block prints steep through three stages of river washing.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="services.html" class="btn btn-primary">Browse Current Catalog</a>
+        <a href="about.html" class="btn btn-secondary">Meet Our Artisans</a>
+      </div>
     </div>
   </div>
 </section>
@@ -311,76 +254,159 @@
 <!-- ===== SECTION 3: LIVE COUNTDOWN TIMER ===== -->
 <section class="cs-timer-section">
   <div class="container">
-    <span style="font-size:0.8rem;color:var(--terracotta);font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Seasonal Drop In</span>
-    <h2 style="font-family:var(--font-heading);font-size:2.2rem;margin-top:0.4rem;">Collection Reveal Countdown</h2>
-    <div class="countdown-grid">
-      <div class="timer-block">
-        <div class="timer-val" id="cDays">14</div>
-        <div class="timer-label">Days</div>
-      </div>
-      <div class="timer-block">
-        <div class="timer-val" id="cHours">08</div>
-        <div class="timer-label">Hours</div>
-      </div>
-      <div class="timer-block">
-        <div class="timer-val" id="cMins">45</div>
-        <div class="timer-label">Mins</div>
-      </div>
-      <div class="timer-block">
-        <div class="timer-val" id="cSecs">12</div>
-        <div class="timer-label">Secs</div>
+    <div class="reveal">
+      <span class="section-eyebrow">Target Unveiling</span>
+      <h2 class="section-title">Festival Collection<br><em>Countdown</em></h2>
+      <div class="countdown-grid">
+        <div class="timer-block">
+          <div class="timer-val" id="cDays">14</div>
+          <div class="timer-label">Days</div>
+        </div>
+        <div class="timer-block">
+          <div class="timer-val" id="cHours">08</div>
+          <div class="timer-label">Hours</div>
+        </div>
+        <div class="timer-block">
+          <div class="timer-val" id="cMins">30</div>
+          <div class="timer-label">Minutes</div>
+        </div>
+        <div class="timer-block">
+          <div class="timer-val" id="cSecs">00</div>
+          <div class="timer-label">Seconds</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== SECTION 4: VIP LAUNCH NOTIFICATION ===== -->
+<!-- ===== SECTION 4: VIP LAUNCH / NEWSLETTER ===== -->
 <section class="cs-newsletter">
   <div class="container">
-    <div class="newsletter-box">
-      <span style="font-size:0.8rem;color:var(--deep-olive);font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Be the First</span>
-      <h2 style="font-family:var(--font-heading);font-size:2rem;margin-top:0.4rem;">Get VIP Early Access</h2>
-      <p style="color:#666;font-size:0.95rem;margin-top:0.5rem;">Join 4,500+ handcrafted living enthusiasts who receive early access 48 hours before public launch.</p>
-      <form class="newsletter-form" onsubmit="handleNotify(event)">
-        <input type="email" placeholder="Enter your email address" required id="vipEmail">
-        <button type="submit" class="btn-submit">Notify Me <i class="fas fa-arrow-right"></i></button>
+    <div class="newsletter-box reveal">
+      <span class="section-eyebrow">VIP Collector List</span>
+      <h2 class="section-title">Receive an Early Invitation<br><em>Before Public Launch</em></h2>
+      <p style="color:var(--text-secondary);line-height:1.7;">Subscribers receive 48 hours of exclusive advance access to small-batch studio releases before pieces sell out.</p>
+      <form class="newsletter-form-cs" onsubmit="handleNotify(event)">
+        <input type="email" id="vipEmail" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-primary">Reserve VIP Access <i class="fas fa-arrow-right"></i></button>
       </form>
-      <div class="cs-feedback" id="vipFeedback"><i class="fas fa-star"></i> You are on the VIP guest list! We will notify you first.</div>
     </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 5: STUDIO CONTACT INFO ===== -->
-<section class="cs-contact-strip">
-  <div class="container">
-    <h3 style="font-family:var(--font-heading);font-size:1.4rem;">Need Urgent Support During Maintenance?</h3>
-    <div class="contact-items">
-      <div class="contact-item">
-        <h4>Studio Email</h4>
-        <p><a href="mailto:hello@auradecor.in" style="color:var(--terracotta);text-decoration:none;">hello@auradecor.in</a></p>
-      </div>
-      <div class="contact-item">
-        <h4>WhatsApp Desk</h4>
-        <p><a href="tel:+919876543210" style="color:var(--terracotta);text-decoration:none;">+91 98765 43210</a></p>
-      </div>
-      <div class="contact-item">
-        <h4>Jaipur Gallery</h4>
-        <p>12, Artisan Lane, Jaipur, Rajasthan</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 6: RETURN TO HOME ===== -->
-<section class="cs-return-strip">
-  <div class="container">
-    <p style="font-size:1.05rem;color:rgba(255,255,255,0.85);">Explore existing published artisan stories and portfolio pieces on our main website.</p>
-    <a href="../index.html" class="btn-return">Visit Store Homepage <i class="fas fa-arrow-right"></i></a>
   </div>
 </section>
 
 </main>
 
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo footer-logo"><span class="logo-mark"><svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#B9684E"/><path d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z" fill="#F8F3E9"/><path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="#B79A62"/><circle cx="32" cy="32" r="3.2" fill="#B9684E"/></svg></span><span class="logo-text-group"><span class="logo-text">AuraDecor</span><span class="logo-tagline">Crafted with Soul</span></span></a>
+          <p class="footer-tagline">Handmade heirlooms for slow living.</p>
+          <div class="footer-socials" aria-label="Follow AuraDecor">
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </div>
+          <p class="footer-craft-note"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> Handcrafted in Jaipur, loved everywhere.</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Explore">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-nav">
+            <li><a class="footer-nav-link" href="../index.html">Home</a></li>
+            <li><a class="footer-nav-link" href="home2.html">Home 2</a></li>
+            <li><a class="footer-nav-link" href="about.html">About</a></li>
+            <li><a class="footer-nav-link" href="services.html">Services</a></li>
+            <li><a class="footer-nav-link" href="blog.html">Blog</a></li>
+            <li><a class="footer-nav-link" href="pricing.html">Pricing</a></li>
+            <li><a class="footer-nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Collections">
+          <h3 class="footer-col-title">Collections</h3>
+          <ul class="footer-nav">
+            <li><a class="footer-nav-link" href="services.html?cat=home-decor">Home Decor</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=pottery-ceramics">Pottery &amp; Ceramics</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=textiles">Handmade Textiles</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=wooden">Wooden Handicrafts</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=wall-art">Wall Art</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=lighting">Handmade Lighting</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=metal-crafts">Metal Crafts</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=gifts">Handmade Gifts</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Support</h3>
+          <ul class="footer-nav">
+            <li><a class="footer-nav-link" href="contact.html#faq">FAQs</a></li>
+            <li><a class="footer-nav-link" href="contact.html">Shipping &amp; Delivery</a></li>
+            <li><a class="footer-nav-link" href="contact.html">Returns &amp; Exchanges</a></li>
+            <li><a class="footer-nav-link" href="pricing.html">Wholesale Enquiries</a></li>
+            <li><a class="footer-nav-link" href="contact.html#enquiry-form">Book a Consultation</a></li>
+            <li><a class="footer-nav-link" href="login.html">My Account</a></li>
+          </ul>
+          <div class="footer-contact">
+            <a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i> +91 98765 43210</a>
+            <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope" aria-hidden="true"></i> hello@auradecor.in</a>
+          </div>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h3 class="footer-col-title">Workshop Notes</h3>
+          <p class="footer-newsletter-note">A quiet letter about craft, colour and slow living — delivered once a month.</p>
+          <form class="footer-newsletter-form newsletter-form" data-newsletter-form novalidate>
+            <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+            <input class="footer-newsletter-input" id="footerNewsletterEmail" type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+            <button class="footer-newsletter-btn" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Subscribe</button>
+          </form>
+          <p class="footer-newsletter-hint"><i class="fas fa-shield-heart" aria-hidden="true"></i> No spam, just stories.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container"><hr class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p class="footer-copyright">&copy; 2026 AuraDecor. All rights reserved. Crafted with care in Jaipur.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a class="footer-legal-link" href="privacy-policy.html">Privacy Policy</a>
+        <a class="footer-legal-link" href="terms-and-conditions.html">Terms of Service</a>
+        <a class="footer-legal-link" href="sitemap.html">Sitemap</a>
+      </nav>
+      <a class="footer-back-to-top" href="#" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i> Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
+  <div class="cart-header cart-drawer-header">
+    <h3 class="cart-drawer-title"><i class="fas fa-shopping-bag" aria-hidden="true"></i> Your Cart <span class="cart-drawer-count" data-cart-count>0</span></h3>
+    <button class="cart-close" id="cartClose" data-close-cart aria-label="Close cart"><i class="fas fa-xmark"></i></button>
+  </div>
+  <div class="cart-items cart-drawer-body" id="cart-items">
+    <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p>
+  </div>
+  <div class="cart-footer-panel cart-drawer-footer" id="cartFooterPanel">
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">₹0</span></div>
+    <p class="cart-free-ship" style="font-size:0.78rem;color:var(--deep-olive);margin-bottom:12px;"><i class="fas fa-truck-fast"></i> Free shipping on orders above ₹2,000</p>
+    <button class="btn-primary cart-checkout-btn" type="button" onclick="openCheckout()">Proceed to Checkout</button>
+    <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
+  </div>
+</aside>
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="../assets/js/products-data.js"></script>
+<script src="../assets/js/main.js"></script>
 <script>
 // Live Countdown Script (14 days from now)
 (function() {
@@ -410,8 +436,14 @@
 
 function handleNotify(e) {
   e.preventDefault();
-  document.getElementById('vipFeedback').style.display = 'block';
-  document.getElementById('vipEmail').value = '';
+  const emailInput = document.getElementById('vipEmail');
+  const email = emailInput.value.trim();
+  if (typeof window.showToast === 'function') {
+    window.showToast(`VIP Access reserved for ${email}! Check your inbox for your private preview code.`, 'success');
+  } else {
+    alert(`VIP Access reserved for ${email}!`);
+  }
+  emailInput.value = '';
 }
 </script>
 </body>
