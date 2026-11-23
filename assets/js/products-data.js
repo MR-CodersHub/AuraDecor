@@ -1019,7 +1019,7 @@ const artisans = [
     specialty: "Natural-Dye Block Printing",
     bio: "Farida Khatoon is one of only a handful of female master block printers in Bagru, a village where the craft has traditionally been male-dominated. She runs the 'Rang Sakhi' women's printing collective from a converted haveli courtyard, training women who would otherwise have no independent income.",
     story: "Growing up in Bagru, Farida watched her father and uncles work the vats of fermented iron-mud while women of the household were confined to stretching and drying cloth. After her arranged marriage at 18, she quietly began practicing block printing in the evenings, guided by her father-in-law who saw her talent. When a Delhi NGO visited Bagru looking for women artisans to train, Farida was the only woman who could already demonstrate the technique. The training grant allowed her to convert the haveli's inner courtyard into a printing studio. Today 'Rang Sakhi' employs 23 women and is certified by Craftmark for natural-dye authenticity. Farida's work has been featured in Vogue India and the Craft Council of India's annual showcase.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600",
     yearsExperience: 14,
     productsCount: 18,
     awards: ["Craftmark Certified Master Artisan 2020", "Rajasthan Mahila Shakti Puraskar 2022"]

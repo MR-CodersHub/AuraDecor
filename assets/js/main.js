@@ -104,7 +104,7 @@ const products = [
     image: "https://images.unsplash.com/photo-1518893494013-481c1d8ed3fd?w=600",
     images: [
       "https://images.unsplash.com/photo-1518893494013-481c1d8ed3fd?w=600",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600"
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600"
     ],
     description: "Boho-chic macramé wall hanging handknotted from natural cotton rope.",
     fullDescription: "Every knot in this expansive wall hanging is tied by hand over the course of three full days. Using a centuries-old knotting vocabulary — square knots, lark's-head knots, spiral half-hitches — our artisan builds a living tapestry that casts beautiful shadows in natural light.",
@@ -179,9 +179,9 @@ const products = [
     categorySlug: "wall-art-hangings",
     price: 1750,
     originalPrice: 2000,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+    image: "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=600",
     images: [
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+      "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=600",
       "https://images.unsplash.com/photo-1518893494013-481c1d8ed3fd?w=600"
     ],
     description: "Traditional Warli tribal art hand-painted on canvas, framed in mango wood.",
@@ -283,9 +283,9 @@ const products = [
     categorySlug: "handmade-gifts",
     price: 480,
     originalPrice: 600,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+    image: "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=600",
     images: [
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+      "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=600",
       "https://images.unsplash.com/photo-1518893494013-481c1d8ed3fd?w=600"
     ],
     description: "Pack of 8 hand-painted Madhubani art greeting cards with envelopes.",
@@ -439,9 +439,9 @@ const products = [
     categorySlug: "wall-art-hangings",
     price: 2650,
     originalPrice: 3000,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600",
     images: [
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600",
+      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600",
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600"
     ],
     description: "Handmade clear resin wall clock with real pressed wildflowers.",
@@ -520,7 +520,7 @@ const products = [
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
     images: [
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600"
+      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600"
     ],
     description: "Set of 3 bamboo photo frames in graduated sizes, eco-friendly.",
     fullDescription: "Three graduated frames — 4×6, 5×7, and 8×10 inches — crafted from certified sustainable bamboo with a natural carbonised finish. The frames can stand or hang and include acid-free backing boards to protect your photos. A thoughtful, planet-friendly gift.",
