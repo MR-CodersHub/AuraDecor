@@ -61,8 +61,8 @@
   --z-dropdown: 100;
   --z-sticky: 200;
   --z-navbar: 300;
-  --z-drawer: 400;
-  --z-overlay: 500;
+  --z-overlay: 400;
+  --z-drawer: 500;
   --z-modal: 600;
   --z-toast: 700;
 
@@ -2686,8 +2686,9 @@ select.form-control {
 .cart-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(57, 51, 45, 0.5);
-  backdrop-filter: blur(4px);
+  background-color: rgba(30, 26, 23, 0.45);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   z-index: var(--z-overlay);
   opacity: 0;
   pointer-events: none;
@@ -2707,8 +2708,8 @@ select.form-control {
   max-width: 420px;
   height: 100vh;
   height: 100dvh;
-  background-color: var(--card-bg);
-  box-shadow: -4px 0 24px rgba(57, 51, 45, 0.15);
+  background-color: var(--card-bg, #ffffff);
+  box-shadow: -4px 0 28px rgba(0, 0, 0, 0.2);
   z-index: var(--z-drawer);
   display: flex;
   flex-direction: column;
