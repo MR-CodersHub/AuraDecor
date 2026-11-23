@@ -72,7 +72,7 @@
 <section class="shop-hero section-padding">
   <div class="shop-hero-bg"></div>
   <div class="container">
-    <div class="shop-hero-content reveal-up">
+    <div class="shop-hero-content reveal">
       <p class="shop-hero-eyebrow"><i class="fas fa-star"></i> Handcrafted for Your Home</p>
       <h1>Discover Handmade<br><em>Treasures for Your Home</em></h1>
       <p>Explore our curated collections of authentic, artisan-crafted home decor — each piece a unique expression of traditional skill and contemporary beauty.</p>
@@ -87,12 +87,12 @@
 <!-- ===== SECTION 2: SHOP BY CATEGORY ===== -->
 <section class="categories-section section-padding" id="categories-section">
   <div class="container">
-    <div class="section-header reveal-up">
+    <div class="section-header reveal">
       <span class="section-eyebrow">Browse by Craft</span>
       <h2 class="section-title">Shop by Product<br><em>Category</em></h2>
       <p class="section-subtitle">Discover the full breadth of our handcrafted collections — from earthy ceramics to intricately woven textiles.</p>
     </div>
-    <div class="cat-grid reveal-up">
+    <div class="cat-grid reveal">
       <div class="cat-card" data-cat="Home Decor" onclick="filterByCategory('Home Decor',this)" tabindex="0" role="button" aria-label="Shop Home Decor">
         <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&auto=format&fit=crop" alt="Home Decor" loading="lazy">
         <div class="cat-card-overlay"></div>
@@ -190,12 +190,12 @@
 <!-- ===== SECTION 3: ALL PRODUCTS ===== -->
 <section class="products-section section-padding" id="products-section">
   <div class="container">
-    <div class="section-header reveal-up">
+    <div class="section-header reveal">
       <span class="section-eyebrow">Our Collection</span>
       <h2 class="section-title">All Handcrafted<br><em>Products</em></h2>
     </div>
     <!-- Filter Bar -->
-    <div class="filter-bar reveal-up">
+    <div class="filter-bar reveal">
       <label>Search
         <input type="text" id="searchInput" placeholder="Search products…" autocomplete="off">
       </label>
@@ -235,12 +235,12 @@
 <!-- ===== SECTION 4: CURATED COLLECTIONS ===== -->
 <section class="curated-section section-padding">
   <div class="container">
-    <div class="section-header reveal-up">
+    <div class="section-header reveal">
       <span class="section-eyebrow">Handpicked for You</span>
       <h2 class="section-title">Featured & Seasonal<br><em>Collections</em></h2>
       <p class="section-subtitle">Thoughtfully curated groups that bring harmony and artisanal warmth to every corner of your home.</p>
     </div>
-    <div class="curated-grid reveal-up">
+    <div class="curated-grid reveal">
       <div class="curated-card" onclick="filterByCategory('Home Decor',null)">
         <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&auto=format&fit=crop" alt="Earthy Living">
         <div class="curated-card-overlay"></div>
@@ -303,7 +303,7 @@
 <section class="custom-orders-section section-padding">
   <div class="container">
     <div class="custom-grid">
-      <div class="reveal-up">
+      <div class="reveal">
         <span class="section-eyebrow">Made Just for You</span>
         <h2 class="section-title" style="text-align:left;">Custom Handcrafted<br><em>Orders</em></h2>
         <p style="color:var(--charcoal);opacity:.8;margin-bottom:1rem;">Every home has its own story. Our artisans work with you to create personalized handcrafted pieces that fit your space, your style, and your vision perfectly.</p>
@@ -331,7 +331,7 @@
 <section class="shop-cta-section section-padding">
   <div class="shop-cta-bg"></div>
   <div class="container">
-    <div class="shop-cta-content reveal-up">
+    <div class="shop-cta-content reveal">
       <span class="section-eyebrow" style="color:var(--antique-gold);">Every Piece Tells a Story</span>
       <h2>Discover Your<br><em style="color:var(--warm-sand);">Favourite Piece</em></h2>
       <p>Each item in our collection is handcrafted by a skilled artisan who pours their tradition, creativity, and care into every piece. No two are exactly alike — which makes yours truly one of a kind.</p>
@@ -606,8 +606,6 @@ document.getElementById('sortFilter').addEventListener('change',renderGrid);
     if(card)card.classList.add('active-cat');
   }
   renderGrid();
-  updateWishlistBadge();
-  updateCartBadge();
 })();
 </script>
 </body>
