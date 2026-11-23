@@ -1208,7 +1208,7 @@
   }
 
   .hero-about .container {
-    padding-top: calc(var(--navbar-height) + var(--space-6));
+    padding-top: var(--space-6);
     padding-bottom: var(--space-6);
   }
 }

@@ -27,10 +27,18 @@
 
     /* Top Utility Bar */
     .maint-topbar {
-      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 0;
       border-bottom: 1px solid var(--border-color);
-      background-color: var(--card-bg);
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       transition: background-color var(--transition-base), border-color var(--transition-base);
+    }
+    [data-theme="dark"] .maint-topbar {
+      background-color: rgba(42, 34, 24, 0.95);
     }
     .maint-topbar-inner {
       display: flex;

@@ -704,9 +704,6 @@
     padding: 24px 24px 32px !important;
     box-sizing: border-box !important;
   }
-  body.has-fixed-nav {
-    padding-top: 66px;
-  }
 }
 
 /* Viewport 5: Large Phones & Landscape (576px – 768px) */
@@ -771,9 +768,6 @@
     height: calc(100vh - 64px);
     padding: 20px 18px 28px !important;
     box-sizing: border-box !important;
-  }
-  body.has-fixed-nav {
-    padding-top: 64px;
   }
 }
 
@@ -856,9 +850,6 @@
   }
   [dir="rtl"] .mobile-nav-link {
     padding: 8px 0 8px 10px;
-  }
-  body.has-fixed-nav {
-    padding-top: 58px;
   }
 }
 
@@ -947,9 +938,6 @@
     width: 26px;
     height: 26px;
     font-size: 0.8rem;
-  }
-  body.has-fixed-nav {
-    padding-top: 54px;
   }
 }
 
