@@ -552,6 +552,80 @@
   }
 }
 
+/* ===== 6b. BUTTONS & ACTIONS ===== */
+.btn-primary,
+.btn-secondary,
+.studio-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 13px 28px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-full, 9999px);
+  text-decoration: none;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-base, 0.25s ease);
+}
+
+.btn-primary {
+  background-color: var(--terracotta);
+  color: #ffffff !important;
+  border: 1.5px solid var(--terracotta);
+  box-shadow: 0 4px 14px rgba(185, 104, 78, 0.28);
+}
+
+.btn-primary:hover {
+  background-color: #a05640;
+  border-color: #a05640;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(185, 104, 78, 0.38);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--terracotta);
+  border: 1.5px solid var(--terracotta);
+}
+
+.btn-secondary:hover {
+  background-color: var(--terracotta);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(185, 104, 78, 0.25);
+}
+
+.studio-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+}
+
+.studio-actions .btn-primary {
+  background-color: var(--terracotta);
+  color: #ffffff !important;
+  border-color: var(--terracotta);
+}
+
+.studio-actions .btn-secondary {
+  background-color: transparent;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+}
+
+.studio-actions .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: #ffffff;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
 /* ===== 7. DARK MODE REFINEMENTS ===== */
 [data-theme="dark"] .info-card,
 [data-theme="dark"] .form-wrapper,
