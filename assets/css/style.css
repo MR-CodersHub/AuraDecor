@@ -4921,6 +4921,96 @@ select.form-control {
   z-index: 1;
 }
 
+/* Map Wrapper for Live Embed */
+.map-wrapper {
+  position: relative;
+  border-radius: var(--radius-xl, 20px);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  min-height: 380px;
+  background: var(--bg-secondary, #2a2521);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  border: 0;
+  display: block;
+}
+
+.map-floating-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: rgba(30, 26, 23, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md, 12px);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 2;
+}
+
+.map-badge-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.map-badge-text i {
+  color: var(--accent, #B9684E);
+  font-size: 1rem;
+}
+
+.map-directions-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--accent, #B9684E);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.map-directions-link:hover {
+  background: var(--deep-olive, #4D5940);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .map-wrapper {
+    min-height: 320px;
+    aspect-ratio: auto;
+  }
+  .map-wrapper iframe {
+    min-height: 320px;
+  }
+  .map-floating-badge {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
 /* ============================================================
    25. ARTISAN PROFILE PAGE
    ============================================================ */

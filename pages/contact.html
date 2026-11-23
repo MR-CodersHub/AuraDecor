@@ -287,29 +287,86 @@
     @media (max-width: 850px) {
       .studio-grid { grid-template-columns: 1fr; }
     }
-    .map-placeholder {
-      background: #2a2521;
+    .map-wrapper {
+      position: relative;
       border-radius: 20px;
       overflow: hidden;
       aspect-ratio: 4/3;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.15);
-      position: relative;
+      min-height: 380px;
+      background: #2a2521;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
     }
-    .map-placeholder-bg {
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border: 0;
+      display: block;
+    }
+    .map-floating-badge {
       position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop') center/cover;
-      opacity: 0.25;
-    }
-    .map-content {
-      position: relative;
+      bottom: 14px;
+      left: 14px;
+      right: 14px;
+      background: rgba(30, 26, 23, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
       z-index: 2;
+    }
+    .map-badge-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .map-badge-text i {
+      color: var(--accent);
+      font-size: 1rem;
+    }
+    .map-directions-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .map-directions-link:hover {
+      background: var(--deep-olive);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    @media (max-width: 600px) {
+      .map-wrapper {
+        min-height: 320px;
+        aspect-ratio: auto;
+      }
+      .map-wrapper iframe {
+        min-height: 320px;
+      }
+      .map-floating-badge {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
     }
   </style>
 </head>
@@ -389,6 +446,7 @@
           Jaipur, Rajasthan 302001<br>
           <em>(Sample Location)</em>
         </address>
+        <a href="#studio-map" style="display:inline-flex;align-items:center;gap:5px;font-size:0.8rem;color:var(--accent);font-weight:600;margin-top:6px;text-decoration:none;"><i class="fas fa-map-location-dot"></i> View on Map</a>
       </div>
 
       <div class="info-card">
@@ -615,7 +673,7 @@
 </section>
 
 <!-- ===== SECTION 6: VISIT & CONNECT / STUDIO DETAILS ===== -->
-<section class="studio-visit-section">
+<section class="studio-visit-section" id="studio-map">
   <div class="container">
     <div class="studio-grid">
       <div class="reveal-up">
@@ -640,13 +698,25 @@
         </div>
       </div>
 
-      <div class="map-placeholder reveal-right">
-        <div class="map-placeholder-bg"></div>
-        <div class="map-content">
-          <span style="font-size:3rem;display:block;margin-bottom:1rem;"><i class="fas fa-map"></i></span>
-          <h3 style="font-family:var(--font-heading);font-size:1.5rem;color:#fff;margin-bottom:0.5rem;">Jaipur Flagship Studio</h3>
-          <p style="color:rgba(255,255,255,0.85);font-size:0.9rem;max-width:320px;margin:0 auto 1.2rem;">Centrally located 5 minutes from City Palace and Hawa Mahal.</p>
-          <span style="display:inline-block;padding:0.5rem 1.2rem;background:rgba(255,255,255,0.15);border-radius:20px;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-sand);">Google Maps Directions Available</span>
+      <div class="map-wrapper reveal-right">
+        <iframe
+          src="https://maps.google.com/maps?q=City+Palace%2C+Jaipur%2C+Rajasthan+302001&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="AuraDecor Flagship Studio Location - Jaipur, Rajasthan">
+        </iframe>
+        <div class="map-floating-badge">
+          <div class="map-badge-text">
+            <i class="fas fa-location-dot" aria-hidden="true"></i>
+            <span>AuraDecor Flagship Studio, Jaipur</span>
+          </div>
+          <a href="https://maps.google.com/?q=City+Palace%2C+Jaipur%2C+Rajasthan+302001" target="_blank" rel="noopener noreferrer" class="map-directions-link">
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Get Directions
+          </a>
         </div>
       </div>
     </div>
