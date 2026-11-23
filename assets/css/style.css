@@ -3062,14 +3062,14 @@ select.form-control {
    ============================================================ */
 .toast-container {
   position: fixed;
-  bottom: 24px;
+  bottom: 84px;
   right: 24px;
   z-index: var(--z-toast);
   display: flex;
   flex-direction: column;
   gap: 10px;
   pointer-events: none;
-  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1), bottom 0.35s ease;
 }
 
 /* Offset toast outside the cart drawer so it never covers checkout controls */

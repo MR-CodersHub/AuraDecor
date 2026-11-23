@@ -13,362 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
-  <style>
-    /* ===== CONTACT PAGE STYLES ===== */
-    .contact-hero {
-      position: relative;
-      min-height: 55vh;
-      display: flex;
-      align-items: center;
-      background: var(--charcoal);
-      overflow: hidden;
-      color: #fff;
-    }
-    .contact-hero-bg {
-      position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1600&auto=format&fit=crop') center/cover no-repeat;
-      opacity: 0.35;
-    }
-    .contact-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-    }
-    .contact-hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      margin-bottom: 1rem;
-      line-height: 1.15;
-    }
-    .contact-hero p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.6;
-    }
-
-    /* Info Cards Section */
-    .contact-info-section {
-      background: var(--natural-cream);
-      padding: 4rem 0 2rem;
-    }
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-    @media (max-width: 992px) {
-      .info-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 540px) {
-      .info-grid { grid-template-columns: 1fr; }
-    }
-    .info-card {
-      background: #fff;
-      padding: 2rem 1.6rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      border: 1px solid var(--warm-sand);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .info-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-    .info-icon {
-      font-size: 2rem;
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-    .info-card h3 {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      margin-bottom: 0.5rem;
-      color: var(--charcoal);
-    }
-    .info-card p, .info-card address {
-      font-size: 0.9rem;
-      color: #666;
-      line-height: 1.6;
-      font-style: normal;
-    }
-    .info-card a {
-      color: var(--terracotta);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    /* Main Form Section */
-    .enquiry-form-section {
-      background: var(--natural-cream);
-      padding: 3rem 0 5rem;
-    }
-    .form-wrapper {
-      background: #fff;
-      border-radius: 20px;
-      padding: 3.5rem;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
-      border: 1px solid var(--warm-sand);
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    @media (max-width: 768px) {
-      .form-wrapper { padding: 2rem 1.5rem; }
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.4rem;
-    }
-    @media (max-width: 640px) {
-      .form-grid { grid-template-columns: 1fr; }
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-    .form-group.full-width {
-      grid-column: 1 / -1;
-    }
-    .form-group label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--charcoal);
-      letter-spacing: 0.04em;
-    }
-    .form-group label span.req {
-      color: var(--terracotta);
-    }
-    .form-group input, 
-    .form-group select, 
-    .form-group textarea {
-      padding: 0.85rem 1rem;
-      border: 1.5px solid var(--warm-sand);
-      border-radius: 10px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      background: #fff;
-      color: var(--charcoal);
-      outline: none;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .form-group input:focus, 
-    .form-group select:focus, 
-    .form-group textarea:focus {
-      border-color: var(--terracotta);
-      box-shadow: 0 0 0 3px rgba(185,104,78,0.15);
-    }
-    .form-success {
-      display: none;
-      background: rgba(77,89,64,0.1);
-      border: 2px solid var(--deep-olive);
-      color: var(--deep-olive);
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .form-success h4 {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      margin-bottom: 0.4rem;
-    }
-
-    /* Custom & Wholesale Spotlight */
-    .custom-spotlight-section {
-      background: var(--soft-beige);
-      padding: 5rem 0;
-    }
-    .spotlight-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-    @media (max-width: 850px) {
-      .spotlight-grid { grid-template-columns: 1fr; }
-    }
-    .spotlight-img {
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.1);
-    }
-    .spotlight-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .spotlight-list {
-      list-style: none;
-      padding: 0;
-      margin: 1.5rem 0;
-    }
-    .spotlight-list li {
-      display: flex;
-      gap: 0.8rem;
-      align-items: flex-start;
-      margin-bottom: 0.9rem;
-      font-size: 0.95rem;
-      color: #555;
-    }
-    .spotlight-list li span.bullet {
-      color: var(--terracotta);
-      font-weight: bold;
-    }
-
-    /* FAQ Section */
-    .faq-section {
-      background: var(--natural-cream);
-      padding: 5rem 0;
-    }
-    .faq-container {
-      max-width: 820px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      background: #fff;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      border: 1px solid var(--warm-sand);
-      overflow: hidden;
-      transition: border-color 0.25s;
-    }
-    .faq-item.active {
-      border-color: var(--terracotta);
-    }
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 1.3rem 1.6rem;
-      text-align: left;
-      font-family: var(--font-heading);
-      font-size: 1.05rem;
-      color: var(--charcoal);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-    .faq-icon {
-      font-size: 1.2rem;
-      color: var(--terracotta);
-      transition: transform 0.3s;
-    }
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
-    }
-    .faq-answer {
-      display: none;
-      padding: 0 1.6rem 1.4rem;
-      font-size: 0.92rem;
-      color: #666;
-      line-height: 1.7;
-    }
-    .faq-item.active .faq-answer {
-      display: block;
-    }
-
-    /* Studio & Map Visit Section */
-    .studio-visit-section {
-      background: var(--charcoal);
-      color: #fff;
-      padding: 5rem 0;
-    }
-    .studio-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-    @media (max-width: 850px) {
-      .studio-grid { grid-template-columns: 1fr; }
-    }
-    .map-wrapper {
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      min-height: 380px;
-      background: #2a2521;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-    }
-    .map-wrapper iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 380px;
-      border: 0;
-      display: block;
-    }
-    .map-floating-badge {
-      position: absolute;
-      bottom: 14px;
-      left: 14px;
-      right: 14px;
-      background: rgba(30, 26, 23, 0.92);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      padding: 10px 14px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      z-index: 2;
-    }
-    .map-badge-text {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #fff;
-    }
-    .map-badge-text i {
-      color: var(--accent);
-      font-size: 1rem;
-    }
-    .map-directions-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      border-radius: 6px;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-    .map-directions-link:hover {
-      background: var(--deep-olive);
-      color: #fff;
-      transform: translateY(-1px);
-    }
-    @media (max-width: 600px) {
-      .map-wrapper {
-        min-height: 320px;
-        aspect-ratio: auto;
-      }
-      .map-wrapper iframe {
-        min-height: 320px;
-      }
-      .map-floating-badge {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/contact.css">
 </head>
 <body>
 
@@ -426,8 +71,9 @@
 <!-- ===== SECTION 1: CONTACT HERO ===== -->
 <section class="contact-hero section-padding">
   <div class="contact-hero-bg"></div>
+  <div class="contact-hero-overlay"></div>
   <div class="container">
-    <div class="contact-hero-content reveal-up">
+    <div class="contact-hero-content reveal">
       <span class="section-eyebrow" style="color:var(--antique-gold);">We are Here to Help</span>
       <h1>Connect With Our<br><em>Artisans &amp; Studio</em></h1>
       <p>Whether you are inquiring about a handcrafted piece, designing custom home decor, exploring bulk orders, or seeking assistance with an existing order, we would love to hear from you.</p>
@@ -438,9 +84,9 @@
 <!-- ===== SECTION 2: CONTACT INFORMATION ===== -->
 <section class="contact-info-section">
   <div class="container">
-    <div class="info-grid reveal-up">
+    <div class="info-grid reveal">
       <div class="info-card">
-        <span class="info-icon"><i class="fas fa-location-dot"></i></span>
+        <div class="info-icon-wrap"><i class="fas fa-location-dot"></i></div>
         <h3>Artisan Studio</h3>
         <address>
           12, Artisan Lane, Near City Palace<br>
@@ -451,23 +97,23 @@
       </div>
 
       <div class="info-card">
-        <span class="info-icon"><i class="fas fa-phone"></i></span>
+        <div class="info-icon-wrap"><i class="fas fa-phone"></i></div>
         <h3>Phone &amp; WhatsApp</h3>
         <p>Direct: <a href="tel:+919876543210">+91 98765 43210</a></p>
         <p>WhatsApp: <a href="https://wa.me/919876543210" target="_blank" rel="noopener">+91 98765 43210</a></p>
-        <p><small style="color:#888;">Mon–Sat, 10AM–7PM IST</small></p>
+        <p><small style="color:var(--text-secondary);">Mon–Sat, 10AM–7PM IST</small></p>
       </div>
 
       <div class="info-card">
-        <span class="info-icon"><i class="fas fa-envelope"></i></span>
+        <div class="info-icon-wrap"><i class="fas fa-envelope"></i></div>
         <h3>Email Inquiries</h3>
         <p>General: <a href="mailto:hello@auradecor.in">hello@auradecor.in</a></p>
         <p>Wholesale: <a href="mailto:wholesale@auradecor.in">wholesale@auradecor.in</a></p>
-        <p><small style="color:#888;">Response within 24 business hours</small></p>
+        <p><small style="color:var(--text-secondary);">Response within 24 business hours</small></p>
       </div>
 
       <div class="info-card">
-        <span class="info-icon"><i class="fas fa-clock"></i></span>
+        <div class="info-icon-wrap"><i class="fas fa-clock"></i></div>
         <h3>Studio Visiting Hours</h3>
         <p>Monday – Saturday: 10:00 AM – 7:00 PM</p>
         <p>Sunday: 11:00 AM – 5:00 PM</p>
@@ -480,13 +126,13 @@
 <!-- ===== SECTION 3: COMPLETE ENQUIRY FORM ===== -->
 <section class="enquiry-form-section" id="enquiry-form">
   <div class="container">
-    <div class="section-header reveal-up" style="margin-bottom:2.5rem;">
+    <div class="section-header reveal" style="margin-bottom:2.5rem;">
       <span class="section-eyebrow">Direct Contact</span>
       <h2 class="section-title">Send Us an<br><em>Artisan Enquiry</em></h2>
       <p class="section-subtitle">Please fill out the form below. Every enquiry is handled directly by our craft curation team.</p>
     </div>
 
-    <div class="form-wrapper reveal-up">
+    <div class="form-wrapper reveal">
       <div class="form-success" id="formSuccess">
         <h4><i class="fas fa-star"></i> Thank You! Your Message Has Been Sent.</h4>
         <p>Our craft liaison will review your requirements and respond within 24 hours.</p>
@@ -558,13 +204,13 @@
 <section class="custom-spotlight-section">
   <div class="container">
     <div class="spotlight-grid">
-      <div class="spotlight-img reveal-up">
+      <div class="spotlight-img reveal">
         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop" alt="Artisan handloom weaving workshop" loading="lazy">
       </div>
-      <div class="reveal-right">
+      <div class="reveal">
         <span class="section-eyebrow">Tailored For Homes &amp; Spaces</span>
         <h2 class="section-title" style="text-align:left;">Custom Commissions &amp;<br><em>Wholesale Partnerships</em></h2>
-        <p style="color:#555;line-height:1.7;">Are you an interior designer, boutique hotelier, architect, or looking for handcrafted corporate gifts? AuraDecor works hand-in-hand with verified artisan master communities to bring bespoke designs to life.</p>
+        <p style="color:var(--text-secondary);line-height:1.7;">Are you an interior designer, boutique hotelier, architect, or looking for handcrafted corporate gifts? AuraDecor works hand-in-hand with verified artisan master communities to bring bespoke designs to life.</p>
         <ul class="spotlight-list">
           <li><span class="bullet"><i class="fas fa-star"></i></span> <span><strong>Custom Sizing &amp; Glazes:</strong> Tailor dimensions, materials, and palettes to your spatial scheme.</span></li>
           <li><span class="bullet"><i class="fas fa-star"></i></span> <span><strong>Wholesale Pricing Tiers:</strong> Transparent tier-based discounts for orders of 10+ artisan items.</span></li>
@@ -583,13 +229,13 @@
 <!-- ===== SECTION 5: FAQ ACCORDION ===== -->
 <section class="faq-section">
   <div class="container">
-    <div class="section-header reveal-up">
+    <div class="section-header reveal">
       <span class="section-eyebrow">Common Questions</span>
       <h2 class="section-title">Frequently Asked<br><em>Questions</em></h2>
       <p class="section-subtitle">Everything you need to know about our handmade products, shipping, returns, and artisan collaborations.</p>
     </div>
 
-    <div class="faq-container reveal-up">
+    <div class="faq-container reveal">
       <div class="faq-item active">
         <button class="faq-question" type="button">
           <span>How long does delivery take for handmade items?</span>
@@ -677,29 +323,29 @@
 <section class="studio-visit-section" id="studio-map">
   <div class="container">
     <div class="studio-grid">
-      <div class="reveal-up">
-        <span class="section-eyebrow" style="color:var(--antique-gold);">Heritage Experience</span>
-        <h2 class="section-title" style="text-align:left;color:#fff;">Visit Our Jaipur<br><em style="color:var(--warm-sand);">Craft Studio &amp; Gallery</em></h2>
-        <p style="color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:1.5rem;">Nestled in the historic artisan quarter of Jaipur, our flagship studio showcases finished collections, ongoing kiln firings, handloom demonstrations, and raw material archives. Come experience the warmth of handmade firsthand.</p>
+      <div class="studio-info-col reveal">
+        <span class="section-eyebrow" style="color:var(--antique-gold);"><i class="fas fa-compass" aria-hidden="true"></i> Heritage Experience</span>
+        <h2>Visit Our Jaipur<br><em>Craft Studio &amp; Gallery</em></h2>
+        <p>Nestled in the historic artisan quarter of Jaipur, our flagship studio showcases finished collections, ongoing kiln firings, handloom demonstrations, and raw material archives. Come experience the warmth of handmade firsthand.</p>
         
-        <div style="margin-bottom:1.5rem;">
-          <p style="color:var(--antique-gold);font-weight:700;margin-bottom:0.25rem;">STUDIO LOCATION</p>
-          <p style="color:#fff;">12, Artisan Lane, Near City Palace, Jaipur, Rajasthan 302001</p>
+        <div class="studio-meta-block">
+          <p class="meta-label">Studio Location</p>
+          <p class="meta-value">12, Artisan Lane, Near City Palace, Jaipur, Rajasthan 302001</p>
         </div>
 
-        <div style="margin-bottom:1.8rem;">
-          <p style="color:var(--antique-gold);font-weight:700;margin-bottom:0.25rem;">STUDIO TIMINGS</p>
-          <p style="color:#fff;">Monday to Saturday: 10:00 AM – 7:00 PM IST</p>
-          <p style="color:#fff;">Sunday: 11:00 AM – 5:00 PM IST</p>
+        <div class="studio-meta-block">
+          <p class="meta-label">Studio Timings</p>
+          <p class="meta-value">Monday to Saturday: 10:00 AM – 7:00 PM IST</p>
+          <p class="meta-value">Sunday: 11:00 AM – 5:00 PM IST</p>
         </div>
 
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem;">
           <a href="#enquiry-form" class="btn-primary">Book a Studio Appointment</a>
           <a href="services.html" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,0.4);">Browse Shop Online</a>
         </div>
       </div>
 
-      <div class="map-wrapper reveal-right">
+      <div class="map-wrapper reveal">
         <iframe
           src="https://maps.google.com/maps?q=City+Palace%2C+Jaipur%2C+Rajasthan+302001&t=&z=15&ie=UTF8&iwloc=&output=embed"
           width="100%"
@@ -858,7 +504,7 @@ function handleFormSubmit(e) {
   e.target.reset();
   successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   if (typeof window.showToast === 'function') {
-    window.showToast('Enquiry submitted successfully!');
+    window.showToast('Enquiry submitted successfully! Our craft team will respond within 24 hours.', 'success');
   }
 }
 </script>
