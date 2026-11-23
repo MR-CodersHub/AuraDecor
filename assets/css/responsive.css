@@ -66,139 +66,423 @@
 }
 
 /* ============================================================
-   2. TYPOGRAPHY SCALING
+   2. TYPOGRAPHY SCALING — RESPONSIVE VIEWPORT BREAKPOINTS
    ============================================================ */
 
-/* Mobile Small (≤ 480px) */
-@media (max-width: 480px) {
-  h1,
-  .h1 {
-    font-size: 28px;
+/* Viewport 1: Ultra-Wide Desktop (≥ 1440px) */
+@media (min-width: 1440px) {
+  html {
+    font-size: 16.5px;
+  }
+  h1, .h1, .page-title, .page-header h1 {
+    font-size: 56px;
+    line-height: 1.1;
+  }
+  h2, .h2, .section-heading {
+    font-size: 44px;
+    line-height: 1.15;
+  }
+  .section-title {
+    font-size: 50px;
+    line-height: 1.15;
+  }
+  h3, .h3, .card-title {
+    font-size: 30px;
     line-height: 1.25;
   }
-
-  h2,
-  .h2 {
+  h4, .h4, .product-card-title {
     font-size: 24px;
     line-height: 1.3;
   }
-
-  h3,
-  .h3 {
+  h5, .h5 {
     font-size: 20px;
     line-height: 1.35;
   }
-
-  h4,
-  .h4 {
-    font-size: 18px;
+  h6, .h6 {
+    font-size: 16px;
     line-height: 1.4;
   }
+  .section-subtitle {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+  .section-label, .section-eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+  }
+  p, .text-body {
+    font-size: 16.5px;
+    line-height: 1.75;
+  }
+  .lead {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+  .hero h1, .hero__title, .hero-title {
+    font-size: 4.8rem;
+    line-height: 1.08;
+  }
+  .hero p, .hero__subtitle, .hero-desc {
+    font-size: 19px;
+    line-height: 1.7;
+  }
+}
 
-  h5,
-  .h5 {
+/* Viewport 2: Standard Desktop (1200px – 1439px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  html {
     font-size: 16px;
   }
-
-  h6,
-  .h6 {
-    font-size: 14px;
+  h1, .h1, .page-title, .page-header h1 {
+    font-size: 50px;
+    line-height: 1.12;
   }
-
+  h2, .h2, .section-heading {
+    font-size: 38px;
+    line-height: 1.18;
+  }
   .section-title {
+    font-size: 44px;
+    line-height: 1.18;
+  }
+  h3, .h3, .card-title {
     font-size: 28px;
     line-height: 1.25;
   }
-
-  .section-subtitle {
-    font-size: 15px;
+  h4, .h4, .product-card-title {
+    font-size: 22px;
+    line-height: 1.3;
   }
-
-  p {
+  h5, .h5 {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  h6, .h6 {
     font-size: 15px;
+    line-height: 1.4;
+  }
+  .section-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .section-label, .section-eyebrow {
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+  }
+  p, .text-body {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .lead {
+    font-size: 18.5px;
+    line-height: 1.75;
+  }
+  .hero h1, .hero__title, .hero-title {
+    font-size: 4.2rem;
+    line-height: 1.1;
+  }
+  .hero p, .hero__subtitle, .hero-desc {
+    font-size: 18px;
     line-height: 1.65;
   }
 }
 
-/* Tablet (481px – 1023px) */
-@media (min-width: 481px) and (max-width: 1023px) {
-  h1,
-  .h1 {
-    font-size: 36px;
-    line-height: 1.25;
+/* Viewport 3: Medium Desktop & Laptops (1024px – 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  html {
+    font-size: 15.5px;
   }
-
-  h2,
-  .h2 {
-    font-size: 28px;
-    line-height: 1.3;
-  }
-
-  h3,
-  .h3 {
-    font-size: 24px;
-    line-height: 1.35;
-  }
-
-  h4,
-  .h4 {
-    font-size: 20px;
-  }
-
-  .section-title {
-    font-size: 36px;
-    line-height: 1.25;
-  }
-
-  .section-subtitle {
-    font-size: 16px;
-  }
-}
-
-/* Desktop (≥ 1024px) */
-@media (min-width: 1024px) {
-  h1,
-  .h1 {
-    font-size: 48px;
+  h1, .h1, .page-title, .page-header h1 {
+    font-size: 44px;
     line-height: 1.15;
   }
-
-  h2,
-  .h2 {
-    font-size: 36px;
+  h2, .h2, .section-heading {
+    font-size: 34px;
     line-height: 1.2;
   }
-
-  h3,
-  .h3 {
-    font-size: 28px;
-    line-height: 1.3;
-  }
-
-  h4,
-  .h4 {
-    font-size: 22px;
-  }
-
   .section-title {
-    font-size: 48px;
-    line-height: 1.15;
+    font-size: 38px;
+    line-height: 1.2;
   }
-
+  h3, .h3, .card-title {
+    font-size: 25px;
+    line-height: 1.28;
+  }
+  h4, .h4, .product-card-title {
+    font-size: 20px;
+    line-height: 1.32;
+  }
+  h5, .h5 {
+    font-size: 17px;
+    line-height: 1.35;
+  }
+  h6, .h6 {
+    font-size: 14.5px;
+    line-height: 1.4;
+  }
   .section-subtitle {
-    font-size: 18px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .section-label, .section-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+  p, .text-body {
+    font-size: 15.5px;
+    line-height: 1.68;
+  }
+  .lead {
+    font-size: 17.5px;
+    line-height: 1.7;
+  }
+  .hero h1, .hero__title, .hero-title {
+    font-size: 3.5rem;
+    line-height: 1.12;
+  }
+  .hero p, .hero__subtitle, .hero-desc {
+    font-size: 17px;
+    line-height: 1.65;
   }
 }
 
-/* Large Desktop (≥ 1280px) */
-@media (min-width: 1280px) {
-  h1,
-  .h1 {
-    font-size: 56px;
+/* Viewport 4: Tablets & iPad (769px – 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  html {
+    font-size: 15px;
   }
-
+  h1, .h1, .page-title, .page-header h1 {
+    font-size: 38px;
+    line-height: 1.18;
+  }
+  h2, .h2, .section-heading {
+    font-size: 30px;
+    line-height: 1.22;
+  }
   .section-title {
-    font-size: 52px;
+    font-size: 34px;
+    line-height: 1.22;
+  }
+  h3, .h3, .card-title {
+    font-size: 23px;
+    line-height: 1.3;
+  }
+  h4, .h4, .product-card-title {
+    font-size: 19px;
+    line-height: 1.32;
+  }
+  h5, .h5 {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  h6, .h6 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .section-subtitle {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .section-label, .section-eyebrow {
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+  }
+  p, .text-body {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .lead {
+    font-size: 16.5px;
+    line-height: 1.65;
+  }
+  .hero h1, .hero__title, .hero-title {
+    font-size: 2.85rem;
+    line-height: 1.15;
+  }
+  .hero p, .hero__subtitle, .hero-desc {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* Viewport 5: Large Phones & Landscape (576px – 768px) */
+@media (min-width: 576px) and (max-width: 768px) {
+  html {
+    font-size: 14.5px;
+  }
+  h1, .h1, .page-title, .page-header h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  h2, .h2, .section-heading {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+  .section-title {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+  h3, .h3, .card-title {
+    font-size: 21px;
+    line-height: 1.32;
+  }
+  h4, .h4, .product-card-title {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  h5, .h5 {
+    font-size: 15px;
+    line-height: 1.38;
+  }
+  h6, .h6 {
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+  .section-subtitle {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .section-label, .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.09em;
+  }
+  p, .text-body {
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+  .lead {
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+  .hero h1, .hero__title, .hero-title {
+    font-size: 2.35rem;
+    line-height: 1.18;
+  }
+  .hero p, .hero__subtitle, .hero-desc {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}
+
+/* Viewport 6: Standard Phones (361px – 575px) */
+@media (min-width: 361px) and (max-width: 575px) {
+  html {
+    font-size: 14px;
+  }
+  h1, .h1, .page-title, .page-header h1 {
+    font-size: 27px;
+    line-height: 1.22;
+  }
+  h2, .h2, .section-heading {
+    font-size: 22px;
+    line-height: 1.26;
+  }
+  .section-title {
+    font-size: 25px;
+    line-height: 1.26;
+  }
+  h3, .h3, .card-title {
+    font-size: 19px;
+    line-height: 1.32;
+  }
+  h4, .h4, .product-card-title {
+    font-size: 16.5px;
+    line-height: 1.35;
+  }
+  h5, .h5 {
+    font-size: 14.5px;
+    line-height: 1.38;
+  }
+  h6, .h6 {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .section-subtitle {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .section-label, .section-eyebrow {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+  }
+  p, .text-body {
+    font-size: 14px;
+    line-height: 1.58;
+  }
+  .lead {
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+  .hero h1, .hero__title, .hero-title {
+    font-size: 1.95rem;
+    line-height: 1.2;
+  }
+  .hero p, .hero__subtitle, .hero-desc {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+}
+
+/* Viewport 7: Small / Compact Phones (≤ 360px) */
+@media (max-width: 360px) {
+  html {
+    font-size: 13.5px;
+  }
+  h1, .h1, .page-title, .page-header h1 {
+    font-size: 23px;
+    line-height: 1.22;
+    word-break: break-word;
+  }
+  h2, .h2, .section-heading {
+    font-size: 19.5px;
+    line-height: 1.25;
+    word-break: break-word;
+  }
+  .section-title {
+    font-size: 22px;
+    line-height: 1.25;
+    word-break: break-word;
+  }
+  h3, .h3, .card-title {
+    font-size: 17.5px;
+    line-height: 1.3;
+  }
+  h4, .h4, .product-card-title {
+    font-size: 15px;
+    line-height: 1.32;
+  }
+  h5, .h5 {
+    font-size: 13.5px;
+    line-height: 1.35;
+  }
+  h6, .h6 {
+    font-size: 12px;
+    line-height: 1.38;
+  }
+  .section-subtitle {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .section-label, .section-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  p, .text-body {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .lead {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .hero h1, .hero__title, .hero-title {
+    font-size: 1.65rem;
+    line-height: 1.22;
+    word-break: break-word;
+  }
+  .hero p, .hero__subtitle, .hero-desc {
+    font-size: 13px;
+    line-height: 1.5;
   }
 }
 
@@ -691,13 +975,11 @@
 
   .hero h1,
   .hero__title {
-    font-size: 2rem;
     margin-bottom: 16px;
   }
 
   .hero p,
   .hero__subtitle {
-    font-size: 15px;
     margin-bottom: 24px;
   }
 
@@ -730,11 +1012,6 @@
     min-height: 60vh;
     flex-direction: column;
   }
-
-  .hero h1,
-  .hero__title {
-    font-size: 2rem;
-  }
 }
 
 /* Tablet (481px – 1023px) */
@@ -745,11 +1022,6 @@
     padding: 40px 24px;
     flex-direction: column;
     text-align: center;
-  }
-
-  .hero h1,
-  .hero__title {
-    font-size: 3rem;
   }
 
   .hero__image img {
@@ -777,7 +1049,6 @@
 
   .hero h1,
   .hero__title {
-    font-size: 4rem;
     line-height: 1.1;
   }
 
@@ -802,11 +1073,6 @@
   .hero-section {
     min-height: 90vh;
     padding: 100px 80px;
-  }
-
-  .hero h1,
-  .hero__title {
-    font-size: 5rem;
   }
 }
 
