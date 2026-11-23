@@ -14,164 +14,77 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
   <style>
-    /* ===== 404 SPECIFIC STYLES ===== */
+    /* ===== CLEAN FOCUSED 404 STYLES ===== */
     .notfound-hero {
-      background: var(--natural-cream);
-      padding: 5rem 0 3rem;
+      background-color: var(--bg-primary);
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: clamp(3rem, 6vw, 6rem) 1.5rem;
+    }
+    .notfound-card {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: clamp(2.5rem, 5vw, 4.2rem) clamp(1.8rem, 4vw, 3.8rem);
+      background-color: var(--card-bg, #ffffff);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-2xl, 24px);
+      box-shadow: 0 16px 44px rgba(57, 51, 45, 0.08);
+      transition: background-color var(--transition-base), border-color var(--transition-base);
+    }
+    .notfound-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 6px 16px;
+      border-radius: var(--radius-full, 9999px);
+      background-color: rgba(185, 104, 78, 0.12);
+      color: var(--terracotta);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
     }
     .notfound-visual {
-      font-family: var(--font-heading);
-      font-size: clamp(6rem, 15vw, 10rem);
-      line-height: 1;
+      font-family: var(--font-serif);
+      font-size: clamp(6.5rem, 16vw, 10.5rem);
+      line-height: 0.95;
       font-weight: 900;
       color: var(--terracotta);
-      opacity: 0.85;
-      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 10px 30px rgba(185, 104, 78, 0.22);
     }
-    .notfound-hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-      color: var(--charcoal);
+    .notfound-card h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--text-primary);
       margin-bottom: 1rem;
+      line-height: 1.25;
     }
-    .notfound-hero p {
-      color: #666;
-      font-size: 1.05rem;
-      max-width: 540px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
-    }
-
-    /* Section 2: Action Guidance */
-    .action-guidance-section {
-      background: #fff;
-      padding: 3rem 0;
-      border-top: 1px solid var(--warm-sand);
-      border-bottom: 1px solid var(--warm-sand);
-    }
-    .action-box {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .action-search {
-      display: flex;
-      gap: 0.6rem;
-      margin-top: 1.5rem;
-    }
-    .action-search input {
-      flex: 1;
-      padding: 0.85rem 1.2rem;
-      border: 1.5px solid var(--warm-sand);
-      border-radius: 10px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      outline: none;
-    }
-
-    /* Section 3: Category Navigation Pills */
-    .category-pills-section {
-      background: var(--soft-beige);
-      padding: 4rem 0;
-      text-align: center;
-    }
-    .pills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem;
-      max-width: 800px;
-      margin: 2rem auto 0;
-    }
-    .nav-pill {
-      background: #fff;
-      color: var(--charcoal);
-      padding: 0.6rem 1.4rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.88rem;
-      border: 1px solid var(--warm-sand);
-      transition: all 0.25s;
-    }
-    .nav-pill:hover {
-      background: var(--terracotta);
-      color: #fff;
-      border-color: var(--terracotta);
-      transform: translateY(-2px);
-    }
-
-    /* Section 4: Recommended Products */
-    .recommended-section {
-      background: var(--natural-cream);
-      padding: 5rem 0;
-    }
-    .rec-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    @media (max-width: 850px) {
-      .rec-grid { grid-template-columns: 1fr; }
-    }
-    .rec-card {
-      background: #fff;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--warm-sand);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    }
-    .rec-card img {
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-    }
-    .rec-card-body {
-      padding: 1.5rem;
-    }
-    .rec-card-body h3 {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      margin-bottom: 0.4rem;
-    }
-
-    /* Section 5: Artisan Quote */
-    .quote-section {
-      background: #fff;
-      padding: 4rem 0;
-      text-align: center;
-    }
-    .quote-content {
-      max-width: 650px;
-      margin: 0 auto;
-    }
-    .quote-content blockquote {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
+    .notfound-card h1 em {
       font-style: italic;
-      color: var(--charcoal);
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-    .quote-content cite {
-      font-size: 0.88rem;
       color: var(--terracotta);
-      font-weight: 700;
     }
-
-    /* Section 6: Customer Support Strip */
-    .support-strip {
-      background: var(--charcoal);
-      color: #fff;
-      padding: 3rem 0;
-      text-align: center;
+    .notfound-card p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto 2.2rem;
     }
-    .support-strip a {
-      color: var(--antique-gold);
-      font-weight: 700;
-      text-decoration: none;
+    .notfound-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    [data-theme="dark"] .notfound-card {
+      background-color: var(--card-bg);
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.42);
     }
   </style>
 </head>
@@ -228,110 +141,19 @@
 
 <main>
 
-<!-- ===== SECTION 1: 404 VISUAL HERO ===== -->
+<!-- ===== 404 HERO ===== -->
 <section class="notfound-hero">
-  <div class="container reveal-up">
-    <div class="notfound-visual">404</div>
-    <h1>A Missing Fragment in the Mosaic</h1>
-    <p>Like a piece of handcrafted pottery fired in an unexpected wind, this page has wandered away from the workshop or does not exist.</p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="../index.html" class="btn-primary">Return to Homepage</a>
-      <a href="services.html" class="btn-secondary">Explore Handcrafted Shop</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 2: ACTION GUIDANCE & SEARCH ===== -->
-<section class="action-guidance-section">
   <div class="container">
-    <div class="action-box reveal-up">
-      <h3 style="font-family:var(--font-heading);font-size:1.3rem;color:var(--charcoal);margin-bottom:0.5rem;">Looking for Something Specific?</h3>
-      <p style="color:#666;font-size:0.92rem;">Search our entire collection of pottery, rugs, brass, and carved woodcraft.</p>
-      <form class="action-search" onsubmit="event.preventDefault();window.location.href='services.html';">
-        <input type="text" placeholder="e.g. Terracotta Vase, Kutchi Rug, Brass Lamp...">
-        <button type="submit" class="btn-primary" style="white-space:nowrap;">Search Store</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 3: QUICK CATEGORY PILLS ===== -->
-<section class="category-pills-section">
-  <div class="container">
-    <div class="reveal-up">
-      <span class="section-eyebrow">Explore Collections</span>
-      <h2 class="section-title">Popular Craft<br><em>Categories</em></h2>
-    </div>
-
-    <div class="pills-grid reveal-up">
-      <a href="services.html?cat=Pottery" class="nav-pill">Pottery &amp; Ceramics</a>
-      <a href="services.html?cat=Textiles" class="nav-pill">Handmade Textiles</a>
-      <a href="services.html?cat=Wooden" class="nav-pill">Wooden Handicrafts</a>
-      <a href="services.html?cat=Wall Art" class="nav-pill">Wall Art &amp; Hangings</a>
-      <a href="services.html?cat=Lighting" class="nav-pill">Handmade Lighting</a>
-      <a href="services.html?cat=Metal" class="nav-pill">Brass &amp; Metal Crafts</a>
-      <a href="services.html?cat=Tableware" class="nav-pill">Tableware &amp; Kitchen</a>
-      <a href="services.html?cat=Gifts" class="nav-pill">Handmade Gifts</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 4: FEATURED RECOMMENDATIONS ===== -->
-<section class="recommended-section">
-  <div class="container">
-    <div class="section-header reveal-up">
-      <span class="section-eyebrow">Handpicked Treasures</span>
-      <h2 class="section-title">You Might Adore<br><em>These Pieces</em></h2>
-    </div>
-
-    <div class="rec-grid reveal-up">
-      <div class="rec-card">
-        <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=500&auto=format&fit=crop" alt="Terracotta Sunrise Vase">
-        <div class="rec-card-body">
-          <p style="font-size:0.75rem;color:var(--deep-olive);font-weight:700;text-transform:uppercase;">Pottery</p>
-          <h3>Terracotta Sunrise Vase</h3>
-          <p style="color:var(--terracotta);font-weight:700;margin-bottom:1rem;">₹2,850</p>
-          <a href="service-details.html" class="btn-secondary" style="display:block;text-align:center;">View Details</a>
-        </div>
-      </div>
-
-      <div class="rec-card">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop" alt="Hand-Woven Jute Rug">
-        <div class="rec-card-body">
-          <p style="font-size:0.75rem;color:var(--deep-olive);font-weight:700;text-transform:uppercase;">Textiles</p>
-          <h3>Hand-Woven Jute Rug</h3>
-          <p style="color:var(--terracotta);font-weight:700;margin-bottom:1rem;">₹5,200</p>
-          <a href="service-details.html" class="btn-secondary" style="display:block;text-align:center;">View Details</a>
-        </div>
-      </div>
-
-      <div class="rec-card">
-        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop" alt="Carved Mango Wood Bowl">
-        <div class="rec-card-body">
-          <p style="font-size:0.75rem;color:var(--deep-olive);font-weight:700;text-transform:uppercase;">Woodcraft</p>
-          <h3>Carved Mango Wood Bowl</h3>
-          <p style="color:var(--terracotta);font-weight:700;margin-bottom:1rem;">₹1,750</p>
-          <a href="service-details.html" class="btn-secondary" style="display:block;text-align:center;">View Details</a>
-        </div>
+    <div class="notfound-card reveal">
+      <span class="notfound-badge"><i class="fas fa-compass"></i> Page Not Found</span>
+      <div class="notfound-visual">404</div>
+      <h1>A Missing Fragment in the <em>Craft Mosaic</em></h1>
+      <p>Like a piece of handcrafted pottery fired in an unexpected wind, this page has wandered away from the workshop or does not exist.</p>
+      <div class="notfound-actions">
+        <a href="../index.html" class="btn btn-primary"><i class="fas fa-house"></i> Return to Homepage</a>
+        <a href="services.html" class="btn btn-secondary"><i class="fas fa-store"></i> Explore Shop</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 5: ARTISAN QUOTE ===== -->
-<section class="quote-section">
-  <div class="container">
-    <div class="quote-content reveal-up">
-      <blockquote>"There are no mistakes in handmade craftsmanship—only serendipitous departures that lead to new beauty."</blockquote>
-      <cite>— Folk Wisdom from Sanganer Potters Collective</cite>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 6: SUPPORT STRIP ===== -->
-<section class="support-strip">
-  <div class="container reveal-up">
-    <p style="margin:0;font-size:0.95rem;">Need assistance locating an order or specific item? Our team is available at <a href="mailto:hello@auradecor.in">hello@auradecor.in</a> or visit our <a href="contact.html">Contact &amp; Enquiry Desk</a>.</p>
   </div>
 </section>
 
