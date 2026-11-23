@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="shortcut icon" href="../favicon.svg">
-  <meta name="description" content="Shop handcrafted home decor, pottery, textiles, wooden crafts, wall art and more at AuraDecor — India's premium artisan marketplace.">
-  <title>Shop Handcrafted Collections — AuraDecor</title>
+  <meta name="description" content="Shop handcrafted home decor, pottery, textiles, wooden crafts, wall art and more at AuraDecor â€” India's premium artisan marketplace.">
+  <title>Shop Handcrafted Collections â€” AuraDecor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -34,6 +34,7 @@
     <div class="navbar-actions">
       <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
       <button class="icon-btn text-toggle" id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+      <button class="icon-btn cart-trigger" id="cart-btn" data-open-cart aria-label="Open shopping cart" title="Shopping Cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-count" data-cart-count style="display:none;">0</span></button>
       <a href="contact.html#enquiry-form" class="btn-nav-cta">Book Now</a>
       <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -62,7 +63,7 @@
       <a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i> +91 98765 43210</a>
       <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope" aria-hidden="true"></i> hello@auradecor.in</a>
     </div>
-    <p class="mobile-menu-note">Handcrafted in Jaipur · Loved everywhere</p>
+    <p class="mobile-menu-note">Handcrafted in Jaipur Â· Loved everywhere</p>
   </div>
 </div></nav>
 
@@ -75,7 +76,7 @@
     <div class="shop-hero-content reveal">
       <p class="shop-hero-eyebrow"><i class="fas fa-star"></i> Handcrafted for Your Home</p>
       <h1>Discover Handmade<br><em>Treasures for Your Home</em></h1>
-      <p>Explore our curated collections of authentic, artisan-crafted home decor — each piece a unique expression of traditional skill and contemporary beauty.</p>
+      <p>Explore our curated collections of authentic, artisan-crafted home decor â€” each piece a unique expression of traditional skill and contemporary beauty.</p>
       <div style="display:flex;gap:1rem;flex-wrap:wrap;">
         <a href="#products-section" class="btn-primary">Browse All Products</a>
         <a href="#categories-section" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,.5);">Shop by Category</a>
@@ -90,7 +91,7 @@
     <div class="section-header reveal">
       <span class="section-eyebrow">Browse by Craft</span>
       <h2 class="section-title">Shop by Product<br><em>Category</em></h2>
-      <p class="section-subtitle">Discover the full breadth of our handcrafted collections — from earthy ceramics to intricately woven textiles.</p>
+      <p class="section-subtitle">Discover the full breadth of our handcrafted collections â€” from earthy ceramics to intricately woven textiles.</p>
     </div>
     <div class="cat-grid reveal">
       <div class="cat-card" data-cat="Home Decor" onclick="filterByCategory('Home Decor',this)" tabindex="0" role="button" aria-label="Shop Home Decor">
@@ -134,7 +135,7 @@
         <div class="cat-card-overlay"></div>
         <div class="cat-card-body">
           <h3>Wall Art & Hangings</h3>
-          <p>Macramé, paintings & decorative wall pieces</p>
+          <p>MacramÃ©, paintings & decorative wall pieces</p>
           <span class="cat-card-link">Explore <i class="fas fa-arrow-right"></i></span>
         </div>
       </div>
@@ -197,7 +198,7 @@
     <!-- Filter Bar -->
     <div class="filter-bar reveal">
       <label>Search
-        <input type="text" id="searchInput" placeholder="Search products…" autocomplete="off">
+        <input type="text" id="searchInput" placeholder="Search productsâ€¦" autocomplete="off">
       </label>
       <label>Category
         <select id="categoryFilter">
@@ -334,7 +335,7 @@
     <div class="shop-cta-content reveal">
       <span class="section-eyebrow" style="color:var(--antique-gold);">Every Piece Tells a Story</span>
       <h2>Discover Your<br><em style="color:var(--warm-sand);">Favourite Piece</em></h2>
-      <p>Each item in our collection is handcrafted by a skilled artisan who pours their tradition, creativity, and care into every piece. No two are exactly alike — which makes yours truly one of a kind.</p>
+      <p>Each item in our collection is handcrafted by a skilled artisan who pours their tradition, creativity, and care into every piece. No two are exactly alike â€” which makes yours truly one of a kind.</p>
       <div style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;">
         <a href="#products-section" class="btn-primary">Shop Handcrafted Collections</a>
         <a href="about.html" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,.4);">Our Artisan Story</a>
@@ -407,7 +408,7 @@
 
         <div class="footer-col footer-newsletter">
           <h3 class="footer-col-title">Workshop Notes</h3>
-          <p class="footer-newsletter-note">A quiet letter about craft, colour and slow living — delivered once a month.</p>
+          <p class="footer-newsletter-note">A quiet letter about craft, colour and slow living â€” delivered once a month.</p>
           <form class="footer-newsletter-form newsletter-form" data-newsletter-form novalidate>
             <label class="sr-only" for="footerNewsletterEmail">Email address</label>
             <input class="footer-newsletter-input" id="footerNewsletterEmail" type="email" name="email" placeholder="Your email address" required aria-label="Email address">
@@ -437,16 +438,17 @@
 <!-- Cart Drawer -->
 <div class="cart-overlay" id="cart-overlay"></div>
 <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
-  <div class="cart-header">
-    <h3>Your Cart</h3>
-    <button class="cart-close" id="cartClose"><i class="fas fa-xmark"></i></button>
+  <div class="cart-header cart-drawer-header">
+    <h3 class="cart-drawer-title"><i class="fas fa-shopping-bag" aria-hidden="true"></i> Your Cart <span class="cart-drawer-count" data-cart-count>0</span></h3>
+    <button class="cart-close" id="cartClose" data-close-cart aria-label="Close cart"><i class="fas fa-xmark"></i></button>
   </div>
-  <div class="cart-items" id="cart-items">
+  <div class="cart-items cart-drawer-body" id="cart-items">
     <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p>
   </div>
-  <div class="cart-footer-panel" id="cartFooterPanel">
-    <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">₹0</span></div>
-    <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
+  <div class="cart-footer-panel cart-drawer-footer" id="cartFooterPanel">
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">?0</span></div>
+    <p class="cart-free-ship" style="font-size:0.78rem;color:var(--deep-olive);margin-bottom:12px;"><i class="fas fa-truck-fast"></i> Free shipping on orders above ?2,000</p>
+    <button class="btn-primary cart-checkout-btn" type="button" onclick="if(window.showToast)window.showToast('Proceeding to demo checkout...', 'info')">Proceed to Checkout</button>
     <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
   </div>
 </aside>
@@ -456,11 +458,11 @@
 <script src="../assets/js/products-data.js"></script>
 <script src="../assets/js/main.js"></script>
 <script>
-// ===== SHOP PAGE — FILTER, SORT & RENDER =====
+// ===== SHOP PAGE â€” FILTER, SORT & RENDER =====
 const SHOP_PRODUCTS = [
   {id:1,name:"Terracotta Sunrise Vase",cat:"Pottery",price:2850,old:3500,desc:"Hand-thrown terracotta vase with a warm sunrise glaze, perfect as a statement centerpiece.",img:"https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=500&auto=format&fit=crop",artisan:"Priya Sharma",badge:"Bestseller",isNew:false},
   {id:2,name:"Hand-Woven Jute Rug",cat:"Textiles",price:5200,old:6000,desc:"Naturally dyed jute rug in earthy geometric patterns, handloom woven by master weavers.",img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop",artisan:"Ramesh Patel",badge:"",isNew:false},
-  {id:3,name:"Carved Mango Wood Bowl",cat:"Wooden",price:1750,old:0,desc:"Hand-carved mango wood bowl with organic edges and natural grain — no two are alike.",img:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop",artisan:"Meera Nair",badge:"",isNew:false},
+  {id:3,name:"Carved Mango Wood Bowl",cat:"Wooden",price:1750,old:0,desc:"Hand-carved mango wood bowl with organic edges and natural grain â€” no two are alike.",img:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop",artisan:"Meera Nair",badge:"",isNew:false},
   {id:4,name:"Copper Lotus Wall Art",cat:"Wall Art",price:3400,old:4000,desc:"Hand-hammered copper lotus panel with an antique patina finish, ethically crafted in Moradabad.",img:"https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500&auto=format&fit=crop",artisan:"Arjun Mehta",badge:"",isNew:false},
   {id:5,name:"Rattan Pendant Lamp",cat:"Lighting",price:4500,old:5500,desc:"Intricately hand-woven rattan pendant that casts beautiful dappled light across any room.",img:"https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=500&auto=format&fit=crop",artisan:"Sunita Devi",badge:"Sale",isNew:false},
   {id:6,name:"Dhokra Brass Figurine",cat:"Metal",price:2100,old:0,desc:"Lost-wax cast tribal brass figurine in the ancient Dhokra tradition of Chhattisgarh.",img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&auto=format&fit=crop",artisan:"Vikram Das",badge:"",isNew:false},
@@ -470,10 +472,10 @@ const SHOP_PRODUCTS = [
   {id:10,name:"Indigo Block Print Throw",cat:"Textiles",price:3800,old:0,desc:"Hand block-printed cotton throw blanket in deep indigo and natural white geometric patterns.",img:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&auto=format&fit=crop",artisan:"Ramesh Patel",badge:"",isNew:true},
   {id:11,name:"Carved Sheesham Wood Lamp",cat:"Lighting",price:5800,old:0,desc:"Hand-carved sheesham wood table lamp with filigree cutwork casting stunning shadow patterns.",img:"https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=500&auto=format&fit=crop",artisan:"Meera Nair",badge:"",isNew:true},
   {id:12,name:"Blue Pottery Spice Jars",cat:"Pottery",price:1850,old:0,desc:"Set of 3 Jaipur blue pottery spice jars with hand-painted floral motifs and fitted lids.",img:"https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=500&auto=format&fit=crop",artisan:"Priya Sharma",badge:"",isNew:false},
-  {id:13,name:"Macramé Wall Hanging",cat:"Wall Art",price:2600,old:3000,desc:"Hand-knotted cotton macramé wall hanging in a natural boho pattern. Handmade with love.",img:"https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500&auto=format&fit=crop",artisan:"Sunita Devi",badge:"Sale",isNew:false},
+  {id:13,name:"MacramÃ© Wall Hanging",cat:"Wall Art",price:2600,old:3000,desc:"Hand-knotted cotton macramÃ© wall hanging in a natural boho pattern. Handmade with love.",img:"https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500&auto=format&fit=crop",artisan:"Sunita Devi",badge:"Sale",isNew:false},
   {id:14,name:"Brass Diya Lamp Set",cat:"Metal",price:1750,old:2000,desc:"Set of 5 hand-crafted brass diya lamps with intricate engravings. Perfect for festive occasions.",img:"https://images.unsplash.com/photo-1608755728617-aefab37d2edd?w=500&auto=format&fit=crop",artisan:"Vikram Das",badge:"",isNew:false},
-  {id:15,name:"Handmade Gift Hamper",cat:"Gifts",price:4200,old:0,desc:"Curated artisan gift hamper with 5 handcrafted items — pottery, textiles, brass & more.",img:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&auto=format&fit=crop",artisan:"AuraDecor",badge:"",isNew:true},
-  {id:16,name:"Jute Macramé Planter",cat:"Home Decor",price:1100,old:0,desc:"Handknotted jute macramé plant hanger for indoor plants. Eco-friendly and stylish.",img:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&auto=format&fit=crop",artisan:"Sunita Devi",badge:"",isNew:true},
+  {id:15,name:"Handmade Gift Hamper",cat:"Gifts",price:4200,old:0,desc:"Curated artisan gift hamper with 5 handcrafted items â€” pottery, textiles, brass & more.",img:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&auto=format&fit=crop",artisan:"AuraDecor",badge:"",isNew:true},
+  {id:16,name:"Jute MacramÃ© Planter",cat:"Home Decor",price:1100,old:0,desc:"Handknotted jute macramÃ© plant hanger for indoor plants. Eco-friendly and stylish.",img:"https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=500&auto=format&fit=crop",artisan:"Sunita Devi",badge:"",isNew:true},
   {id:17,name:"Glazed Ceramic Bowl Set",cat:"Pottery",price:3600,old:4200,desc:"Set of 3 hand-glazed ceramic nesting bowls in earthy terracotta and sage green tones.",img:"https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=500&auto=format&fit=crop",artisan:"Priya Sharma",badge:"Bestseller",isNew:false},
   {id:18,name:"Hand-Painted Wooden Tray",cat:"Wooden",price:2200,old:0,desc:"Mango wood serving tray with hand-painted floral mandala in natural pigments.",img:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&auto=format&fit=crop",artisan:"Meera Nair",badge:"",isNew:true},
   {id:19,name:"Copper Wind Chime",cat:"Accessories",price:1550,old:0,desc:"Handcrafted copper wind chime with geometric cutouts producing a melodious chime.",img:"https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500&auto=format&fit=crop",artisan:"Arjun Mehta",badge:"",isNew:false},

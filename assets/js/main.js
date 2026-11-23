@@ -854,18 +854,29 @@ function saveCart() {
  * @param {number} [qty=1]
  */
 function addToCart(productId, qty = 1) {
-  const product = products.find(p => p.id === productId);
+  let product = products.find(p => p.id === productId);
+  if (!product && typeof window.SHOP_PRODUCTS !== 'undefined') {
+    const sp = window.SHOP_PRODUCTS.find(p => p.id === productId);
+    if (sp) product = { id: sp.id, name: sp.name, price: sp.price, image: sp.img };
+  }
   if (!product) return;
   const existing = cart.find(item => item.id === productId);
   if (existing) {
     existing.qty = Math.min(existing.qty + qty, 99);
   } else {
-    cart.push({ id: productId, qty });
+    cart.push({
+      id: productId,
+      qty,
+      name: product.name,
+      price: product.price,
+      image: product.image || product.img
+    });
   }
   saveCart();
   updateCartCount();
   renderCart();
   showToast(`"${product.name}" added to cart`, 'success');
+  openCart();
 }
 
 /**
@@ -906,11 +917,16 @@ function getCartTotal() {
   let subtotal = 0;
   let itemCount = 0;
   cart.forEach(item => {
-    const product = products.find(p => p.id === item.id);
-    if (product) {
-      subtotal += product.price * item.qty;
-      itemCount += item.qty;
+    let price = item.price;
+    if (price === undefined) {
+      let product = products.find(p => p.id === item.id);
+      if (!product && typeof window.SHOP_PRODUCTS !== 'undefined') {
+        product = window.SHOP_PRODUCTS.find(p => p.id === item.id);
+      }
+      price = product ? product.price : 0;
     }
+    subtotal += price * item.qty;
+    itemCount += item.qty;
   });
   return { subtotal, itemCount };
 }
@@ -921,40 +937,55 @@ function getCartTotal() {
 function renderCart() {
   const cartItemsEl = document.getElementById('cart-items');
   const cartSubtotalEl = document.getElementById('cart-subtotal');
+  const footerPanel = document.getElementById('cartFooterPanel');
   if (!cartItemsEl) return;
 
   if (cart.length === 0) {
     cartItemsEl.innerHTML = `
       <div class="cart-empty">
-        <i class="fas fa-shopping-bag"></i>
-        <p>Your cart is empty</p>
-        <a href="${PAGES_BASE}services.html" class="btn btn-primary">Continue Shopping</a>
+        <i class="fas fa-shopping-bag cart-empty-icon" style="font-size:3rem;margin-bottom:0.8rem;color:var(--warm-sand);"></i>
+        <h4 class="cart-empty-title">Your cart is empty</h4>
+        <p class="cart-empty-text">Looks like you haven't added any handcrafted treasures yet.</p>
+        <a href="${PAGES_BASE}services.html" class="btn btn-primary" style="margin-top:0.8rem;">Explore Collections</a>
       </div>`;
     if (cartSubtotalEl) cartSubtotalEl.textContent = '₹0';
+    if (footerPanel) footerPanel.style.display = 'none';
     return;
   }
 
+  if (footerPanel) footerPanel.style.display = 'block';
+
   cartItemsEl.innerHTML = cart.map(item => {
-    const p = products.find(prod => prod.id === item.id);
+    let p = products.find(prod => prod.id === item.id);
+    if (!p && typeof window.SHOP_PRODUCTS !== 'undefined') {
+      const sp = window.SHOP_PRODUCTS.find(prod => prod.id === item.id);
+      if (sp) p = { id: sp.id, name: sp.name, price: sp.price, image: sp.img };
+    }
+    if (!p && item.name && item.price) {
+      p = item;
+    }
     if (!p) return '';
+    const imgUrl = p.image || p.img || (p.images && p.images[0]) || '';
     return `
       <div class="cart-item" data-id="${p.id}">
-        <img src="${p.image}" alt="${p.name}" loading="lazy">
+        <img class="cart-item-img" src="${imgUrl}" alt="${p.name}" loading="lazy">
         <div class="cart-item-info">
           <p class="cart-item-name">${p.name}</p>
           <p class="cart-item-price">₹${p.price.toLocaleString('en-IN')}</p>
-          <div class="cart-item-qty">
-            <button class="qty-btn" aria-label="Decrease quantity"
-              onclick="updateQty(${p.id}, ${item.qty - 1})">−</button>
-            <span>${item.qty}</span>
-            <button class="qty-btn" aria-label="Increase quantity"
-              onclick="updateQty(${p.id}, ${item.qty + 1})">+</button>
+          <div class="cart-item-footer">
+            <div class="qty-control">
+              <button class="qty-btn" aria-label="Decrease quantity"
+                onclick="updateQty(${p.id}, ${item.qty - 1})">−</button>
+              <span class="qty-value">${item.qty}</span>
+              <button class="qty-btn" aria-label="Increase quantity"
+                onclick="updateQty(${p.id}, ${item.qty + 1})">+</button>
+            </div>
+            <button class="cart-item-remove" aria-label="Remove from cart"
+              onclick="removeFromCart(${p.id})">
+              <i class="fas fa-trash-can"></i>
+            </button>
           </div>
         </div>
-        <button class="cart-item-remove" aria-label="Remove from cart"
-          onclick="removeFromCart(${p.id})">
-          <i class="fas fa-times"></i>
-        </button>
       </div>`;
   }).join('');
 
@@ -969,7 +1000,7 @@ function updateCartCount() {
   const { itemCount } = getCartTotal();
   document.querySelectorAll('.cart-count, [data-cart-count]').forEach(el => {
     el.textContent = itemCount;
-    el.style.display = itemCount > 0 ? 'flex' : 'none';
+    el.style.display = itemCount > 0 ? 'inline-flex' : 'none';
   });
 }
 
@@ -977,6 +1008,7 @@ function updateCartCount() {
 function openCart() {
   const drawer = document.getElementById('cart-drawer');
   const overlay = document.getElementById('cart-overlay');
+  renderCart();
   if (drawer) drawer.classList.add('open');
   if (overlay) overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1000,13 +1032,19 @@ function initCartSystem() {
   renderCart();
 
   // Open cart
-  document.querySelectorAll('[data-open-cart], .cart-trigger').forEach(btn => {
-    btn.addEventListener('click', openCart);
+  document.querySelectorAll('[data-open-cart], .cart-trigger, #cart-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openCart();
+    });
   });
 
   // Close cart
-  document.querySelectorAll('[data-close-cart], .cart-close').forEach(btn => {
-    btn.addEventListener('click', closeCart);
+  document.querySelectorAll('[data-close-cart], .cart-close, #cartClose').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeCart();
+    });
   });
 
   const overlay = document.getElementById('cart-overlay');
@@ -1016,6 +1054,14 @@ function initCartSystem() {
     if (e.key === 'Escape') closeCart();
   });
 }
+
+// Global exposure for onclick handlers
+window.addToCart = addToCart;
+window.removeFromCart = removeFromCart;
+window.updateQty = updateQty;
+window.openCart = openCart;
+window.closeCart = closeCart;
+window.renderCart = renderCart;
 
 /* ============================================================
    7. WISHLIST SYSTEM
