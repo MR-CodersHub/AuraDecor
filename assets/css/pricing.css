@@ -1,0 +1,615 @@
+/* ============================================================
+   AuraDecor — Pricing & Custom Commissions Stylesheet
+   assets/css/pricing.css
+   Loaded after style.css and responsive.css
+   ============================================================ */
+
+/* ===== 1. PRICING HERO ===== */
+.pricing-hero {
+  position: relative;
+  min-height: 58vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--charcoal-brown);
+  color: #ffffff;
+  overflow: hidden;
+  padding: var(--space-7) 0;
+}
+
+.pricing-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&auto=format&fit=crop') center/cover no-repeat;
+  opacity: 0.38;
+}
+
+.pricing-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(30, 26, 23, 0.45) 0%, rgba(30, 26, 23, 0.9) 100%);
+}
+
+.pricing-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.pricing-hero-content .section-eyebrow {
+  color: var(--antique-gold);
+  margin-bottom: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pricing-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  line-height: 1.15;
+}
+
+.pricing-hero h1 em {
+  font-style: italic;
+  color: var(--warm-sand);
+}
+
+.pricing-hero p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  max-width: 640px;
+}
+
+/* ===== 2. CUSTOM HANDMADE ORDERS SECTION ===== */
+.custom-tiers-section {
+  background-color: var(--bg-primary);
+  padding: var(--space-7) 0;
+}
+
+.craft-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.6rem;
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 1024px) {
+  .craft-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .craft-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.craft-tier-card {
+  background-color: var(--card-bg, #ffffff);
+  border-radius: var(--radius-xl);
+  padding: 2.2rem 1.8rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(57, 51, 45, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  position: relative;
+}
+
+.craft-tier-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(57, 51, 45, 0.12);
+  border-color: var(--terracotta);
+}
+
+.craft-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background-color: rgba(185, 104, 78, 0.12);
+  color: var(--terracotta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.craft-tier-card:hover .craft-icon-wrap {
+  background-color: var(--terracotta);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.craft-tier-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  margin-bottom: 0.7rem;
+  line-height: 1.25;
+}
+
+.craft-tier-card p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.6rem;
+}
+
+.craft-meta {
+  border-top: 1px dashed var(--border-color);
+  padding-top: 1.1rem;
+  margin-top: auto;
+}
+
+.craft-price-tag {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.craft-lead-time {
+  font-size: 0.82rem;
+  color: var(--deep-olive);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ===== 3. BULK & WHOLESALE PARTNER TIERS ===== */
+.wholesale-section {
+  background-color: var(--bg-secondary);
+  padding: var(--space-7) 0;
+}
+
+.tier-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  margin-top: var(--space-4);
+  align-items: stretch;
+}
+
+@media (max-width: 1100px) {
+  .tier-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .tier-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tier-card {
+  background-color: var(--card-bg, #ffffff);
+  border-radius: var(--radius-2xl, 24px);
+  padding: 2.6rem 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 24px rgba(57, 51, 45, 0.05);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.tier-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(57, 51, 45, 0.12);
+}
+
+.tier-card.featured {
+  border: 2px solid var(--terracotta);
+  box-shadow: 0 14px 40px rgba(185, 104, 78, 0.18);
+  transform: scale(1.02);
+}
+
+.tier-card.featured:hover {
+  transform: scale(1.02) translateY(-6px);
+}
+
+.tier-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--terracotta);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(185, 104, 78, 0.4);
+  white-space: nowrap;
+}
+
+.tier-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.tier-volume {
+  font-size: 0.88rem;
+  color: var(--deep-olive);
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  display: inline-block;
+  background-color: rgba(92, 107, 79, 0.12);
+  padding: 0.28rem 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+.tier-discount {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  margin-bottom: 1.6rem;
+  font-family: var(--font-serif);
+  line-height: 1.1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.tier-discount small {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  font-family: var(--font-sans);
+}
+
+.tier-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.2rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.tier-features li {
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.tier-features li i {
+  color: var(--deep-olive);
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.tier-card .btn-primary,
+.tier-card .btn-secondary {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  display: inline-flex;
+  padding: 0.85rem 1.4rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  margin-top: auto;
+}
+
+/* ===== 4. THE 5-STEP BESPOKE COMMISSION PROCESS ===== */
+.process-timeline-section {
+  background-color: var(--bg-primary);
+  padding: var(--space-7) 0;
+}
+
+.timeline-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.4rem;
+  position: relative;
+  margin-top: var(--space-5);
+}
+
+@media (max-width: 1024px) {
+  .timeline-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .timeline-steps {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+}
+
+.timeline-step {
+  background-color: var(--card-bg, #ffffff);
+  padding: 2rem 1.6rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px rgba(57, 51, 45, 0.05);
+  position: relative;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.timeline-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(57, 51, 45, 0.1);
+  border-color: var(--warm-sand);
+}
+
+.step-badge {
+  width: 44px;
+  height: 44px;
+  background: var(--terracotta);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px rgba(185, 104, 78, 0.35);
+}
+
+.timeline-step h4 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.25;
+}
+
+.timeline-step p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ===== 5. PRICING FACTORS SECTION ===== */
+.pricing-factors-section {
+  background-color: var(--bg-secondary);
+  padding: var(--space-7) 0;
+}
+
+.factors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 960px) {
+  .factors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .factors-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.factor-item {
+  background-color: var(--card-bg, #ffffff);
+  padding: 2rem 1.8rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--terracotta);
+  box-shadow: 0 4px 18px rgba(57, 51, 45, 0.05);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.factor-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(57, 51, 45, 0.1);
+}
+
+.factor-item h4 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.factor-item p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ===== 6. REQUEST A QUOTE FORM & CTA ===== */
+.quote-cta-section {
+  background-color: var(--charcoal-brown);
+  color: #ffffff;
+  padding: var(--space-7) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .quote-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.quote-info-panel h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+
+.quote-info-panel h2 em {
+  font-style: italic;
+  color: var(--warm-sand);
+}
+
+.quote-info-panel p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.trade-desk-card {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 1.6rem 1.8rem;
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--terracotta);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 4px solid var(--terracotta);
+}
+
+.trade-desk-card .desk-title {
+  color: var(--antique-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.trade-desk-card p {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.trade-desk-card a {
+  color: var(--warm-sand);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.trade-desk-card a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Quote Form */
+.quote-form-panel {
+  background: rgba(42, 37, 33, 0.95);
+  padding: clamp(1.8rem, 3.5vw, 2.8rem);
+  border-radius: var(--radius-2xl, 24px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
+}
+
+.quote-form-panel h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1.4rem;
+}
+
+.quote-form-panel input,
+.quote-form-panel select,
+.quote-form-panel textarea {
+  width: 100%;
+  padding: 0.88rem 1.1rem;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(25, 21, 18, 0.85);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  outline: none;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.quote-form-panel input::placeholder,
+.quote-form-panel textarea::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.quote-form-panel select {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.quote-form-panel select option {
+  background-color: var(--charcoal-brown);
+  color: #ffffff;
+}
+
+.quote-form-panel input:focus,
+.quote-form-panel select:focus,
+.quote-form-panel textarea:focus {
+  border-color: var(--antique-gold);
+  background: rgba(35, 30, 26, 0.98);
+}
+
+.quote-form-panel .btn-primary {
+  width: 100%;
+  padding: 0.95rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  margin-top: 0.4rem;
+  box-shadow: 0 6px 20px rgba(185, 104, 78, 0.35);
+}
+
+/* ===== 7. DARK MODE REFINEMENTS ===== */
+[data-theme="dark"] .craft-tier-card,
+[data-theme="dark"] .tier-card,
+[data-theme="dark"] .timeline-step,
+[data-theme="dark"] .factor-item {
+  background-color: var(--card-bg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .craft-icon-wrap {
+  background-color: rgba(185, 104, 78, 0.2);
+}
+
+[data-theme="dark"] .tier-card.featured {
+  box-shadow: 0 12px 36px rgba(185, 104, 78, 0.25);
+}
+
+/* ===== 8. RTL REFINEMENTS ===== */
+[dir="rtl"] .factor-item {
+  border-left: 1px solid var(--border-color);
+  border-right: 4px solid var(--terracotta);
+}
+
+[dir="rtl"] .trade-desk-card {
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 4px solid var(--terracotta);
+}
+
+[dir="rtl"] .quote-info-panel h2 {
+  text-align: right;
+}

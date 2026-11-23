@@ -13,307 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
-  <style>
-    /* ===== PRICING & CUSTOM ORDERS STYLES ===== */
-    .pricing-hero {
-      position: relative;
-      min-height: 55vh;
-      display: flex;
-      align-items: center;
-      background: var(--charcoal);
-      color: #fff;
-      overflow: hidden;
-    }
-    .pricing-hero-bg {
-      position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&auto=format&fit=crop') center/cover;
-      opacity: 0.35;
-    }
-    .pricing-hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 720px;
-    }
-    .pricing-hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      margin-bottom: 1rem;
-      line-height: 1.15;
-    }
-    .pricing-hero p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.6;
-    }
-
-    /* Section 2: Custom Handmade Orders Cards */
-    .custom-tiers-section {
-      background: var(--natural-cream);
-      padding: 5rem 0;
-    }
-    .craft-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-    @media (max-width: 992px) {
-      .craft-cards-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 540px) {
-      .craft-cards-grid { grid-template-columns: 1fr; }
-    }
-    .craft-tier-card {
-      background: #fff;
-      border-radius: 18px;
-      padding: 2.2rem 1.6rem;
-      border: 1px solid var(--warm-sand);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .craft-tier-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-      border-color: var(--terracotta);
-    }
-    .craft-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .craft-tier-card h3 {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      color: var(--charcoal);
-      margin-bottom: 0.6rem;
-    }
-    .craft-tier-card p {
-      font-size: 0.88rem;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-    }
-    .craft-meta {
-      border-top: 1px dashed var(--warm-sand);
-      padding-top: 1rem;
-      font-size: 0.85rem;
-      color: var(--deep-olive);
-      font-weight: 700;
-    }
-
-    /* Section 3: Bulk & Wholesale Tiers */
-    .wholesale-section {
-      background: var(--soft-beige);
-      padding: 5rem 0;
-    }
-    .tier-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.8rem;
-    }
-    @media (max-width: 1024px) {
-      .tier-cards-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 580px) {
-      .tier-cards-grid { grid-template-columns: 1fr; }
-    }
-    .tier-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 2.5rem 1.8rem;
-      border: 1px solid var(--warm-sand);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .tier-card.featured {
-      border: 2px solid var(--terracotta);
-      box-shadow: 0 10px 40px rgba(185,104,78,0.15);
-      transform: scale(1.02);
-    }
-    .tier-badge {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--terracotta);
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.35rem 1rem;
-      border-radius: 20px;
-    }
-    .tier-title {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
-      color: var(--charcoal);
-      margin-bottom: 0.4rem;
-    }
-    .tier-volume {
-      font-size: 0.85rem;
-      color: var(--deep-olive);
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-    }
-    .tier-discount {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--terracotta);
-      margin-bottom: 1.5rem;
-      font-family: var(--font-heading);
-    }
-    .tier-discount small {
-      font-size: 0.9rem;
-      color: #888;
-      font-weight: 400;
-      font-family: var(--font-body);
-    }
-    .tier-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2rem;
-      font-size: 0.88rem;
-      color: #555;
-      line-height: 1.7;
-    }
-    .tier-features li {
-      margin-bottom: 0.5rem;
-      display: flex;
-      gap: 0.6rem;
-    }
-    .tier-features li::before {
-      content: '\f00c';
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-      color: var(--deep-olive);
-    }
-
-    /* Section 4: 5-Step Custom Order Process */
-    .process-timeline-section {
-      background: var(--natural-cream);
-      padding: 5rem 0;
-    }
-    .timeline-steps {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1.2rem;
-      position: relative;
-      margin-top: 2rem;
-    }
-    @media (max-width: 900px) {
-      .timeline-steps { grid-template-columns: 1fr; gap: 1.5rem; }
-    }
-    .timeline-step {
-      background: #fff;
-      padding: 1.8rem 1.4rem;
-      border-radius: 16px;
-      border: 1px solid var(--warm-sand);
-      position: relative;
-    }
-    .step-badge {
-      width: 36px;
-      height: 36px;
-      background: var(--charcoal);
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-    .timeline-step h4 {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      color: var(--charcoal);
-      margin-bottom: 0.5rem;
-    }
-    .timeline-step p {
-      font-size: 0.82rem;
-      color: #666;
-      line-height: 1.6;
-    }
-
-    /* Section 5: Pricing Factors & Craft Guide */
-    .pricing-factors-section {
-      background: var(--soft-beige);
-      padding: 5rem 0;
-    }
-    .factors-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.8rem;
-    }
-    @media (max-width: 900px) {
-      .factors-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 550px) {
-      .factors-grid { grid-template-columns: 1fr; }
-    }
-    .factor-item {
-      background: #fff;
-      padding: 1.8rem;
-      border-radius: 14px;
-      border-left: 4px solid var(--terracotta);
-    }
-    .factor-item h4 {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      color: var(--charcoal);
-      margin-bottom: 0.4rem;
-    }
-    .factor-item p {
-      font-size: 0.88rem;
-      color: #666;
-      line-height: 1.6;
-    }
-
-    /* Section 6: Request Quote Form & CTA */
-    .quote-cta-section {
-      background: var(--charcoal);
-      color: #fff;
-      padding: 5rem 0;
-    }
-    .quote-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    @media (max-width: 850px) {
-      .quote-grid { grid-template-columns: 1fr; }
-    }
-    .quote-form-panel {
-      background: #2a2521;
-      padding: 2.5rem;
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.15);
-    }
-    .quote-form-panel input,
-    .quote-form-panel select,
-    .quote-form-panel textarea {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.25);
-      background: #1e1a17;
-      color: #fff;
-      font-family: var(--font-body);
-      outline: none;
-    }
-    .quote-form-panel input:focus,
-    .quote-form-panel select:focus,
-    .quote-form-panel textarea:focus {
-      border-color: var(--antique-gold);
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/pricing.css">
 </head>
 <body>
 
@@ -371,9 +71,10 @@
 <!-- ===== SECTION 1: PRICING HERO ===== -->
 <section class="pricing-hero section-padding">
   <div class="pricing-hero-bg"></div>
+  <div class="pricing-hero-overlay"></div>
   <div class="container">
-    <div class="pricing-hero-content reveal-up">
-      <span class="section-eyebrow" style="color:var(--antique-gold);">Craft Commissions &amp; Gifting</span>
+    <div class="pricing-hero-content reveal">
+      <span class="section-eyebrow"><i class="fas fa-hand-holding-heart"></i> Craft Commissions &amp; Gifting</span>
       <h1>Transparent Artisan<br><em>Pricing</em></h1>
       <p>Whether you require a one-of-a-kind bespoke centerpiece for your home, hospitality fit-outs, or curated artisan hampers for corporate gifting, our craft pricing is fair, direct, and ethical.</p>
     </div>
@@ -383,58 +84,58 @@
 <!-- ===== SECTION 2: CUSTOM HANDMADE ORDERS ===== -->
 <section class="custom-tiers-section">
   <div class="container">
-    <div class="section-header reveal-up">
+    <div class="section-header reveal">
       <span class="section-eyebrow">Bespoke Living</span>
       <h2 class="section-title">Custom Artisan<br><em>Order Disciplines</em></h2>
       <p class="section-subtitle">We collaborate with regional master crafters to accommodate custom proportions, hues, and motifs.</p>
     </div>
 
-    <div class="craft-cards-grid reveal-up">
+    <div class="craft-cards-grid reveal">
       <div class="craft-tier-card">
         <div>
-          <span class="craft-icon"><i class="fas fa-jug"></i></span>
+          <div class="craft-icon-wrap"><i class="fas fa-jar" aria-hidden="true"></i></div>
           <h3>Ceramics &amp; Pottery</h3>
           <p>Wheel-thrown vessels, dinnerware sets, and planter suites with personalized mineral glazes and engraved seals.</p>
         </div>
         <div class="craft-meta">
-          <span>Starting from ₹2,500</span><br>
-          <small>Lead time: 2–3 weeks</small>
+          <span class="craft-price-tag">Starting from ₹2,500</span>
+          <span class="craft-lead-time"><i class="far fa-clock"></i> Lead time: 2–3 weeks</span>
         </div>
       </div>
 
       <div class="craft-tier-card">
         <div>
-          <span class="craft-icon"><i class="fas fa-layer-group"></i></span>
+          <div class="craft-icon-wrap"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
           <h3>Handloom Textiles</h3>
           <p>Custom-dimension jute dhurries, organic indigo throws, and block-printed furnishings dyed with botanical pigments.</p>
         </div>
         <div class="craft-meta">
-          <span>Starting from ₹4,000</span><br>
-          <small>Lead time: 3–4 weeks</small>
+          <span class="craft-price-tag">Starting from ₹4,000</span>
+          <span class="craft-lead-time"><i class="far fa-clock"></i> Lead time: 3–4 weeks</span>
         </div>
       </div>
 
       <div class="craft-tier-card">
         <div>
-          <span class="craft-icon"><i class="fas fa-tree"></i></span>
+          <div class="craft-icon-wrap"><i class="fas fa-tree" aria-hidden="true"></i></div>
           <h3>Sculptural Woodcraft</h3>
           <p>Hand-carved mango wood, teak wall screens, and bespoke serving trays sealed with food-grade beeswax.</p>
         </div>
         <div class="craft-meta">
-          <span>Starting from ₹3,200</span><br>
-          <small>Lead time: 2–4 weeks</small>
+          <span class="craft-price-tag">Starting from ₹3,200</span>
+          <span class="craft-lead-time"><i class="far fa-clock"></i> Lead time: 2–4 weeks</span>
         </div>
       </div>
 
       <div class="craft-tier-card">
         <div>
-          <span class="craft-icon"><i class="fas fa-fire"></i></span>
+          <div class="craft-icon-wrap"><i class="fas fa-fire" aria-hidden="true"></i></div>
           <h3>Brass &amp; Metal Art</h3>
           <p>Ancient Dhokra lost-wax castings, hand-beaten copper mirrors, and architectural brass lighting fixtures.</p>
         </div>
         <div class="craft-meta">
-          <span>Starting from ₹3,800</span><br>
-          <small>Lead time: 3–5 weeks</small>
+          <span class="craft-price-tag">Starting from ₹3,800</span>
+          <span class="craft-lead-time"><i class="far fa-clock"></i> Lead time: 3–5 weeks</span>
         </div>
       </div>
     </div>
@@ -444,43 +145,43 @@
 <!-- ===== SECTION 3: BULK & WHOLESALE TIERS ===== -->
 <section class="wholesale-section">
   <div class="container">
-    <div class="section-header reveal-up">
+    <div class="section-header reveal">
       <span class="section-eyebrow">Trade &amp; Corporate Gifting</span>
       <h2 class="section-title">Bulk &amp; Wholesale<br><em>Partner Tiers</em></h2>
       <p class="section-subtitle">Designed for architects, interior stylists, festive corporate gifting, and luxury boutique hotels.</p>
     </div>
 
-    <div class="tier-cards-grid reveal-up">
+    <div class="tier-cards-grid reveal">
       <div class="tier-card">
         <div>
           <h3 class="tier-title">Studio Tier</h3>
           <div class="tier-volume">10 – 25 Units</div>
           <div class="tier-discount">15% Off <small>/ retail</small></div>
           <ul class="tier-features">
-            <li>Mix &amp; match standard catalogue</li>
-            <li>Custom hand-stamped logo tags</li>
-            <li>Standard eco-friendly packaging</li>
-            <li>Single address dispatch</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Mix &amp; match standard catalogue</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Custom hand-stamped logo tags</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Standard eco-friendly packaging</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Single address dispatch</li>
           </ul>
         </div>
-        <a href="#quote-section" class="btn-secondary" style="text-align:center;">Enquire Studio</a>
+        <a href="#quote-section" class="btn-secondary">Enquire Studio</a>
       </div>
 
       <div class="tier-card featured">
-        <span class="tier-badge">Most Popular</span>
+        <span class="tier-badge"><i class="fas fa-star"></i> Most Popular</span>
         <div>
           <h3 class="tier-title">Boutique Tier</h3>
           <div class="tier-volume">26 – 50 Units</div>
           <div class="tier-discount">25% Off <small>/ retail</small></div>
           <ul class="tier-features">
-            <li>Glaze &amp; textile colour customization</li>
-            <li>Custom engraved brass or wood plate</li>
-            <li>Bespoke rigid gift box options</li>
-            <li>Split delivery to up to 3 locations</li>
-            <li>Dedicated artisan project manager</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Glaze &amp; textile colour customization</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Custom engraved brass or wood plate</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Bespoke rigid gift box options</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Split delivery to up to 3 locations</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Dedicated artisan project manager</li>
           </ul>
         </div>
-        <a href="#quote-section" class="btn-primary" style="text-align:center;">Enquire Boutique</a>
+        <a href="#quote-section" class="btn-primary">Enquire Boutique</a>
       </div>
 
       <div class="tier-card">
@@ -489,14 +190,14 @@
           <div class="tier-volume">51 – 150 Units</div>
           <div class="tier-discount">35% Off <small>/ retail</small></div>
           <ul class="tier-features">
-            <li>Full bespoke mold &amp; pattern creation</li>
-            <li>Artisan story booklet with each item</li>
-            <li>Custom branded wax seal packaging</li>
-            <li>Multi-destination domestic shipping</li>
-            <li>Sample prototype before production</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Full bespoke mold &amp; pattern creation</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Artisan story booklet with each item</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Custom branded wax seal packaging</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Multi-destination domestic shipping</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Sample prototype before production</li>
           </ul>
         </div>
-        <a href="#quote-section" class="btn-secondary" style="text-align:center;">Enquire Heritage</a>
+        <a href="#quote-section" class="btn-secondary">Enquire Heritage</a>
       </div>
 
       <div class="tier-card">
@@ -505,14 +206,14 @@
           <div class="tier-volume">150+ Units / Hospitality</div>
           <div class="tier-discount">Custom <small>/ contract</small></div>
           <ul class="tier-features">
-            <li>Exclusive cluster craftsmanship booking</li>
-            <li>Direct guild master supervision</li>
-            <li>Global freight &amp; customs management</li>
-            <li>Custom sustainable shipping crates</li>
-            <li>Staggered delivery milestones</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Exclusive cluster craftsmanship booking</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Direct guild master supervision</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Global freight &amp; customs management</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Custom sustainable shipping crates</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Staggered delivery milestones</li>
           </ul>
         </div>
-        <a href="#quote-section" class="btn-secondary" style="text-align:center;">Contact Commercial</a>
+        <a href="#quote-section" class="btn-secondary">Contact Commercial</a>
       </div>
     </div>
   </div>
@@ -521,13 +222,13 @@
 <!-- ===== SECTION 4: CUSTOM ORDER PROCESS ===== -->
 <section class="process-timeline-section">
   <div class="container">
-    <div class="section-header reveal-up">
+    <div class="section-header reveal">
       <span class="section-eyebrow">How It Works</span>
       <h2 class="section-title">The 5-Step Bespoke<br><em>Commission Process</em></h2>
       <p class="section-subtitle">From conceptual sketch to master kiln firing, each custom piece follows a thoughtful rhythm.</p>
     </div>
 
-    <div class="timeline-steps reveal-up">
+    <div class="timeline-steps reveal">
       <div class="timeline-step">
         <div class="step-badge">1</div>
         <h4>Consultation</h4>
@@ -564,13 +265,13 @@
 <!-- ===== SECTION 5: PRICING FACTORS ===== -->
 <section class="pricing-factors-section">
   <div class="container">
-    <div class="section-header reveal-up">
+    <div class="section-header reveal">
       <span class="section-eyebrow">Honest Craft Economics</span>
       <h2 class="section-title">What Determines Our<br><em>Handmade Prices?</em></h2>
       <p class="section-subtitle">We believe in transparent pricing that values human dignity, natural ingredients, and time-tested methods.</p>
     </div>
 
-    <div class="factors-grid reveal-up">
+    <div class="factors-grid reveal">
       <div class="factor-item">
         <h4>1. Ethical Artisan Wages</h4>
         <p>Our crafters set their own fair hourly and piece rates, ensuring generational craft sustainability without exploitative middlemen.</p>
@@ -608,19 +309,20 @@
 <section class="quote-cta-section" id="quote-section">
   <div class="container">
     <div class="quote-grid">
-      <div class="reveal-up">
-        <span class="section-eyebrow" style="color:var(--antique-gold);">Let's Create Together</span>
-        <h2 class="section-title" style="text-align:left;color:#fff;">Request a Custom Order<br><em style="color:var(--warm-sand);">or Wholesale Estimate</em></h2>
-        <p style="color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:1.5rem;">Tell us about your project or bulk order. Our craft coordinator will respond within 24 hours with material suggestions, sample timelines, and an itemized quote.</p>
+      <div class="quote-info-panel reveal">
+        <span class="section-eyebrow" style="color:var(--antique-gold);"><i class="fas fa-handshake"></i> Let's Create Together</span>
+        <h2>Request a Custom Order<br><em>or Wholesale Estimate</em></h2>
+        <p>Tell us about your project or bulk order. Our craft coordinator will respond within 24 hours with material suggestions, sample timelines, and an itemized quote.</p>
         
-        <div style="background:rgba(255,255,255,0.06);padding:1.4rem;border-radius:12px;margin-bottom:1.5rem;border-left:3px solid var(--terracotta);">
-          <p style="color:var(--antique-gold);font-weight:700;margin-bottom:0.2rem;">DIRECT TRADE DESK</p>
-          <p style="font-size:0.95rem;color:#fff;">Email: <a href="mailto:wholesale@auradecor.in" style="color:var(--warm-sand);text-decoration:none;">wholesale@auradecor.in</a></p>
-          <p style="font-size:0.95rem;color:#fff;">Phone: <a href="tel:+919876543210" style="color:var(--warm-sand);text-decoration:none;">+91 98765 43210</a> (Wholesale Extension 2)</p>
+        <div class="trade-desk-card">
+          <span class="desk-title">DIRECT TRADE DESK</span>
+          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:wholesale@auradecor.in">wholesale@auradecor.in</a></p>
+          <p><i class="fas fa-phone"></i> Phone: <a href="tel:+919876543210">+91 98765 43210</a> (Wholesale Ext 2)</p>
         </div>
       </div>
 
-      <div class="quote-form-panel reveal-right">
+      <div class="quote-form-panel reveal">
+        <h3>Commission Enquiry Form</h3>
         <form id="quoteForm" onsubmit="handleQuoteSubmit(event)">
           <input type="text" placeholder="Your Name or Organisation *" required>
           <input type="email" placeholder="Email Address *" required>
@@ -636,7 +338,7 @@
           </select>
           <input type="number" placeholder="Estimated Quantity (e.g. 1 or 50)" min="1">
           <textarea rows="3" placeholder="Brief project description, desired dimensions, or budget range..." required></textarea>
-          <button type="submit" class="btn-primary" style="width:100%;padding:1rem;">Request Personalized Estimate <i class="fas fa-arrow-right"></i></button>
+          <button type="submit" class="btn-primary">Request Personalized Estimate <i class="fas fa-arrow-right"></i></button>
         </form>
       </div>
     </div>
@@ -759,7 +461,11 @@
 <script>
 function handleQuoteSubmit(e) {
   e.preventDefault();
-  alert('Thank you for requesting an artisan quote! Our craft liaison will be in touch within 24 hours.');
+  if (typeof window.showToast === 'function') {
+    window.showToast('Thank you for requesting an artisan quote! Our craft liaison will be in touch within 24 hours.', 'success');
+  } else {
+    alert('Thank you for requesting an artisan quote! Our craft liaison will be in touch within 24 hours.');
+  }
   e.target.reset();
 }
 </script>
