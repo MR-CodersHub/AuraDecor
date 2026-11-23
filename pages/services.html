@@ -490,45 +490,13 @@ let searchTimer = null;
 
 function formatPrice(n){return '₹'+n.toLocaleString('en-IN');}
 
-function getWishlist(){try{return JSON.parse(localStorage.getItem('aura_wishlist')||'[]');}catch{return [];}}
-function toggleWishlistItem(id){
-  let w=getWishlist();
-  const idx=w.indexOf(id);
-  if(idx===-1){w.push(id);}else{w.splice(idx,1);}
-  localStorage.setItem('aura_wishlist',JSON.stringify(w));
-  updateWishlistBadge();
-  return idx===-1;
-}
-function updateWishlistBadge(){
-  const el=document.getElementById('wishlistCount');
-  if(el)el.textContent=getWishlist().length;
-}
+function getWishlist(){try{return JSON.parse(localStorage.getItem('aura-wishlist')||'[]');}catch{return [];}}
 function addToCartShop(id){
   const p=SHOP_PRODUCTS.find(x=>x.id===id);if(!p)return;
-  if(typeof window.addToCart==='function'){window.addToCart(p.id,p.name,p.price,p.img);}
-  else{
-    try{
-      let cart=JSON.parse(localStorage.getItem('aura_cart')||'[]');
-      const ex=cart.find(x=>x.id===id);
-      if(ex){ex.qty++;}else{cart.push({id:p.id,name:p.name,price:p.price,img:p.img,qty:1});}
-      localStorage.setItem('aura_cart',JSON.stringify(cart));
-      showToastShop(p.name+' added to cart!');
-      updateCartBadge();
-    }catch(e){}
-  }
+  if(typeof window.addToCart==='function') window.addToCart(id);
 }
 function showToastShop(msg){
-  const tc=document.getElementById('toastContainer');
-  if(!tc)return;
-  const t=document.createElement('div');t.className='toast';t.textContent=msg;
-  tc.appendChild(t);setTimeout(()=>t.remove(),3200);
-}
-function updateCartBadge(){
-  try{
-    const cart=JSON.parse(localStorage.getItem('aura_cart')||'[]');
-    const total=cart.reduce((s,x)=>s+x.qty,0);
-    const el=document.getElementById('cartCount');if(el)el.textContent=total;
-  }catch(e){}
+  if(typeof window.showToast==='function') window.showToast(msg,'success');
 }
 
 function renderGrid(){
@@ -582,7 +550,8 @@ function renderGrid(){
 }
 
 function handleWishlist(id,btn){
-  const added=toggleWishlistItem(id);
+  const result=typeof window.toggleWishlist==='function'?window.toggleWishlist(id):{added:false};
+  const added=result.added;
   btn.innerHTML=added?'<i class="fas fa-heart"></i>':'<i class="far fa-heart"></i>';
   btn.classList.toggle('active',added);
   showToastShop(added?'Added to wishlist!':'Removed from wishlist');
