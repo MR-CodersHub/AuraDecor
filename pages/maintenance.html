@@ -109,13 +109,50 @@
     .maint-eyebrow {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
+      padding: 6px 16px;
+      border-radius: var(--radius-full, 9999px);
+      background-color: rgba(185, 104, 78, 0.12);
+      border: 1px solid rgba(185, 104, 78, 0.22);
       color: var(--terracotta);
-      font-size: 0.9rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 0.9rem;
+      margin-bottom: 1.1rem;
+      max-width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      line-height: 1.25;
+    }
+    .maint-eyebrow i {
+      flex-shrink: 0;
+    }
+    .maint-eyebrow span {
+      white-space: nowrap;
+    }
+    @media (max-width: 960px) {
+      .maint-eyebrow {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    @media (max-width: 480px) {
+      .maint-eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+        padding: 5px 12px;
+        gap: 0.35rem;
+      }
+    }
+    @media (max-width: 360px) {
+      .maint-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.03em;
+        padding: 4px 10px;
+        gap: 0.3rem;
+      }
     }
     .maint-title {
       font-family: var(--font-serif);
@@ -429,6 +466,11 @@
       background-color: var(--card-bg);
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
     }
+    [data-theme="dark"] .maint-eyebrow {
+      background-color: rgba(185, 104, 78, 0.22);
+      border-color: rgba(185, 104, 78, 0.4);
+      color: var(--accent, #C99579);
+    }
   </style>
 </head>
 <body class="maint-page">
@@ -466,7 +508,8 @@
         <!-- Left: Details & Live Timer -->
         <div class="maint-content">
           <span class="maint-eyebrow">
-            <i class="fas fa-hammer"></i> Refining Our Kilns &amp; Marketplace
+            <i class="fas fa-hammer" aria-hidden="true"></i>
+            <span>Refining Our Kilns &amp; Marketplace</span>
           </span>
           <h1 class="maint-title">
             Crafting a Better<br><em>Artisan Experience</em>
