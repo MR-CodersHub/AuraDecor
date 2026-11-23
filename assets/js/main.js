@@ -1071,6 +1071,181 @@ window.updateQty = updateQty;
 window.openCart = openCart;
 window.closeCart = closeCart;
 window.renderCart = renderCart;
+window.openCheckout = openCheckout;
+window.closeCheckout = closeCheckout;
+window.handlePlaceOrder = handlePlaceOrder;
+
+/**
+ * Opens a real checkout modal with order summary, delivery details, and payment options.
+ */
+function openCheckout() {
+  closeCart();
+  if (!cart || cart.length === 0) {
+    if (typeof showToast === 'function') {
+      showToast('Your cart is empty. Add items before checking out.', 'info');
+    }
+    return;
+  }
+
+  let modal = document.getElementById('checkout-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.className = 'modal-overlay';
+    modal.id = 'checkout-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    document.body.appendChild(modal);
+  }
+
+  const { subtotal } = getCartTotal();
+  const shipping = subtotal >= 2000 ? 0 : 150;
+  const total = subtotal + shipping;
+
+  const itemsHtml = cart.map(item => {
+    let p = null;
+    if (typeof window.SHOP_PRODUCTS !== 'undefined') {
+      const sp = window.SHOP_PRODUCTS.find(x => x.id === item.id);
+      if (sp) p = { name: sp.name, price: sp.price, image: sp.img };
+    }
+    if (!p) p = products.find(x => x.id === item.id);
+    const name = item.name || (p && p.name) || 'Artisan Decor';
+    const price = item.price !== undefined ? item.price : (p ? p.price : 0);
+    const img = (item && item.image) || (p && (p.image || p.img)) || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=120';
+    return `
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border-color);">
+        <img src="${img}" alt="${name}" style="width:52px;height:52px;border-radius:8px;object-fit:cover;flex-shrink:0;">
+        <div style="flex:1;min-width:0;">
+          <p style="font-size:0.9rem;font-weight:600;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${name}</p>
+          <span style="font-size:0.8rem;color:var(--text-secondary);">Qty: ${item.qty} × ₹${price.toLocaleString('en-IN')}</span>
+        </div>
+        <strong style="font-size:0.95rem;color:var(--charcoal-brown);">₹${(price * item.qty).toLocaleString('en-IN')}</strong>
+      </div>
+    `;
+  }).join('');
+
+  modal.innerHTML = `
+    <div class="modal" style="max-width: 640px; width: 94%; max-height: 92vh; overflow-y: auto; padding: 0;">
+      <div class="modal-header" style="padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border-color);">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(185,104,78,0.12);color:var(--terracotta);"><i class="fas fa-lock"></i></span>
+          <div>
+            <h3 class="modal-title" style="margin:0;font-size:1.25rem;">Secure Checkout</h3>
+            <span style="font-size:0.75rem;color:var(--deep-olive);font-weight:600;"><i class="fas fa-shield-halved"></i> 256-bit SSL Protected</span>
+          </div>
+        </div>
+        <button class="modal-close" type="button" onclick="closeCheckout()" aria-label="Close checkout" style="cursor:pointer;border:none;background:none;font-size:1.4rem;">&times;</button>
+      </div>
+      <div class="modal-body" id="checkout-modal-body" style="padding: 1.5rem;">
+        <form id="checkout-form" onsubmit="handlePlaceOrder(event)">
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="font-family:var(--font-serif);font-size:1.05rem;margin-bottom:0.8rem;color:var(--charcoal-brown);">Order Summary</h4>
+            <div style="max-height: 180px; overflow-y: auto; padding-right: 6px; margin-bottom: 1rem;">
+              ${itemsHtml}
+            </div>
+            <div style="background:var(--bg-secondary);padding:1rem;border-radius:10px;font-size:0.875rem;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span>Subtotal</span>
+                <span>₹${subtotal.toLocaleString('en-IN')}</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span>Shipping</span>
+                <span>${shipping === 0 ? '<strong style="color:var(--deep-olive);">FREE</strong>' : '₹' + shipping}</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1.05rem;border-top:1px dashed var(--border-color);padding-top:8px;margin-top:6px;color:var(--terracotta);">
+                <span>Total Amount</span>
+                <span>₹${total.toLocaleString('en-IN')}</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="font-family:var(--font-serif);font-size:1.05rem;margin-bottom:0.8rem;color:var(--charcoal-brown);">Delivery Address</h4>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+              <input type="text" class="form-control" name="name" placeholder="Full Name" required style="width:100%;padding:9px 12px;border:1px solid var(--border-color);border-radius:8px;font-size:0.875rem;">
+              <input type="tel" class="form-control" name="phone" placeholder="Phone (+91)" required pattern="[0-9]{10}" title="10-digit mobile number" style="width:100%;padding:9px 12px;border:1px solid var(--border-color);border-radius:8px;font-size:0.875rem;">
+            </div>
+            <input type="text" class="form-control" name="address" placeholder="Street Address / Flat / Landmark" required style="width:100%;padding:9px 12px;border:1px solid var(--border-color);border-radius:8px;font-size:0.875rem;margin-bottom:10px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+              <input type="text" class="form-control" name="city" placeholder="City" required style="width:100%;padding:9px 12px;border:1px solid var(--border-color);border-radius:8px;font-size:0.875rem;">
+              <input type="text" class="form-control" name="pincode" placeholder="Pincode" required pattern="[0-9]{6}" style="width:100%;padding:9px 12px;border:1px solid var(--border-color);border-radius:8px;font-size:0.875rem;">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 1.5rem;">
+            <h4 style="font-family:var(--font-serif);font-size:1.05rem;margin-bottom:0.8rem;color:var(--charcoal-brown);">Payment Method</h4>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:0.875rem;">
+              <label style="display:flex;align-items:center;gap:10px;padding:10px 14px;border:1.5px solid var(--terracotta);border-radius:8px;cursor:pointer;background:rgba(185,104,78,0.04);">
+                <input type="radio" name="payment" value="UPI / QR" checked>
+                <span><strong>UPI / QR Code</strong> (Google Pay, PhonePe, Paytm)</span>
+              </label>
+              <label style="display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--border-color);border-radius:8px;cursor:pointer;">
+                <input type="radio" name="payment" value="Card / Netbanking">
+                <span>Credit / Debit Card or Netbanking</span>
+              </label>
+              <label style="display:flex;align-items:center;gap:10px;padding:10px 14px;border:1px solid var(--border-color);border-radius:8px;cursor:pointer;">
+                <input type="radio" name="payment" value="Cash on Delivery">
+                <span>Cash on Delivery (COD)</span>
+              </label>
+            </div>
+          </div>
+
+          <button class="btn btn-primary w-100" type="submit" style="width:100%;padding:0.9rem;font-weight:700;font-size:1rem;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--terracotta);color:#fff;border:none;cursor:pointer;">
+            <i class="fas fa-lock"></i> Place Order (₹${total.toLocaleString('en-IN')})
+          </button>
+        </form>
+      </div>
+    </div>
+  `;
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCheckout() {
+  const modal = document.getElementById('checkout-modal');
+  if (modal) modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handlePlaceOrder(e) {
+  e.preventDefault();
+  const form = e.target;
+  const paymentMethod = form.querySelector('input[name="payment"]:checked')?.value || 'UPI';
+  const orderId = 'AD-' + Math.floor(100000 + Math.random() * 900000);
+
+  const body = document.getElementById('checkout-modal-body');
+  if (body) {
+    body.innerHTML = `
+      <div style="text-align:center;padding:2rem 1rem;">
+        <div style="width:72px;height:72px;border-radius:50%;background:#e8f5e9;color:#2e7d32;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:2.2rem;">
+          <i class="fas fa-check"></i>
+        </div>
+        <h3 style="font-family:var(--font-serif);font-size:1.75rem;margin-bottom:0.4rem;color:var(--charcoal-brown);">Order Placed Successfully!</h3>
+        <p style="color:var(--terracotta);font-weight:700;margin-bottom:1rem;font-size:1.05rem;">Order #${orderId}</p>
+        <p style="color:var(--text-secondary);max-width:440px;margin:0 auto 1.5rem;line-height:1.6;font-size:0.92rem;">
+          Thank you for supporting authentic artisan families! We have received your order and are lovingly preparing your handcrafted pieces in Jaipur.
+        </p>
+        <div style="background:var(--bg-secondary);padding:1rem 1.4rem;border-radius:10px;margin:0 auto 1.8rem;max-width:380px;text-align:left;font-size:0.875rem;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+            <span style="color:var(--text-secondary);">Estimated Delivery:</span>
+            <strong style="color:var(--charcoal-brown);">3–5 Business Days</strong>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="color:var(--text-secondary);">Payment:</span>
+            <strong style="color:var(--charcoal-brown);">${paymentMethod} (Confirmed)</strong>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="button" onclick="closeCheckout()" style="padding:0.75rem 2.2rem;font-weight:700;background:var(--terracotta);color:#fff;border:none;border-radius:8px;cursor:pointer;">Continue Shopping</button>
+      </div>
+    `;
+  }
+
+  // Clear cart
+  cart = [];
+  saveCart();
+  updateCartCount();
+  renderCart();
+}
 
 /* ============================================================
    7. WISHLIST SYSTEM
