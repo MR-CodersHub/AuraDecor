@@ -194,87 +194,455 @@
 }
 
 /* ------------------------------------------------------------
-   S4 — Craftsmanship & materials
+   S4 — Craftsmanship & materials (Redesigned)
    ------------------------------------------------------------ */
-.craft-feature-row {
-  display: flex;
-  align-items: center;
-  gap: clamp(40px, 6vw, 80px);
-  flex-wrap: wrap;
+.craftsmanship-sec {
+  position: relative;
+  overflow: hidden;
+}
+
+.craft-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 3.5vw, 36px);
   margin-top: var(--space-5);
 }
 
-.craft-feature-text {
-  flex: 1;
-  min-width: 260px;
-  max-width: 560px;
-}
-
-.craft-feature-text h3 {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.25;
-  margin-bottom: var(--space-2);
-}
-
-.craft-feature-text p {
-  font-size: 0.9375rem;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  margin-bottom: var(--space-3);
-}
-
-.craft-mats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  list-style: none;
-  padding: 0;
-  margin: 0 0 var(--space-3);
-}
-
-.craft-mats li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.craft-mats i {
-  color: var(--accent);
-  font-size: 0.875rem;
-  flex-shrink: 0;
-}
-
-.craft-feature-img {
-  flex: 0 0 auto;
-  width: clamp(260px, 40vw, 480px);
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-lg);
+.craft-pillar-card {
+  background-color: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #DCCBB2);
+  border-radius: var(--radius-xl, 20px);
   overflow: hidden;
-  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(57, 51, 45, 0.05);
+}
+
+.craft-pillar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(57, 51, 45, 0.12);
+}
+
+.craft-pillar-media {
+  position: relative;
+  height: 270px;
+  overflow: hidden;
   background-color: var(--bg-secondary);
 }
 
-.craft-feature-img img {
+.craft-pillar-media img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.7s ease;
+  transition: transform 0.7s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
-.craft-feature-img:hover img {
-  transform: scale(1.05);
+.craft-pillar-card:hover .craft-pillar-media img {
+  transform: scale(1.06);
 }
 
-.craft-row-rev {
-  flex-direction: row-reverse;
+.craft-pillar-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(30, 26, 23, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 2;
+}
+
+.craft-pillar-origin {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(185, 104, 78, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 2;
+}
+
+.craft-pillar-body {
+  padding: 26px 28px 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.craft-pillar-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent, #B9684E);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.craft-pillar-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.craft-pillar-desc {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.craft-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.craft-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: rgba(185, 104, 78, 0.08);
+  color: var(--accent, #B9684E);
+  border: 1px solid rgba(185, 104, 78, 0.18);
+}
+
+.craft-technique-callout {
+  background-color: var(--bg-secondary, #F8F3E9);
+  border-left: 3px solid var(--accent, #B9684E);
+  padding: 10px 14px;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: auto;
+}
+
+.craft-technique-callout i {
+  color: var(--antique-gold, #B79A62);
+  font-size: 0.95rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Process Journey */
+.craft-process-banner {
+  margin-top: 60px;
+  background-color: var(--bg-secondary, #F8F3E9);
+  border-radius: var(--radius-xl, 24px);
+  padding: 48px 40px;
+  border: 1px solid var(--border-color, #DCCBB2);
+}
+
+.craft-process-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.craft-process-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 6px 0 10px;
+}
+
+.craft-process-sub {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.craft-process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.craft-step-card {
+  background-color: var(--card-bg, #fff);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px 20px;
+  border: 1px solid rgba(57, 51, 45, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.craft-step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(57, 51, 45, 0.08);
+}
+
+.craft-step-num {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--antique-gold, #B79A62);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.craft-step-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background-color: rgba(185, 104, 78, 0.1);
+  color: var(--accent, #B9684E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.craft-step-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.craft-step-card p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Care Guide */
+.craft-care-wrapper {
+  margin-top: 60px;
+}
+
+.craft-care-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.craft-care-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 6px 0 10px;
+}
+
+.craft-care-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.craft-care-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.craft-care-card {
+  background-color: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #DCCBB2);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.craft-care-card:hover {
+  transform: translateY(-4px);
+}
+
+.craft-care-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: rgba(77, 89, 64, 0.12);
+  color: var(--deep-olive, #4D5940);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.craft-care-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 2px 0 0;
+  line-height: 1.3;
+}
+
+.craft-care-card p {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.craft-care-tip {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(57, 51, 45, 0.12);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--deep-olive, #4D5940);
+  font-weight: 600;
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.craft-care-tip i {
+  color: var(--antique-gold, #B79A62);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Philosophy Callout */
+.craft-philosophy-callout {
+  margin-top: 60px;
+  background: linear-gradient(135deg, #39332D 0%, #2A2521 100%);
+  color: #fff;
+  border-radius: var(--radius-xl, 24px);
+  padding: 48px 36px;
+  text-align: center;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.craft-philosophy-callout::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(185, 104, 78, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.craft-philosophy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: rgba(185, 104, 78, 0.25);
+  border: 1px solid rgba(185, 104, 78, 0.4);
+  color: var(--warm-sand, #DCCBB2);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.craft-philosophy-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 820px;
+  margin: 0 auto 20px;
+  color: var(--natural-cream, #F8F3E9);
+}
+
+.craft-philosophy-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.craft-author-name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--antique-gold, #B79A62);
+  letter-spacing: 0.04em;
+}
+
+.craft-author-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: rgba(220, 203, 178, 0.7);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Dark theme adaptations */
+[data-theme="dark"] .craft-pillar-card,
+[data-theme="dark"] .craft-step-card,
+[data-theme="dark"] .craft-care-card {
+  background-color: #241f1b;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] .craft-process-banner {
+  background-color: #1e1a17;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .craft-technique-callout {
+  background-color: #1e1a17;
+  color: var(--warm-sand);
+}
+
+[data-theme="dark"] .craft-care-tip {
+  color: var(--warm-sand);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .craft-care-icon {
+  background-color: rgba(77, 89, 64, 0.3);
+  color: var(--warm-sand);
 }
 
 /* ------------------------------------------------------------
@@ -417,22 +785,14 @@
   .story-grid,
   .mission-grid,
   .artisans-h-grid,
-  .commitment-grid {
+  .commitment-grid,
+  .craft-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .craft-process-steps,
+  .craft-care-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .craft-feature-row,
-  .craft-row-rev {
-    flex-direction: column;
-  }
-
-  .craft-feature-text {
-    max-width: none;
-  }
-
-  .craft-feature-img {
-    width: 100%;
-    max-width: 420px;
   }
 
   .hero-about .container {
@@ -458,8 +818,29 @@
     padding-bottom: var(--space-5);
   }
 
-  .craft-mats li {
-    font-size: 0.8125rem;
+  .craft-process-banner {
+    padding: 32px 20px;
+    border-radius: var(--radius-lg, 16px);
+  }
+
+  .craft-philosophy-callout {
+    padding: 36px 20px;
+    border-radius: var(--radius-lg, 16px);
+  }
+}
+
+@media (max-width: 600px) {
+  .craft-process-steps,
+  .craft-care-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .craft-pillar-media {
+    height: 220px;
+  }
+
+  .craft-pillar-body {
+    padding: 20px 18px 24px;
   }
 }
 

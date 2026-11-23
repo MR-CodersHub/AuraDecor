@@ -808,7 +808,7 @@ code {
     height: calc(100vh - 68px);
     background-color: var(--natural-cream, #F8F3E9);
     color: var(--text-primary);
-    padding: 24px 20px 32px;
+    padding: 20px 1.5rem 32px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 1004;
@@ -1017,6 +1017,10 @@ code {
   .navbar-inner {
     padding: 0 1rem;
     gap: 0.6rem;
+  }
+
+  .navbar.navbar-open .mobile-menu {
+    padding: 16px 1rem 28px;
   }
 
   .logo {
