@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+  <link rel="shortcut icon" href="../favicon.svg">
+  <meta name="description" content="AuraDecor Website Directory and Sitemap — Explore all handcrafted collections, artisan stories, custom orders, studio visits, and resources.">
+  <title>Sitemap &amp; Directory — AuraDecor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <style>
+    /* ===== SITEMAP PAGE STYLES ===== */
+    .sitemap-hero {
+      position: relative;
+      min-height: 44vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--charcoal-brown);
+      color: #ffffff;
+      overflow: hidden;
+      padding: var(--space-7) 0;
+    }
+    .sitemap-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1600&auto=format&fit=crop') center/cover no-repeat;
+      opacity: 0.32;
+    }
+    .sitemap-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(30, 26, 23, 0.5) 0%, rgba(30, 26, 23, 0.94) 100%);
+    }
+    .sitemap-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+    }
+    .sitemap-hero-content .section-eyebrow {
+      color: var(--antique-gold);
+      margin-bottom: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sitemap-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: #ffffff;
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .sitemap-hero h1 em {
+      font-style: italic;
+      color: var(--warm-sand);
+    }
+    .sitemap-hero p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.65;
+    }
+
+    /* Sitemap Grid Section */
+    .sitemap-section {
+      background-color: var(--bg-primary);
+      padding: var(--space-7) 0;
+    }
+    .sitemap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 1024px) {
+      .sitemap-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .sitemap-grid { grid-template-columns: 1fr; }
+    }
+
+    .sitemap-card {
+      background-color: var(--card-bg, #ffffff);
+      border-radius: var(--radius-xl, 20px);
+      padding: 2.2rem 2rem;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(57, 51, 45, 0.05);
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+      display: flex;
+      flex-direction: column;
+    }
+    .sitemap-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(57, 51, 45, 0.12);
+      border-color: var(--terracotta);
+    }
+
+    .sitemap-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .sitemap-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-lg, 12px);
+      background-color: rgba(185, 104, 78, 0.12);
+      color: var(--terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    }
+    .sitemap-card:hover .sitemap-icon-badge {
+      background-color: var(--terracotta);
+      color: #ffffff;
+      transform: scale(1.06);
+    }
+    .sitemap-card-header h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin: 0;
+    }
+    .sitemap-card-header p {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-top: 0.2rem;
+    }
+
+    .sitemap-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .sitemap-link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+    .sitemap-link-item a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: color var(--transition-fast), transform var(--transition-fast);
+    }
+    .sitemap-link-item a i {
+      font-size: 0.8rem;
+      color: var(--terracotta);
+      transition: transform var(--transition-fast);
+    }
+    .sitemap-link-item a:hover {
+      color: var(--terracotta);
+      transform: translateX(3px);
+    }
+    .sitemap-link-item a:hover i {
+      transform: translateX(2px);
+    }
+    .sitemap-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-full, 9999px);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .sitemap-tag-core {
+      background-color: rgba(185, 104, 78, 0.12);
+      color: var(--terracotta);
+    }
+    .sitemap-tag-shop {
+      background-color: rgba(77, 89, 64, 0.12);
+      color: var(--deep-olive);
+    }
+    .sitemap-tag-util {
+      background-color: rgba(183, 154, 98, 0.15);
+      color: var(--charcoal-brown);
+    }
+
+    /* Quick Search & Summary Row */
+    .sitemap-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      padding: 1.2rem 1.8rem;
+      background-color: var(--card-bg, #ffffff);
+      border-radius: var(--radius-xl, 16px);
+      border: 1px solid var(--border-color);
+    }
+    .sitemap-count-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .sitemap-count-text strong {
+      color: var(--terracotta);
+      font-weight: 700;
+    }
+    .sitemap-quick-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    [data-theme="dark"] .sitemap-card,
+    [data-theme="dark"] .sitemap-summary-row {
+      background-color: var(--card-bg);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+    }
+    [data-theme="dark"] .sitemap-tag-util {
+      color: var(--warm-sand);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="../index.html" class="logo"><span class="logo-mark"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#B9684E"/><path d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z" fill="#F8F3E9"/><path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="#B79A62"/><circle cx="32" cy="32" r="3.2" fill="#B9684E"/></svg></span><span class="logo-text-group"><span class="logo-text">AuraDecor</span><span class="logo-tagline">Crafted with Soul</span></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html" class="nav-link">Home</a></li>
+      <li><a href="home2.html" class="nav-link">Home 2</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="blog.html" class="nav-link">Blog</a></li>
+      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      <button class="icon-btn text-toggle" id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+      <button class="icon-btn cart-trigger" id="cart-btn" data-open-cart aria-label="Open shopping cart" title="Shopping Cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-count" data-cart-count style="display:none;">0</span></button>
+      <a href="contact.html#enquiry-form" class="btn-nav-cta">Book Now</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <nav class="mobile-menu-nav" aria-label="Main menu">
+      <a href="../index.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-house" aria-hidden="true"></i></span><span>Home</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="home2.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></span><span>Home 2</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="about.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-info-circle" aria-hidden="true"></i></span><span>About</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="services.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i></span><span>Services</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="blog.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-newspaper" aria-hidden="true"></i></span><span>Blog</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="pricing.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-tags" aria-hidden="true"></i></span><span>Pricing</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+      <a href="contact.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span><span>Contact</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+  </nav>
+  <div class="mobile-menu-actions">
+    <a href="contact.html#enquiry-form" class="mobile-menu-cta"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Now <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+  <div class="mobile-menu-footer">
+    <div class="mobile-menu-socials" aria-label="Follow AuraDecor">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+    </div>
+    <div class="mobile-menu-contact">
+      <a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i> +91 98765 43210</a>
+      <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope" aria-hidden="true"></i> hello@auradecor.in</a>
+    </div>
+    <p class="mobile-menu-note">Handcrafted in Jaipur · Loved everywhere</p>
+  </div>
+</div></nav>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<section class="sitemap-hero section-padding">
+  <div class="sitemap-hero-bg"></div>
+  <div class="sitemap-hero-overlay"></div>
+  <div class="container">
+    <div class="sitemap-hero-content reveal">
+      <span class="section-eyebrow"><i class="fas fa-sitemap" aria-hidden="true"></i> Website Directory</span>
+      <h1>Explore All of<br><em>AuraDecor Online</em></h1>
+      <p>A structured navigation overview of our storefront, curated collections, artisan narratives, wholesale pricing tables, studio visit bookings, and member accounts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SITEMAP GRID ===== -->
+<section class="sitemap-section">
+  <div class="container">
+    
+    <div class="sitemap-summary-row reveal">
+      <div class="sitemap-count-text">
+        <i class="fas fa-folder-tree" style="color:var(--terracotta);"></i>
+        <span>Index containing <strong>12 Live Pages</strong> across <strong>6 Core Categories</strong></span>
+      </div>
+      <div class="sitemap-quick-actions">
+        <a href="services.html" class="btn btn-primary" style="padding:8px 18px;font-size:0.85rem;"><i class="fas fa-store"></i> Shop Collections</a>
+        <a href="contact.html" class="btn btn-secondary" style="padding:8px 18px;font-size:0.85rem;"><i class="fas fa-envelope"></i> Contact Us</a>
+      </div>
+    </div>
+
+    <div class="sitemap-grid">
+      
+      <!-- Card 1: Core Navigation -->
+      <div class="sitemap-card reveal">
+        <div class="sitemap-card-header">
+          <div class="sitemap-icon-badge"><i class="fas fa-compass"></i></div>
+          <div>
+            <h3>Main Storefront</h3>
+            <p>Primary destination pages</p>
+          </div>
+        </div>
+        <ul class="sitemap-links">
+          <li class="sitemap-link-item">
+            <a href="../index.html"><i class="fas fa-angle-right"></i> Home (Primary Flagship)</a>
+            <span class="sitemap-tag sitemap-tag-core">Core</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="home2.html"><i class="fas fa-angle-right"></i> Home 2 (Artisan Showcase)</a>
+            <span class="sitemap-tag sitemap-tag-core">Alternate</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="about.html"><i class="fas fa-angle-right"></i> About Us (Heritage &amp; Makers)</a>
+            <span class="sitemap-tag sitemap-tag-core">Story</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="services.html"><i class="fas fa-angle-right"></i> Shop &amp; Services (All Crafts)</a>
+            <span class="sitemap-tag sitemap-tag-core">Catalog</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="blog.html"><i class="fas fa-angle-right"></i> Journal &amp; Stories (Craft Insights)</a>
+            <span class="sitemap-tag sitemap-tag-core">Editorial</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="pricing.html"><i class="fas fa-angle-right"></i> Pricing &amp; Wholesale Tiers</a>
+            <span class="sitemap-tag sitemap-tag-core">Bespoke</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="contact.html"><i class="fas fa-angle-right"></i> Contact Studio &amp; Enquiries</a>
+            <span class="sitemap-tag sitemap-tag-core">Support</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 2: Product & Story Details -->
+      <div class="sitemap-card reveal">
+        <div class="sitemap-card-header">
+          <div class="sitemap-icon-badge"><i class="fas fa-layer-group"></i></div>
+          <div>
+            <h3>Deep Dives &amp; Details</h3>
+            <p>Individual showcases &amp; articles</p>
+          </div>
+        </div>
+        <ul class="sitemap-links">
+          <li class="sitemap-link-item">
+            <a href="service-details.html"><i class="fas fa-angle-right"></i> Product Detail Experience</a>
+            <span class="sitemap-tag sitemap-tag-shop">Featured</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="blog-details.html"><i class="fas fa-angle-right"></i> Artisan Story: Blue Pottery Master</a>
+            <span class="sitemap-tag sitemap-tag-shop">Article</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="pricing.html#calculator"><i class="fas fa-angle-right"></i> Interactive Price Estimator</a>
+            <span class="sitemap-tag sitemap-tag-shop">Tool</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="contact.html#studio-map"><i class="fas fa-angle-right"></i> Jaipur Studio Map &amp; Visiting Info</a>
+            <span class="sitemap-tag sitemap-tag-shop">Location</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="contact.html#enquiry-form"><i class="fas fa-angle-right"></i> Custom Commission Request Form</a>
+            <span class="sitemap-tag sitemap-tag-shop">Enquiry</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 3: Shop Categories -->
+      <div class="sitemap-card reveal">
+        <div class="sitemap-card-header">
+          <div class="sitemap-icon-badge"><i class="fas fa-hand-holding-heart"></i></div>
+          <div>
+            <h3>Craft Collections</h3>
+            <p>Direct category filter links</p>
+          </div>
+        </div>
+        <ul class="sitemap-links">
+          <li class="sitemap-link-item">
+            <a href="services.html?cat=pottery-ceramics"><i class="fas fa-angle-right"></i> Pottery &amp; Ceramics</a>
+            <span class="sitemap-tag sitemap-tag-shop">Shop</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="services.html?cat=textiles"><i class="fas fa-angle-right"></i> Handmade Textiles</a>
+            <span class="sitemap-tag sitemap-tag-shop">Shop</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="services.html?cat=wooden"><i class="fas fa-angle-right"></i> Wooden Handicrafts</a>
+            <span class="sitemap-tag sitemap-tag-shop">Shop</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="services.html?cat=wall-art"><i class="fas fa-angle-right"></i> Wall Art &amp; Hangings</a>
+            <span class="sitemap-tag sitemap-tag-shop">Shop</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="services.html?cat=lighting"><i class="fas fa-angle-right"></i> Handcrafted Lighting</a>
+            <span class="sitemap-tag sitemap-tag-shop">Shop</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="services.html?cat=metal-crafts"><i class="fas fa-angle-right"></i> Metal &amp; Brass Crafts</a>
+            <span class="sitemap-tag sitemap-tag-shop">Shop</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="services.html?cat=gifts"><i class="fas fa-angle-right"></i> Artisan Gift Hampers</a>
+            <span class="sitemap-tag sitemap-tag-shop">Shop</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 4: Customer Account & Utility -->
+      <div class="sitemap-card reveal">
+        <div class="sitemap-card-header">
+          <div class="sitemap-icon-badge"><i class="fas fa-user-shield"></i></div>
+          <div>
+            <h3>Account &amp; System</h3>
+            <p>Portals, status and utilities</p>
+          </div>
+        </div>
+        <ul class="sitemap-links">
+          <li class="sitemap-link-item">
+            <a href="login.html"><i class="fas fa-angle-right"></i> Customer Portal &amp; Login</a>
+            <span class="sitemap-tag sitemap-tag-util">Account</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="coming-soon.html"><i class="fas fa-angle-right"></i> Coming Soon / Maintenance</a>
+            <span class="sitemap-tag sitemap-tag-util">Preview</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="404.html"><i class="fas fa-angle-right"></i> 404 Page (Not Found)</a>
+            <span class="sitemap-tag sitemap-tag-util">Utility</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="sitemap.html"><i class="fas fa-angle-right"></i> XML &amp; HTML Sitemap</a>
+            <span class="sitemap-tag sitemap-tag-util">Current</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 5: Studio & Guild Values -->
+      <div class="sitemap-card reveal">
+        <div class="sitemap-card-header">
+          <div class="sitemap-icon-badge"><i class="fas fa-award"></i></div>
+          <div>
+            <h3>Heritage &amp; Guild</h3>
+            <p>Our craftsmanship promises</p>
+          </div>
+        </div>
+        <ul class="sitemap-links">
+          <li class="sitemap-link-item">
+            <a href="about.html#values"><i class="fas fa-angle-right"></i> Fair Trade &amp; 65% Revenue Share</a>
+            <span class="sitemap-tag sitemap-tag-core">Ethos</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="about.html#artisans"><i class="fas fa-angle-right"></i> Meet Our Master Artisans</a>
+            <span class="sitemap-tag sitemap-tag-core">People</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="pricing.html#faq"><i class="fas fa-angle-right"></i> Custom Order Lead Times &amp; Process</a>
+            <span class="sitemap-tag sitemap-tag-core">Guide</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="contact.html#faq"><i class="fas fa-angle-right"></i> Eco-Friendly Packaging &amp; Shipping</a>
+            <span class="sitemap-tag sitemap-tag-core">Policy</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 6: Direct Assistance -->
+      <div class="sitemap-card reveal">
+        <div class="sitemap-card-header">
+          <div class="sitemap-icon-badge"><i class="fas fa-headset"></i></div>
+          <div>
+            <h3>Client Concierge</h3>
+            <p>Quick communication channels</p>
+          </div>
+        </div>
+        <ul class="sitemap-links">
+          <li class="sitemap-link-item">
+            <a href="tel:+919876543210"><i class="fas fa-phone"></i> +91 98765 43210 (Studio Direct)</a>
+            <span class="sitemap-tag sitemap-tag-core">Voice</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp Concierge</a>
+            <span class="sitemap-tag sitemap-tag-core">Instant</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope"></i> hello@auradecor.in</a>
+            <span class="sitemap-tag sitemap-tag-core">Email</span>
+          </li>
+          <li class="sitemap-link-item">
+            <a href="mailto:wholesale@auradecor.in"><i class="fas fa-briefcase"></i> wholesale@auradecor.in</a>
+            <span class="sitemap-tag sitemap-tag-core">B2B</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo footer-logo"><span class="logo-mark"><svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#B9684E"/><path d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z" fill="#F8F3E9"/><path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="#B79A62"/><circle cx="32" cy="32" r="3.2" fill="#B9684E"/></svg></span><span class="logo-text-group"><span class="logo-text">AuraDecor</span><span class="logo-tagline">Crafted with Soul</span></span></a>
+          <p class="footer-tagline">Handmade heirlooms for slow living.</p>
+          <div class="footer-socials" aria-label="Follow AuraDecor">
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </div>
+          <p class="footer-craft-note"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> Handcrafted in Jaipur, loved everywhere.</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Explore">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-nav">
+            <li><a class="footer-nav-link" href="../index.html">Home</a></li>
+            <li><a class="footer-nav-link" href="home2.html">Home 2</a></li>
+            <li><a class="footer-nav-link" href="about.html">About</a></li>
+            <li><a class="footer-nav-link" href="services.html">Services</a></li>
+            <li><a class="footer-nav-link" href="blog.html">Blog</a></li>
+            <li><a class="footer-nav-link" href="pricing.html">Pricing</a></li>
+            <li><a class="footer-nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Collections">
+          <h3 class="footer-col-title">Collections</h3>
+          <ul class="footer-nav">
+            <li><a class="footer-nav-link" href="services.html?cat=home-decor">Home Decor</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=pottery-ceramics">Pottery &amp; Ceramics</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=textiles">Handmade Textiles</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=wooden">Wooden Handicrafts</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=wall-art">Wall Art</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=lighting">Handmade Lighting</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=metal-crafts">Metal Crafts</a></li>
+            <li><a class="footer-nav-link" href="services.html?cat=gifts">Handmade Gifts</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Support</h3>
+          <ul class="footer-nav">
+            <li><a class="footer-nav-link" href="contact.html#faq">FAQs</a></li>
+            <li><a class="footer-nav-link" href="contact.html">Shipping &amp; Delivery</a></li>
+            <li><a class="footer-nav-link" href="contact.html">Returns &amp; Exchanges</a></li>
+            <li><a class="footer-nav-link" href="pricing.html">Wholesale Enquiries</a></li>
+            <li><a class="footer-nav-link" href="contact.html#enquiry-form">Book a Consultation</a></li>
+            <li><a class="footer-nav-link" href="login.html">My Account</a></li>
+          </ul>
+          <div class="footer-contact">
+            <a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i> +91 98765 43210</a>
+            <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope" aria-hidden="true"></i> hello@auradecor.in</a>
+          </div>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h3 class="footer-col-title">Workshop Notes</h3>
+          <p class="footer-newsletter-note">A quiet letter about craft, colour and slow living — delivered once a month.</p>
+          <form class="footer-newsletter-form newsletter-form" data-newsletter-form novalidate>
+            <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+            <input class="footer-newsletter-input" id="footerNewsletterEmail" type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+            <button class="footer-newsletter-btn" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Subscribe</button>
+          </form>
+          <p class="footer-newsletter-hint"><i class="fas fa-shield-heart" aria-hidden="true"></i> No spam, just stories.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container"><hr class="footer-divider"></div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p class="footer-copyright">&copy; 2026 AuraDecor. All rights reserved. Crafted with care in Jaipur.</p>
+      <nav class="footer-legal" aria-label="Legal">
+        <a class="footer-legal-link" href="#">Privacy Policy</a>
+        <a class="footer-legal-link" href="#">Terms of Service</a>
+        <a class="footer-legal-link" href="sitemap.html">Sitemap</a>
+      </nav>
+      <a class="footer-back-to-top" href="#" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i> Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
+  <div class="cart-header cart-drawer-header">
+    <h3 class="cart-drawer-title"><i class="fas fa-shopping-bag" aria-hidden="true"></i> Your Cart <span class="cart-drawer-count" data-cart-count>0</span></h3>
+    <button class="cart-close" id="cartClose" data-close-cart aria-label="Close cart"><i class="fas fa-xmark"></i></button>
+  </div>
+  <div class="cart-items cart-drawer-body" id="cart-items">
+    <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p>
+  </div>
+  <div class="cart-footer-panel cart-drawer-footer" id="cartFooterPanel">
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">₹0</span></div>
+    <p class="cart-free-ship" style="font-size:0.78rem;color:var(--deep-olive);margin-bottom:12px;"><i class="fas fa-truck-fast"></i> Free shipping on orders above ₹2,000</p>
+    <button class="btn-primary cart-checkout-btn" type="button" onclick="openCheckout()">Proceed to Checkout</button>
+    <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
+  </div>
+</aside>
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+<button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="../assets/js/products-data.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

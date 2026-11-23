@@ -1,512 +1,607 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
   <link rel="shortcut icon" href="../favicon.svg">
-  <meta name="description" content="Get in touch with AuraDecor. Customer enquiries, custom artisan orders, wholesale partnerships, and studio visits.">
+  <meta name="description"
+    content="Get in touch with AuraDecor. Customer enquiries, custom artisan orders, wholesale partnerships, and studio visits.">
   <title>Contact Us &amp; Enquiries — AuraDecor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
   <link rel="stylesheet" href="../assets/css/contact.css">
 </head>
+
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<nav class="navbar" id="navbar">
-  <div class="container navbar-inner">
-    <a href="../index.html" class="logo"><span class="logo-mark"><svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#B9684E"/><path d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z" fill="#F8F3E9"/><path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="#B79A62"/><circle cx="32" cy="32" r="3.2" fill="#B9684E"/></svg></span><span class="logo-text-group"><span class="logo-text">AuraDecor</span><span class="logo-tagline">Crafted with Soul</span></span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html" class="nav-link">Home</a></li>
-      <li><a href="home2.html" class="nav-link">Home 2</a></li>
-      <li><a href="about.html" class="nav-link">About</a></li>
-      <li><a href="services.html" class="nav-link">Services</a></li>
-      <li><a href="blog.html" class="nav-link">Blog</a></li>
-      <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-      <li><a href="contact.html" class="nav-link active">Contact</a></li>
-    </ul>
-    <div class="navbar-actions">
-      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
-      <button class="icon-btn text-toggle" id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
-      <button class="icon-btn cart-trigger" id="cart-btn" data-open-cart aria-label="Open shopping cart" title="Shopping Cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-count" data-cart-count style="display:none;">0</span></button>
-      <a href="contact.html#enquiry-form" class="btn-nav-cta">Book Now</a>
-      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-<div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
-  <nav class="mobile-menu-nav" aria-label="Main menu">
-      <a href="../index.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-house" aria-hidden="true"></i></span><span>Home</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
-      <a href="home2.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></span><span>Home 2</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
-      <a href="about.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-info-circle" aria-hidden="true"></i></span><span>About</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
-      <a href="services.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i></span><span>Services</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
-      <a href="blog.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-newspaper" aria-hidden="true"></i></span><span>Blog</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
-      <a href="pricing.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-tags" aria-hidden="true"></i></span><span>Pricing</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
-      <a href="contact.html" class="mobile-nav-link active"><span class="mobile-nav-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span><span>Contact</span><i class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
-  </nav>
-  <div class="mobile-menu-actions">
-    <a href="contact.html#enquiry-form" class="mobile-menu-cta"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Now <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-  </div>
-  <div class="mobile-menu-footer">
-    <div class="mobile-menu-socials" aria-label="Follow AuraDecor">
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-      <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-      <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-    </div>
-    <div class="mobile-menu-contact">
-      <a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i> +91 98765 43210</a>
-      <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope" aria-hidden="true"></i> hello@auradecor.in</a>
-    </div>
-    <p class="mobile-menu-note">Handcrafted in Jaipur · Loved everywhere</p>
-  </div>
-</div></nav>
-
-<main>
-
-<!-- ===== SECTION 1: CONTACT HERO ===== -->
-<section class="contact-hero section-padding">
-  <div class="contact-hero-bg"></div>
-  <div class="contact-hero-overlay"></div>
-  <div class="container">
-    <div class="contact-hero-content reveal">
-      <span class="section-eyebrow" style="color:var(--antique-gold);">We are Here to Help</span>
-      <h1>Connect With Our<br><em>Artisans &amp; Studio</em></h1>
-      <p>Whether you are inquiring about a handcrafted piece, designing custom home decor, exploring bulk orders, or seeking assistance with an existing order, we would love to hear from you.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 2: CONTACT INFORMATION ===== -->
-<section class="contact-info-section">
-  <div class="container">
-    <div class="info-grid reveal">
-      <div class="info-card">
-        <div class="info-icon-wrap"><i class="fas fa-location-dot"></i></div>
-        <h3>Artisan Studio</h3>
-        <address>
-          12, Artisan Lane, Near City Palace<br>
-          Jaipur, Rajasthan 302001<br>
-          <em>(Sample Location)</em>
-        </address>
-        <a href="#studio-map" style="display:inline-flex;align-items:center;gap:5px;font-size:0.8rem;color:var(--accent);font-weight:600;margin-top:6px;text-decoration:none;"><i class="fas fa-map-location-dot"></i> View on Map</a>
-      </div>
-
-      <div class="info-card">
-        <div class="info-icon-wrap"><i class="fas fa-phone"></i></div>
-        <h3>Phone &amp; WhatsApp</h3>
-        <p>Direct: <a href="tel:+919876543210">+91 98765 43210</a></p>
-        <p>WhatsApp: <a href="https://wa.me/919876543210" target="_blank" rel="noopener">+91 98765 43210</a></p>
-        <p><small style="color:var(--text-secondary);">Mon–Sat, 10AM–7PM IST</small></p>
-      </div>
-
-      <div class="info-card">
-        <div class="info-icon-wrap"><i class="fas fa-envelope"></i></div>
-        <h3>Email Inquiries</h3>
-        <p>General: <a href="mailto:hello@auradecor.in">hello@auradecor.in</a></p>
-        <p>Wholesale: <a href="mailto:wholesale@auradecor.in">wholesale@auradecor.in</a></p>
-        <p><small style="color:var(--text-secondary);">Response within 24 business hours</small></p>
-      </div>
-
-      <div class="info-card">
-        <div class="info-icon-wrap"><i class="fas fa-clock"></i></div>
-        <h3>Studio Visiting Hours</h3>
-        <p>Monday – Saturday: 10:00 AM – 7:00 PM</p>
-        <p>Sunday: 11:00 AM – 5:00 PM</p>
-        <p><small style="color:var(--deep-olive);font-weight:600;">Artisan workshops by appointment</small></p>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="logo"><span class="logo-mark"><svg width="32" height="32" viewBox="0 0 64 64"
+            fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="64" height="64" rx="16" fill="#B9684E" />
+            <path
+              d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z"
+              fill="#F8F3E9" />
+            <path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="#B79A62" />
+            <circle cx="32" cy="32" r="3.2" fill="#B9684E" />
+          </svg></span><span class="logo-text-group"><span class="logo-text">AuraDecor</span><span
+            class="logo-tagline">Crafted with Soul</span></span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="home2.html" class="nav-link">Home 2</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <button class="icon-btn text-toggle" id="rtl-toggle" aria-label="Toggle RTL">RTL</button>
+        <button class="icon-btn cart-trigger" id="cart-btn" data-open-cart aria-label="Open shopping cart"
+          title="Shopping Cart"><i class="fas fa-shopping-bag"></i><span class="badge cart-count" data-cart-count
+            style="display:none;">0</span></button>
+        <a href="contact.html#enquiry-form" class="btn-nav-cta">Book Now</a>
+        <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileMenu"
+          aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 3: COMPLETE ENQUIRY FORM ===== -->
-<section class="enquiry-form-section" id="enquiry-form">
-  <div class="container">
-    <div class="section-header reveal" style="margin-bottom:2.5rem;">
-      <span class="section-eyebrow">Direct Contact</span>
-      <h2 class="section-title">Send Us an<br><em>Artisan Enquiry</em></h2>
-      <p class="section-subtitle">Please fill out the form below. Every enquiry is handled directly by our craft curation team.</p>
-    </div>
-
-    <div class="form-wrapper reveal">
-      <div class="form-success" id="formSuccess">
-        <h4><i class="fas fa-star"></i> Thank You! Your Message Has Been Sent.</h4>
-        <p>Our craft liaison will review your requirements and respond within 24 hours.</p>
-      </div>
-
-      <form id="contactForm" onsubmit="handleFormSubmit(event)">
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="fullName">Full Name <span class="req">*</span></label>
-            <input type="text" id="fullName" name="fullName" placeholder="e.g. Ananya Sen" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address <span class="req">*</span></label>
-            <input type="email" id="email" name="email" placeholder="e.g. ananya@example.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 98765 00000">
-          </div>
-
-          <!-- EXACT 8 ENQUIRY TYPE OPTIONS REQUIRED -->
-          <div class="form-group">
-            <label for="enquiryType">Enquiry Type <span class="req">*</span></label>
-            <select id="enquiryType" name="enquiryType" required>
-              <option value="" disabled selected>Select an enquiry type</option>
-              <option value="Product Enquiry">Product Enquiry</option>
-              <option value="Custom Order">Custom Order</option>
-              <option value="Bulk / Wholesale Enquiry">Bulk / Wholesale Enquiry</option>
-              <option value="Order Support">Order Support</option>
-              <option value="Shipping Question">Shipping Question</option>
-              <option value="Return / Exchange">Return / Exchange</option>
-              <option value="Artisan Collaboration">Artisan Collaboration</option>
-              <option value="General Enquiry">General Enquiry</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="productInterest">Product / Craft of Interest</label>
-            <input type="text" id="productInterest" name="productInterest" placeholder="e.g. Terracotta Sunrise Vase, Kutchi Rugs">
-          </div>
-
-          <div class="form-group">
-            <label for="orderRef">Order Reference <small>(if applicable)</small></label>
-            <input type="text" id="orderRef" name="orderRef" placeholder="e.g. #AD-2026-894">
-          </div>
-
-          <div class="form-group full-width">
-            <label for="subject">Subject <span class="req">*</span></label>
-            <input type="text" id="subject" name="subject" placeholder="Summary of your inquiry" required>
-          </div>
-
-          <div class="form-group full-width">
-            <label for="message">Detailed Message <span class="req">*</span></label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us more about your requirements, custom dimensions, or order questions..." required></textarea>
-          </div>
-
-          <div class="form-group full-width" style="margin-top:0.5rem;">
-            <button type="submit" class="btn btn-primary" style="width:100%;padding:1.1rem;font-size:1rem;">Submit Handcrafted Enquiry <i class="fas fa-arrow-right"></i></button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 4: CUSTOM ORDERS & WHOLESALE HIGHLIGHT ===== -->
-<section class="custom-spotlight-section">
-  <div class="container">
-    <div class="spotlight-grid">
-      <div class="spotlight-img reveal">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop" alt="Artisan handloom weaving workshop" loading="lazy">
-      </div>
-      <div class="reveal">
-        <span class="section-eyebrow">Tailored For Homes &amp; Spaces</span>
-        <h2 class="section-title" style="text-align:left;">Custom Commissions &amp;<br><em>Wholesale Partnerships</em></h2>
-        <p style="color:var(--text-secondary);line-height:1.7;">Are you an interior designer, boutique hotelier, architect, or looking for handcrafted corporate gifts? AuraDecor works hand-in-hand with verified artisan master communities to bring bespoke designs to life.</p>
-        <ul class="spotlight-list">
-          <li><span class="bullet"><i class="fas fa-star"></i></span> <span><strong>Custom Sizing &amp; Glazes:</strong> Tailor dimensions, materials, and palettes to your spatial scheme.</span></li>
-          <li><span class="bullet"><i class="fas fa-star"></i></span> <span><strong>Wholesale Pricing Tiers:</strong> Transparent tier-based discounts for orders of 10+ artisan items.</span></li>
-          <li><span class="bullet"><i class="fas fa-star"></i></span> <span><strong>Authenticity Certificates:</strong> Every piece includes the artisan's signature mark and craft provenance.</span></li>
-          <li><span class="bullet"><i class="fas fa-star"></i></span> <span><strong>Sustainable Packaging:</strong> Plastic-free, hand-stamped biodegradable packing ready for gifting.</span></li>
-        </ul>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
-          <a href="pricing.html" class="btn btn-primary">View Wholesale Pricing <i class="fas fa-arrow-right"></i></a>
-          <a href="about.html" class="btn btn-secondary">Meet Our Artisans</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 5: FAQ ACCORDION ===== -->
-<section class="faq-section">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-eyebrow">Common Questions</span>
-      <h2 class="section-title">Frequently Asked<br><em>Questions</em></h2>
-      <p class="section-subtitle">Everything you need to know about our handmade products, shipping, returns, and artisan collaborations.</p>
-    </div>
-
-    <div class="faq-container reveal">
-      <div class="faq-item active">
-        <button class="faq-question" type="button">
-          <span>How long does delivery take for handmade items?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          In-stock pieces ship within 3–5 business days from our Jaipur studio and typically arrive within 4–7 business days across India. Custom commissions or made-to-order pottery and handloom rugs require 2 to 4 weeks depending on the artisan's drying and firing schedules.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>Are handmade variations considered defects?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          No. Slight variations in clay glaze tone, wood grain, weave density, and brushstrokes are the authentic signatures of human hands. We celebrate these unique nuances—they prove that your piece was individually created rather than stamped out in a factory.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>Can I order custom dimensions or glazes?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          Yes! We specialize in custom orders. Select "Custom Order" in the enquiry form above or visit our <a href="pricing.html" style="color:var(--terracotta);font-weight:700;">Pricing Page</a> to see customization parameters and minimum lead times.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>How do you package fragile pottery and glass decor?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          All ceramics and delicate crafts are packed using double-walled corrugated boxes, honeycomb kraft paper, shredded plant fibre cushioning, and reinforced corner protectors. Over 98% of our packaging is 100% recyclable and completely plastic-free.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>What is your return and exchange policy?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          We accept returns within 7 days of delivery for standard items in unused, original condition with artisan tags intact. Custom bespoke orders and personalized items are non-refundable unless damaged during transit.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>Do you ship internationally?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          Yes, we ship to over 35 countries via trusted courier partners including DHL Express and FedEx. International shipping costs and duty estimates are provided during checkout or upon custom quote request.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>How are the artisans compensated?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          AuraDecor adheres strictly to fair trade guidelines. Artisans receive upfront advance payments for materials and fair, dignified prices set in direct collaboration with guild elders and master makers. Over 65% of net product proceeds flow directly back to artisan communities.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" type="button">
-          <span>Can I visit the artisan workshops in Jaipur?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          We welcome guests to our central studio and arrange curated heritage studio walks in Sanganer and surrounding craft clusters by prior appointment. Please submit a request via our form at least 5 days in advance.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SECTION 6: VISIT & CONNECT / STUDIO DETAILS ===== -->
-<section class="studio-visit-section" id="studio-map">
-  <div class="container">
-    <div class="studio-grid">
-      <div class="studio-info-col reveal">
-        <span class="section-eyebrow" style="color:var(--antique-gold);"><i class="fas fa-compass" aria-hidden="true"></i> Heritage Experience</span>
-        <h2>Visit Our Jaipur<br><em>Craft Studio &amp; Gallery</em></h2>
-        <p>Nestled in the historic artisan quarter of Jaipur, our flagship studio showcases finished collections, ongoing kiln firings, handloom demonstrations, and raw material archives. Come experience the warmth of handmade firsthand.</p>
-        
-        <div class="studio-meta-block">
-          <p class="meta-label">Studio Location</p>
-          <p class="meta-value">12, Artisan Lane, Near City Palace, Jaipur, Rajasthan 302001</p>
-        </div>
-
-        <div class="studio-meta-block">
-          <p class="meta-label">Studio Timings</p>
-          <p class="meta-value">Monday to Saturday: 10:00 AM – 7:00 PM IST</p>
-          <p class="meta-value">Sunday: 11:00 AM – 5:00 PM IST</p>
-        </div>
-
-        <div class="studio-actions">
-          <a href="#enquiry-form" class="btn btn-primary"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book a Studio Appointment</a>
-          <a href="services.html" class="btn btn-secondary"><i class="fas fa-bag-shopping" aria-hidden="true"></i> Browse Shop Online</a>
-        </div>
-      </div>
-
-      <div class="map-wrapper reveal">
-        <iframe
-          src="https://maps.google.com/maps?q=City+Palace%2C+Jaipur%2C+Rajasthan+302001&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          width="100%"
-          height="100%"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="AuraDecor Flagship Studio Location - Jaipur, Rajasthan">
-        </iframe>
-        <div class="map-floating-badge">
-          <div class="map-badge-text">
-            <i class="fas fa-location-dot" aria-hidden="true"></i>
-            <span>AuraDecor Flagship Studio, Jaipur</span>
-          </div>
-          <a href="https://maps.google.com/?q=City+Palace%2C+Jaipur%2C+Rajasthan+302001" target="_blank" rel="noopener noreferrer" class="map-directions-link">
-            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Get Directions
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="footer-top">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="../index.html" class="logo footer-logo"><span class="logo-mark"><svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#B9684E"/><path d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z" fill="#F8F3E9"/><path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="#B79A62"/><circle cx="32" cy="32" r="3.2" fill="#B9684E"/></svg></span><span class="logo-text-group"><span class="logo-text">AuraDecor</span><span class="logo-tagline">Crafted with Soul</span></span></a>
-          <p class="footer-tagline">Handmade heirlooms for slow living.</p>
-          <div class="footer-socials" aria-label="Follow AuraDecor">
-            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-            <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
-          </div>
-          <p class="footer-craft-note"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> Handcrafted in Jaipur, loved everywhere.</p>
-        </div>
-
-        <nav class="footer-col" aria-label="Explore">
-          <h3 class="footer-col-title">Explore</h3>
-          <ul class="footer-nav">
-            <li><a class="footer-nav-link" href="../index.html">Home</a></li>
-            <li><a class="footer-nav-link" href="home2.html">Home 2</a></li>
-            <li><a class="footer-nav-link" href="about.html">About</a></li>
-            <li><a class="footer-nav-link" href="services.html">Services</a></li>
-            <li><a class="footer-nav-link" href="blog.html">Blog</a></li>
-            <li><a class="footer-nav-link" href="pricing.html">Pricing</a></li>
-            <li><a class="footer-nav-link" href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-
-        <nav class="footer-col" aria-label="Collections">
-          <h3 class="footer-col-title">Collections</h3>
-          <ul class="footer-nav">
-            <li><a class="footer-nav-link" href="services.html?cat=home-decor">Home Decor</a></li>
-            <li><a class="footer-nav-link" href="services.html?cat=pottery-ceramics">Pottery &amp; Ceramics</a></li>
-            <li><a class="footer-nav-link" href="services.html?cat=textiles">Handmade Textiles</a></li>
-            <li><a class="footer-nav-link" href="services.html?cat=wooden">Wooden Handicrafts</a></li>
-            <li><a class="footer-nav-link" href="services.html?cat=wall-art">Wall Art</a></li>
-            <li><a class="footer-nav-link" href="services.html?cat=lighting">Handmade Lighting</a></li>
-            <li><a class="footer-nav-link" href="services.html?cat=metal-crafts">Metal Crafts</a></li>
-            <li><a class="footer-nav-link" href="services.html?cat=gifts">Handmade Gifts</a></li>
-          </ul>
-        </nav>
-
-        <div class="footer-col">
-          <h3 class="footer-col-title">Support</h3>
-          <ul class="footer-nav">
-            <li><a class="footer-nav-link" href="contact.html#faq">FAQs</a></li>
-            <li><a class="footer-nav-link" href="contact.html">Shipping &amp; Delivery</a></li>
-            <li><a class="footer-nav-link" href="contact.html">Returns &amp; Exchanges</a></li>
-            <li><a class="footer-nav-link" href="pricing.html">Wholesale Enquiries</a></li>
-            <li><a class="footer-nav-link" href="contact.html#enquiry-form">Book a Consultation</a></li>
-            <li><a class="footer-nav-link" href="login.html">My Account</a></li>
-          </ul>
-          <div class="footer-contact">
-            <a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i> +91 98765 43210</a>
-            <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope" aria-hidden="true"></i> hello@auradecor.in</a>
-          </div>
-        </div>
-
-        <div class="footer-col footer-newsletter">
-          <h3 class="footer-col-title">Workshop Notes</h3>
-          <p class="footer-newsletter-note">A quiet letter about craft, colour and slow living — delivered once a month.</p>
-          <form class="footer-newsletter-form newsletter-form" data-newsletter-form novalidate>
-            <label class="sr-only" for="footerNewsletterEmail">Email address</label>
-            <input class="footer-newsletter-input" id="footerNewsletterEmail" type="email" name="email" placeholder="Your email address" required aria-label="Email address">
-            <button class="footer-newsletter-btn" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Subscribe</button>
-          </form>
-          <p class="footer-newsletter-hint"><i class="fas fa-shield-heart" aria-hidden="true"></i> No spam, just stories.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container"><hr class="footer-divider"></div>
-
-  <div class="footer-bottom">
-    <div class="container footer-bottom-inner">
-      <p class="footer-copyright">&copy; 2026 AuraDecor. All rights reserved. Crafted with care in Jaipur.</p>
-      <nav class="footer-legal" aria-label="Legal">
-        <a class="footer-legal-link" href="#">Privacy Policy</a>
-        <a class="footer-legal-link" href="#">Terms of Service</a>
-        <a class="footer-legal-link" href="#">Accessibility</a>
+    <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+      <nav class="mobile-menu-nav" aria-label="Main menu">
+        <a href="../index.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-house"
+              aria-hidden="true"></i></span><span>Home</span><i class="fas fa-arrow-right mobile-nav-arrow"
+            aria-hidden="true"></i></a>
+        <a href="home2.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-layer-group"
+              aria-hidden="true"></i></span><span>Home 2</span><i class="fas fa-arrow-right mobile-nav-arrow"
+            aria-hidden="true"></i></a>
+        <a href="about.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-info-circle"
+              aria-hidden="true"></i></span><span>About</span><i class="fas fa-arrow-right mobile-nav-arrow"
+            aria-hidden="true"></i></a>
+        <a href="services.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i
+              class="fas fa-hand-holding-heart" aria-hidden="true"></i></span><span>Services</span><i
+            class="fas fa-arrow-right mobile-nav-arrow" aria-hidden="true"></i></a>
+        <a href="blog.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-newspaper"
+              aria-hidden="true"></i></span><span>Blog</span><i class="fas fa-arrow-right mobile-nav-arrow"
+            aria-hidden="true"></i></a>
+        <a href="pricing.html" class="mobile-nav-link"><span class="mobile-nav-icon"><i class="fas fa-tags"
+              aria-hidden="true"></i></span><span>Pricing</span><i class="fas fa-arrow-right mobile-nav-arrow"
+            aria-hidden="true"></i></a>
+        <a href="contact.html" class="mobile-nav-link active"><span class="mobile-nav-icon"><i class="fas fa-envelope"
+              aria-hidden="true"></i></span><span>Contact</span><i class="fas fa-arrow-right mobile-nav-arrow"
+            aria-hidden="true"></i></a>
       </nav>
-      <a class="footer-back-to-top" href="#" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i> Back to top</a>
+      <div class="mobile-menu-actions">
+        <a href="contact.html#enquiry-form" class="mobile-menu-cta"><i class="fas fa-calendar-check"
+            aria-hidden="true"></i> Book Now <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="mobile-menu-footer">
+        <div class="mobile-menu-socials" aria-label="Follow AuraDecor">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </div>
+        <div class="mobile-menu-contact">
+          <a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i> +91 98765 43210</a>
+          <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope" aria-hidden="true"></i> hello@auradecor.in</a>
+        </div>
+        <p class="mobile-menu-note">Handcrafted in Jaipur · Loved everywhere</p>
+      </div>
     </div>
-  </div>
-</footer>
+  </nav>
 
-<!-- Cart Drawer -->
-<div class="cart-overlay" id="cart-overlay"></div>
-<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
-  <div class="cart-header cart-drawer-header">
-    <h3 class="cart-drawer-title"><i class="fas fa-shopping-bag" aria-hidden="true"></i> Your Cart <span class="cart-drawer-count" data-cart-count>0</span></h3>
-    <button class="cart-close" id="cartClose" data-close-cart aria-label="Close cart"><i class="fas fa-xmark"></i></button>
-  </div>
-  <div class="cart-items cart-drawer-body" id="cart-items">
-    <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p>
-  </div>
-  <div class="cart-footer-panel cart-drawer-footer" id="cartFooterPanel">
-    <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">₹0</span></div>
-    <p class="cart-free-ship" style="font-size:0.78rem;color:var(--deep-olive);margin-bottom:12px;"><i class="fas fa-truck-fast"></i> Free shipping on orders above ₹2,000</p>
-    <button class="btn-primary cart-checkout-btn" type="button" onclick="openCheckout()">Proceed to Checkout</button>
-    <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
-  </div>
-</aside>
-<div class="toast-container" id="toast-container" aria-live="polite"></div>
-<button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  <main>
 
-<script src="../assets/js/products-data.js"></script>
-<script src="../assets/js/main.js"></script>
-<script>
-// FAQ Accordion Toggle
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const isActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-    if (!isActive) {
-      item.classList.add('active');
+    <!-- ===== SECTION 1: CONTACT HERO ===== -->
+    <section class="contact-hero section-padding">
+      <div class="contact-hero-bg"></div>
+      <div class="contact-hero-overlay"></div>
+      <div class="container">
+        <div class="contact-hero-content reveal">
+          <span class="section-eyebrow" style="color:var(--antique-gold);">We are Here to Help</span>
+          <h1>Connect With Our<br><em>Artisans &amp; Studio</em></h1>
+          <p>Whether you are inquiring about a handcrafted piece, designing custom home decor, exploring bulk orders, or
+            seeking assistance with an existing order, we would love to hear from you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: CONTACT INFORMATION ===== -->
+    <section class="contact-info-section">
+      <div class="container">
+        <div class="info-grid reveal">
+          <div class="info-card">
+            <div class="info-icon-wrap"><i class="fas fa-location-dot"></i></div>
+            <h3>Artisan Studio</h3>
+            <address>
+              12, Artisan Lane, Near City Palace<br>
+              Jaipur, Rajasthan 302001<br>
+              <em>(Sample Location)</em>
+            </address>
+            <a href="#studio-map"
+              style="display:inline-flex;align-items:center;gap:5px;font-size:0.8rem;color:var(--accent);font-weight:600;margin-top:6px;text-decoration:none;"><i
+                class="fas fa-map-location-dot"></i> View on Map</a>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon-wrap"><i class="fas fa-phone"></i></div>
+            <h3>Phone &amp; WhatsApp</h3>
+            <p>Direct: <a href="tel:+919876543210">+91 98765 43210</a></p>
+            <p>WhatsApp: <a href="https://wa.me/919876543210" target="_blank" rel="noopener">+91 98765 43210</a></p>
+            <p><small style="color:var(--text-secondary);">Mon–Sat, 10AM–7PM IST</small></p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon-wrap"><i class="fas fa-envelope"></i></div>
+            <h3>Email Inquiries</h3>
+            <p>General: <a href="mailto:hello@auradecor.in">hello@auradecor.in</a></p>
+            <p>Wholesale: <a href="mailto:wholesale@auradecor.in">wholesale@auradecor.in</a></p>
+            <p><small style="color:var(--text-secondary);">Response within 24 business hours</small></p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon-wrap"><i class="fas fa-clock"></i></div>
+            <h3>Studio Visiting Hours</h3>
+            <p>Monday – Saturday: 10:00 AM – 7:00 PM</p>
+            <p>Sunday: 11:00 AM – 5:00 PM</p>
+            <p><small style="color:var(--deep-olive);font-weight:600;">Artisan workshops by appointment</small></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3: COMPLETE ENQUIRY FORM ===== -->
+    <section class="enquiry-form-section" id="enquiry-form">
+      <div class="container">
+        <div class="section-header reveal" style="margin-bottom:2.5rem;">
+          <span class="section-eyebrow">Direct Contact</span>
+          <h2 class="section-title">Send Us an<br><em>Artisan Enquiry</em></h2>
+          <p class="section-subtitle">Please fill out the form below. Every enquiry is handled directly by our craft
+            curation team.</p>
+        </div>
+
+        <div class="form-wrapper reveal">
+          <div class="form-success" id="formSuccess">
+            <h4><i class="fas fa-star"></i> Thank You! Your Message Has Been Sent.</h4>
+            <p>Our craft liaison will review your requirements and respond within 24 hours.</p>
+          </div>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="fullName">Full Name <span class="req">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="e.g. Ananya Sen" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address <span class="req">*</span></label>
+                <input type="email" id="email" name="email" placeholder="e.g. ananya@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 00000">
+              </div>
+
+              <!-- EXACT 8 ENQUIRY TYPE OPTIONS REQUIRED -->
+              <div class="form-group">
+                <label for="enquiryType">Enquiry Type <span class="req">*</span></label>
+                <select id="enquiryType" name="enquiryType" required>
+                  <option value="" disabled selected>Select an enquiry type</option>
+                  <option value="Product Enquiry">Product Enquiry</option>
+                  <option value="Custom Order">Custom Order</option>
+                  <option value="Bulk / Wholesale Enquiry">Bulk / Wholesale Enquiry</option>
+                  <option value="Order Support">Order Support</option>
+                  <option value="Shipping Question">Shipping Question</option>
+                  <option value="Return / Exchange">Return / Exchange</option>
+                  <option value="Artisan Collaboration">Artisan Collaboration</option>
+                  <option value="General Enquiry">General Enquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="productInterest">Product / Craft of Interest</label>
+                <input type="text" id="productInterest" name="productInterest"
+                  placeholder="e.g. Terracotta Sunrise Vase, Kutchi Rugs">
+              </div>
+
+              <div class="form-group">
+                <label for="orderRef">Order Reference <small>(if applicable)</small></label>
+                <input type="text" id="orderRef" name="orderRef" placeholder="e.g. #AD-2026-894">
+              </div>
+
+              <div class="form-group full-width">
+                <label for="subject">Subject <span class="req">*</span></label>
+                <input type="text" id="subject" name="subject" placeholder="Summary of your inquiry" required>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="message">Detailed Message <span class="req">*</span></label>
+                <textarea id="message" name="message" rows="5"
+                  placeholder="Tell us more about your requirements, custom dimensions, or order questions..."
+                  required></textarea>
+              </div>
+
+              <div class="form-group full-width" style="margin-top:0.5rem;">
+                <button type="submit" class="btn btn-primary" style="width:100%;padding:1.1rem;font-size:1rem;">Submit
+                  Handcrafted Enquiry <i class="fas fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4: CUSTOM ORDERS & WHOLESALE HIGHLIGHT ===== -->
+    <section class="custom-spotlight-section">
+      <div class="container">
+        <div class="spotlight-grid">
+          <div class="spotlight-img reveal">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
+              alt="Artisan handloom weaving workshop" loading="lazy">
+          </div>
+          <div class="reveal">
+            <span class="section-eyebrow">Tailored For Homes &amp; Spaces</span>
+            <h2 class="section-title" style="text-align:left;">Custom Commissions &amp;<br><em>Wholesale
+                Partnerships</em></h2>
+            <p style="color:var(--text-secondary);line-height:1.7;">Are you an interior designer, boutique hotelier,
+              architect, or looking for handcrafted corporate gifts? AuraDecor works hand-in-hand with verified artisan
+              master communities to bring bespoke designs to life.</p>
+            <ul class="spotlight-list">
+              <li><span class="bullet"><i class="fas fa-star"></i></span> <span><strong>Custom Sizing &amp;
+                    Glazes:</strong> Tailor dimensions, materials, and palettes to your spatial scheme.</span></li>
+              <li><span class="bullet"><i class="fas fa-star"></i></span> <span><strong>Wholesale Pricing
+                    Tiers:</strong> Transparent tier-based discounts for orders of 10+ artisan items.</span></li>
+              <li><span class="bullet"><i class="fas fa-star"></i></span> <span><strong>Authenticity
+                    Certificates:</strong> Every piece includes the artisan's signature mark and craft
+                  provenance.</span></li>
+              <li><span class="bullet"><i class="fas fa-star"></i></span> <span><strong>Sustainable Packaging:</strong>
+                  Plastic-free, hand-stamped biodegradable packing ready for gifting.</span></li>
+            </ul>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+              <a href="pricing.html" class="btn btn-primary">View Wholesale Pricing <i
+                  class="fas fa-arrow-right"></i></a>
+              <a href="about.html" class="btn btn-secondary">Meet Our Artisans</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5: FAQ ACCORDION ===== -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Common Questions</span>
+          <h2 class="section-title">Frequently Asked<br><em>Questions</em></h2>
+          <p class="section-subtitle">Everything you need to know about our handmade products, shipping, returns, and
+            artisan collaborations.</p>
+        </div>
+
+        <div class="faq-container reveal">
+          <div class="faq-item active">
+            <button class="faq-question" type="button">
+              <span>How long does delivery take for handmade items?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              In-stock pieces ship within 3–5 business days from our Jaipur studio and typically arrive within 4–7
+              business days across India. Custom commissions or made-to-order pottery and handloom rugs require 2 to 4
+              weeks depending on the artisan's drying and firing schedules.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Are handmade variations considered defects?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              No. Slight variations in clay glaze tone, wood grain, weave density, and brushstrokes are the authentic
+              signatures of human hands. We celebrate these unique nuances—they prove that your piece was individually
+              created rather than stamped out in a factory.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can I order custom dimensions or glazes?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes! We specialize in custom orders. Select "Custom Order" in the enquiry form above or visit our <a
+                href="pricing.html" style="color:var(--terracotta);font-weight:700;">Pricing Page</a> to see
+              customization parameters and minimum lead times.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>How do you package fragile pottery and glass decor?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              All ceramics and delicate crafts are packed using double-walled corrugated boxes, honeycomb kraft paper,
+              shredded plant fibre cushioning, and reinforced corner protectors. Over 98% of our packaging is 100%
+              recyclable and completely plastic-free.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What is your return and exchange policy?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              We accept returns within 7 days of delivery for standard items in unused, original condition with artisan
+              tags intact. Custom bespoke orders and personalized items are non-refundable unless damaged during
+              transit.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Do you ship internationally?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes, we ship to over 35 countries via trusted courier partners including DHL Express and FedEx.
+              International shipping costs and duty estimates are provided during checkout or upon custom quote request.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>How are the artisans compensated?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              AuraDecor adheres strictly to fair trade guidelines. Artisans receive upfront advance payments for
+              materials and fair, dignified prices set in direct collaboration with guild elders and master makers. Over
+              65% of net product proceeds flow directly back to artisan communities.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can I visit the artisan workshops in Jaipur?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              We welcome guests to our central studio and arrange curated heritage studio walks in Sanganer and
+              surrounding craft clusters by prior appointment. Please submit a request via our form at least 5 days in
+              advance.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 6: VISIT & CONNECT / STUDIO DETAILS ===== -->
+    <section class="studio-visit-section" id="studio-map">
+      <div class="container">
+        <div class="studio-grid">
+          <div class="studio-info-col reveal">
+            <span class="section-eyebrow" style="color:var(--antique-gold);"><i class="fas fa-compass"
+                aria-hidden="true"></i> Heritage Experience</span>
+            <h2>Visit Our Jaipur<br><em>Craft Studio &amp; Gallery</em></h2>
+            <p>Nestled in the historic artisan quarter of Jaipur, our flagship studio showcases finished collections,
+              ongoing kiln firings, handloom demonstrations, and raw material archives. Come experience the warmth of
+              handmade firsthand.</p>
+
+            <div class="studio-meta-block">
+              <p class="meta-label">Studio Location</p>
+              <p class="meta-value">12, Artisan Lane, Near City Palace, Jaipur, Rajasthan 302001</p>
+            </div>
+
+            <div class="studio-meta-block">
+              <p class="meta-label">Studio Timings</p>
+              <p class="meta-value">Monday to Saturday: 10:00 AM – 7:00 PM IST</p>
+              <p class="meta-value">Sunday: 11:00 AM – 5:00 PM IST</p>
+            </div>
+
+              <div class="studio-actions">
+                <a href="#enquiry-form" class="btn btn-primary"><i class="fas fa-calendar-check" aria-hidden="true"></i>
+                  Book a Studio Appointment</a>
+                <a href="services.html" class="btn btn-secondary"><i class="fas fa-bag-shopping" aria-hidden="true"></i>
+                  Browse Shop Online</a>
+              </div>
+            </div>
+
+            <div class="map-wrapper reveal">
+              <iframe
+                src="https://maps.google.com/maps?q=City+Palace%2C+Jaipur%2C+Rajasthan+302001&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="AuraDecor Flagship Studio Location - Jaipur, Rajasthan">
+              </iframe>
+              <div class="map-floating-badge">
+                <div class="map-badge-text">
+                  <i class="fas fa-location-dot" aria-hidden="true"></i>
+                  <span>AuraDecor Flagship Studio, Jaipur</span>
+                </div>
+                <a href="https://maps.google.com/?q=City+Palace%2C+Jaipur%2C+Rajasthan+302001" target="_blank"
+                  rel="noopener noreferrer" class="map-directions-link">
+                  <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Get Directions
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="../index.html" class="logo footer-logo"><span class="logo-mark"><svg width="28" height="28"
+                  viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect width="64" height="64" rx="16" fill="#B9684E" />
+                  <path
+                    d="M32 10 L35.2 24.5 L46 17 L38.5 27.8 L53 32 L38.5 36.2 L46 47 L35.2 39.5 L32 54 L28.8 39.5 L18 47 L25.5 36.2 L11 32 L25.5 27.8 L18 17 L28.8 24.5 Z"
+                    fill="#F8F3E9" />
+                  <path d="M32 17 L36.5 27.5 L47 32 L36.5 36.5 L32 47 L27.5 36.5 L17 32 L27.5 27.5 Z" fill="#B79A62" />
+                  <circle cx="32" cy="32" r="3.2" fill="#B9684E" />
+                </svg></span><span class="logo-text-group"><span class="logo-text">AuraDecor</span><span
+                  class="logo-tagline">Crafted with Soul</span></span></a>
+            <p class="footer-tagline">Handmade heirlooms for slow living.</p>
+            <div class="footer-socials" aria-label="Follow AuraDecor">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"
+                  aria-hidden="true"></i></a>
+              <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"
+                  aria-hidden="true"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"
+                  aria-hidden="true"></i></a>
+              <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+            </div>
+            <p class="footer-craft-note"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i> Handcrafted in
+              Jaipur, loved everywhere.</p>
+          </div>
+
+          <nav class="footer-col" aria-label="Explore">
+            <h3 class="footer-col-title">Explore</h3>
+            <ul class="footer-nav">
+              <li><a class="footer-nav-link" href="../index.html">Home</a></li>
+              <li><a class="footer-nav-link" href="home2.html">Home 2</a></li>
+              <li><a class="footer-nav-link" href="about.html">About</a></li>
+              <li><a class="footer-nav-link" href="services.html">Services</a></li>
+              <li><a class="footer-nav-link" href="blog.html">Blog</a></li>
+              <li><a class="footer-nav-link" href="pricing.html">Pricing</a></li>
+              <li><a class="footer-nav-link" href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+
+          <nav class="footer-col" aria-label="Collections">
+            <h3 class="footer-col-title">Collections</h3>
+            <ul class="footer-nav">
+              <li><a class="footer-nav-link" href="services.html?cat=home-decor">Home Decor</a></li>
+              <li><a class="footer-nav-link" href="services.html?cat=pottery-ceramics">Pottery &amp; Ceramics</a></li>
+              <li><a class="footer-nav-link" href="services.html?cat=textiles">Handmade Textiles</a></li>
+              <li><a class="footer-nav-link" href="services.html?cat=wooden">Wooden Handicrafts</a></li>
+              <li><a class="footer-nav-link" href="services.html?cat=wall-art">Wall Art</a></li>
+              <li><a class="footer-nav-link" href="services.html?cat=lighting">Handmade Lighting</a></li>
+              <li><a class="footer-nav-link" href="services.html?cat=metal-crafts">Metal Crafts</a></li>
+              <li><a class="footer-nav-link" href="services.html?cat=gifts">Handmade Gifts</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-col">
+            <h3 class="footer-col-title">Support</h3>
+            <ul class="footer-nav">
+              <li><a class="footer-nav-link" href="contact.html#faq">FAQs</a></li>
+              <li><a class="footer-nav-link" href="contact.html">Shipping &amp; Delivery</a></li>
+              <li><a class="footer-nav-link" href="contact.html">Returns &amp; Exchanges</a></li>
+              <li><a class="footer-nav-link" href="pricing.html">Wholesale Enquiries</a></li>
+              <li><a class="footer-nav-link" href="contact.html#enquiry-form">Book a Consultation</a></li>
+              <li><a class="footer-nav-link" href="login.html">My Account</a></li>
+            </ul>
+            <div class="footer-contact">
+              <a href="tel:+919876543210"><i class="fas fa-phone" aria-hidden="true"></i> +91 98765 43210</a>
+              <a href="mailto:hello@auradecor.in"><i class="fas fa-envelope" aria-hidden="true"></i>
+                hello@auradecor.in</a>
+            </div>
+          </div>
+
+          <div class="footer-col footer-newsletter">
+            <h3 class="footer-col-title">Workshop Notes</h3>
+            <p class="footer-newsletter-note">A quiet letter about craft, colour and slow living — delivered once a
+              month.</p>
+            <form class="footer-newsletter-form newsletter-form" data-newsletter-form novalidate>
+              <label class="sr-only" for="footerNewsletterEmail">Email address</label>
+              <input class="footer-newsletter-input" id="footerNewsletterEmail" type="email" name="email"
+                placeholder="Your email address" required aria-label="Email address">
+              <button class="footer-newsletter-btn" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i>
+                Subscribe</button>
+            </form>
+            <p class="footer-newsletter-hint"><i class="fas fa-shield-heart" aria-hidden="true"></i> No spam, just
+              stories.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <hr class="footer-divider">
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-copyright">&copy; 2026 AuraDecor. All rights reserved. Crafted with care in Jaipur.</p>
+        <nav class="footer-legal" aria-label="Legal">
+          <a class="footer-legal-link" href="#">Privacy Policy</a>
+          <a class="footer-legal-link" href="#">Terms of Service</a>
+          <a class="footer-legal-link" href="sitemap.html">Sitemap</a>
+        </nav>
+        <a class="footer-back-to-top" href="#" aria-label="Back to top"><i class="fas fa-arrow-up"
+            aria-hidden="true"></i> Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
+    <div class="cart-header cart-drawer-header">
+      <h3 class="cart-drawer-title"><i class="fas fa-shopping-bag" aria-hidden="true"></i> Your Cart <span
+          class="cart-drawer-count" data-cart-count>0</span></h3>
+      <button class="cart-close" id="cartClose" data-close-cart aria-label="Close cart"><i
+          class="fas fa-xmark"></i></button>
+    </div>
+    <div class="cart-items cart-drawer-body" id="cart-items">
+      <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i
+            class="fas fa-arrow-right"></i></a></p>
+    </div>
+    <div class="cart-footer-panel cart-drawer-footer" id="cartFooterPanel">
+      <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">₹0</span></div>
+      <p class="cart-free-ship" style="font-size:0.78rem;color:var(--deep-olive);margin-bottom:12px;"><i
+          class="fas fa-truck-fast"></i> Free shipping on orders above ₹2,000</p>
+      <button class="btn-primary cart-checkout-btn" type="button" onclick="openCheckout()">Proceed to Checkout</button>
+      <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
+    </div>
+  </aside>
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="../assets/js/products-data.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // FAQ Accordion Toggle
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Contact Form Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const successBox = document.getElementById('formSuccess');
+      successBox.style.display = 'block';
+      e.target.reset();
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (typeof window.showToast === 'function') {
+        window.showToast('Enquiry submitted successfully! Our craft team will respond within 24 hours.', 'success');
+      }
     }
-  });
-});
-
-// Contact Form Handler
-function handleFormSubmit(e) {
-  e.preventDefault();
-  const successBox = document.getElementById('formSuccess');
-  successBox.style.display = 'block';
-  e.target.reset();
-  successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  if (typeof window.showToast === 'function') {
-    window.showToast('Enquiry submitted successfully! Our craft team will respond within 24 hours.', 'success');
-  }
-}
-</script>
+  </script>
 </body>
+
 </html>
