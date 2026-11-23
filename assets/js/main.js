@@ -78,7 +78,7 @@ const products = [
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
     images: [
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600"
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600"
     ],
     description: "Solid sheesham wood serving tray with hand-carved floral border.",
     fullDescription: "Hewn from a single slab of aged sheesham (Indian rosewood), this generous serving tray is hand-carved with a delicate floral border by artisans in Saharanpur. The natural grain of the wood gleams beneath a food-safe beeswax finish.",
@@ -153,9 +153,9 @@ const products = [
     categorySlug: "metal-crafts",
     price: 2200,
     originalPrice: 2700,
-    image: "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
     images: [
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600"
     ],
     description: "Lost-wax cast brass elephant in the ancient Dhokra tribal tradition.",
@@ -260,7 +260,7 @@ const products = [
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
     images: [
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600",
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600"
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600"
     ],
     description: "Antibacterial neem wood cooking spatulas, hand-carved set of 3.",
     fullDescription: "Neem wood's natural antibacterial properties make it the ideal kitchen companion. Each spatula in this set of three is hand-carved to a different head shape — flat, slotted, and angled — from a single branch of a mature neem tree felled in its natural cycle. Finished with food-grade coconut oil.",
@@ -309,9 +309,9 @@ const products = [
     categorySlug: "metal-crafts",
     price: 1800,
     originalPrice: 2200,
-    image: "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
     images: [
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600"
     ],
     description: "Pure copper water bottle with hand-hammered texture, Ayurveda-approved.",
@@ -494,7 +494,7 @@ const products = [
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600",
     images: [
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600",
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600"
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600"
     ],
     description: "Hand-forged iron jali lantern with geometric cutwork pattern.",
     fullDescription: "Forged and chiselled by hand in a traditional blacksmith's workshop in Jodhpur, this jali (lattice) lantern casts mesmerising geometric shadow patterns across walls and ceilings. The black oxide finish prevents rust and suits both indoor and sheltered outdoor use. Fits standard tealight candles.",
@@ -621,9 +621,9 @@ const products = [
     categorySlug: "metal-crafts",
     price: 1250,
     originalPrice: 1500,
-    image: "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
     images: [
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
       "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600"
     ],
     description: "Set of 5 hand-forged wrought iron wall hooks with leaf design.",
@@ -854,10 +854,13 @@ function saveCart() {
  * @param {number} [qty=1]
  */
 function addToCart(productId, qty = 1) {
-  let product = products.find(p => p.id === productId);
-  if (!product && typeof window.SHOP_PRODUCTS !== 'undefined') {
+  let product = null;
+  if (typeof window.SHOP_PRODUCTS !== 'undefined') {
     const sp = window.SHOP_PRODUCTS.find(p => p.id === productId);
     if (sp) product = { id: sp.id, name: sp.name, price: sp.price, image: sp.img };
+  }
+  if (!product) {
+    product = products.find(p => p.id === productId);
   }
   if (!product) return;
   const existing = cart.find(item => item.id === productId);
@@ -869,13 +872,12 @@ function addToCart(productId, qty = 1) {
       qty,
       name: product.name,
       price: product.price,
-      image: product.image || product.img
+      image: product.image || product.img || (product.images && product.images[0]) || ''
     });
   }
   saveCart();
   updateCartCount();
   renderCart();
-  showToast(`"${product.name}" added to cart`, 'success');
   openCart();
 }
 
@@ -956,22 +958,27 @@ function renderCart() {
   if (footerPanel) footerPanel.style.display = 'block';
 
   cartItemsEl.innerHTML = cart.map(item => {
-    let p = products.find(prod => prod.id === item.id);
-    if (!p && typeof window.SHOP_PRODUCTS !== 'undefined') {
+    let p = null;
+    if (typeof window.SHOP_PRODUCTS !== 'undefined') {
       const sp = window.SHOP_PRODUCTS.find(prod => prod.id === item.id);
       if (sp) p = { id: sp.id, name: sp.name, price: sp.price, image: sp.img };
+    }
+    if (!p) {
+      p = products.find(prod => prod.id === item.id);
     }
     if (!p && item.name && item.price) {
       p = item;
     }
     if (!p) return '';
-    const imgUrl = p.image || p.img || (p.images && p.images[0]) || '';
+    const imgUrl = (item && item.image) || p.image || p.img || (p.images && p.images[0]) || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400';
+    const itemName = item.name || p.name;
+    const itemPrice = item.price !== undefined ? item.price : p.price;
     return `
       <div class="cart-item" data-id="${p.id}">
-        <img class="cart-item-img" src="${imgUrl}" alt="${p.name}" loading="lazy">
+        <img class="cart-item-img" src="${imgUrl}" alt="${itemName}" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400';">
         <div class="cart-item-info">
-          <p class="cart-item-name">${p.name}</p>
-          <p class="cart-item-price">₹${p.price.toLocaleString('en-IN')}</p>
+          <p class="cart-item-name">${itemName}</p>
+          <p class="cart-item-price">₹${itemPrice.toLocaleString('en-IN')}</p>
           <div class="cart-item-footer">
             <div class="qty-control">
               <button class="qty-btn" aria-label="Decrease quantity"
@@ -1011,6 +1018,7 @@ function openCart() {
   renderCart();
   if (drawer) drawer.classList.add('open');
   if (overlay) overlay.classList.add('open');
+  document.body.classList.add('cart-open');
   document.body.style.overflow = 'hidden';
 }
 
@@ -1020,6 +1028,7 @@ function closeCart() {
   const overlay = document.getElementById('cart-overlay');
   if (drawer) drawer.classList.remove('open');
   if (overlay) overlay.classList.remove('open');
+  document.body.classList.remove('cart-open');
   document.body.style.overflow = '';
 }
 

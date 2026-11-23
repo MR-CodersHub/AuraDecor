@@ -370,10 +370,10 @@ const allProducts = [
     categorySlug: "handmade-lighting",
     price: 4200,
     originalPrice: 5000,
-    image: "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
     images: [
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
-      "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600"
     ],
     description: "A hand-carved Jaisalmer golden sandstone lantern with intricate jali perforations. Casts a breathtaking constellation of light patterns when lit with a tea-light or LED puck.",
@@ -399,10 +399,10 @@ const allProducts = [
     categorySlug: "handmade-lighting",
     price: 2650,
     originalPrice: 3200,
-    image: "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
     images: [
-      "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600"
     ],
     description: "A hand-woven bamboo and jute pendant lamp shade from Assam — an eco-friendly statement light that casts warm, dappled shadows for a serene ambiance.",
@@ -431,8 +431,8 @@ const allProducts = [
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600",
     images: [
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600",
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
-      "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600"
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600"
     ],
     description: "A matching pair of Bidriware candle holders — hand-cast zinc alloy blackened with soil, inlaid with sterling silver arabesques. A GI-tagged luxury craft of Bidar, Karnataka.",
     fullDescription: "Bidriware is one of India's most sophisticated metalwork traditions, developed in the 15th-century Bahmani Sultanate court of Bidar. This pair of candle holders is hand-cast from a zinc-copper alloy in a sand mould, then engraved by hand before pure silver wire is hammered into the channels — a process requiring a steady hand and years of practice to master.\n\nThe finished pieces are blackened by burying them in a mixture of ammonium chloride and soil unique to Bidar's fort area — the only soil in the world with the right chemical composition to permanently blacken Bidri alloy without paint or coating. The matte black background makes the gleaming silver inlay stand out with extraordinary contrast.\n\nThe floral arabesque pattern is a classic Bidri design inspired by Mughal garden motifs — jasmine scrolls and lotus medallions rendered in continuous flowing lines. Each holder accepts a standard 22 mm diameter pillar candle or tea-light.\n\nThis pair carries a GI certification label and comes in a handmade paper gift box, making it a distinguished gift for collectors and design enthusiasts.",
@@ -459,10 +459,10 @@ const allProducts = [
     categorySlug: "metal-crafts",
     price: 4500,
     originalPrice: 5500,
-    image: "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
     images: [
-      "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600"
     ],
     description: "A magnificent Dhokra lost-wax cast brass Ganesha idol from Odisha, made by the Dhokra Damar tribes using a 4,000-year-old metal casting technique — the world's oldest non-ferrous metal casting process.",
@@ -488,10 +488,10 @@ const allProducts = [
     categorySlug: "metal-crafts",
     price: 2200,
     originalPrice: 2800,
-    image: "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
     images: [
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
-      "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600"
     ],
     description: "A hand-hammered and engraved copper fruit bowl from Moradabad — the 'Brass City' of India — with a floral chasing pattern that catches the light beautifully.",
@@ -520,8 +520,8 @@ const allProducts = [
     image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600",
     images: [
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600",
-      "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600"
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600"
     ],
     description: "A hand-forged wrought iron peacock wall panel from Rajasthan's Nathhdwara — the national bird rendered in bold ironwork with coloured enamel eye accents.",
     fullDescription: "Iron-forging in Rajasthan has a warrior tradition — blacksmiths ('Lohars') historically supplied armour and weapons to Rajput armies. This peacock wall panel repurposes that martial strength into decorative artistry, with the iron's inherent toughness making it ideal for a piece designed to be displayed for generations.\n\nEach panel is forged by hand: iron rods are heated in a coal forge and shaped with hammer and anvil into the organic curves of the peacock's body, neck, and tail feathers. The tail plumes are individually drawn and welded, creating an airy openwork design that casts interesting shadows on the wall behind it.\n\nSmall circles of hand-cut copper and brass sheet are riveted to each tail feather tip as 'eye' accents, while vivid blue and green enamel spots complete the naturalistic colouring of the feather ocelli. The piece is finished with a beeswax coating to prevent rust while preserving the dark iron's visual character.\n\nHanging width 70 cm, height 55 cm, with two welded wall-mount hooks on the reverse.",
@@ -815,10 +815,10 @@ const allProducts = [
     categorySlug: "eco-friendly",
     price: 500,
     originalPrice: 650,
-    image: "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
     images: [
-      "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
       "https://images.unsplash.com/photo-1467043153537-a4fba2cd39ef?w=600"
     ],
     description: "A set of four hand-finished bamboo toothbrushes with BPA-free nylon bristles — an everyday eco-swap that keeps 4 plastic handles out of landfill, made by artisans from Assam's bamboo belt.",
@@ -844,10 +844,10 @@ const allProducts = [
     categorySlug: "eco-friendly",
     price: 1100,
     originalPrice: 1400,
-    image: "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
     images: [
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
-      "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
       "https://images.unsplash.com/photo-1467043153537-a4fba2cd39ef?w=600"
     ],
     description: "A sturdy, stylish waste paper basket woven from rolled recycled newspaper coils — an artisanal zero-waste object that turns yesterday's news into functional home decor.",
@@ -876,8 +876,8 @@ const allProducts = [
     image: "https://images.unsplash.com/photo-1467043153537-a4fba2cd39ef?w=600",
     images: [
       "https://images.unsplash.com/photo-1467043153537-a4fba2cd39ef?w=600",
-      "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
-      "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600"
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600"
     ],
     description: "A heavy-duty reusable tote bag woven from organic jute and hand-spun khadi cotton — block-printed with a Warli motif in natural indigo dye, strong enough for groceries and stylish enough for markets.",
     fullDescription: "India produces 70% of the world's jute — a natural bast fibre that is 100% biodegradable, requires no pesticides, and absorbs CO₂ as it grows. This tote bag combines coarse jute canvas for strength and durability with hand-spun khadi cotton panels for lightness and printability.\n\nThe Warli motif panel on the front — a joyful harvest dance scene rendered in white on indigo — is hand-block-printed by artisans in Kolkata using the same natural indigo dye preparations used in traditional Dabu printing. The indigo is cold-process fermented and colour-fixed with a natural alum mordant, eliminating synthetic chemical use at every stage.\n\nThe bag measures 40 × 38 cm with a 65 cm handle drop — comfortable on the shoulder with groceries, books, or a laptop inside. Reinforced interior seams and a double-stitch base make it suitable for loads of up to 15 kg. An interior khadi pocket keeps small items organised.\n\nThis bag replaces approximately 500 single-use plastic bags over its lifetime and is fully compostable when it finally wears out.",
@@ -944,7 +944,7 @@ const categories = [
     name: "Handmade Lighting",
     slug: "handmade-lighting",
     description: "Sandstone lanterns, bamboo pendants, and Bidriware candle holders — artisanal light sources that transform any space into a sanctuary of warmth.",
-    image: "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
     productCount: 3,
     featured: false
   },
@@ -953,7 +953,7 @@ const categories = [
     name: "Metal Crafts",
     slug: "metal-crafts",
     description: "Dhokra brass idols, Moradabad copper bowls, and forged iron wall art — the timeless metal-working traditions of India's master artisans.",
-    image: "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
     productCount: 3,
     featured: true
   },
@@ -1007,7 +1007,7 @@ const artisans = [
     specialty: "Jaipur Blue Pottery",
     bio: "Priya Sharma is a third-generation Blue Pottery artisan from Jaipur who took over her family workshop at the age of 22 after completing a degree in fine arts. She is known for introducing contemporary forms — geometric vases, tapas dishes, and wall tiles — into the traditionally ornamental Blue Pottery vocabulary.",
     story: "Priya grew up watching her grandmother hand-paint cobalt flowers onto lumpy unfired pots in their cramped Jaipur workshop. 'I used to steal brushes and paint the walls,' she laughs. After her father's health declined, she returned from Jaipur's arts college to lead the workshop — initially sceptical that Blue Pottery could survive in a mass-market world. It was an order from a Bangalore interior designer that changed everything: a request for 60 matching vases in a single contemporary shape. Priya engineered a system where she designed the forms and trained six neighbourhood women to do the painting, turning the cottage operation into a collective. Today, her workshop employs 18 women and exports to boutique hotels in London and Tokyo.",
-    image: "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=600",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
     yearsExperience: 18,
     productsCount: 12,
     awards: ["National Craft Award — Pottery 2019", "Rajasthan Heritage Prize 2021", "India Design ID Artisan Fellowship 2022"]
@@ -1102,7 +1102,7 @@ const blogPosts = [
     excerpt: "When Priya Sharma inherited her family's Blue Pottery workshop at 22, she faced an agonising choice: preserve the tradition exactly as her grandfather practised it, or adapt it for a 21st-century market. Her decision — and the community it built — changed everything.",
     content: "Priya Sharma's workshop in Jaipur's Sanganer colony does not look like a heritage site. There are laptops on the worktables alongside pigment stones and bamboo brushes, and the conversation moves fluidly between colour theory and social media strategy. But the clay being worked at every station is the same quartz-based Jaipur Blue Pottery clay that Priya's grandfather used, and the cobalt being applied is the same mineral oxide that gives Blue Pottery its GI-protected identity. What Priya changed was the form: where her grandfather made bulbous vases and water jars in the shapes dictated by royal-era conventions, Priya designs pieces responsive to contemporary interiors — slender geometric vases, tapas plates, coffee mugs, bathroom accessories. The technique is identical; the vocabulary is new. The result is a workshop that has grown from 3 family members to 18 artisans, 15 of whom are women from the neighbourhood. Priya is careful to explain that she did not 'save' Blue Pottery — the craft was surviving without her. What she did was expand its market so it could sustain more people. That, she says, is the right relationship between innovation and tradition: not rescue, but growth.",
     author: "Ananya Krishnan",
-    authorImage: "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=100",
+    authorImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=100",
     date: "2024-10-28",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600",
@@ -1150,7 +1150,7 @@ const blogPosts = [
     authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
     date: "2024-09-05",
     readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
     featured: false,
     tags: ["behind-the-craft", "Dhokra", "lost-wax", "metal-casting", "Odisha", "craft-technique"]
   },
@@ -1165,7 +1165,7 @@ const blogPosts = [
     authorImage: "https://images.unsplash.com/photo-1529612700005-e35377bf1415?w=100",
     date: "2024-08-18",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1584565688690-e6b3f7e7b9a7?w=600",
+    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600",
     featured: true,
     tags: ["bamboo", "sustainability", "eco-friendly", "NortheastIndia", "plastic-replacement"]
   },
@@ -1192,7 +1192,7 @@ const blogPosts = [
     excerpt: "With mass-produced imitations flooding online markets, knowing how to identify an authentic handmade Indian craft object is more important than ever. These seven markers — from tool marks to price signals — will help you buy with confidence.",
     content: "The first and most reliable sign of an authentic handmade craft object is irregularity: slight variations in form, colour, pattern, or surface texture that result from the involvement of human hands and judgement. Machine-made objects are defined by their perfect uniformity; handmade objects by their individual character. If every unit is identical, it is almost certainly machine-made. The second marker is appropriate imperfection: a hand-thrown ceramic pot will show spiral throwing marks on the interior base; a hand-block-printed textile will have occasional slight misregistrations where the block was set down at a fractional angle; a Dhokra casting will have small irregularities where air bubbles escaped during casting. These are not flaws — they are authentication marks. Third is the material story: authentic crafts use materials specific to their tradition and geography (Jaipur Blue Pottery's quartz clay; Longpi's serpentinite rock; Bidriware's zinc alloy blackened with Bidar soil). If the seller cannot explain the materials with specificity, be cautious. Fourth is price: genuine handmade craft has an irreducible labour cost. If a 'handmade' Kashmiri papier-mâché box costs ₹200, it is not Kashmiri papier-mâché. The price should reflect the documented time it takes to make the object at a living wage. Fifth, seek GI certification where it applies — the labels are government-issued and not easily counterfeited. Sixth, buy from sellers who can name the artisan and location: traceability is the hallmark of a responsible supply chain. Seventh, ask about the dye, finish, or treatment: authentic craft uses natural or traditionally-specified materials; shortcuts (synthetic dye presented as natural; varnish presented as oil finish) are identifiable if you know what to ask.",
     author: "Ananya Krishnan",
-    authorImage: "https://images.unsplash.com/photo-1575585269294-7d28bb912db8?w=100",
+    authorImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=100",
     date: "2024-07-12",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600",

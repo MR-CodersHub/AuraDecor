@@ -3068,6 +3068,22 @@ select.form-control {
   flex-direction: column;
   gap: 10px;
   pointer-events: none;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Offset toast outside the cart drawer so it never covers checkout controls */
+body.cart-open .toast-container,
+.cart-drawer.open ~ .toast-container,
+.cart-overlay.open ~ .toast-container {
+  right: calc(420px + 24px);
+}
+
+@media (max-width: 640px) {
+  body.cart-open .toast-container,
+  .cart-drawer.open ~ .toast-container,
+  .cart-overlay.open ~ .toast-container {
+    display: none !important;
+  }
 }
 
 .toast {
@@ -5549,6 +5565,13 @@ select.form-control {
 [dir="rtl"] .toast-container {
   right: auto;
   left: 24px;
+}
+
+[dir="rtl"] body.cart-open .toast-container,
+[dir="rtl"] .cart-drawer.open ~ .toast-container,
+[dir="rtl"] .cart-overlay.open ~ .toast-container {
+  left: calc(420px + 24px);
+  right: auto;
 }
 
 [dir="rtl"] .toast {
