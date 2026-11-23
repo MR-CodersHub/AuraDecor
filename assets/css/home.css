@@ -1,0 +1,932 @@
+/* ============================================================
+   AuraDecor — Home Page Component Styles
+   Loaded after style.css and responsive.css so the markup used by
+   index.html is fully styled with the shared design tokens.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Shared helpers & buttons
+   ------------------------------------------------------------ */
+.bg-sec {
+  background-color: var(--bg-secondary);
+}
+
+.bg-dark {
+  background-color: var(--charcoal-brown);
+  color: var(--white);
+}
+
+.section-label.light {
+  color: var(--warm-sand);
+}
+
+.section-title.light {
+  color: var(--white);
+}
+
+.section-subtitle.light {
+  color: rgba(248, 243, 233, 0.82);
+}
+
+/* The home markup uses these button classes without the base .btn class. */
+.btn-primary,
+.btn-outline,
+.btn-outline-light,
+.cart-checkout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast),
+              transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+.btn-sm {
+  padding: 9px 18px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(185, 104, 78, 0.25);
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--white);
+  color: var(--charcoal-brown);
+  transform: translateY(-2px);
+}
+
+.btn-hero {
+  min-width: 196px;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: var(--space-5);
+}
+
+.lead-text {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+/* ------------------------------------------------------------
+   Section 1 — Hero
+   ------------------------------------------------------------ */
+.hero.hero-home {
+  min-height: min(88vh, 860px);
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero-home .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: clamp(88px, 11vh, 150px);
+  padding-bottom: clamp(88px, 11vh, 150px);
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.hero-home .hero-overlay {
+  z-index: 1;
+}
+
+.hero-home .hero-content {
+  max-width: 760px;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm-sand);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(220, 203, 178, 0.38);
+  border-radius: var(--radius-full);
+  padding: 9px 18px;
+  margin-bottom: var(--space-3);
+  backdrop-filter: blur(6px);
+}
+
+.hero-badge i {
+  color: var(--antique-gold);
+  font-size: 0.625rem;
+}
+
+.hero-home .hero-title {
+  font-size: clamp(2.75rem, 5.5vw, 5rem);
+  color: var(--white);
+  max-width: 760px;
+}
+
+.hero-home .hero-title em {
+  color: var(--warm-sand);
+  font-style: italic;
+}
+
+.hero-home .hero-subtitle {
+  max-width: 620px;
+  color: rgba(248, 243, 233, 0.88);
+}
+
+.hero-btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.hero-btns .btn-outline {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.hero-btns .btn-outline:hover {
+  background-color: var(--white);
+  color: var(--charcoal-brown);
+  border-color: var(--white);
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------
+   Section 2 — Featured collections
+   ------------------------------------------------------------ */
+.collections-sec .collection-card {
+  aspect-ratio: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg);
+}
+
+.collection-link,
+.collection-link:hover {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.collection-img-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--soft-beige);
+}
+
+.collection-img-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.collection-card:hover .collection-img-wrap img {
+  transform: scale(1.06);
+}
+
+.collection-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, rgba(57, 51, 45, 0.65), rgba(57, 51, 45, 0.15));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.collection-card:hover .collection-overlay,
+.collection-link:focus-visible .collection-overlay {
+  opacity: 1;
+}
+
+.collection-overlay span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: rgba(57, 51, 45, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-full);
+  padding: 10px 18px;
+  backdrop-filter: blur(4px);
+}
+
+.collection-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 22px;
+}
+
+.collection-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.collection-count {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------
+   Section 3 — Bestselling products
+   ------------------------------------------------------------ */
+.product-img-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--bg-secondary);
+}
+
+.product-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.06);
+}
+
+.product-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--terracotta);
+  border-radius: var(--radius-sm);
+  padding: 5px 11px;
+  line-height: 1.4;
+}
+
+.product-badge.badge-new {
+  background-color: var(--deep-olive);
+}
+
+.wishlist-toggle {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.94);
+  color: var(--charcoal-brown);
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.wishlist-toggle:hover {
+  color: #c14b4b;
+  transform: scale(1.08);
+}
+
+.wishlist-toggle.active {
+  color: #c14b4b;
+}
+
+.product-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-3);
+}
+
+.product-cat {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.product-name {
+  font-family: var(--font-serif);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.product-artisan {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--antique-gold);
+  font-size: 0.75rem;
+  margin-bottom: 12px;
+}
+
+.product-rating span {
+  color: var(--text-secondary);
+  margin-left: 5px;
+}
+
+.product-pricing {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.price-now {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--antique-gold);
+}
+
+.price-was {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+
+.price-save {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--deep-olive);
+  background-color: rgba(77, 89, 64, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+}
+
+.product-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+/* ------------------------------------------------------------
+   Section 4 — The beauty of handmade
+   ------------------------------------------------------------ */
+.handmade-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 88px);
+}
+
+.feature-list {
+  list-style: none;
+  display: grid;
+  gap: 22px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feature-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(185, 104, 78, 0.12);
+  color: var(--accent);
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.feature-item strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.feature-item p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.image-collage {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 16px;
+  height: 100%;
+}
+
+.collage-main,
+.collage-side img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.collage-main {
+  overflow: hidden;
+}
+
+.collage-main img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+}
+
+.collage-side {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+}
+
+.collage-side img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------------------------------------
+   Section 5 — Artisans
+   ------------------------------------------------------------ */
+.artisans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.artisans-sec .artisan-card {
+  aspect-ratio: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.artisan-img-wrap {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.artisan-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.artisan-card:hover .artisan-img {
+  transform: scale(1.05);
+}
+
+.artisan-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-3);
+}
+
+.artisan-craft {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 7px;
+}
+
+.artisan-name {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.artisan-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.artisan-location i {
+  color: var(--accent);
+}
+
+.artisan-bio {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.artisan-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap var(--transition-fast);
+}
+
+.artisan-link:hover {
+  gap: 12px;
+}
+
+/* ------------------------------------------------------------
+   Section 6 — CTA banner
+   ------------------------------------------------------------ */
+.cta-banner-sec {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(80px, 10vw, 130px) 0;
+  background-color: var(--charcoal-brown);
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-banner-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.cta-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(57, 51, 45, 0.88) 0%,
+    rgba(57, 51, 45, 0.6) 55%,
+    rgba(57, 51, 45, 0.78) 100%
+  );
+  z-index: 1;
+}
+
+.cta-banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-banner-frame {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(36px, 5vw, 64px);
+  background-color: rgba(57, 51, 45, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+.cta-banner-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  margin-bottom: var(--space-3);
+}
+
+.cta-banner-title em {
+  font-style: italic;
+  color: var(--warm-sand);
+}
+
+.cta-banner-subtitle {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(248, 243, 233, 0.86);
+  margin-bottom: var(--space-4);
+}
+
+.cta-banner-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ------------------------------------------------------------
+   Cart drawer markup used on the home page
+   ------------------------------------------------------------ */
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cart-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cart-close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.cart-close-btn:hover {
+  background-color: var(--bg-secondary);
+  color: var(--accent);
+}
+
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-3) var(--space-4);
+}
+
+.cart-empty-msg {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.cart-empty-msg a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cart-footer-panel {
+  flex-shrink: 0;
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
+.cart-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.cart-free-ship {
+  font-size: 0.75rem;
+  color: var(--deep-olive);
+  margin-bottom: var(--space-2);
+}
+
+.cart-checkout-btn {
+  width: 100%;
+}
+
+.cart-demo-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin-top: var(--space-2);
+}
+
+/* ------------------------------------------------------------
+   Responsive behaviour
+   ------------------------------------------------------------ */
+@media (max-width: 992px) {
+  .handmade-grid {
+    gap: var(--space-5);
+  }
+
+  .artisans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collage-main img {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero.hero-home {
+    min-height: 0;
+  }
+
+  .hero-home .container {
+    padding-top: calc(var(--navbar-height) + var(--space-6));
+    padding-bottom: var(--space-6);
+  }
+
+  .hero-home .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-home .hero-title {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .hero-btns .btn-primary,
+  .hero-btns .btn-outline {
+    width: 100%;
+  }
+
+  .handmade-grid,
+  .image-collage {
+    grid-template-columns: 1fr;
+  }
+
+  .collage-side {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .collage-side img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .artisans-grid {
+    gap: var(--space-3);
+  }
+}
+
+@media (max-width: 640px) {
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .artisans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-banner-frame {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .cta-banner-btns .btn-primary,
+  .cta-banner-btns .btn-outline-light {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-badge {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    padding: 8px 14px;
+  }
+
+  .collections-grid,
+  .product-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .product-actions .btn-primary,
+  .product-actions .btn-outline {
+    width: 100%;
+  }
+
+  .collection-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

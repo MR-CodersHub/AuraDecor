@@ -13,96 +13,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
-  <style>
-    /* ===== SHOP PAGE SPECIFIC ===== */
-    .shop-hero{position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden;background:var(--charcoal);}
-    .shop-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&auto=format&fit=crop')center/cover no-repeat;opacity:.45;}
-    .shop-hero-content{position:relative;z-index:2;max-width:700px;}
-    .shop-hero-eyebrow{font-family:var(--font-body);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--antique-gold);margin-bottom:1rem;}
-    .shop-hero h1{font-family:var(--font-heading);font-size:clamp(2.4rem,5vw,4.2rem);color:#fff;line-height:1.15;margin-bottom:1.2rem;}
-    .shop-hero p{font-size:1.1rem;color:rgba(255,255,255,.82);max-width:520px;margin-bottom:2rem;}
-    /* Category grid */
-    .categories-section{background:var(--natural-cream);}
-    .cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4rem;}
-    @media(max-width:1100px){.cat-grid{grid-template-columns:repeat(3,1fr);}}
-    @media(max-width:680px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
-    .cat-card{position:relative;border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .35s,box-shadow .35s;aspect-ratio:3/4;}
-    .cat-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.18);}
-    .cat-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-    .cat-card:hover img{transform:scale(1.07);}
-    .cat-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(39,33,29,.88) 40%,transparent 100%);}
-    .cat-card-body{position:absolute;bottom:0;left:0;right:0;padding:1.4rem;}
-    .cat-card-body h3{font-family:var(--font-heading);font-size:1.1rem;color:#fff;margin-bottom:.35rem;}
-    .cat-card-body p{font-size:.78rem;color:rgba(255,255,255,.75);margin-bottom:.7rem;line-height:1.5;}
-    .cat-card-link{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--antique-gold);font-family:var(--font-body);font-weight:700;}
-    .cat-card.active-cat{outline:3px solid var(--terracotta);outline-offset:3px;}
-    /* Filter bar */
-    .products-section{background:var(--soft-beige);}
-    .filter-bar{background:#fff;border-radius:16px;padding:1.4rem 2rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-bottom:2.5rem;box-shadow:0 4px 24px rgba(0,0,0,.07);}
-    .filter-bar label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--charcoal);display:flex;flex-direction:column;gap:.35rem;flex:1;min-width:150px;}
-    .filter-bar input,.filter-bar select{border:1.5px solid var(--warm-sand);border-radius:8px;padding:.5rem .9rem;font-size:.9rem;font-family:var(--font-body);background:#fff;color:var(--charcoal);outline:none;transition:border .25s;}
-    .filter-bar input:focus,.filter-bar select:focus{border-color:var(--terracotta);}
-    .price-output{font-size:.85rem;color:var(--terracotta);font-weight:700;}
-    #resetBtn{background:var(--terracotta);color:#fff;border:none;border-radius:8px;padding:.6rem 1.4rem;font-size:.85rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .25s;align-self:flex-end;}
-    #resetBtn:hover{background:var(--deep-olive);}
-    .results-meta{font-size:.9rem;color:#888;margin-bottom:1.5rem;}
-    .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.8rem;}
-    @media(max-width:1100px){.products-grid{grid-template-columns:repeat(3,1fr);}}
-    @media(max-width:720px){.products-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:420px){.products-grid{grid-template-columns:1fr;}}
-    .product-card{background:#fff;border-radius:16px;overflow:hidden;transition:transform .35s,box-shadow .35s;position:relative;}
-    .product-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.13);}
-    .product-card-img{position:relative;overflow:hidden;aspect-ratio:1;}
-    .product-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-    .product-card:hover .product-card-img img{transform:scale(1.08);}
-    .product-badge{position:absolute;top:12px;left:12px;background:var(--terracotta);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.08em;padding:.3rem .7rem;border-radius:20px;text-transform:uppercase;}
-    .wishlist-btn{position:absolute;top:12px;right:12px;width:36px;height:36px;background:#fff;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 2px 8px rgba(0,0,0,.12);transition:background .25s,color .25s;}
-    .wishlist-btn.active,.wishlist-btn:hover{background:var(--terracotta);color:#fff;}
-    .product-card-body{padding:1.2rem;}
-    .product-category{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--deep-olive);font-weight:700;margin-bottom:.4rem;}
-    .product-card-body h3{font-family:var(--font-heading);font-size:1.05rem;color:var(--charcoal);margin-bottom:.45rem;line-height:1.3;}
-    .product-desc{font-size:.8rem;color:#777;line-height:1.5;margin-bottom:.8rem;}
-    .product-pricing{display:flex;align-items:baseline;gap:.6rem;margin-bottom:1rem;}
-    .price-current{font-size:1.1rem;font-weight:700;color:var(--terracotta);}
-    .price-old{font-size:.85rem;color:#aaa;text-decoration:line-through;}
-    .product-card-actions{display:flex;gap:.6rem;}
-    .btn-cart{flex:1;background:var(--charcoal);color:#fff;border:none;border-radius:8px;padding:.62rem;font-size:.82rem;font-weight:700;cursor:pointer;transition:background .25s;}
-    .btn-cart:hover{background:var(--terracotta);}
-    .btn-detail{background:transparent;border:1.5px solid var(--warm-sand);border-radius:8px;padding:.62rem .9rem;font-size:.82rem;color:var(--charcoal);cursor:pointer;transition:border-color .25s,color .25s;text-decoration:none;display:flex;align-items:center;white-space:nowrap;}
-    .btn-detail:hover{border-color:var(--terracotta);color:var(--terracotta);}
-    .no-results{grid-column:1/-1;text-align:center;padding:4rem;color:#aaa;}
-    .no-results p{font-size:1.1rem;margin-bottom:1rem;}
-    /* Curated collections */
-    .curated-section{background:var(--natural-cream);}
-    .curated-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
-    @media(max-width:800px){.curated-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:520px){.curated-grid{grid-template-columns:1fr;}}
-    .curated-card{border-radius:18px;overflow:hidden;position:relative;aspect-ratio:4/3;cursor:pointer;transition:transform .35s;}
-    .curated-card:hover{transform:translateY(-5px);}
-    .curated-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
-    .curated-card:hover img{transform:scale(1.06);}
-    .curated-card-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(39,33,29,.72),rgba(185,104,78,.4));}
-    .curated-card-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1.8rem;}
-    .curated-card-content h3{font-family:var(--font-heading);font-size:1.3rem;color:#fff;margin-bottom:.4rem;}
-    .curated-card-content p{font-size:.82rem;color:rgba(255,255,255,.8);margin-bottom:.8rem;}
-    .curated-link{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--antique-gold);font-weight:700;}
-    /* Custom orders */
-    .custom-orders-section{background:var(--soft-beige);}
-    .custom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;align-items:center;}
-    @media(max-width:800px){.custom-grid{grid-template-columns:1fr;}}
-    .custom-features{list-style:none;padding:0;margin:1.5rem 0;}
-    .custom-features li{padding:.6rem 0;border-bottom:1px solid var(--warm-sand);display:flex;align-items:center;gap:.8rem;font-size:.95rem;color:var(--charcoal);}
-    .custom-features li:last-child{border-bottom:none;}
-    .custom-features li::before{content:'\f005';font-family:'Font Awesome 6 Free';font-weight:900;color:var(--terracotta);font-size:.7rem;}
-    .custom-img-wrap{border-radius:20px;overflow:hidden;aspect-ratio:1.2;position:relative;}
-    .custom-img-wrap img{width:100%;height:100%;object-fit:cover;}
-    /* Shop CTA */
-    .shop-cta-section{position:relative;overflow:hidden;background:var(--charcoal);}
-    .shop-cta-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1540518614846-7eded433c457?w=1400&auto=format&fit=crop')center/cover;opacity:.3;}
-    .shop-cta-content{position:relative;z-index:2;text-align:center;max-width:680px;margin:0 auto;}
-    .shop-cta-content h2{font-family:var(--font-heading);font-size:clamp(2rem,4vw,3.2rem);color:#fff;margin-bottom:1rem;}
-    .shop-cta-content p{color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:2rem;}
-  </style>
+  <link rel="stylesheet" href="../assets/css/home.css">
+  <link rel="stylesheet" href="../assets/css/services.css">
 </head>
 <body>
 
@@ -523,22 +435,22 @@
 </footer>
 
 <!-- Cart Drawer -->
-<div class="cart-overlay" id="cartOverlay"></div>
-<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
   <div class="cart-header">
     <h3>Your Cart</h3>
-    <button class="cart-close-btn" id="cartClose"><i class="fas fa-xmark"></i></button>
+    <button class="cart-close" id="cartClose"><i class="fas fa-xmark"></i></button>
   </div>
-  <div class="cart-items" id="cartItems">
+  <div class="cart-items" id="cart-items">
     <p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p>
   </div>
-  <div class="cart-footer-panel" id="cartFooterPanel" style="display:none;">
-    <div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div>
+  <div class="cart-footer-panel" id="cartFooterPanel">
+    <div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">₹0</span></div>
     <button class="btn-primary cart-checkout-btn">Proceed to Checkout</button>
     <p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store — no real payments processed</p>
   </div>
 </aside>
-<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
 <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
 <script src="../assets/js/products-data.js"></script>

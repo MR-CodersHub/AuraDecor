@@ -1,0 +1,528 @@
+/* ============================================================
+   AuraDecor — Home 2 Page Component Styles
+   Loaded after style.css, responsive.css and home.css so the
+   markup used by pages/home2.html is fully styled with the
+   shared design tokens.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Section 1 — Editorial split hero
+   ------------------------------------------------------------ */
+.hero.hero-split {
+  min-height: min(88vh, 820px);
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero-split .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-top: clamp(88px, 11vh, 150px);
+  padding-bottom: clamp(88px, 11vh, 150px);
+}
+
+.hero-split-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 88px);
+}
+
+.hero-split-text {
+  color: rgba(248, 243, 233, 0.9);
+}
+
+.hero-split .hero-title {
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  color: var(--white);
+  max-width: 640px;
+}
+
+.hero-split .hero-title em {
+  font-style: italic;
+  color: var(--warm-sand);
+}
+
+.hero-split .hero-subtitle {
+  max-width: 540px;
+  color: rgba(248, 243, 233, 0.85);
+}
+
+.hero-split-img {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  background-color: var(--charcoal-brown);
+}
+
+.hero-split-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.hero-split-img:hover img {
+  transform: scale(1.04);
+}
+
+.hero-img-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 48px 24px 20px;
+  background: linear-gradient(to top, rgba(57, 51, 45, 0.85), transparent);
+  color: rgba(248, 243, 233, 0.9);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+.craft-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: var(--space-4);
+}
+
+.craft-pill {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-sand);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(220, 203, 178, 0.35);
+  border-radius: var(--radius-full);
+  padding: 7px 14px;
+}
+
+/* ------------------------------------------------------------
+   Section 2 — Shop by craft
+   ------------------------------------------------------------ */
+.craft-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.craft-card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-secondary);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.craft-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.craft-card a,
+.styling-card a {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.craft-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.craft-img-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s ease;
+}
+
+.craft-card:hover .craft-img-wrap img {
+  transform: scale(1.07);
+}
+
+.craft-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--space-3);
+  background: linear-gradient(
+    to top,
+    rgba(57, 51, 45, 0.88) 0%,
+    rgba(57, 51, 45, 0.25) 55%,
+    transparent 100%
+  );
+}
+
+.craft-overlay h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.craft-overlay span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-sand);
+}
+
+/* ------------------------------------------------------------
+   Section 3 — Home styling spaces
+   ------------------------------------------------------------ */
+.styling-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 240px;
+  gap: var(--space-3);
+}
+
+.styling-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.styling-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.styling-card-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.styling-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s ease;
+}
+
+.styling-card:hover img {
+  transform: scale(1.06);
+}
+
+.styling-info {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 26px;
+  background: linear-gradient(to top, rgba(57, 51, 45, 0.9), transparent);
+  color: var(--white);
+}
+
+.styling-card-large .styling-info {
+  padding: var(--space-4);
+}
+
+.styling-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.styling-card-large .styling-info h3 {
+  font-size: 1.75rem;
+}
+
+.styling-info p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(248, 243, 233, 0.85);
+  margin-bottom: 10px;
+}
+
+.styling-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--warm-sand);
+}
+
+.styling-card:hover .styling-cta i {
+  transform: translateX(4px);
+}
+
+.styling-cta i {
+  transition: transform var(--transition-fast);
+}
+
+/* ------------------------------------------------------------
+   Section 4 — New arrivals (shared product card styles from home.css)
+   ------------------------------------------------------------ */
+.arrivals-sec .products-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ------------------------------------------------------------
+   Section 5 — Slow craft process
+   ------------------------------------------------------------ */
+.process-sec {
+  color: var(--white);
+}
+
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  margin-top: var(--space-5);
+}
+
+.process-step {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.process-num {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(220, 203, 178, 0.28);
+  margin-bottom: 8px;
+}
+
+.process-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-2);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(220, 203, 178, 0.3);
+  color: var(--warm-sand);
+  font-size: 1.15rem;
+}
+
+.process-step h3 {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: rgba(248, 243, 233, 0.75);
+}
+
+.process-connector {
+  flex: 0 0 40px;
+  height: 1px;
+  background-color: rgba(220, 203, 178, 0.35);
+  margin-top: 42px;
+}
+
+/* ------------------------------------------------------------
+   Section 6 — Shop with purpose
+   ------------------------------------------------------------ */
+.purpose-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(40px, 6vw, 88px);
+}
+
+.purpose-content > p:not(.lead-text) {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.purpose-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  background-color: var(--bg-secondary);
+}
+
+.purpose-img img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+.purpose-img-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 48px 20px 18px;
+  background: linear-gradient(to top, rgba(57, 51, 45, 0.82), transparent);
+  color: rgba(248, 243, 233, 0.92);
+  font-size: 0.8125rem;
+}
+
+/* ------------------------------------------------------------
+   Responsive behaviour
+   ------------------------------------------------------------ */
+@media (max-width: 1200px) {
+  .process-connector {
+    flex-basis: 24px;
+  }
+
+  .process-step {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-split-inner,
+  .purpose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-split-img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .craft-grid,
+  .arrivals-sec .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .styling-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 220px;
+  }
+
+  .process-steps {
+    flex-wrap: wrap;
+    gap: var(--space-4) 0;
+  }
+
+  .process-step {
+    flex: 0 0 33.333%;
+  }
+
+  .process-connector {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero.hero-split {
+    min-height: 0;
+  }
+
+  .hero-split .container {
+    padding-top: calc(var(--navbar-height) + var(--space-6));
+    padding-bottom: var(--space-6);
+  }
+
+  .hero-split .hero-title {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .styling-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .styling-card {
+    min-height: 260px;
+  }
+
+  .styling-card-large {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 320px;
+  }
+
+  .process-step {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .craft-grid,
+  .arrivals-sec .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-step {
+    flex: 0 0 100%;
+  }
+
+  .stats-row {
+    gap: var(--space-3);
+  }
+
+  .styling-info,
+  .styling-card-large .styling-info {
+    padding: var(--space-3);
+  }
+
+  .styling-card-large .styling-info h3 {
+    font-size: 1.375rem;
+  }
+}

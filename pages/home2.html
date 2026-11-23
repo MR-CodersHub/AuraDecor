@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/home.css">
+  <link rel="stylesheet" href="../assets/css/home2.css">
 </head>
 <body>
 <nav class="navbar" id="navbar">
@@ -264,16 +266,28 @@
     </div>
   </div>
 </footer>
-<div class="cart-overlay" id="cartOverlay"></div>
-<aside class="cart-drawer" id="cartDrawer"><div class="cart-header"><h3>Your Cart</h3><button class="cart-close-btn" id="cartClose"><i class="fas fa-xmark"></i></button></div><div class="cart-items" id="cartItems"><p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p></div><div class="cart-footer-panel" id="cartFooterPanel"><div class="cart-total-row"><span>Subtotal:</span><span id="cartTotal">₹0</span></div><button class="btn-primary cart-checkout-btn">Proceed to Checkout</button><p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store</p></div></aside>
-<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer"><div class="cart-header"><h3>Your Cart</h3><button class="cart-close" id="cartClose"><i class="fas fa-xmark"></i></button></div><div class="cart-items" id="cart-items"><p class="cart-empty-msg">Your cart is empty. <a href="services.html">Start shopping <i class="fas fa-arrow-right"></i></a></p></div><div class="cart-footer-panel" id="cartFooterPanel"><div class="cart-total-row"><span>Subtotal:</span><span id="cart-subtotal">₹0</span></div><button class="btn-primary cart-checkout-btn">Proceed to Checkout</button><p class="cart-demo-note"><i class="fas fa-triangle-exclamation"></i> Demo store</p></div></aside>
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
 <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 <script src="../assets/js/products-data.js"></script><script src="../assets/js/main.js"></script>
 <script>
 (function(){
-  function toast(msg){var tc=document.getElementById('toastContainer');if(!tc)return;var t=document.createElement('div');t.className='toast';t.innerHTML='<span>'+msg+'</span>';tc.appendChild(t);requestAnimationFrame(function(){t.classList.add('show');});setTimeout(function(){t.classList.remove('show');setTimeout(function(){t.remove();},400);},2800);}
-  document.querySelectorAll('.atc-btn').forEach(function(btn){btn.addEventListener('click',function(){var d=this.dataset;if(window.addToCart)window.addToCart({id:parseInt(d.id),name:d.name,price:parseInt(d.price),image:d.img,qty:1});toast('<i class="fas fa-check"></i> Added: '+d.name);});});
-  document.querySelectorAll('.wishlist-toggle').forEach(function(btn){btn.addEventListener('click',function(){this.classList.toggle('active');this.innerHTML=this.classList.contains('active')?'<i class="fas fa-heart"></i>':'<i class="far fa-heart"></i>';toast(this.classList.contains('active')?'<i class="fas fa-check"></i> Added to wishlist':'Removed from wishlist');});});
+  document.querySelectorAll('.atc-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(window.addToCart) window.addToCart(parseInt(this.dataset.id,10),1);
+    });
+  });
+  document.querySelectorAll('.wishlist-toggle').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var id=parseInt(this.dataset.id,10);
+      var result=window.toggleWishlist?window.toggleWishlist(id):null;
+      var active=result?result.added:!this.classList.contains('active');
+      this.classList.toggle('active',active);
+      this.innerHTML=active?'<i class="fas fa-heart"></i>':'<i class="far fa-heart"></i>';
+      if(window.showToast) window.showToast(active?'Added to wishlist':'Removed from wishlist',active?'success':'info');
+    });
+  });
 })();
 </script>
 </body></html>
