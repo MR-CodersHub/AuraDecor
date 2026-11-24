@@ -1,0 +1,247 @@
+/* ============================================================
+   AuraDecor — Editorial Hero System
+   Loaded after every page stylesheet so all heroes share one
+   visual language: warm editorial wash, gold rule and a framed
+   feature image.
+   ============================================================ */
+
+/* ---- Shared editorial wash over hero photography ---- */
+.hero-overlay,
+.blog-hero::after,
+.blog-hero-gradient,
+.pricing-hero-overlay,
+.contact-hero-overlay,
+.legal-hero-overlay,
+.sitemap-hero-overlay,
+.cs-hero-overlay,
+.article-hero-gradient,
+.shop-hero::after {
+  background:
+    radial-gradient(
+      circle at 82% 12%,
+      rgba(183, 154, 98, 0.22),
+      transparent 42%
+    ),
+    linear-gradient(
+      115deg,
+      rgba(28, 24, 21, 0.92) 0%,
+      rgba(28, 24, 21, 0.7) 48%,
+      rgba(28, 24, 21, 0.3) 100%
+    ) !important;
+}
+
+.shop-hero::after,
+.blog-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---- Editorial heading rule and balanced wrapping ---- */
+.hero h1,
+.shop-hero h1,
+.blog-hero h1,
+.pricing-hero h1,
+.contact-hero h1,
+.legal-hero h1,
+.sitemap-hero h1,
+.cs-hero h1,
+.article-hero h1,
+.notfound-card h1,
+.maint-title {
+  text-wrap: balance;
+}
+
+.hero h1::after,
+.shop-hero h1::after,
+.blog-hero h1::after,
+.pricing-hero h1::after,
+.contact-hero h1::after,
+.legal-hero h1::after,
+.sitemap-hero h1::after,
+.cs-hero h1::after,
+.article-hero h1::after {
+  content: "";
+  display: block;
+  width: clamp(48px, 5vw, 72px);
+  height: 2px;
+  margin-top: clamp(16px, 2vw, 24px);
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    90deg,
+    var(--antique-gold),
+    rgba(183, 154, 98, 0.12)
+  );
+}
+
+.cs-hero h1::after,
+.notfound-card h1::after,
+.maint-title::after {
+  margin-inline: auto;
+}
+
+.notfound-card h1::after,
+.maint-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 2px;
+  margin-top: 1rem;
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    90deg,
+    var(--antique-gold),
+    rgba(183, 154, 98, 0.12)
+  );
+}
+
+/* ---- Fine gold accent beside hero copy ---- */
+.hero-layout > div:first-child,
+.hero-split-text,
+.shop-hero-content,
+.blog-hero-content,
+.pricing-hero-content,
+.contact-hero-content,
+.legal-hero-content,
+.sitemap-hero-content,
+.cs-hero-content,
+.article-hero-content {
+  position: relative;
+  padding-left: clamp(0px, 1.8vw, 24px);
+}
+
+.hero-layout > div:first-child::before,
+.hero-split-text::before,
+.shop-hero-content::before,
+.blog-hero-content::before,
+.pricing-hero-content::before,
+.contact-hero-content::before,
+.legal-hero-content::before,
+.sitemap-hero-content::before,
+.cs-hero-content::before,
+.article-hero-content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 2px;
+  height: clamp(44px, 5vw, 64px);
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    to bottom,
+    var(--antique-gold),
+    rgba(183, 154, 98, 0)
+  );
+  pointer-events: none;
+}
+
+/* ---- Layered editorial frame around feature imagery ---- */
+.hero-visual,
+.hero-split-img {
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.hero-visual::before,
+.hero-split-img::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border: 1px solid rgba(183, 154, 98, 0.42);
+  border-radius: calc(var(--radius-xl) + 8px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-visual img,
+.hero-split-img img {
+  position: relative;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.hero-visual::after,
+.hero-split-img::after {
+  border-radius: inherit;
+}
+
+/* ---- Small maker's seal on the feature image ---- */
+.hero-visual-mark {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(28, 24, 21, 0.76);
+  border: 1px solid rgba(183, 154, 98, 0.6);
+  color: var(--antique-gold);
+  font-size: 0.75rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+}
+
+.hero-split-img .hero-visual-mark {
+  left: auto;
+  right: 18px;
+  bottom: auto;
+  top: 18px;
+}
+
+/* ---- Small-screen refinements ---- */
+@media (max-width: 600px) {
+  .hero-layout > div:first-child,
+  .hero-split-text,
+  .shop-hero-content,
+  .blog-hero-content,
+  .pricing-hero-content,
+  .contact-hero-content,
+  .legal-hero-content,
+  .sitemap-hero-content,
+  .cs-hero-content,
+  .article-hero-content {
+    padding-left: 14px;
+  }
+
+  .hero-visual::before,
+  .hero-split-img::before {
+    inset: -8px;
+    border-radius: calc(var(--radius-lg) + 6px);
+  }
+
+  .hero-visual-mark {
+    width: 34px;
+    height: 34px;
+    left: 14px;
+    bottom: 14px;
+    font-size: 0.6875rem;
+  }
+
+  .hero-split-img .hero-visual-mark {
+    left: auto;
+    right: 14px;
+    bottom: auto;
+    top: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero h1::after,
+  .shop-hero h1::after,
+  .blog-hero h1::after,
+  .pricing-hero h1::after,
+  .contact-hero h1::after,
+  .legal-hero h1::after,
+  .sitemap-hero h1::after,
+  .cs-hero h1::after,
+  .article-hero h1::after {
+    width: 40px;
+    margin-top: 14px;
+  }
+}

@@ -384,16 +384,16 @@
   align-items: center;
   gap: 0.4rem;
   padding: 5px 12px;
-  background-color: rgba(255, 255, 255, 0.16);
+  background-color: rgba(28, 24, 21, 0.78);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(220, 203, 178, 0.42);
   border-radius: var(--radius-full, 9999px);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--warm-sand, #F8F3E9);
+  color: #F8F3E9;
 }
 
 .bento-badge--spotlight {
