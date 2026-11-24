@@ -818,6 +818,7 @@
   height: 30px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: 50% 15%;
   border: 1.5px solid var(--warm-sand);
 }
 
