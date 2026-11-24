@@ -722,9 +722,15 @@
 /* Master Artisans Showcase Grid */
 .artisans-showcase-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(24px, 3.5vw, 32px);
   margin-top: 48px;
+}
+
+@media (max-width: 1200px) {
+  .artisans-showcase-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .artisan-profile-card {
@@ -1198,7 +1204,6 @@
 @media (max-width: 992px) {
   .story-grid,
   .mission-grid,
-  .artisans-showcase-grid,
   .commitment-grid,
   .craft-pillars-grid {
     grid-template-columns: 1fr;
@@ -1221,6 +1226,12 @@
   .hero-about .container {
     padding-top: var(--space-6);
     padding-bottom: var(--space-6);
+  }
+}
+
+@media (max-width: 680px) {
+  .artisans-showcase-grid {
+    grid-template-columns: 1fr;
   }
 }
 
