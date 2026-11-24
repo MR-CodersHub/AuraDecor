@@ -1125,15 +1125,6 @@
 [data-theme="dark"] .custom-cta-note i {
   color: #66BB6A;
 }
-  color: var(--text-primary);
-}
-
-.custom-benefit-item p {
-  font-size: 0.82rem;
-  color: var(--text-secondary);
-  margin: 0;
-  line-height: 1.45;
-}
 
 /* 4-Step Journey Cards */
 .custom-journey-section {
