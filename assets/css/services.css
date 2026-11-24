@@ -90,7 +90,52 @@
    S2 — Shop by category
    ------------------------------------------------------------ */
 .categories-section {
-  background-color: var(--natural-cream);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.categories-section .section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+
+.categories-section .section-eyebrow {
+  color: #93432C;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+[data-theme="dark"] .categories-section .section-eyebrow {
+  color: var(--accent-gold, #D4AF76);
+}
+
+.categories-section .section-title {
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.categories-section .section-title em {
+  font-style: italic;
+  color: var(--terracotta);
+}
+
+[data-theme="dark"] .categories-section .section-title em {
+  color: var(--accent-gold, #D4AF76);
+}
+
+.categories-section .section-subtitle {
+  color: var(--text-primary);
+  opacity: 0.92;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+[data-theme="dark"] .categories-section .section-subtitle {
+  color: var(--text-secondary);
+  opacity: 0.95;
 }
 
 .cat-grid {
@@ -116,30 +161,42 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.35s, box-shadow 0.35s;
+  transition: transform 0.35s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.35s ease;
   aspect-ratio: 3 / 4;
+  border: 1px solid rgba(57, 51, 45, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .cat-card {
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .cat-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
 }
 
 .cat-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
 .cat-card:hover img {
-  transform: scale(1.07);
+  transform: scale(1.08);
 }
 
 .cat-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(39, 33, 29, 0.88) 40%, transparent 100%);
+  background: linear-gradient(to top, rgba(18, 14, 11, 0.92) 0%, rgba(18, 14, 11, 0.65) 45%, rgba(18, 14, 11, 0.12) 100%);
+  transition: background 0.35s ease;
+}
+
+.cat-card:hover .cat-card-overlay {
+  background: linear-gradient(to top, rgba(18, 14, 11, 0.96) 0%, rgba(18, 14, 11, 0.72) 50%, rgba(18, 14, 11, 0.2) 100%);
 }
 
 .cat-card-body {
@@ -148,29 +205,43 @@
   left: 0;
   right: 0;
   padding: 1.4rem;
+  z-index: 2;
 }
 
 .cat-card-body h3 {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
-  color: #fff;
+  font-size: 1.15rem;
+  color: #FFFFFF;
+  font-weight: 700;
   margin-bottom: 0.35rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .cat-card-body p {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 0.7rem;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0.75rem;
+  line-height: 1.45;
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .cat-card-link {
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--antique-gold);
+  color: #F3D89F;
   font-family: var(--font-sans);
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.25s, transform 0.25s;
+}
+
+.cat-card:hover .cat-card-link {
+  color: #FFFFFF;
+  transform: translateX(4px);
 }
 
 .cat-card.active-cat {
