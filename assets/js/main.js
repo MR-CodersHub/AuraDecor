@@ -2025,7 +2025,7 @@ let revealObserver = null;
  */
 function initScrollReveal() {
   if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => el.classList.add('visible'));
     return;
   }
 
@@ -2056,7 +2056,7 @@ function initScrollReveal() {
  */
 function observeRevealElements() {
   if (!revealObserver) return;
-  document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal:not(.visible), .reveal-left:not(.visible), .reveal-right:not(.visible), .reveal-scale:not(.visible)').forEach(el => revealObserver.observe(el));
 }
 
 /* ============================================================
