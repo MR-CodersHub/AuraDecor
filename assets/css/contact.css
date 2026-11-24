@@ -19,7 +19,7 @@
 .contact-hero-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=1600&auto=format&fit=crop') center/cover no-repeat;
+  background: url('https://i.pinimg.com/736x/82/aa/79/82aa790158c0d42cd8a38a0c4a86b358.jpg') center/cover no-repeat;
   opacity: 0.38;
 }
 
@@ -185,6 +185,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
+  min-width: 0;
 }
 
 .form-group.full-width {

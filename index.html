@@ -92,69 +92,212 @@
   </div>
 </section>
 
-<!-- SECTION 2: FEATURED COLLECTIONS -->
+<!-- SECTION 2: FEATURED COLLECTIONS (REDESIGNED) -->
 <section class="section collections-sec" aria-label="Featured collections">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Our Collections</span>
-      <h2 class="section-title">Explore Handcrafted Collections</h2>
-      <p class="section-subtitle">From ancient pottery traditions to contemporary woven art — discover craft in all its forms.</p>
+    <div class="collections-header-wrapper reveal">
+      <div class="section-header">
+        <span class="section-label"><i class="fas fa-shapes" aria-hidden="true"></i> Our Collections</span>
+        <h2 class="section-title">Explore Handcrafted <em>Collections</em></h2>
+        <p class="section-subtitle">From ancient pottery traditions to contemporary woven art — discover craft in all its forms.</p>
+      </div>
+
+      <!-- Quick Discipline Filter Tabs (Instant Client Interaction) -->
+      <div class="collections-filter-bar" role="tablist" aria-label="Filter collections by craft discipline">
+        <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true"><i class="fas fa-border-all" aria-hidden="true"></i> All Disciplines</button>
+        <button class="filter-tab" data-filter="pottery" role="tab" aria-selected="false"><i class="fas fa-fire-burner" aria-hidden="true"></i> Pottery &amp; Clay</button>
+        <button class="filter-tab" data-filter="textiles" role="tab" aria-selected="false"><i class="fas fa-rug" aria-hidden="true"></i> Handloom Textiles</button>
+        <button class="filter-tab" data-filter="wooden" role="tab" aria-selected="false"><i class="fas fa-tree" aria-hidden="true"></i> Woodcraft</button>
+        <button class="filter-tab" data-filter="art" role="tab" aria-selected="false"><i class="fas fa-palette" aria-hidden="true"></i> Wall Art &amp; Decor</button>
+      </div>
     </div>
-    <div class="collections-grid">
-      <article class="collection-card reveal">
-        <a href="pages/services.html?cat=home-decor" class="collection-link">
-          <div class="collection-img-wrap">
-            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600&auto=format&fit=crop" alt="Handcrafted Home Decor collection" loading="lazy">
-            <div class="collection-overlay"><span>Explore <i class="fas fa-arrow-right"></i></span></div>
+
+    <!-- Curated Editorial Bento Grid -->
+    <div class="collections-bento-grid" id="collectionsGrid">
+
+      <!-- Item 1: HERO SPOTLIGHT (Pottery & Ceramics) -->
+      <article class="bento-card bento-card--featured reveal" data-category="pottery">
+        <a href="pages/services.html?cat=pottery-ceramics" class="bento-card-link" aria-label="Explore Handmade Pottery and Stoneware collection">
+          <div class="bento-img-wrap">
+            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=900&auto=format&fit=crop" alt="Handmade Pottery and Stoneware collection" loading="lazy">
+            <div class="bento-scrim"></div>
           </div>
-          <div class="collection-info"><h3>Handcrafted Home Decor</h3><span class="collection-count">48 items</span></div>
+          <div class="bento-content">
+            <div class="bento-top-meta">
+              <span class="bento-badge bento-badge--spotlight"><i class="fas fa-certificate" aria-hidden="true"></i> Signature Discipline</span>
+              <span class="bento-count-pill"><i class="fas fa-cubes-stacked" aria-hidden="true"></i> 36 Heirlooms</span>
+            </div>
+            <div class="bento-bottom-info">
+              <span class="bento-origin"><i class="fas fa-location-dot" aria-hidden="true"></i> Jaipur &amp; Khurja Kilns</span>
+              <h3 class="bento-title">Handmade Pottery &amp; Stoneware</h3>
+              <p class="bento-desc">Individually wheel-thrown alluvial clays, natural ash glazes, and wood-fired kiln finishes designed for slow living rituals.</p>
+              <div class="bento-cta-row">
+                <span class="bento-cta-text">Explore Pottery Collection</span>
+                <span class="bento-arrow-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
         </a>
       </article>
-      <article class="collection-card reveal">
-        <a href="pages/services.html?cat=pottery-ceramics" class="collection-link">
-          <div class="collection-img-wrap">
-            <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&auto=format&fit=crop" alt="Handmade Pottery collection" loading="lazy">
-            <div class="collection-overlay"><span>Explore <i class="fas fa-arrow-right"></i></span></div>
+
+      <!-- Item 2: Handcrafted Home Decor -->
+      <article class="bento-card reveal" data-category="art">
+        <a href="pages/services.html?cat=home-decor" class="bento-card-link" aria-label="Explore Handcrafted Home Decor collection">
+          <div class="bento-img-wrap">
+            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=700&auto=format&fit=crop" alt="Handcrafted Home Decor collection" loading="lazy">
+            <div class="bento-scrim"></div>
           </div>
-          <div class="collection-info"><h3>Handmade Pottery</h3><span class="collection-count">36 items</span></div>
+          <div class="bento-content">
+            <div class="bento-top-meta">
+              <span class="bento-badge"><i class="fas fa-heart" aria-hidden="true"></i> Slow Living</span>
+              <span class="bento-count-pill">48 Items</span>
+            </div>
+            <div class="bento-bottom-info">
+              <span class="bento-origin"><i class="fas fa-location-dot" aria-hidden="true"></i> Multidisciplinary Studios</span>
+              <h3 class="bento-title">Handcrafted Home Decor</h3>
+              <p class="bento-desc">Tactile accents, stone-burnished vessels, and sculptural conversation pieces.</p>
+              <div class="bento-cta-row">
+                <span class="bento-cta-text">Discover Decor</span>
+                <span class="bento-arrow-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
         </a>
       </article>
-      <article class="collection-card reveal">
-        <a href="pages/services.html?cat=textiles" class="collection-link">
-          <div class="collection-img-wrap">
-            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&auto=format&fit=crop" alt="Woven Textiles collection" loading="lazy">
-            <div class="collection-overlay"><span>Explore <i class="fas fa-arrow-right"></i></span></div>
+
+      <!-- Item 3: Woven Textiles -->
+      <article class="bento-card reveal" data-category="textiles">
+        <a href="pages/services.html?cat=textiles" class="bento-card-link" aria-label="Explore Woven Textiles and Rugs collection">
+          <div class="bento-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=700&auto=format&fit=crop" alt="Handloom Woven Textiles and Rugs collection" loading="lazy">
+            <div class="bento-scrim"></div>
           </div>
-          <div class="collection-info"><h3>Woven Textiles</h3><span class="collection-count">52 items</span></div>
+          <div class="bento-content">
+            <div class="bento-top-meta">
+              <span class="bento-badge"><i class="fas fa-rug" aria-hidden="true"></i> Pit-Loom Weaves</span>
+              <span class="bento-count-pill">52 Items</span>
+            </div>
+            <div class="bento-bottom-info">
+              <span class="bento-origin"><i class="fas fa-location-dot" aria-hidden="true"></i> Varanasi &amp; Kutch</span>
+              <h3 class="bento-title">Woven Textiles &amp; Rugs</h3>
+              <p class="bento-desc">Raw jute, organic cotton, and hand-spun wool dyed with botanical extracts.</p>
+              <div class="bento-cta-row">
+                <span class="bento-cta-text">Discover Textiles</span>
+                <span class="bento-arrow-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
         </a>
       </article>
-      <article class="collection-card reveal">
-        <a href="pages/services.html?cat=wooden" class="collection-link">
-          <div class="collection-img-wrap">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop" alt="Wooden Crafts collection" loading="lazy">
-            <div class="collection-overlay"><span>Explore <i class="fas fa-arrow-right"></i></span></div>
+
+      <!-- Item 4: Wooden Crafts -->
+      <article class="bento-card reveal" data-category="wooden">
+        <a href="pages/services.html?cat=wooden" class="bento-card-link" aria-label="Explore Sculptural Wooden Crafts collection">
+          <div class="bento-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&auto=format&fit=crop" alt="Carved Wooden Crafts collection" loading="lazy">
+            <div class="bento-scrim"></div>
           </div>
-          <div class="collection-info"><h3>Wooden Crafts</h3><span class="collection-count">29 items</span></div>
+          <div class="bento-content">
+            <div class="bento-top-meta">
+              <span class="bento-badge"><i class="fas fa-tree" aria-hidden="true"></i> Reclaimed Teak &amp; Rosewood</span>
+              <span class="bento-count-pill">29 Items</span>
+            </div>
+            <div class="bento-bottom-info">
+              <span class="bento-origin"><i class="fas fa-location-dot" aria-hidden="true"></i> Saharanpur &amp; Jodhpur</span>
+              <h3 class="bento-title">Sculptural Wooden Crafts</h3>
+              <p class="bento-desc">Hand-gouged bowls, live-edge boards, and heirloom architectural millwork.</p>
+              <div class="bento-cta-row">
+                <span class="bento-cta-text">Discover Woodcraft</span>
+                <span class="bento-arrow-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
         </a>
       </article>
-      <article class="collection-card reveal">
-        <a href="pages/services.html?cat=wall-art" class="collection-link">
-          <div class="collection-img-wrap">
-            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&auto=format&fit=crop" alt="Wall Art collection" loading="lazy">
-            <div class="collection-overlay"><span>Explore <i class="fas fa-arrow-right"></i></span></div>
+
+      <!-- Item 5: Wall Art -->
+      <article class="bento-card reveal" data-category="art">
+        <a href="pages/services.html?cat=wall-art" class="bento-card-link" aria-label="Explore Folk and Ancestral Wall Art collection">
+          <div class="bento-img-wrap">
+            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=700&auto=format&fit=crop" alt="Ancestral Wall Art collection" loading="lazy">
+            <div class="bento-scrim"></div>
           </div>
-          <div class="collection-info"><h3>Wall Art</h3><span class="collection-count">41 items</span></div>
+          <div class="bento-content">
+            <div class="bento-top-meta">
+              <span class="bento-badge"><i class="fas fa-palette" aria-hidden="true"></i> Folk Miniatures</span>
+              <span class="bento-count-pill">41 Items</span>
+            </div>
+            <div class="bento-bottom-info">
+              <span class="bento-origin"><i class="fas fa-location-dot" aria-hidden="true"></i> Madhubani &amp; Mithila</span>
+              <h3 class="bento-title">Folk &amp; Ancestral Wall Art</h3>
+              <p class="bento-desc">Mineral-pigment paintings on cotton rag paper celebrating sacred folklore.</p>
+              <div class="bento-cta-row">
+                <span class="bento-cta-text">Discover Wall Art</span>
+                <span class="bento-arrow-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
         </a>
       </article>
-      <article class="collection-card reveal">
-        <a href="pages/services.html?cat=lighting" class="collection-link">
-          <div class="collection-img-wrap">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop" alt="Handmade Lighting collection" loading="lazy">
-            <div class="collection-overlay"><span>Explore <i class="fas fa-arrow-right"></i></span></div>
+
+      <!-- Item 6: Handmade Lighting -->
+      <article class="bento-card reveal" data-category="pottery">
+        <a href="pages/services.html?cat=lighting" class="bento-card-link" aria-label="Explore Handmade Ambient Lighting collection">
+          <div class="bento-img-wrap">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&auto=format&fit=crop" alt="Handmade Ambient Lighting collection" loading="lazy">
+            <div class="bento-scrim"></div>
           </div>
-          <div class="collection-info"><h3>Handmade Lighting</h3><span class="collection-count">24 items</span></div>
+          <div class="bento-content">
+            <div class="bento-top-meta">
+              <span class="bento-badge"><i class="fas fa-sun" aria-hidden="true"></i> Ambient Glow</span>
+              <span class="bento-count-pill">24 Items</span>
+            </div>
+            <div class="bento-bottom-info">
+              <span class="bento-origin"><i class="fas fa-location-dot" aria-hidden="true"></i> Moradabad &amp; Jaipur</span>
+              <h3 class="bento-title">Handmade Ambient Lighting</h3>
+              <p class="bento-desc">Perforated clay lanterns and hand-beaten brass fixtures creating celestial shadow play.</p>
+              <div class="bento-cta-row">
+                <span class="bento-cta-text">Discover Lighting</span>
+                <span class="bento-arrow-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
         </a>
       </article>
+
+    </div>
+
+    <!-- Craft Integrity Strip & Direct Catalog Callout -->
+    <div class="collections-footer-banner reveal">
+      <div class="collections-pillars-row">
+        <div class="coll-pillar-item">
+          <span class="pillar-icon"><i class="fas fa-leaf" aria-hidden="true"></i></span>
+          <div class="pillar-text">
+            <strong>100% Earth-Grown</strong>
+            <span>Alluvial clays, wild silks &amp; raw woods</span>
+          </div>
+        </div>
+        <div class="coll-pillar-item">
+          <span class="pillar-icon"><i class="fas fa-hand-holding-heart" aria-hidden="true"></i></span>
+          <div class="pillar-text">
+            <strong>Fair Trade Guild</strong>
+            <span>Direct living wages for 200+ master makers</span>
+          </div>
+        </div>
+        <div class="coll-pillar-item">
+          <span class="pillar-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+          <div class="pillar-text">
+            <strong>Breakage Guarantee</strong>
+            <span>Honeycomb cushioned plastic-free shipping</span>
+          </div>
+        </div>
+      </div>
+      <div class="collections-action-wrap">
+        <a href="pages/services.html" class="btn btn-primary btn-lg">
+          <span>Browse All 240+ Handcrafted Heirlooms</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
   </div>
 </section>

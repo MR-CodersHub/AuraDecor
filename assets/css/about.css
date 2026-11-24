@@ -21,17 +21,28 @@
   padding-bottom: clamp(88px, 11vh, 150px);
 }
 
+.hero-about .hero-layout {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+}
+
+@media (max-width: 992px) {
+  .hero-about .hero-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .hero-about .hero-content {
   max-width: 700px;
-  margin-inline: auto;
-  text-align: center;
+  margin-inline: 0;
+  padding: 0;
+  text-align: left;
 }
 
 .hero-about .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2.25rem, 4vw, 3.6rem);
   color: var(--white);
   max-width: 640px;
-  margin-inline: auto;
+  margin-inline: 0;
 }
 
 .hero-about .hero-title em {
@@ -44,11 +55,11 @@
   line-height: 1.75;
   color: rgba(248, 243, 233, 0.88);
   max-width: 560px;
-  margin-inline: auto;
+  margin-inline: 0;
 }
 
 .hero-about .breadcrumb {
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: var(--space-3);
   font-size: 0.8125rem;
 }
@@ -1279,5 +1290,11 @@
   .commitment-cta .btn-outline {
     width: 100%;
     max-width: 260px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-about .hero-title {
+    font-size: clamp(1.75rem, 9vw, 2.25rem);
   }
 }

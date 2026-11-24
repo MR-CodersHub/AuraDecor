@@ -2869,7 +2869,50 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.pricing-enquiry-form'))  initPricingForm();
   if (document.querySelector('.blog-filters'))          initBlogFilters();
   if (document.querySelector('.countdown'))             initCountdown('2025-12-31');
+  if (document.querySelector('.collections-filter-bar')) initCollectionsFilter();
 });
+
+/**
+ * Initialises interactive category filtering on Homepage Collections section.
+ */
+function initCollectionsFilter() {
+  const filterBar = document.querySelector('.collections-filter-bar');
+  if (!filterBar) return;
+
+  const tabs = filterBar.querySelectorAll('.filter-tab');
+  const cards = document.querySelectorAll('.collections-bento-grid .bento-card');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const filter = tab.getAttribute('data-filter');
+
+      // Update tab active states
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // Filter cards with smooth fade
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.classList.remove('is-hidden');
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(12px)';
+          requestAnimationFrame(() => {
+            card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+          });
+        } else {
+          card.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+}
 
 /* ============================================================
    END OF main.js — AuraDecor

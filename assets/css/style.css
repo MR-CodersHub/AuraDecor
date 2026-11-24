@@ -1211,6 +1211,78 @@ code {
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
+/* Hero layout with a feature image on the right */
+.hero-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.hero-layout > * {
+  min-width: 0;
+}
+
+.hero-visual {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 4 / 5;
+  max-height: 575px;
+  justify-self: end;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(220, 203, 178, 0.32);
+  background-color: var(--charcoal-brown);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(30, 26, 23, 0.28) 100%);
+  pointer-events: none;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s ease;
+}
+
+.hero-visual:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 992px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .hero-visual {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 380px;
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-visual {
+    aspect-ratio: 4 / 3;
+    max-height: 260px;
+    border-radius: var(--radius-lg);
+  }
+}
+
 /* Hero 2 — Split Layout */
 .hero-2 {
   position: relative;
@@ -2733,7 +2805,14 @@ select.form-control {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
 }
 
+.cart-drawer:not(.open) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 .cart-drawer.open {
+  display: flex !important;
   transform: translateX(0);
   visibility: visible;
   pointer-events: auto;
