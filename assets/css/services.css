@@ -701,13 +701,56 @@
    S5 — Custom Handcrafted Orders Redesign
    ------------------------------------------------------------ */
 .custom-orders-section {
-  background: linear-gradient(180deg, var(--soft-beige) 0%, rgba(248, 243, 233, 0.6) 100%);
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   position: relative;
   overflow: hidden;
+  color: var(--text-primary);
 }
 
 [data-theme="dark"] .custom-orders-section {
   background: linear-gradient(180deg, #1c1815 0%, #25201c 100%);
+}
+
+.custom-orders-section .section-eyebrow {
+  color: #93432C;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+[data-theme="dark"] .custom-orders-section .section-eyebrow {
+  color: var(--accent-gold, #D4AF76);
+}
+
+.custom-orders-heading,
+.custom-journey-title,
+.custom-showcase-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: var(--text-primary);
+  margin: 0.4rem 0;
+  line-height: 1.25;
+}
+
+.custom-orders-heading {
+  font-size: 2rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.custom-orders-lead,
+.custom-journey-subtitle,
+.custom-showcase-subtitle {
+  color: var(--text-primary);
+  opacity: 0.92;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+[data-theme="dark"] .custom-orders-lead,
+[data-theme="dark"] .custom-journey-subtitle,
+[data-theme="dark"] .custom-showcase-subtitle {
+  color: var(--text-secondary);
+  opacity: 0.95;
 }
 
 [data-theme="dark"] .custom-step-card,
@@ -909,65 +952,90 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(57, 51, 45, 0.06);
+}
+
+[data-theme="dark"] .custom-step-card {
+  background: var(--card-bg, #27211d);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .custom-step-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(57, 51, 45, 0.08);
+  box-shadow: 0 14px 30px rgba(57, 51, 45, 0.12);
 }
 
 .custom-step-num {
   font-family: var(--font-serif);
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--warm-sand);
+  color: var(--terracotta);
+  opacity: 0.55;
   line-height: 1;
   margin-bottom: 0.75rem;
 }
 
+[data-theme="dark"] .custom-step-num {
+  color: var(--accent-gold);
+  opacity: 0.45;
+}
+
 .custom-step-icon {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: var(--soft-beige);
-  color: var(--charcoal-brown);
+  background: rgba(185, 104, 78, 0.12);
+  color: #93432C;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 1rem;
 }
 
 [data-theme="dark"] .custom-step-icon {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--warm-sand);
+  background: rgba(212, 175, 118, 0.15);
+  color: var(--accent-gold);
 }
 
 .custom-step-card h4 {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin: 0 0 0.5rem;
   color: var(--text-primary);
+  font-weight: 700;
 }
 
 .custom-step-card p {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  opacity: 0.88;
+  line-height: 1.55;
   margin: 0 0 1rem;
   flex: 1;
 }
 
+[data-theme="dark"] .custom-step-card p {
+  color: var(--text-secondary);
+  opacity: 0.92;
+}
+
 .custom-step-tag {
   align-self: flex-start;
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--deep-olive);
-  background: rgba(78, 93, 66, 0.1);
-  padding: 0.25rem 0.65rem;
+  letter-spacing: 0.06em;
+  color: #395232;
+  background: rgba(77, 89, 64, 0.12);
+  padding: 0.28rem 0.75rem;
   border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] .custom-step-tag {
+  color: var(--accent-gold, #D4AF76);
+  background: rgba(212, 175, 118, 0.15);
 }
 
 /* 3-Commission Showcases */
