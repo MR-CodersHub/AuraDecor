@@ -71,17 +71,17 @@
 
 <!-- ===== SECTION 1: ARTICLE HEADER HERO ===== -->
 <section class="article-hero">
-  <div class="article-hero-bg" style="background-image: url('https://i.pinimg.com/736x/98/40/c8/9840c8abb2a3496eb80e603a8cc63058.jpg');"></div>
+  <div class="article-hero-bg" id="articleHeroBg" style="background-image: url('https://i.pinimg.com/736x/98/40/c8/9840c8abb2a3496eb80e603a8cc63058.jpg');"></div>
   <div class="article-hero-gradient"></div>
   <div class="container">
     <div class="article-hero-content">
       <div class="article-category">
         <a href="blog.html" style="color:var(--antique-gold);text-decoration:none;"><i class="fas fa-arrow-left"></i> All Stories</a>
         <span><i class="fas fa-star"></i></span>
-        <span>Pottery & Ceramics</span>
+        <span id="articleCategoryLabel">Pottery & Ceramics</span>
       </div>
-      <h1>The Potter's Wheel:<br>Priya Sharma's Journey<br><em>Through Three Generations</em></h1>
-      <div class="article-meta">
+      <h1 id="articleTitle">The Potter's Wheel:<br>Priya Sharma's Journey<br><em>Through Three Generations</em></h1>
+      <div class="article-meta" id="articleMeta">
         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop" alt="Priya Sharma">
         <span>By <strong>Priya Sharma</strong></span>
         <span>·</span>
@@ -100,6 +100,7 @@
   <div class="container">
     <div class="article-layout">
       <article class="article-content reveal">
+        <div id="articleDynamic">
         <!-- Pull Quote Intro -->
         <div class="article-pull-quote">
           <blockquote>"Every time I sit at my wheel, I feel like the clay is telling me what it wants to become. My hands just help it get there."</blockquote>
@@ -198,6 +199,7 @@
             <span class="blog-tag">Rajasthan</span>
           </div>
         </div>
+        </div>
 
         <!-- Share -->
         <div style="margin-top:2rem;padding:1.5rem;background:var(--natural-cream);border-radius:14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
@@ -213,7 +215,7 @@
       <!-- SIDEBAR -->
       <aside class="article-sidebar reveal" style="--delay:.2s">
         <!-- About the artisan -->
-        <div class="sidebar-card">
+        <div class="sidebar-card" id="sidebarArtisan">
           <h4>About the Artisan</h4>
           <div class="sidebar-artisan">
             <img src="https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?w=100&auto=format&fit=crop" alt="Priya Sharma">
@@ -229,6 +231,7 @@
         <!-- Related stories -->
         <div class="sidebar-card">
           <h4>More Stories</h4>
+          <div id="sidebarRelated">
           <div class="sidebar-related-article">
             <img src="https://i.pinimg.com/1200x/0c/f5/13/0cf51335b7f0d069efeeff4e3f924408.jpg" alt="">
             <a href="blog-details.html">Threads of Identity: The Handloom Traditions of Kutch</a>
@@ -241,12 +244,13 @@
             <img src="https://i.pinimg.com/736x/4f/9a/2e/4f9a2ec342f691f1d088c4ff839318fc.jpg" alt="">
             <a href="blog-details.html">Madhubani: When Village Walls Became Sacred Canvas</a>
           </div>
+          </div>
         </div>
 
         <!-- Tags -->
         <div class="sidebar-card">
           <h4>Browse by Topic</h4>
-          <div class="sidebar-tags">
+          <div class="sidebar-tags" id="sidebarTags">
             <span class="sidebar-tag">Pottery</span>
             <span class="sidebar-tag">Textiles</span>
             <span class="sidebar-tag">Woodcraft</span>
@@ -277,9 +281,9 @@
   <div class="container">
     <div class="section-header reveal">
       <span class="section-eyebrow">From the Workshop</span>
-      <h2 class="section-title">Shop Priya's<br><em>Pottery Collection</em></h2>
+      <h2 class="section-title" id="productsHeading">Shop Priya's<br><em>Pottery Collection</em></h2>
     </div>
-    <div class="article-products-grid reveal">
+    <div class="article-products-grid reveal" id="productsGrid">
       <article class="product-card">
         <div class="product-card-img">
           <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=400&auto=format&fit=crop" alt="Terracotta Sunrise Vase" loading="lazy">
@@ -332,7 +336,7 @@
       <span class="section-eyebrow">Continue Reading</span>
       <h2 class="section-title">More Artisan<br><em>Stories</em></h2>
     </div>
-    <div class="related-stories-grid reveal">
+    <div class="related-stories-grid reveal" id="relatedStoriesGrid">
       <article class="blog-card">
         <div class="blog-card-img">
           <img src="https://i.pinimg.com/1200x/0c/f5/13/0cf51335b7f0d069efeeff4e3f924408.jpg" alt="Kutchi Weaving" loading="lazy">
@@ -513,6 +517,7 @@
 <div class="toast-container" id="toast-container" aria-live="polite"></div>
 <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 <script src="../assets/js/products-data.js"></script>
+<script src="../assets/js/blog-details.js"></script>
 <script src="../assets/js/main.js"></script>
 </body>
 </html>
