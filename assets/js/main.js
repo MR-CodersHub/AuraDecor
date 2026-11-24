@@ -2476,54 +2476,6 @@ function initPriceRange() {
 }
 
 /* ============================================================
-   20. COMING SOON COUNTDOWN
-   ============================================================ */
-
-/**
- * Counts down to a target date, updating DOM every second.
- * Looks for elements: #countdown-days, #countdown-hours, #countdown-minutes, #countdown-seconds.
- * @param {string} targetDate - ISO date string e.g. '2025-12-31'
- */
-function initCountdown(targetDate) {
-  const target = new Date(targetDate).getTime();
-
-  const daysEl = document.getElementById('countdown-days');
-  const hoursEl = document.getElementById('countdown-hours');
-  const minsEl = document.getElementById('countdown-minutes');
-  const secsEl = document.getElementById('countdown-seconds');
-
-  if (!daysEl && !hoursEl && !minsEl && !secsEl) return;
-
-  const pad = n => String(Math.max(0, Math.floor(n))).padStart(2, '0');
-
-  const tick = () => {
-    const now = Date.now();
-    const diff = Math.max(0, target - now);
-
-    const totalSecs = Math.floor(diff / 1000);
-    const days = Math.floor(totalSecs / 86400);
-    const hours = Math.floor((totalSecs % 86400) / 3600);
-    const mins = Math.floor((totalSecs % 3600) / 60);
-    const secs = totalSecs % 60;
-
-    if (daysEl) daysEl.textContent = pad(days);
-    if (hoursEl) hoursEl.textContent = pad(hours);
-    if (minsEl) minsEl.textContent = pad(mins);
-    if (secsEl) secsEl.textContent = pad(secs);
-
-    if (diff <= 0) {
-      clearInterval(countdownInterval);
-      document.querySelectorAll('.countdown').forEach(el => {
-        el.innerHTML = '<p class="countdown-ended">We\'re Live! <i class="fas fa-gifts"></i></p>';
-      });
-    }
-  };
-
-  tick();
-  const countdownInterval = setInterval(tick, 1000);
-}
-
-/* ============================================================
    21. UTILITY: DEBOUNCE
    ============================================================ */
 
@@ -2868,7 +2820,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.register-form'))         initRegisterForm();
   if (document.querySelector('.pricing-enquiry-form'))  initPricingForm();
   if (document.querySelector('.blog-filters'))          initBlogFilters();
-  if (document.querySelector('.countdown'))             initCountdown('2025-12-31');
   if (document.querySelector('.collections-filter-bar')) initCollectionsFilter();
 });
 

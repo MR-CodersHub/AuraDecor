@@ -100,14 +100,6 @@ Every public-facing page contains **exactly 6 meaningful content sections** (exc
     - Section 5: Artisan Quote on Imperfection & Beauty
     - Section 6: Direct Help & Concierge Support Strip
 
-11. [coming-soon.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/coming-soon.html) — **Coming Soon / Maintenance**
-    - Section 1: Fullscreen Studio Maintenance Hero
-    - Section 2: Slow Craftsmanship & Kiln Firing Journey Message
-    - Section 3: Live JavaScript Countdown Timer (Days, Hours, Mins, Secs)
-    - Section 4: VIP Early Access Launch Registration Form
-    - Section 5: Studio Direct Contact Information
-    - Section 6: Return to Active Storefront CTA
-
 ---
 
 ## Shared Assets & Architectural Highlights
