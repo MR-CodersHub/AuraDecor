@@ -777,11 +777,11 @@
   -webkit-backdrop-filter: blur(8px);
   color: #fff;
   font-family: var(--font-sans);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 5px 12px;
+  padding: 5px 10px;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   z-index: 2;
@@ -1301,6 +1301,10 @@
   .commitment-cta .btn-outline {
     width: 100%;
     max-width: 260px;
+  }
+
+  .artisan-badge-lineage {
+    top: 50px;
   }
 }
 
