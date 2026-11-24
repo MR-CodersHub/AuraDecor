@@ -990,7 +990,7 @@
 }
 
 .artisan-img-wrap {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background-color: var(--bg-secondary);
 }
@@ -1000,8 +1000,20 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: top center;
   transition: transform 0.6s ease;
+}
+
+.artisans-grid .artisan-card:nth-child(1) .artisan-img {
+  object-position: 50% 14%;
+}
+
+.artisans-grid .artisan-card:nth-child(2) .artisan-img {
+  object-position: 50% 8%;
+}
+
+.artisans-grid .artisan-card:nth-child(3) .artisan-img {
+  object-position: 50% 12%;
 }
 
 .artisan-card:hover .artisan-img {
