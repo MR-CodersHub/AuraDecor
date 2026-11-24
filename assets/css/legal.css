@@ -14,6 +14,9 @@
   color: #ffffff;
   overflow: hidden;
   padding: var(--space-7) 0 var(--space-5);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .legal-hero-bg {
@@ -66,8 +69,9 @@
 .legal-meta-badges {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .legal-badge {
@@ -81,6 +85,9 @@
   font-size: 0.82rem;
   color: var(--warm-sand);
   backdrop-filter: blur(8px);
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
 }
 
 /* ===== 2. LEGAL BODY SECTION ===== */
@@ -181,6 +188,9 @@
   padding: clamp(2rem, 4vw, 3.8rem);
   border: 1px solid var(--border-color);
   box-shadow: 0 8px 32px rgba(57, 51, 45, 0.06);
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .legal-block {
@@ -358,4 +368,107 @@
 [dir="rtl"] .legal-block ol {
   padding-left: 0;
   padding-right: 1.4rem;
+}
+
+/* ===== 5. RESPONSIVE BREAKPOINTS ===== */
+@media (max-width: 992px) {
+  .legal-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .legal-hero {
+    padding: var(--space-6) 0 var(--space-4);
+    min-height: auto;
+  }
+  .legal-section {
+    padding: var(--space-5) 0;
+  }
+  .legal-content-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-lg, 16px);
+  }
+  .legal-toc-card {
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-lg, 16px);
+  }
+  .legal-contact-box {
+    grid-template-columns: 1fr;
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+  .legal-callout {
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .legal-badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    gap: 0.35rem;
+  }
+  .legal-block h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-content-card {
+    padding: 1.25rem 0.85rem;
+  }
+  .legal-toc-card {
+    padding: 1rem 0.75rem;
+  }
+  .legal-contact-box {
+    padding: 1rem 0.75rem;
+  }
+  .legal-contact-item {
+    gap: 0.6rem;
+  }
+  .legal-callout {
+    padding: 0.9rem 1rem;
+  }
+  .legal-block ul,
+  .legal-block ol {
+    padding-left: 1.1rem;
+  }
+  .legal-meta-badges {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .legal-content-card {
+    padding: 1.1rem 0.65rem;
+  }
+  .legal-toc-card {
+    padding: 0.9rem 0.65rem;
+  }
+  .legal-toc-title {
+    font-size: 1rem;
+  }
+  .legal-toc-nav li a {
+    font-size: 0.8rem;
+    padding: 5px 6px;
+  }
+  .legal-badge {
+    font-size: 0.68rem;
+    padding: 4px 8px;
+    letter-spacing: 0.01em;
+  }
+  .legal-block h2 {
+    font-size: 1.15rem;
+    gap: 0.5rem;
+  }
+  .legal-block h2 .section-num {
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
+  }
+  .legal-block p,
+  .legal-block li {
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
 }
