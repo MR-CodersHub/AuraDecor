@@ -92,15 +92,7 @@ Every public-facing page contains **exactly 6 meaningful content sections** (exc
    - Section 5: 6 Factors Determining Artisan Pricing
    - Section 6: Interactive Instant Estimate Request Form & Trade Desk Info
 
-10. [login.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/login.html) — **Customer Account** *(No Dashboard)*
-    - Section 1: Patron Welcome Hero
-    - Section 2: Seamless Tab Switcher (Sign In vs Create Account)
-    - Section 3: Customer Login Form with inline success state (strictly NO dashboard redirects)
-    - Section 4: Registration Form with interactive password strength meter
-    - Section 5: Patron Privileges & Benefits (Order tracking, wishlist sync, studio drops)
-    - Section 6: Artisan Community Mosaic Strip
-
-11. [404.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/404.html) — **Page Not Found**
+10. [404.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/404.html) — **Page Not Found**
     - Section 1: Sculptural 404 Visual & Craft Metaphor Hero
     - Section 2: Search Bar & Immediate Recovery Guidance
     - Section 3: 8 Quick Category Navigation Pills
@@ -108,7 +100,7 @@ Every public-facing page contains **exactly 6 meaningful content sections** (exc
     - Section 5: Artisan Quote on Imperfection & Beauty
     - Section 6: Direct Help & Concierge Support Strip
 
-12. [coming-soon.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/coming-soon.html) — **Coming Soon / Maintenance**
+11. [coming-soon.html](file:///c:/Users/LOKII_1526/Desktop/AuraDecor/pages/coming-soon.html) — **Coming Soon / Maintenance**
     - Section 1: Fullscreen Studio Maintenance Hero
     - Section 2: Slow Craftsmanship & Kiln Firing Journey Message
     - Section 3: Live JavaScript Countdown Timer (Days, Hours, Mins, Secs)
