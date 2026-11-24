@@ -69,7 +69,7 @@
 }
 
 .hero-about .breadcrumb a:hover {
-  color: var(--natural-cream);
+  color: #F8F3E9;
 }
 
 /* ------------------------------------------------------------
@@ -602,7 +602,7 @@
   line-height: 1.6;
   max-width: 820px;
   margin: 0 auto 20px;
-  color: var(--natural-cream, #F8F3E9);
+  color: #F8F3E9;
 }
 
 .craft-philosophy-author {
