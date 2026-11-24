@@ -1009,7 +1009,7 @@
 }
 
 .artisans-grid .artisan-card:nth-child(2) .artisan-img {
-  object-position: 50% 8%;
+  object-position: 50% 0%;
 }
 
 .artisans-grid .artisan-card:nth-child(3) .artisan-img {
