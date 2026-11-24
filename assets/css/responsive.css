@@ -2364,7 +2364,7 @@
   }
 
   .newsletter__form,
-  .newsletter-form {
+  .newsletter-form:not(.footer-newsletter-form) {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -2373,7 +2373,7 @@
   }
 
   .newsletter__form input[type="email"],
-  .newsletter-form input[type="email"] {
+  .newsletter-form:not(.footer-newsletter-form) input[type="email"] {
     width: 100%;
     padding: 14px 16px;
     font-size: 15px;
@@ -2382,7 +2382,7 @@
   }
 
   .newsletter__form .btn,
-  .newsletter-form .btn {
+  .newsletter-form:not(.footer-newsletter-form) .btn {
     width: 100%;
     padding: 14px 24px;
   }
@@ -2404,18 +2404,18 @@
   }
 
   .newsletter__form,
-  .newsletter-form {
+  .newsletter-form:not(.footer-newsletter-form) {
     flex-direction: column;
     gap: 12px;
   }
 
   .newsletter__form input,
-  .newsletter-form input {
+  .newsletter-form:not(.footer-newsletter-form) input {
     width: 100%;
   }
 
   .newsletter__form .btn,
-  .newsletter-form .btn {
+  .newsletter-form:not(.footer-newsletter-form) .btn {
     width: 100%;
   }
 }
@@ -2423,7 +2423,7 @@
 /* Tablet (481px – 1023px) */
 @media (min-width: 481px) and (max-width: 1023px) {
   .newsletter__form,
-  .newsletter-form {
+  .newsletter-form:not(.footer-newsletter-form) {
     max-width: 540px;
     margin: 0 auto;
   }
@@ -2438,7 +2438,7 @@
   }
 
   .newsletter__form,
-  .newsletter-form {
+  .newsletter-form:not(.footer-newsletter-form) {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -2449,7 +2449,7 @@
   }
 
   .newsletter__form input[type="email"],
-  .newsletter-form input[type="email"] {
+  .newsletter-form:not(.footer-newsletter-form) input[type="email"] {
     flex: 1;
     padding: 14px 20px;
     font-size: 16px;
@@ -2458,7 +2458,7 @@
   }
 
   .newsletter__form .btn,
-  .newsletter-form .btn {
+  .newsletter-form:not(.footer-newsletter-form) .btn {
     flex-shrink: 0;
     white-space: nowrap;
     padding: 14px 32px;
